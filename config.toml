@@ -1,0 +1,145 @@
+baseurl = "http://localhost:1313/"
+
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+googleAnalytics = "UA-178245243-1"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = ""
+
+[languages]
+    [languages.en]
+        languagename = "English"
+		title = "Arafat Hasan"
+    [languages.bn]
+        languagename = "বাংলা"
+        title = "আরাফাত হাসান"
+
+[languages.en.params]
+    author = "Arafat Hasan"
+    info = "Continuous Learner | Computer Nerd"
+    description = "Arafat Hasan's personal website"
+    footercontent = "Want to talk in private? <a href='mailto:opendoor.arafat@gmail.com'> Email me </a>!"
+
+
+[languages.bn.params]
+    author = "আরাফাত হাসান"
+    info = "নানান কিছু অবিরাম শিখি | বই পড়ি | কম্পিউটার গুতোই"
+    description = "আরাফাত হাসানের ওয়েবসাইট"
+    footercontent = "আলাপ করতে চান? <a href='mailto:opendoor.arafat@gmail.com'> ইমেইল করুন </a>!"
+
+
+[params]
+    keywords = "blog,developer,personal,resume,computer,technology,programmer,curriculum vitae"
+    avatarurl = "/images/IMG_1186-gray-full-blur-back-semicolor-foreground-512x512.png"
+
+    favicon_32 = "/images/favicon-32x32.png"
+    favicon_16 = "/images/favicon-16x16.png"
+
+
+
+    hidecredits = false
+    hidecopyright = false
+
+    rtl = false
+    
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "auto"
+
+    math = true
+    custom_css = ["css/custom.css"]
+
+
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+# Social links
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin fa-2x"
+    weight = 1
+    url = "https://www.linkedin.com/in/arafat-hasan/"
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 3
+    url = "https://github.com/arafat-hasan/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 4
+    url = "https://twitter.com/Arafat_HJ/"
+[[params.social]]
+    name = "Facebook"
+    icon = "fab fa-facebook fa-2x"
+    weight = 5
+    url = "https://www.facebook.com/OpenDoor.Arafat"
+[[params.social]]
+    name = "Stackoverflow"
+    icon = "fab fa-stack-overflow fa-2x"
+    weight = 2
+    url = "https://stackoverflow.com/users/7829174/arafat-hasan"
+
+
+
+[languages.en.menu]
+
+    [[languages.en.menu.main]]
+    name = "About"
+    weight = 1
+    url = "about/"
+
+    [[languages.en.menu.main]]
+    name = "Blog"
+    weight = 2
+    url = "posts/"
+
+    [[languages.en.menu.main]]
+    name = "Projects"
+    weight = 3
+    url = "projects/"
+
+    [[languages.en.menu.main]]
+    name = "Contact me"
+    weight = 5
+    url = "contact/"
+    
+[languages.bn.menu]
+
+    [[languages.bn.menu.main]]
+    name = "জানুন"
+    weight = 1
+    url = "about/"
+
+    [[languages.bn.menu.main]]
+    name = "লেখা"
+    weight = 2
+    url = "posts/"
+
+    [[languages.bn.menu.main]]
+    name = "প্রকল্প"
+    weight = 3
+    url = "projects/"
+
+    [[languages.bn.menu.main]]
+    name = "যোগাযোগ করুন"
+    weight = 5
+    url = "contact/"
+
+
