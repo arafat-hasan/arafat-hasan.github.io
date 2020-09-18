@@ -40,7 +40,7 @@ disqusShortname = ""
 
 [params]
     keywords = "blog,developer,personal,resume,computer,technology,programmer,curriculum vitae"
-    avatarurl = "/images/IMG_1186-gray-full-blur-back-semicolor-foreground-512x512.png"
+    avatarurl = "/images/avater.jpg"
 
     favicon_32 = "/images/favicon-32x32.png"
     favicon_16 = "/images/favicon-16x16.png"
