@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://arafat-hasan.github.io/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://arafat-hasan.github.io/bn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://arafat-hasan.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://arafat-hasan.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://arafat-hasan.github.io/bn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://arafat-hasan.github.io/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://arafat-hasan.github.io/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://arafat-hasan.github.io/bn/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://arafat-hasan.github.io/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://arafat-hasan.github.io/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://arafat-hasan.github.io/bn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://arafat-hasan.github.io/tags/"
+                />
+  </url>
+  
+</urlset>
