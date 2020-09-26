@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>https://arafathasan.live/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/"
+                href="https://arafathasan.live/bn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://arafathasan.live/"
                 />
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://arafathasan.live/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/categories/"
+                href="https://arafathasan.live/bn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://arafathasan.live/categories/"
                 />
   </url>
   
   <url>
-    <loc>/series/</loc>
+    <loc>https://arafathasan.live/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/series/"
+                href="https://arafathasan.live/bn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/series/"
+                href="https://arafathasan.live/series/"
                 />
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://arafathasan.live/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/tags/"
+                href="https://arafathasan.live/bn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://arafathasan.live/tags/"
                 />
   </url>
   

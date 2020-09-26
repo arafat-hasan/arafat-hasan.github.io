@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/bn/categories/</loc>
+    <loc>https://arafathasan.live/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://arafathasan.live/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/categories/"
+                href="https://arafathasan.live/bn/categories/"
                 />
   </url>
   
   <url>
-    <loc>/bn/series/</loc>
+    <loc>https://arafathasan.live/bn/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/series/"
+                href="https://arafathasan.live/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/series/"
+                href="https://arafathasan.live/bn/series/"
                 />
   </url>
   
   <url>
-    <loc>/bn/tags/</loc>
+    <loc>https://arafathasan.live/bn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://arafathasan.live/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/tags/"
+                href="https://arafathasan.live/bn/tags/"
                 />
   </url>
   
   <url>
-    <loc>/bn/</loc>
+    <loc>https://arafathasan.live/bn/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://arafathasan.live/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/"
+                href="https://arafathasan.live/bn/"
                 />
   </url>
   
