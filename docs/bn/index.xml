@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>আরাফাত হাসান</title>
-    <link>arafathasan.live/bn/</link>
+    <link>/bn/</link>
     <description>Recent content on আরাফাত হাসান</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="arafathasan.live/bn/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="/bn/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
