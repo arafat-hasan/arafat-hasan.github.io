@@ -1,4 +1,4 @@
-baseurl = "https://arafathasan.live"
+baseurl = "arafathasan.live"
 
 theme = "hugo-coder"
 

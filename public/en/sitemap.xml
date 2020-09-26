@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://arafathasan.live/</loc>
+    <loc>arafathasan.live/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/"
+                href="arafathasan.live/bn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/"
+                href="arafathasan.live/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/categories/</loc>
+    <loc>arafathasan.live/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/categories/"
+                href="arafathasan.live/bn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/categories/"
+                href="arafathasan.live/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/series/</loc>
+    <loc>arafathasan.live/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/series/"
+                href="arafathasan.live/bn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/series/"
+                href="arafathasan.live/series/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/tags/</loc>
+    <loc>arafathasan.live/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/tags/"
+                href="arafathasan.live/bn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/tags/"
+                href="arafathasan.live/tags/"
                 />
   </url>
   

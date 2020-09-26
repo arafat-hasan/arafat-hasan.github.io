@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://arafathasan.live/bn/categories/</loc>
+    <loc>arafathasan.live/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/categories/"
+                href="arafathasan.live/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/categories/"
+                href="arafathasan.live/bn/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/bn/series/</loc>
+    <loc>arafathasan.live/bn/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/series/"
+                href="arafathasan.live/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/series/"
+                href="arafathasan.live/bn/series/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/bn/tags/</loc>
+    <loc>arafathasan.live/bn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/tags/"
+                href="arafathasan.live/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/tags/"
+                href="arafathasan.live/bn/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://arafathasan.live/bn/</loc>
+    <loc>arafathasan.live/bn/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://arafathasan.live/"
+                href="arafathasan.live/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://arafathasan.live/bn/"
+                href="arafathasan.live/bn/"
                 />
   </url>
   
