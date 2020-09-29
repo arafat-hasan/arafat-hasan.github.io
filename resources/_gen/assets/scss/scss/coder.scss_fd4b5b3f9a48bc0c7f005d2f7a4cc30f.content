@@ -241,9 +241,6 @@ img.emoji {
   padding: 0; }
   .list ul li {
     font-size: 1.8rem; }
-    @media only screen and (min-width: 768.1px) {
-      .list ul li {
-        display: flex; } }
     @media only screen and (max-width: 768px) {
       .list ul li {
         margin: 1.6rem 0 1.6rem 0; } }
@@ -265,6 +262,10 @@ img.emoji {
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #1565c0; }
+
+@media only screen and (min-width: 768.1px) {
+  .list ul:not(.pagination) li {
+    display: flex; } }
 
 .centered {
   display: flex;
