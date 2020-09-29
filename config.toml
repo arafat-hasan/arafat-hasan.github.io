@@ -2,7 +2,6 @@ baseurl = ""
 
 theme = "hugo-coder"
 
-publishDir = "docs"
 
 languagecode = "en"
 defaultcontentlanguage = "en"
