@@ -29,7 +29,7 @@ disqusShortname = ""
     author = "Arafat Hasan"
     info = "Continuous Learner ⦁ Computer Nerd"
     description = "Arafat Hasan's personal website"
-    footercontent = "Want to talk in private? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a>"
+    footercontent = "Want to talk? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a>"
 
 
 [languages.bn.params]
@@ -43,8 +43,8 @@ disqusShortname = ""
     keywords = "blog,developer,personal,resume,computer,technology,programmer,curriculum vitae"
     avatarurl = "/images/avatar.jpg"
 
-    favicon_32 = "/images/favicon-32x32.png"
-    favicon_16 = "/images/favicon-16x16.png"
+    favicon_32 = "/images/knight-2-right-32x32.png"
+    favicon_16 = "/images/knight-2-right-16x16.png"
 
 	dateformat = "January 2, 2006"
 
