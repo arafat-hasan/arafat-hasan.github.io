@@ -73,27 +73,27 @@ disqusShortname = ""
 # Social links
 [[params.social]]
     name = "LinkedIn"
-    icon = "fab fa-linkedin fa-2x"
+    icon = "fa fa-linkedin"
     weight = 1
     url = "https://www.linkedin.com/in/arafat-hasan/"
 [[params.social]]
     name = "Github"
-    icon = "fab fa-github fa-2x"
+    icon = "fa fa-github"
     weight = 3
     url = "https://github.com/arafat-hasan/"
 [[params.social]]
     name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
+    icon = "fa fa-twitter"
     weight = 4
     url = "https://twitter.com/Arafat_HJ/"
 [[params.social]]
     name = "Facebook"
-    icon = "fab fa-facebook fa-2x"
+    icon = "fa fa-facebook"
     weight = 5
     url = "https://www.facebook.com/OpenDoor.Arafat"
 [[params.social]]
     name = "Stackoverflow"
-    icon = "fab fa-stack-overflow fa-2x"
+    icon = "fa fa-stack-overflow"
     weight = 2
     url = "https://stackoverflow.com/users/7829174/arafat-hasan"
 
