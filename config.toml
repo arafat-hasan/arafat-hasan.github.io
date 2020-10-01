@@ -46,7 +46,7 @@ disqusShortname = ""
     favicon_32 = "/images/knight-2-right-32x32.png"
     favicon_16 = "/images/knight-2-right-16x16.png"
 
-	dateformat = "January 2, 2006"
+    dateformat = "January 2, 2006"
 
     hidecredits = false
     hidecopyright = false
