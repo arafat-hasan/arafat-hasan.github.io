@@ -19,4 +19,3 @@ deploy:
     branch: master
   name: Arafat Hasan
   email: opendoor.arafat@gmail.com
-  commit_message: "[TRAVIS CI AUTO BUILD] `date +'%Y-%m-%d %T'`" 
