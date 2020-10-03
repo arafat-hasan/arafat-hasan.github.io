@@ -16,3 +16,4 @@ deploy:
   local_dir: public
   on:
     branch: master
+  committer_from_gh: true
