@@ -17,4 +17,6 @@ deploy:
   local_dir: public
   on:
     branch: master
-  committer_from_gh: true
+  name: Arafat Hasan
+  email: opendoor.arafat@gmail.com
+  commit_message: "[TRAVIS CI AUTO BUILD] `date +'%Y-%m-%d %T'`" 
