@@ -45,11 +45,11 @@ disqusShortname = "arafathasan"
 
 
 [taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
+    category = "categories"
+    series = "series"
+    tag = "tags"
 
-# Social links
+
 [[params.social]]
     name = "LinkedIn"
     icon = "fa fa-linkedin"
@@ -92,24 +92,28 @@ disqusShortname = "arafathasan"
         [languages.en.menu]
 
             [[languages.en.menu.main]]
-            name = "About"
-            weight = 1
-            url = "/about/"
+                name = "About"
+                identifier = "enAbout"
+                weight = 1
+                url = "/about/"
 
             [[languages.en.menu.main]]
-            name = "Blog"
-            weight = 2
-            url = "/posts/"
+                name = "Blog"
+                identifier = "enBlog"
+                weight = 2
+                url = "/posts/"
 
             [[languages.en.menu.main]]
-            name = "Projects"
-            weight = 3
-            url = ""
+                name = "Projects"
+                identifier = "enProjects"
+                weight = 3
+                url = ""
 
             [[languages.en.menu.main]]
-            name = "Contact me"
-            weight = 5
-            url = ""
+                name = "Contact me"
+                identifier = "enContact"
+                weight = 5
+                url = ""
 
 
     [languages.bn]
@@ -126,21 +130,25 @@ disqusShortname = "arafathasan"
         [languages.bn.menu]
 
             [[languages.bn.menu.main]]
-            name = "জানুন"
-            weight = 1
-            url = "/about/"
+                name = "জানুন"
+                identifier = "bnAbout"
+                weight = 1
+                url = "/about/"
 
             [[languages.bn.menu.main]]
-            name = "লেখা"
-            weight = 2
-            url = "/posts/"
+                name = "লেখা"
+                identifier = "bnBlog"
+                weight = 2
+                url = "/posts/"
 
             [[languages.bn.menu.main]]
-            name = "প্রকল্প"
-            weight = 3
-            url = ""
+                name = "প্রকল্প"
+                identifier = "bnProject"
+                weight = 3
+                url = ""
 
             [[languages.bn.menu.main]]
-            name = "যোগাযোগ করুন"
-            weight = 5
-            url = ""
+                name = "যোগাযোগ করুন"
+                identifier = "bnContact"
+                weight = 5
+                url = ""
