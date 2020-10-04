@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
+    <loc>/en/about/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -13,12 +13,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/about/"
+                href="/en/about/"
                 />
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/en/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -28,12 +28,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/en/"
                 />
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>/en/posts/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -43,32 +43,32 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/posts/"
+                href="/en/posts/"
                 />
   </url>
   
   <url>
-    <loc>/posts/test-post/</loc>
+    <loc>/en/posts/test-post/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/test-post-2/</loc>
+    <loc>/en/posts/test-post-2/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/test-post-3/</loc>
+    <loc>/en/posts/test-post-3/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/test-post-4/</loc>
+    <loc>/en/posts/test-post-4/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -77,12 +77,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>/series/</loc>
+    <loc>/en/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -91,12 +91,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/series/"
+                href="/en/series/"
                 />
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -105,7 +105,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="/en/tags/"
                 />
   </url>
   
