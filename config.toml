@@ -3,7 +3,6 @@ baseurl = ""
 theme = "hugo-coder"
 
 
-languagecode = "en"
 defaultcontentlanguage = "en"
 
 googleAnalytics = "UA-178245243-1"
@@ -41,10 +40,10 @@ disqusShortname = ""
 
 [params]
     keywords = "blog,developer,personal,resume,computer,technology,programmer,curriculum vitae"
-    avatarurl = "/images/avatar.jpg"
+    avatarurl = "/assets/images/avatar.jpg"
 
-    favicon_32 = "/images/knight-2-right-32x32.png"
-    favicon_16 = "/images/knight-2-right-16x16.png"
+    favicon_32 = "/assets/images/knight-2-right-32x32.png"
+    favicon_16 = "/assets/images/knight-2-right-16x16.png"
 
     dateformat = "January 2, 2006"
 
@@ -104,7 +103,7 @@ disqusShortname = ""
     [[languages.en.menu.main]]
     name = "About"
     weight = 1
-    url = ""
+    url = "/about/"
 
     [[languages.en.menu.main]]
     name = "Blog"
@@ -126,21 +125,19 @@ disqusShortname = ""
     [[languages.bn.menu.main]]
     name = "জানুন"
     weight = 1
-    url = ""
+    url = "/about/"
 
     [[languages.bn.menu.main]]
     name = "লেখা"
     weight = 2
-    url = ""
+    url = "/posts/"
 
     [[languages.bn.menu.main]]
     name = "প্রকল্প"
     weight = 3
-    url = ""
+#    url = ""
 
     [[languages.bn.menu.main]]
     name = "যোগাযোগ করুন"
     weight = 5
-    url = ""
-
-
+#    url = ""
