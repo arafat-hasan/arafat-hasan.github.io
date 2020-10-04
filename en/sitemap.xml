@@ -4,6 +4,7 @@
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -14,6 +15,16 @@
                 hreflang="en"
                 href="/"
                 />
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/test-post/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
