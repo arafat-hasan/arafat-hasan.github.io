@@ -3,6 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/bn/posts/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="/bn/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>/bn/posts/test-post-5.bn.en/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/bn/about/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="/bn/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>/bn/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="/bn/"
+                />
+  </url>
+  
+  <url>
+    <loc>/bn/posts/test-lekha/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/bn/posts/test-lekha-2/</loc>
+    <lastmod>2020-10-04T14:18:11+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -41,20 +101,6 @@
                 rel="alternate"
                 hreflang="bn"
                 href="/bn/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>/bn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="/bn/"
                 />
   </url>
   
