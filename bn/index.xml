@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>আরাফাত হাসান</title>
-    <link>/bn/</link>
+    <link>https://www.arafathasan.live/bn/</link>
     <description>Recent content on আরাফাত হাসান</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Oct 2020 14:18:11 +0600</lastBuildDate><atom:link href="/bn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 14:18:11 +0600</lastBuildDate><atom:link href="https://www.arafathasan.live/bn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test Post 5</title>
-      <link>/bn/posts/test-post-5.bn.en/</link>
+      <link>https://www.arafathasan.live/bn/posts/test-post-5.bn.en/</link>
       <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
       
-      <guid>/bn/posts/test-post-5.bn.en/</guid>
+      <guid>https://www.arafathasan.live/bn/posts/test-post-5.bn.en/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit tellus, consequat quis neque non, semper lacinia libero. Duis molestie sagittis justo in tempus. Quisque id libero nunc. Phasellus rutrum placerat vulputate. Aliquam at lorem est. Nulla nec turpis sit amet enim sagittis feugiat imperdiet vel nibh. Fusce sollicitudin nunc sed nulla suscipit sodales. Aliquam id porta nulla.
 Nam viverra elit ante, ut consectetur neque blandit nec. Integer imperdiet ex tempor augue eleifend, id vestibulum felis rutrum.</description>
     </item>
     
     <item>
       <title>আমার সম্পর্কে</title>
-      <link>/bn/about/</link>
+      <link>https://www.arafathasan.live/bn/about/</link>
       <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
       
-      <guid>/bn/about/</guid>
+      <guid>https://www.arafathasan.live/bn/about/</guid>
       <description>আমি আরাফাত হাসান। জুতা সেলাই থেকে চন্ডীপাঠ পর্যন্ত সব কাজই আমি করি। অনেক বিষয়ে আমার জানাশোনা আছে, কিন্তু কোনটাতেই দক্ষ নই। একাধিক বিষয়ে আগ্রহ থাকার কারণে সামগ্রিক ধারণা আমার মধ্যে তৈরি হয়েছে।</description>
     </item>
     
     <item>
       <title>বাংলা পরীক্ষামূলক পোস্ট</title>
-      <link>/bn/posts/test-lekha/</link>
+      <link>https://www.arafathasan.live/bn/posts/test-lekha/</link>
       <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
       
-      <guid>/bn/posts/test-lekha/</guid>
+      <guid>https://www.arafathasan.live/bn/posts/test-lekha/</guid>
       <description>ও অকূলের কূল, ও অগতির গতি,
 ও অনাথের নাথ, ও পতিতের পতি।
 ও নয়নের আলো, ও রসনার মধু,
@@ -43,10 +43,10 @@ Nam viverra elit ante, ut consectetur neque blandit nec. Integer imperdiet ex te
     
     <item>
       <title>মাস্টারমশায়</title>
-      <link>/bn/posts/test-lekha-2/</link>
+      <link>https://www.arafathasan.live/bn/posts/test-lekha-2/</link>
       <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
       
-      <guid>/bn/posts/test-lekha-2/</guid>
+      <guid>https://www.arafathasan.live/bn/posts/test-lekha-2/</guid>
       <description>রাত্রি তখন প্রায় দুটা। কলিকাতার নিস্তব্ধ শব্দসমুদ্রে একটুখানি ঢেউ তুলিয়া একটা বড়ো জুড়িগাড়ি ভবানীপুরের দিক হইতে আসিয়া বির্জিতলাওয়ের মোড়ের কাছে থামিল। সেখানে একটা ঠিকাগাড়ি দেখিয়া, আরোহী বাবু তাহাকে ডাকিয়া আনাইলেন। তাহার পাশে একটি কোট-হ্যাট-পরা বাঙালি বিলাতফের্তা যুবা সম্মুখের আসনে দুই পা তুলিয়া দিয়া একটু মদমত্ত অবস্থায় ঘাড় নামাইয়া ঘুমাইতেছিল। এই যুবকটি নূতন বিলাত হইতে আসিয়াছে। ইহারই অভ্যর্থনা উপলক্ষে বন্ধুমহলে একটা খানা হইয়া গেছে। সেই খানা হইতে ফিরিবার পথে একজন বন্ধু তাহাকে কিছুদূর অগ্রসর করিবার জন্য নিজের গাড়িতে তুলিয়া লইয়াছেন। তিনি ইহাকে দু-তিনবার ঠেলা দিয়া জাগাইয়া কহিলেন, &amp;lsquo;মজুমদার, গাড়ি পাওয়া গেছে, বাড়ি যাও।&amp;rsquo;</description>
     </item>
     

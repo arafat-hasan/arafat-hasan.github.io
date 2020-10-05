@@ -3,104 +3,104 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/bn/posts/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/"
+                href="https://www.arafathasan.live/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/posts/"
+                href="https://www.arafathasan.live/bn/posts/"
                 />
   </url>
   
   <url>
-    <loc>/bn/posts/test-post-5.bn.en/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/test-post-5.bn.en/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/bn/about/</loc>
+    <loc>https://www.arafathasan.live/bn/about/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/about/"
+                href="https://www.arafathasan.live/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/about/"
+                href="https://www.arafathasan.live/bn/about/"
                 />
   </url>
   
   <url>
-    <loc>/bn/</loc>
+    <loc>https://www.arafathasan.live/bn/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="https://www.arafathasan.live/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/"
+                href="https://www.arafathasan.live/bn/"
                 />
   </url>
   
   <url>
-    <loc>/bn/posts/test-lekha/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/test-lekha/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/bn/posts/test-lekha-2/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/test-lekha-2/</loc>
     <lastmod>2020-10-04T14:18:11+06:00</lastmod>
   </url>
   
   <url>
-    <loc>/bn/categories/</loc>
+    <loc>https://www.arafathasan.live/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="https://www.arafathasan.live/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/categories/"
+                href="https://www.arafathasan.live/bn/categories/"
                 />
   </url>
   
   <url>
-    <loc>/bn/series/</loc>
+    <loc>https://www.arafathasan.live/bn/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/series/"
+                href="https://www.arafathasan.live/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/series/"
+                href="https://www.arafathasan.live/bn/series/"
                 />
   </url>
   
   <url>
-    <loc>/bn/tags/</loc>
+    <loc>https://www.arafathasan.live/bn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="https://www.arafathasan.live/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="/bn/tags/"
+                href="https://www.arafathasan.live/bn/tags/"
                 />
   </url>
   
