@@ -95,7 +95,7 @@ disqusShortname = "arafathasan"
                 name = "About"
                 identifier = "enAbout"
                 weight = 1
-                url = "/about/"
+                url = "https://www.linkedin.com/in/arafat-hasan/"
 
             [[languages.en.menu.main]]
                 name = "Blog"
@@ -122,7 +122,7 @@ disqusShortname = "arafathasan"
 
         [languages.bn.params]
             author = "আরাফাত হাসান"
-            info = "ভড়ুয়া বাঙাল ⦁ ঋষি দরবেশ"
+            info = "ঋষি দরবেশ ⦁ ভড়ুয়া বাঙাল ⦁ বহিরাগত দর্শক"
             description = "আরাফাত হাসানের ওয়েবসাইট"
             footercontent = "আলাপ করতে চান? <a href='mailto:opendoor.arafat@gmail.com'>ইমেইল করুন!</a>"
 
@@ -133,7 +133,7 @@ disqusShortname = "arafathasan"
                 name = "জানুন"
                 identifier = "bnAbout"
                 weight = 1
-                url = "/about/"
+                url = "https://www.linkedin.com/in/arafat-hasan/"
 
             [[languages.bn.menu.main]]
                 name = "লেখা"
