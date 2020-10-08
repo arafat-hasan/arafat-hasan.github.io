@@ -4,54 +4,28 @@
     <title>Arafat Hasan</title>
     <link>https://www.arafathasan.live/en/</link>
     <description>Recent content on Arafat Hasan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Oct 2020 14:18:11 +0600</lastBuildDate><atom:link href="https://www.arafathasan.live/en/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.arafathasan.live/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About page</title>
+      <title>About Me</title>
       <link>https://www.arafathasan.live/en/about/</link>
-      <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/about/</guid>
-      <description></description>
+      <description>Last semester student of Computer Science and Engineering at Mawlana Bhashani Science and Technology University. Super computer nerd who loves Vim, Linux and enjoys to customize all of the development environment. Work best with keyboard shortcuts and hate to use a mouse. Interested in devising a better problem-solving method for challenging tasks, the harder it is the more thrilled I feel. Inquisitive of learning new technologies and tools if the need arises.</description>
     </item>
     
     <item>
-      <title>Test Post 1</title>
-      <link>https://www.arafathasan.live/en/posts/test-post/</link>
-      <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
+      <title>আমার সম্পর্কে</title>
+      <link>https://www.arafathasan.live/en/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/posts/test-post/</guid>
-      <description>This is a test post</description>
-    </item>
-    
-    <item>
-      <title>Test Post 2</title>
-      <link>https://www.arafathasan.live/en/posts/test-post-2/</link>
-      <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/posts/test-post-2/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit tellus, consequat quis neque non, semper lacinia libero. Duis molestie sagittis justo in tempus. Quisque id libero nunc. Phasellus rutrum placerat vulputate. Aliquam at lorem est. Nulla nec turpis sit amet enim sagittis feugiat imperdiet vel nibh. Fusce sollicitudin nunc sed nulla suscipit sodales. Aliquam id porta nulla.
-Nam viverra elit ante, ut consectetur neque blandit nec. Integer imperdiet ex tempor augue eleifend, id vestibulum felis rutrum.</description>
-    </item>
-    
-    <item>
-      <title>Test Post 3</title>
-      <link>https://www.arafathasan.live/en/posts/test-post-3/</link>
-      <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/posts/test-post-3/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit tellus, consequat quis neque non, semper lacinia libero. Duis molestie sagittis justo in tempus. Quisque id libero nunc. Phasellus rutrum placerat vulputate. Aliquam at lorem est. Nulla nec turpis sit amet enim sagittis feugiat imperdiet vel nibh. Fusce sollicitudin nunc sed nulla suscipit sodales. Aliquam id porta nulla.
-Nam viverra elit ante, ut consectetur neque blandit nec. Integer imperdiet ex tempor augue eleifend, id vestibulum felis rutrum.</description>
-    </item>
-    
-    <item>
-      <title>Test Post 4</title>
-      <link>https://www.arafathasan.live/en/posts/test-post-4/</link>
-      <pubDate>Sun, 04 Oct 2020 14:18:11 +0600</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/posts/test-post-4/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit tellus, consequat quis neque non, semper lacinia libero. Duis molestie sagittis justo in tempus. Quisque id libero nunc. Phasellus rutrum placerat vulputate. Aliquam at lorem est. Nulla nec turpis sit amet enim sagittis feugiat imperdiet vel nibh. Fusce sollicitudin nunc sed nulla suscipit sodales. Aliquam id porta nulla.
-Nam viverra elit ante, ut consectetur neque blandit nec. Integer imperdiet ex tempor augue eleifend, id vestibulum felis rutrum.</description>
+      <guid>https://www.arafathasan.live/en/readme/</guid>
+      <description>সালাম, নমস্কার!
+আমি আরাফাত হাসান।
+আরাফাত হাসান কে, এবং কী বস্তু তার সত্য সঠিক উত্তর আমার জানা নেই।
+তবে সবাইকে জানানোর মতো আমার কিছু পরিচয় এবং বৈশিষ্ট্য আছে। আমার পুরা নাম মোহাম্মদ আরাফাত হাসান জেনিন। বাংলাদেশের রংপুরের এক গ্রামে আমার জন্ম এবং রংপুরেই আমি বেড়ে উঠেছি।
+আমি বেশ অন্তর্মুখী। ফলে নতুন কারো সাথে সহজে ভাব করতে পারি না। তবে ভাব হলে অনেক বকবক করি, হুদা-কথা বলি।
+অনেক কাজের কাজি আমি— যেসবের অধিকাংশই অনুৎপাদনশীল অব্যবহারযোগ্য অলাভজক অকাজ এবং যার কিছুতে আমার মাঝারি থেকে উচ্চ মানের দক্ষতা আছে।</description>
     </item>
     
   </channel>
