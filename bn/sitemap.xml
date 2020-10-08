@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.arafathasan.live/bn/critical/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/critical/shirshendu-mukhopadhyay/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -14,10 +39,6 @@
                 hreflang="bn"
                 href="https://www.arafathasan.live/bn/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/</loc>
   </url>
   
   <url>
@@ -63,33 +84,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/critical/salimullah-khan/islamofascism/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/oneliner/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/flawless-god/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/the-great-ruler-of-the-bad-system/</loc>
   </url>
   
   <url>
@@ -97,43 +92,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/three-colours-red/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/gender-based-sitting-difference/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/masculinity/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/philanthropy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/some-ideas-to-fix-offensive-comments-on-facebook/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/fear-of-danger/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/critical/salimullah-khan/salimullah-khan-autonomous-univs-and-privatization/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/insightful-one-liners-of-others/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/teacher-student-tradition/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/shirshendu-mukhopadhyay/</loc>
   </url>
   
 </urlset>
