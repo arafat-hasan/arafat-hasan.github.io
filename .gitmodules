@@ -1,6 +1,3 @@
 [submodule "themes/hugo-coder"]
 	path = themes/hugo-coder
 	url = https://github.com/arafat-hasan/hugo-coder.git
-[submodule "content"]
-	path = content
-	url = git@github.com:arafat-hasan/writings.git
