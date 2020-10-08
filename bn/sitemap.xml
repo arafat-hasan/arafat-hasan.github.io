@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.arafathasan.live/bn/critical/</loc>
+    <lastmod>2020-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/</loc>
+    <lastmod>2020-06-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/critical/cigarette-and-sex/</loc>
+    <lastmod>2020-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/critical/adar-bepari/</loc>
+    <lastmod>2020-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/bn/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -14,10 +44,6 @@
                 hreflang="bn"
                 href="https://www.arafathasan.live/bn/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/</loc>
   </url>
   
   <url>
@@ -49,10 +75,6 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/adar-bepari/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -63,20 +85,6 @@
                 rel="alternate"
                 hreflang="bn"
                 href="https://www.arafathasan.live/bn/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/"
                 />
   </url>
   
@@ -133,19 +141,11 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/bangla-phonetic-typing/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/critical/teacher-student-tradition/</loc>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/bn/critical/shirshendu-mukhopadhyay/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/critical/cigarette-and-sex/</loc>
   </url>
   
 </urlset>
