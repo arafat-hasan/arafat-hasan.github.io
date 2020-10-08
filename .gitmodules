@@ -3,4 +3,4 @@
 	url = https://github.com/arafat-hasan/hugo-coder.git
 [submodule "content"]
 	path = content
-	url = https://github.com/arafat-hasan/writings.git
+	url = https://GITHUB_TOKEN:x-oauth-basic@github.com/arafat-hasan/writings.git
