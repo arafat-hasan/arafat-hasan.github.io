@@ -95,19 +95,8 @@ disqusShortname = "arafathasan"
                 name = "About"
                 identifier = "enAbout"
                 weight = 1
-                url = "https://www.linkedin.com/in/arafat-hasan/"
+                url = "/about"
 
-            [[languages.en.menu.main]]
-                name = "Blog"
-                identifier = "enBlog"
-                weight = 2
-                url = "/posts/"
-
-            [[languages.en.menu.main]]
-                name = "Projects"
-                identifier = "enProjects"
-                weight = 3
-                url = ""
 
             [[languages.en.menu.main]]
                 name = "Contact me"
@@ -133,19 +122,13 @@ disqusShortname = "arafathasan"
                 name = "জানুন"
                 identifier = "bnAbout"
                 weight = 1
-                url = "https://www.linkedin.com/in/arafat-hasan/"
+                url = "/about/"
 
             [[languages.bn.menu.main]]
                 name = "লেখা"
                 identifier = "bnBlog"
                 weight = 2
-                url = "/posts/"
-
-            [[languages.bn.menu.main]]
-                name = "প্রকল্প"
-                identifier = "bnProject"
-                weight = 3
-                url = ""
+                url = "/critical/"
 
             [[languages.bn.menu.main]]
                 name = "যোগাযোগ করুন"
