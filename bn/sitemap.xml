@@ -4,12 +4,12 @@
   
   <url>
     <loc>https://www.arafathasan.live/bn/critical/</loc>
-    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/bn/</loc>
-    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,6 +20,11 @@
                 hreflang="bn"
                 href="https://www.arafathasan.live/bn/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/critical/capital-punishment/</loc>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
