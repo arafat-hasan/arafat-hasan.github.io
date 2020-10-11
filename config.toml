@@ -6,6 +6,9 @@ theme = "hugo-coder"
 defaultcontentlanguage = "en"
 defaultContentLanguageInSubdir = true
 
+# Enable robots.txt generation
+enableRobotsTXT = true
+
 googleAnalytics = "UA-178245243-1"
 
 paginate = 20
@@ -81,6 +84,8 @@ disqusShortname = "arafathasan"
     [languages.en]
         languagename = "English"
 		title = "Arafat Hasan"
+		contentDir = "content/en"
+		baseURL = "https://www.arafathasan.live/en"
 
         [languages.en.params]
             author = "Arafat Hasan"
@@ -108,6 +113,8 @@ disqusShortname = "arafathasan"
     [languages.bn]
         languagename = "বাংলা"
         title = "আরাফাত হাসান"
+        contentDir = "content/bn"
+        baseURL = "https://www.arafathasan.live/bn"
 
         [languages.bn.params]
             author = "আরাফাত হাসান"
