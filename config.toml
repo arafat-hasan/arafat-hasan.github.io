@@ -85,7 +85,6 @@ disqusShortname = "arafathasan"
         languagename = "English"
 		title = "Arafat Hasan"
 		contentDir = "content/en"
-		baseURL = "https://www.arafathasan.live/en"
 
         [languages.en.params]
             author = "Arafat Hasan"
@@ -114,7 +113,6 @@ disqusShortname = "arafathasan"
         languagename = "বাংলা"
         title = "আরাফাত হাসান"
         contentDir = "content/bn"
-        baseURL = "https://www.arafathasan.live/bn"
 
         [languages.bn.params]
             author = "আরাফাত হাসান"
