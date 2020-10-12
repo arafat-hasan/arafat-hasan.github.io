@@ -100,6 +100,12 @@ disqusShortname = "arafathasan"
                 identifier = "enAbout"
                 weight = 1
                 url = "/about"
+                
+            [[languages.en.menu.main]]
+                name = "Tech"
+                identifier = "enTech"
+                weight = 1
+                url = "/tech"
 
 
             [[languages.en.menu.main]]
