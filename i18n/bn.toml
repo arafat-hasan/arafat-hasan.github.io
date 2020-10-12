@@ -30,4 +30,7 @@ other = "আরও দেখুন"
 other = "সব পোস্ট"
 
 [criticals]
-other = "সব পোস্ট"
+other = "ক্রিটিক্যাল"
+
+[writings]
+other = "সব লেখা"
