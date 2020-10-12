@@ -8,19 +8,19 @@
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
-      <link>https://www.arafathasan.live/en/technotes/chapters/lamp/</link>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/lamp/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/technotes/chapters/lamp/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/lamp/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories. However, the file can be download manually.  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-languages.zip  Extract the .zip file archive:  unzip phpMyAdmin-4.9.4-all-languages.zip  Move the extracted files to the /usr/share/phpmyadmin directory:  sudo mv phpMyAdmin-4.9.4-all-languages.zip /usr/share/phpmyadmin  Change directories:  cd /usr/share/phpmyadmin  Rename the sample php configuration file:  sudo mv config.</description>
     </item>
     
     <item>
       <title>Redis Notes</title>
-      <link>https://www.arafathasan.live/en/technotes/chapters/redis/</link>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/redis/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/technotes/chapters/redis/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis/</guid>
       <description>Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
  What is a key-value pair?
  A key-value pair is a set or pair of two linked items.</description>
@@ -28,10 +28,10 @@
     
     <item>
       <title>PostgresSQL Notes</title>
-      <link>https://www.arafathasan.live/en/technotes/chapters/postgres/</link>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/technotes/chapters/postgres/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres/</guid>
       <description>Table of Content  Introduction to PostgreSQL 🚧 Installation  Install PostgreSQL in Ubuntu Install PostgreSQL in CentOS  Method 1: PostgreSQL Yum Repository Method 2: Using DNF     Initial Configuration  Creating a New PostgreSQL Database Cluster Understanding PostgreSQL Roles and Databases Creating a New Postgres Role   Some Very First Commands  Examples CREATE DATABASE DROP DATABASE CREATE TABLE Table Definition INSERT INTO SELECT DROP TABLE   The Surface Sea  Mockaroo Data Generator ORDER BY  ASC DESC ORDER BY with Two-parameter   DISTINCT WHERE  BETWEEN LIKE   GROUP BY  GROUP BY with ORDER BY GROUP BY HAVING   COALESCE Another Table Called car Basic Functions  MAX MIN AVG ROUND COUNT SUM   Basic Arithmetic Operations Discount Calculation ALIAS NULLIF DATE  NOW Addition and Subtraction of Date  INTERVAL   EXTRACT AGE     The Shallow Sea  PRIMARY KEY CONSTRAINTS  UNIQUE constraint CHECK Constraint   DELETE UPDATE ON CONFLICT  DO NOTHING DO UPDATE SET   Foreign Keys, Joins and Relationships  Delete Record with Foreign Keys   JOIN  INNER JOIN LEFT JOIN RIGHT JOIN FULL OUTER JOIN   Exporting Query Results to CSV Serials and Sequences Extensions UUID Datatype  UUID as Primary Key      Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
     </item>
     

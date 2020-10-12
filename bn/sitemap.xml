@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.arafathasan.live/bn/posts/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/writings/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -28,13 +18,23 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/posts/capital-punishment/</loc>
+    <loc>https://www.arafathasan.live/bn/writings/articles/critical/capital-punishment/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/writings/articles/critical/capital-punishment/</loc>
+    <loc>https://www.arafathasan.live/bn/writings/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/writings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/writings/"
+                />
   </url>
   
   <url>

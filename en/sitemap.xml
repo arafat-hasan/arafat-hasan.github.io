@@ -18,22 +18,22 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/technotes/chapters/lamp/</loc>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/lamp/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/technotes/</loc>
+    <loc>https://www.arafathasan.live/en/prowritings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/technotes/chapters/redis/</loc>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/redis/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/technotes/chapters/postgres/</loc>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -62,6 +62,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.arafathasan.live/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/writings/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/writings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/writings/"
                 />
   </url>
   
