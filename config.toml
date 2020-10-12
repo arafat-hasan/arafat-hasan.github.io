@@ -99,13 +99,13 @@ disqusShortname = "arafathasan"
                 name = "About"
                 identifier = "enAbout"
                 weight = 1
-                url = "/about"
+                url = "/en/about/"
                 
             [[languages.en.menu.main]]
                 name = "Tech"
                 identifier = "enTech"
                 weight = 2
-                url = "/techNotes"
+                url = "/en/prowritings/"
 
 
             [[languages.en.menu.main]]
@@ -133,13 +133,13 @@ disqusShortname = "arafathasan"
                 name = "জানুন"
                 identifier = "bnAbout"
                 weight = 1
-                url = "/about"
+                url = "/bn/about/"
 
             [[languages.bn.menu.main]]
                 name = "লেখা"
                 identifier = "bnBlog"
                 weight = 2
-                url = "/writings"
+                url = "/bn/writings/"
 
             [[languages.bn.menu.main]]
                 name = "যোগাযোগ করুন"
