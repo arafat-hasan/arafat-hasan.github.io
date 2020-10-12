@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arafat Hasan</title>
-    <link>https://www.arafathasan.live/en/</link>
-    <description>Recent content on Arafat Hasan</description>
+    <title>TechNotes on Arafat Hasan</title>
+    <link>https://www.arafathasan.live/en/technotes/</link>
+    <description>Recent content in TechNotes on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/technotes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
       <link>https://www.arafathasan.live/en/technotes/chapters/lamp/</link>
@@ -33,15 +33,6 @@
       
       <guid>https://www.arafathasan.live/en/technotes/chapters/postgres/</guid>
       <description>Table of Content  Introduction to PostgreSQL 🚧 Installation  Install PostgreSQL in Ubuntu Install PostgreSQL in CentOS  Method 1: PostgreSQL Yum Repository Method 2: Using DNF     Initial Configuration  Creating a New PostgreSQL Database Cluster Understanding PostgreSQL Roles and Databases Creating a New Postgres Role   Some Very First Commands  Examples CREATE DATABASE DROP DATABASE CREATE TABLE Table Definition INSERT INTO SELECT DROP TABLE   The Surface Sea  Mockaroo Data Generator ORDER BY  ASC DESC ORDER BY with Two-parameter   DISTINCT WHERE  BETWEEN LIKE   GROUP BY  GROUP BY with ORDER BY GROUP BY HAVING   COALESCE Another Table Called car Basic Functions  MAX MIN AVG ROUND COUNT SUM   Basic Arithmetic Operations Discount Calculation ALIAS NULLIF DATE  NOW Addition and Subtraction of Date  INTERVAL   EXTRACT AGE     The Shallow Sea  PRIMARY KEY CONSTRAINTS  UNIQUE constraint CHECK Constraint   DELETE UPDATE ON CONFLICT  DO NOTHING DO UPDATE SET   Foreign Keys, Joins and Relationships  Delete Record with Foreign Keys   JOIN  INNER JOIN LEFT JOIN RIGHT JOIN FULL OUTER JOIN   Exporting Query Results to CSV Serials and Sequences Extensions UUID Datatype  UUID as Primary Key      Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://www.arafathasan.live/en/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/about/</guid>
-      <description>Last semester student of Computer Science and Engineering at Mawlana Bhashani Science and Technology University. Super computer nerd who loves Vim, Linux and enjoys to customize all of the development environment. Work best with keyboard shortcuts and hate to use a mouse. Interested in devising a better problem-solving method for challenging tasks, the harder it is the more thrilled I feel. Inquisitive of learning new technologies and tools if the need arises.</description>
     </item>
     
   </channel>

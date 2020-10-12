@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Arafat Hasan">
+    <meta name="description" content="Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
+ What is a key-value pair?
+ A key-value pair is a set or pair of two linked items.">
+    <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis Notes"/>
+<meta name="twitter:description" content="Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
+ What is a key-value pair?
+ A key-value pair is a set or pair of two linked items."/>
+
+    <meta property="og:title" content="Redis Notes" />
+<meta property="og:description" content="Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
+ What is a key-value pair?
+ A key-value pair is a set or pair of two linked items." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.arafathasan.live/en/technotes/chapters/redis/" />
+<meta property="article:published_time" content="2020-09-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-01T00:00:00+00:00" /><meta property="og:site_name" content="Arafat Hasan" />
+
+
+    <title>
+  Redis Notes · Arafat Hasan
+</title>
+
+    
+      <link rel="canonical" href="https://www.arafathasan.live/en/technotes/chapters/redis/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.arafathasan.live/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://www.arafathasan.live/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.arafathasan.live/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.75.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.arafathasan.live/en">
+      Arafat Hasan
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/about">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/technotes">Tech</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="https://www.arafathasan.live/bn/">বাংলা</a>
+              </li>
+            
+          
+            
+          
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Redis Notes</h1>
+    </header>
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock text-center">
+<div class="content">
+<img src="https://imgur.com/90Hyfrg.png" alt="Redis Logo" width="600" height="400"/>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_redis_notes" class="sect0">Redis Notes</h1>
+<div class="openblock partintro">
+<div class="content">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_to_redis">1. Introduction to Redis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is a key-value pair?</strong></p>
+</div>
+<div class="paragraph">
+<p>A key-value pair is a set or pair of two linked items. Consider the following:</p>
+</div>
+<div class="paragraph">
+<p><em>car = Mercedes</em></p>
+</div>
+<div class="paragraph">
+<p>In this case, car is the key and Mercedes is the value. In a Redis database, this information can be  written using the syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SET  &#34;key1&#34; &#34;value1&#34;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Our example will translate to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SET &#34;car&#34; &#34;Mercedes&#34;</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_benefits_of_using_redis">1.1. Benefits of using Redis</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Unlike relational databases like MySQL, Redis is a NoSQL database that stores data as a key value pair. This makes it simple and flexible as there’s no need of creating any tables , columns and rows which are associated with relational databases. Feeding data to Redis is simple and straightforward.</p>
+</li>
+<li>
+<p>One of the apparent uses of Redis is its use as a caching system. While it does so, it also offers persistence to data being written on it.</p>
+</li>
+<li>
+<p>The in-memory architecture of Redis makes it super-fast in storage and retrieval of data.</p>
+</li>
+<li>
+<p>The redis cache system is quite robust and has the capacity of withstanding failures and interruptions.</p>
+</li>
+<li>
+<p>Redis ships with a Master-Slave replication feature. When changes are made to the master node, they are automatically replicated on the slave nodes to ensure high availability.</p>
+</li>
+<li>
+<p>Redis has the ability to store large key &amp; value pairs of up to 512 MB.</p>
+</li>
+<li>
+<p>Given its small footprint, Redis can be installed in IoT devices such as  Raspberry Pi and Arduino to  support IoT apps.</p>
+</li>
+<li>
+<p>Redis is a cross-platform database and caching system which can be installed in Windows , mac and Linux.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation">2. Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_install_redis_on_centos_8">2.1. Install Redis on CentOS 8</h3>
+<div class="sect3">
+<h4 id="_update_system_repositories">2.1.1. Update system repositories</h4>
+<div class="paragraph">
+<p>Login to your CentOS 8 / RHEL 8 system and update system packages and repositories using the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo dnf update -y</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_install_redis_with_dnf">2.1.2. Install Redis with dnf</h4>
+<div class="paragraph">
+<p>Redis version 5.0.x is now included in CentOS 8 AppStream repository and installing it is a walk in the park. Simply run the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo dnf install redis -y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>সংস্থাপন সম্পন্ন হলে নিচের কমান্ডটি চালিয়ে রেডিসের সংস্করণটি যাচাই করতে পারবেন:</p>
+</div>
+<div class="paragraph">
+<p>Once installed, you can verify the version of Redis installed by running the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[arafat@server ~]$ rpm -q redis
+redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>আউটপুট থেকে, এটি স্পষ্ট যে আমরা রেডিস সংস্করণ ৫.০.৩ সংস্থাপন করেছি। রেডিসের সংস্করণ, আর্কিটেকচার, লাইসেন্স এবং সংক্ষিপ্ত বিবরণ পেতে এই কমান্ডটি চালান:</p>
+</div>
+<div class="paragraph">
+<p>From the output , it is clear that we have installed Redis version 5.0.3. To retrieve more information about Redis such as the version, architecture, license and a brief description, run the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ rpm -qi redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>রেডিস চালু করতে সিস্টেম কনট্রোল দিয়ে রেডিস চালু করতে হবে।</p>
+</div>
+<div class="paragraph">
+<p>To start Redis:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl start redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>প্রতি সিস্টেম বুটে স্বয়ংক্রিয়ভাবে রেডিস চালু করতে চাইলে সিস্টেম কনট্রোলে রেডিস সক্ষম করতে হবে:</p>
+</div>
+<div class="paragraph">
+<p>If you want to automatically start Redis in each system boot, you need to enable Redis:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl enable redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>রেডিসের অবস্থা:</p>
+</div>
+<div class="paragraph">
+<p>To see status:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl status redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ডিফল্টভাবে, রেডিস ৬৩৭৯ পোর্টে চালিত হয়। <code>netstat</code> আদেশ চালিয়ে এটি নিশ্চিত হওয়া যাবে:</p>
+</div>
+<div class="paragraph">
+<p>By default, Redis runs on port 6379. This can be confirmed by running the <code>netstat</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo netstat -pnltu | grep redis</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_redis">3. Configure Redis</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_allow_remote_access">3.1. Allow Remote Access</h3>
+<div class="paragraph">
+<p>The default installation only allows connections from localhost or Redis server and blocks any external connections. We are going to configure Redis for remote connection from a client machine.</p>
+</div>
+<div class="paragraph">
+<p>Access the configuration file as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo vim /etc/redis.conf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Locate the <code>bind</code> parameter and replace <code>127.0.0.1</code> with <code>0.0.0.0</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>bind 0.0.0.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Save and close the configuration file. For the changes to come into effect, restart Redis.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl restart redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To log in to Redis shell, run the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ redis-cli</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Try to ping redis server. You should get a ‘PONG’ response as shown.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[arafat@server ~]$ redis-cli
+127.0.0.1:6379&gt; ping
+PONG
+127.0.0.1:6379&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_securing_redis_server">3.2. Securing Redis Server</h3>
+<div class="paragraph">
+<p>Our Redis setup allows anyone to access the shell and databases without authentication which poses a grave security risk. To set a password, head back to the configuration file <code>/etc/redis.conf</code></p>
+</div>
+<div class="paragraph">
+<p>Locate and uncomment the <code>requirepass</code> parameter and specify a strong password.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>================================== SECURITY ===================================
+
+# Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other
+# commands.  This might be useful in environments in which you do not trust
+# others with access to the host running redis-server.
+#
+# This should stay commented out for backward compatibility and because most
+# people do not need auth (e.g. they run their own servers).
+#
+# Warning: since Redis is pretty fast an outside user can try up to
+# 150k passwords per second against a good box. This means that you should
+# use a very strong password otherwise it will be very easy to break.
+#
+# requirepass foobared</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart Redis and head back to the server.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl restart redis</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you attempt to run any command before authenticating, the error shown below will be displayed</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[arafat@server ~]$ redis-cli
+127.0.0.1:6379&gt; ping
+(error) NOAUTH Authentication required.
+127.0.0.1:6379&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To authenticate, type ‘auth’ followed by the password set.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>auth &#39;PASSWORD&#39;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thereafter, you can continue running your commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[arafat@server ~]$ redis-cli
+127.0.0.1:6379&gt; auth &#39;PASSWORD&#39;
+OK
+127.0.0.1:6379&gt; ping
+PONG
+127.0.0.1:6379&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To come out from redis-cli, type <code>exit</code></p>
+</div>
+<div class="sect3">
+<h4 id="_configuring_the_firewall_for_redis">3.2.1. Configuring the Firewall for Redis</h4>
+<div class="paragraph">
+<p>Lastly, we need to configure the firewall to allow remote connections to the Redis server. To do this, we need to open the redis port which is 6379.</p>
+</div>
+<div class="paragraph">
+<p>So, run the commands below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo firewall-cmd --add-port=6379/tcp --permanent
+$ sudo firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To access Redis remotely, use the syntax below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ redis-cli -h REDIS_IP_ADDRESS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next authenticate and hit ‘ENTER’</p>
+</div>
+<div class="paragraph">
+<p>The IP address of our Redis server is 192.168.1.5 The command from another client PC will be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ redis-cli -h 192.168.1.5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, provide the password and hit ‘ENTER’</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>auth &#39;PASSWORD&#39;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_perform_redis_benchmark">3.3. How to perform Redis Benchmark</h3>
+<div class="paragraph">
+<p>Redis comes with a built-in tool known as <code>redis-benchmark</code> that gives insights on the system’s performance statistics such as data transfer rate, throughput and latency to mention a few.</p>
+</div>
+<div class="paragraph">
+<p>Some of the command options you can use with Redis include</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-n</code>:	This defines the number of requests to be made. The default is 100000</p>
+</li>
+<li>
+<p><code>-c</code>:	Defines the number of parallel connections to be simulated. By default, this value is 50</p>
+</li>
+<li>
+<p><code>-p</code>:	This is the Redis port which by default is 6379</p>
+</li>
+<li>
+<p><code>-h</code>:	Used to define the host. By default, this value is set to localhost (127.0.0.1)</p>
+</li>
+<li>
+<p><code>-a</code>:	Used to prompt for a password if the server needs authentication</p>
+</li>
+<li>
+<p><code>-q</code>:	Stands for quiet mode. Displays the average requests made per second</p>
+</li>
+<li>
+<p><code>-t</code>:	Used to run a combination of tests</p>
+</li>
+<li>
+<p><code>-P</code>:	Used for pipelining for enhanced performance.</p>
+</li>
+<li>
+<p><code>-d</code>: Specifies the data size in bytes for GET and SET values. By default, this is set to 3 bytes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p>To confirm the average no. of requests that your Redis server can handle run the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ redis-benchmark -q</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hello_world_in_redis">4. Hello World in Redis</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ping">4.1. PING</h3>
+<div class="paragraph">
+<p>Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_echo">4.2. ECHO</h3>
+<div class="paragraph">
+<p>Returns message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[arafat@server ~]$ redis-cli
+127.0.0.1:6379&gt; PING
+PONG
+127.0.0.1:6379&gt; PING &#34;hello world&#34;
+&#34;hello world&#34;
+127.0.0.1:6379&gt; ECHO &#34;Hello World!&#34;
+&#34;Hello World!&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set">4.3. SET</h3>
+<div class="paragraph">
+<p>Set key to hold the string value. If key already holds a value, it is overwritten, regardless of its type.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get">4.4. GET</h3>
+<div class="paragraph">
+<p>Get the value of key. If the key does not exist the special value nil is returned. An error is returned if the value stored at key is not a string, because GET only handles string values.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; SET foo 100
+OK
+127.0.0.1:6379&gt; GET foo
+&#34;100&#34;
+127.0.0.1:6379&gt; SET bar &#34;Hello World!&#34;
+OK
+127.0.0.1:6379&gt; GET bar
+&#34;Hello World!&#34;
+127.0.0.1:6379&gt; GET nonexisting
+(nil)</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_incr">4.5. INCR</h3>
+<div class="paragraph">
+<p>Increments the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decr">4.6. DECR</h3>
+<div class="paragraph">
+<p>Decrements the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; INCR foo
+(integer) 101
+127.0.0.1:6379&gt; GET foo
+&#34;101&#34;
+127.0.0.1:6379&gt; DECR foo
+(integer) 100
+127.0.0.1:6379&gt; GET foo
+&#34;100&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exists">4.7. EXISTS</h3>
+<div class="paragraph">
+<p>Returns if key exists:
+- 1 if the key exists.
+- 0 if the key does not exist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_del">4.8. DEL</h3>
+<div class="paragraph">
+<p>Removes the specified keys. A key is ignored if it does not exist.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; EXISTS foo
+(integer) 1
+127.0.0.1:6379&gt; EXISTS nosuchkey
+(integer) 0
+127.0.0.1:6379&gt; EXISTS foo bar nosuchkey
+(integer) 2
+127.0.0.1:6379&gt; DEL bar
+(integer) 1
+127.0.0.1:6379&gt; EXISTS bar
+(integer) 0
+127.0.0.1:6379&gt; GET bar
+(nil)</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flushall">4.9. FLUSHALL</h3>
+<div class="paragraph">
+<p>Delete all the keys of all the existing databases, not just the currently selected one. This command never fails.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; FLUSHALL
+OK
+127.0.0.1:6379&gt; GET foo
+(nil)
+127.0.0.1:6379&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expire">4.10. EXPIRE</h3>
+<div class="paragraph">
+<p>Set a timeout on key. After the timeout has expired, the key will automatically be deleted. A key with an associated timeout is often said to be volatile in Redis terminology.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ttl">4.11. TTL</h3>
+<div class="paragraph">
+<p>Returns the remaining time to live of a key that has a timeout. This introspection capability allows a Redis client to check how many seconds a given key will continue to be part of the dataset.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; SET greeting &#34;Hello World!&#34;
+OK
+127.0.0.1:6379&gt; EXPIRE greeting 50
+(integer) 1
+127.0.0.1:6379&gt; TTL greeting
+(integer) 47
+127.0.0.1:6379&gt; TTL greeting
+(integer) 43
+127.0.0.1:6379&gt; TTL greeting
+(integer) 37
+127.0.0.1:6379&gt; TTL greeting
+(integer) 30
+127.0.0.1:6379&gt; TTL greeting
+(integer) 30
+127.0.0.1:6379&gt; TTL greeting
+(integer) 26
+127.0.0.1:6379&gt; TTL greeting
+(integer) 19
+127.0.0.1:6379&gt; TTL greeting
+(integer) 3
+127.0.0.1:6379&gt; TTL greeting
+(integer) -2
+127.0.0.1:6379&gt; TTL greeting
+(integer) -2</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setex">4.12. SETEX</h3>
+<div class="paragraph">
+<p>Set key to hold the string value and set key to timeout after a given number of seconds. This command is equivalent to executing the following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SET mykey value
+EXPIRE mykey seconds</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_persist">4.13. PERSIST</h3>
+<div class="paragraph">
+<p>Remove the existing timeout on key, turning the key from volatile (a key with an expire set) to persistent (a key that will never expire as no timeout is associated).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; SETEX greeting 30 &#34;Hello World!&#34;
+OK
+127.0.0.1:6379&gt; TTL greeting
+(integer) 26
+127.0.0.1:6379&gt; TTL greeting
+(integer) 21
+127.0.0.1:6379&gt; SETEX greeting 130 &#34;Hello World!&#34;
+OK
+127.0.0.1:6379&gt; TTL greeting
+(integer) 125
+127.0.0.1:6379&gt; PERSIST greeting
+(integer) 1
+127.0.0.1:6379&gt; TTL greeting
+(integer) -1
+127.0.0.1:6379&gt; GET greeting
+&#34;Hello World!&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mset">4.14. MSET</h3>
+<div class="paragraph">
+<p>Sets the given keys to their respective values. MSET replaces existing values with new values, just as regular SET. See MSETNX if you don’t want to overwrite existing values.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_append">4.15. APPEND</h3>
+<div class="paragraph">
+<p>If key already exists and is a string, this command appends the value at the end of the string. If key does not exist it is created and set as an empty string, so APPEND will be similar to SET in this special case.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rename">4.16. RENAME</h3>
+<div class="paragraph">
+<p>Renames key to newkey. It returns an error when key does not exist. If newkey already exists it is overwritten, when this happens RENAME executes an implicit DEL operation, so if the deleted key contains a very big value it may cause high latency even if RENAME itself is usually a constant-time operation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; MSET key1 &#34;Hello&#34; key2 &#34;world&#34;
+OK
+127.0.0.1:6379&gt; GET key1
+&#34;Hello&#34;
+127.0.0.1:6379&gt; GET key2
+&#34;world&#34;
+127.0.0.1:6379&gt; APPEND key1 &#34; world!&#34;
+(integer) 12
+127.0.0.1:6379&gt; GET key1
+&#34;Hello world!&#34;
+127.0.0.1:6379&gt; RENAME key1 greeting
+OK
+127.0.0.1:6379&gt; GET key1
+(nil)
+127.0.0.1:6379&gt; GET greeting
+&#34;Hello world!&#34;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_redis_datatypes">5. Redis Datatypes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Official Documentation: <a href="https://redis.io/topics/data-types">Redis Datatypes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Strings</p>
+</li>
+<li>
+<p>Lists</p>
+</li>
+<li>
+<p>Sets</p>
+</li>
+<li>
+<p>Sorted sets</p>
+</li>
+<li>
+<p>Hashes</p>
+</li>
+<li>
+<p>Bitmaps and HyperLogLogs</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_lists">5.1. Lists</h3>
+<div class="sect3">
+<h4 id="_lpush">5.1.1. LPUSH</h4>
+<div class="paragraph">
+<p>Insert all the specified values at the head of the list stored at key. If key does not exist, it is created as empty list before performing the push operations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lrange">5.1.2. LRANGE</h4>
+<div class="paragraph">
+<p>Returns the specified elements of the list stored at key. The offsets start and stop are zero-based indexes, with 0 being the first element of the list (the head of the list), 1 being the next element and so on.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rpush">5.1.3. RPUSH</h4>
+<div class="paragraph">
+<p>Insert all the specified values at the tail of the list stored at key. If key does not exist, it is created as empty list before performing the push operation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; LPUSH people &#34;arafat&#34;
+(integer) 1
+127.0.0.1:6379&gt; LPUSH people &#34;Jen&#34;
+(integer) 2
+127.0.0.1:6379&gt; LPUSH people &#34;Tom&#34;
+(integer) 3
+127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Tom&#34;
+2) &#34;Jen&#34;
+3) &#34;arafat&#34;
+127.0.0.1:6379&gt; LRANGE people 1 2
+1) &#34;Jen&#34;
+2) &#34;arafat&#34;
+127.0.0.1:6379&gt; RPUSH people &#34;Harry&#34;
+(integer) 4
+127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Tom&#34;
+2) &#34;Jen&#34;
+3) &#34;arafat&#34;
+4) &#34;Harry&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lpop">5.1.4. LPOP</h4>
+<div class="paragraph">
+<p>Removes and returns the first element of the list stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rpop">5.1.5. RPOP</h4>
+<div class="paragraph">
+<p>Removes and returns the last element of the list stored at key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Tom&#34;
+2) &#34;Jen&#34;
+3) &#34;arafat&#34;
+127.0.0.1:6379&gt; LPOP people
+&#34;Tom&#34;
+127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Jen&#34;
+2) &#34;arafat&#34;
+3) &#34;Harry&#34;
+127.0.0.1:6379&gt; RPOP people
+&#34;Harry&#34;
+127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Jen&#34;
+2) &#34;arafat&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_linsert">5.1.6. LINSERT</h4>
+<div class="paragraph">
+<p>Inserts element in the list stored at key either before or after the reference value pivot.</p>
+</div>
+<div class="paragraph">
+<p>When key does not exist, it is considered an empty list and no operation is performed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Jen&#34;
+2) &#34;arafat&#34;
+127.0.0.1:6379&gt; LINSERT people BEFORE &#34;arafat&#34; &#34;Tom&#34;
+(integer) 3
+127.0.0.1:6379&gt; LRANGE people 0 -1
+1) &#34;Jen&#34;
+2) &#34;Tom&#34;
+3) &#34;arafat&#34;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sets">5.2. Sets</h3>
+<div class="sect3">
+<h4 id="_sadd">5.2.1. SADD</h4>
+<div class="paragraph">
+<p>Add the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_smembers">5.2.2. SMEMBERS</h4>
+<div class="paragraph">
+<p>Returns all the members of the set value stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sismember">5.2.3. SISMEMBER</h4>
+<div class="paragraph">
+<p>Returns if member is a member of the set stored at key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; SADD cars &#34;Ford&#34;
+(integer) 1
+127.0.0.1:6379&gt; SADD cars &#34;Honda&#34;
+(integer) 1
+127.0.0.1:6379&gt; SADD cars &#34;BMW&#34;
+(integer) 1
+127.0.0.1:6379&gt; SMEMBERS cars
+1) &#34;Ford&#34;
+2) &#34;BMW&#34;
+3) &#34;Honda&#34;
+127.0.0.1:6379&gt; SISMEMBER cars &#34;Ford&#34;
+(integer) 1
+127.0.0.1:6379&gt; SISMEMBER cars &#34;Chevy&#34;
+(integer) 0</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_scard">5.2.4. SCARD</h4>
+<div class="paragraph">
+<p>Returns the set cardinality (number of elements) of the set stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_smove">5.2.5. SMOVE</h4>
+<div class="paragraph">
+<p>Move member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_srem">5.2.6. SREM</h4>
+<div class="paragraph">
+<p>Remove the specified members from the set stored at key. Specified members that are not a member of this set are ignored. If key does not exist, it is treated as an empty set and this command returns 0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; SMEMBERS cars
+1) &#34;Ford&#34;
+2) &#34;BMW&#34;
+3) &#34;Honda&#34;
+127.0.0.1:6379&gt; SCARD cars
+(integer) 3
+127.0.0.1:6379&gt; SMOVE cars mycars &#34;Ford&#34;
+(integer) 1
+127.0.0.1:6379&gt; SMEMBERS cars
+1) &#34;BMW&#34;
+2) &#34;Honda&#34;
+127.0.0.1:6379&gt; SMEMBERS mycars
+1) &#34;Ford&#34;
+127.0.0.1:6379&gt; SREM cars &#34;BMW&#34;
+(integer) 1
+127.0.0.1:6379&gt; SMEMBERS cars
+1) &#34;Honda&#34;
+127.0.0.1:6379&gt; FLUSHALL
+OK</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sorted_sets">5.3. Sorted Sets</h3>
+<div class="sect3">
+<h4 id="_zadd">5.3.1. ZADD</h4>
+<div class="paragraph">
+<p>Adds all the specified members with the specified scores to the sorted set stored at key. It is possible to specify multiple score / member pairs. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zrank">5.3.2. ZRANK</h4>
+<div class="paragraph">
+<p>Returns the rank of member in the sorted set stored at key, with the scores ordered from low to high. The rank (or index) is 0-based, which means that the member with the lowest score has rank 0.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zrange">5.3.3. ZRANGE</h4>
+<div class="paragraph">
+<p>Returns the specified range of elements in the sorted set stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zincrby">5.3.4. ZINCRBY</h4>
+<div class="paragraph">
+<p>Increments the score of member in the sorted set stored at key by increment. If member does not exist in the sorted set, it is added with increment as its score (as if its previous score was 0.0). If key does not exist, a new sorted set with the specified member as its sole member is created.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; ZADD users 1981 &#34;Arafat Hasan&#34;
+(integer) 1
+127.0.0.1:6379&gt; ZADD users 1975 &#34;John Doe&#34;
+(integer) 1
+127.0.0.1:6379&gt; ZADD users 1990 &#34;Mike Smith&#34;
+(integer) 1
+127.0.0.1:6379&gt; ZADD users 1990 &#34;Kate Rogers&#34;
+(integer) 1
+127.0.0.1:6379&gt; ZRANK users &#34;Mike Smith&#34;
+(integer) 3
+127.0.0.1:6379&gt; ZRANK users &#34;John Doe&#34;
+(integer) 0
+127.0.0.1:6379&gt; ZRANK users &#34;John Do&#34;
+(nil)
+127.0.0.1:6379&gt; ZRANK users &#34;Arafat Hasan&#34;
+(integer) 1
+127.0.0.1:6379&gt; ZRANGE users 0 -1
+1) &#34;John Doe&#34;
+2) &#34;Arafat Hasan&#34;
+3) &#34;Kate Rogers&#34;
+4) &#34;Mike Smith&#34;
+127.0.0.1:6379&gt; ZINCRBY users 1 &#34;John Doe&#34;
+&#34;1976&#34;
+127.0.0.1:6379&gt; ZINCRBY users 10 &#34;John Doe&#34;
+&#34;1986&#34;
+127.0.0.1:6379&gt; FLUSHALL
+OK</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hash">5.4. Hash</h3>
+<div class="sect3">
+<h4 id="_hset">5.4.1. HSET</h4>
+<div class="paragraph">
+<p>Sets field in the hash stored at key to value. If key does not exist, a new key holding a hash is created. If field already exists in the hash, it is overwritten.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hget">5.4.2. HGET</h4>
+<div class="paragraph">
+<p>Returns the value associated with field in the hash stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hgetall">5.4.3. HGETALL</h4>
+<div class="paragraph">
+<p>Returns all fields and values of the hash stored at key. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; HSET user:arafat name &#34;Arafat Hasan&#34;
+(integer) 1
+127.0.0.1:6379&gt; HSET user:arafat email &#34;arafat@example.com&#34;
+(integer) 1
+127.0.0.1:6379&gt; HGET user:arafat email
+&#34;arafat@example.com&#34;
+127.0.0.1:6379&gt; HGETALL user:arafat
+1) &#34;name&#34;
+2) &#34;Arafat Hasan&#34;
+3) &#34;email&#34;
+4) &#34;arafat@example.com&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hmset">5.4.4. HMSET</h4>
+<div class="paragraph">
+<p>Sets the specified fields to their respective values in the hash stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hkeys">5.4.5. HKEYS</h4>
+<div class="paragraph">
+<p>Returns all field names in the hash stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hvals">5.4.6. HVALS</h4>
+<div class="paragraph">
+<p>Returns all values in the hash stored at key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; HMSET user:john name &#34;John Doe&#34; email &#34;doe@example.com&#34; age &#34;25&#34;
+OK
+127.0.0.1:6379&gt; HGETALL user:john
+1) &#34;name&#34;
+2) &#34;John Doe&#34;
+3) &#34;email&#34;
+4) &#34;doe@example.com&#34;
+5) &#34;age&#34;
+6) &#34;25&#34;
+127.0.0.1:6379&gt; HKEYS user:john
+1) &#34;name&#34;
+2) &#34;email&#34;
+3) &#34;age&#34;
+127.0.0.1:6379&gt; HVALS user:john
+1) &#34;John Doe&#34;
+2) &#34;doe@example.com&#34;
+3) &#34;25&#34;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hincrby">5.4.7. HINCRBY</h4>
+<div class="paragraph">
+<p>Increments the number stored at field in the hash stored at key by increment.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hdel">5.4.8. HDEL</h4>
+<div class="paragraph">
+<p>Removes the specified fields from the hash stored at key.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hlen">5.4.9. HLEN</h4>
+<div class="paragraph">
+<p>Returns the number of fields contained in the hash stored at key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>127.0.0.1:6379&gt; HINCRBY user:john age 1
+(integer) 26
+127.0.0.1:6379&gt; HDEL user:john age
+(integer) 1
+127.0.0.1:6379&gt; HGETALL user:john
+1) &#34;name&#34;
+2) &#34;John Doe&#34;
+3) &#34;email&#34;
+4) &#34;doe@example.com&#34;
+127.0.0.1:6379&gt; HLEN user:john
+(integer) 2</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_redis_persistence">6. Redis Persistence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Official Documentation: <a href="https://redis.io/topics/persistence" target="_blank" rel="noopener">Read More Here</a></p>
+</div>
+</div>
+</div>
+
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Want to talk? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a></p>
+      
+      
+        ©
+        
+        2020
+         Arafat Hasan 
+      
+      
+        
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://www.arafathasan.live/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178245243-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+    
+
+  </body>
+
+</html>

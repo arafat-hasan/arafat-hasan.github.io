@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.arafathasan.live/en/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/technotes/chapters/lamp/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/technotes/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/technotes/chapters/redis/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/technotes/chapters/postgres/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -13,20 +48,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.arafathasan.live/en/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/en/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/"
                 />
   </url>
   

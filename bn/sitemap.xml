@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/</loc>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/writings/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,12 +28,17 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/capital-punishment/</loc>
+    <loc>https://www.arafathasan.live/bn/posts/capital-punishment/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/critical/shirshendu-mukhopadhyay/</loc>
+    <loc>https://www.arafathasan.live/bn/writings/articles/critical/capital-punishment/</loc>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/writings/articles/critical/shirshendu-mukhopadhyay/</loc>
     <lastmod>2019-09-20T00:00:00+00:00</lastmod>
   </url>
   
