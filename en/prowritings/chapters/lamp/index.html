@@ -387,13 +387,13 @@ Adding password for user admin
 <blockquote>
 <p>The repository configuration file is included in the newest centos-release package. First update your system with dnf update to get the new centos-release package, then run dnf config-manager &ndash;enable cr to enable the CR repository.</p>
 </blockquote>
-<p>SELinux Alert Browser এ এই সাজেশন দিয়েছে: তা চালালাম:
-You should report this as a bug.
+<p>SELinux Alert Browser এ এই সাজেশন দিয়েছে: তা চালালাম:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">You should report this as a bug.
 You can generate a local policy module to allow this access.
-Allow this access for now by executing:</p>
-<h1 id="ausearch--c-snapd---raw--audit2allow--m-my-snapd">ausearch -c &lsquo;snapd&rsquo; &ndash;raw | audit2allow -M my-snapd</h1>
-<h1 id="semodule--x-300--i-my-snapdpp">semodule -X 300 -i my-snapd.pp</h1>
-
+Allow this access for now by executing:
+# ausearch -c &#39;snapd&#39; --raw | audit2allow -M my-snapd
+# semodule -X 300 -i my-snapd.pp
+</code></pre></div>
       </div>
 
 
