@@ -21,7 +21,7 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/redis/</guid>
-      <description>Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
+      <description>1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
  What is a key-value pair?
  A key-value pair is a set or pair of two linked items.</description>
     </item>

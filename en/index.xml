@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>এই ওয়েব সাইটে অংশগ্রহণের নীতিমালা</title>
+      <link>https://www.arafathasan.live/en/comment-policy/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/comment-policy/</guid>
+      <description>এই ওয়েব সাইটে আপনাকে স্বাগত। আপনার অংশগ্রহণে আমরা অত্যন্ত আনন্দিত। আমরা নিশ্চয়তা দিতে চাই যাতে প্রত্যেক অংশগ্রহণকারী এই জায়গাকে তার নিজের বাড়ির মতো মনে করে এবং অন্যান্য অংশগ্রহণকারীদের নিজের বাড়ির সদস্য মনে করে যথাযথ আচরণ করে। এ উদ্দেশ্যে আমাদের কিছু দায়িত্ব পালন করতে হয়, বাড়ির পরিবেশ নিশ্চিতে মাঝে মাঝে মন্তব্য মুছে দেবার মতো কঠিন কাজও করতে হয়। এ জন্য আমাদের একটি নীতিমালাও প্রণয়ন করতে হয়েছে। আমরা জানি যে এই নীতিমালার সবই আপনি জানেন, বোঝেন এবং মানেন। তারপরেও আমরা আপনাকে নীতিমালাটি পড়ে দেখতে অনুরোধ করছি।</description>
+    </item>
+    
+    <item>
       <title>LAMP Installation and Config</title>
       <link>https://www.arafathasan.live/en/prowritings/chapters/lamp/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
@@ -21,7 +30,7 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/redis/</guid>
-      <description>Redis Notes   1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
+      <description>1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
  What is a key-value pair?
  A key-value pair is a set or pair of two linked items.</description>
     </item>

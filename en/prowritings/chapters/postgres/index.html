@@ -305,34 +305,34 @@
 <h1 id="-installation">🚧 Installation</h1>
 <h2 id="install-postgresql-in-ubuntu">Install PostgreSQL in Ubuntu</h2>
 <p>To install PostgreSQL in ubuntu, we have first to refresh our server’s local package index:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo apt update
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo apt update
 </code></pre></div><p>Then, install the Postgres package along with a -contrib package that adds some additional utilities and functionality:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo apt install postgresql postgresql-contrib
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo apt install postgresql postgresql-contrib
 </code></pre></div><p>See More: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart">How To Install PostgreSQL on Ubuntu 20.04 </a></p>
 <h2 id="install-postgresql-in-centos">Install PostgreSQL in CentOS</h2>
 <h3 id="method-1-postgresql-yum-repository">Method 1: PostgreSQL Yum Repository</h3>
 <p>Install the repository RPM:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 </code></pre></div><p>Disable the built-in PostgreSQL module:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf -qy module disable postgresql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf -qy module disable postgresql
 </code></pre></div><p>Install PostgreSQL:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install postgresql12-server
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install postgresql12-server
 </code></pre></div><p>Now PostgreSQL is installed, we have to perform some initialization steps to prepare a new database cluster for PostgreSQL.</p>
 <p>See More:  <a href="https://www.postgresql.org/download/linux/redhat/">Linux downloads (Red Hat family)</a></p>
 <h3 id="method-2-using-dnf">Method 2: Using DNF</h3>
 <p>In DNF, CentOS 8’s default package manager, <em>modules</em> are special collections of RPM packages that together make up a larger application. This is intended to make installing packages and their dependencies more intuitive for users.</p>
 <p>List out the available streams for the <code>postgresql</code> module using the <code>dnf</code> command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf module list postgresql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf module list postgresql
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgresql                           9.6                             client, server [d]                          PostgreSQL server and client module                         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgresql                           9.6                             client, server [d]                          PostgreSQL server and client module                         
 postgresql                           10 [d]                          client, server [d]                          PostgreSQL server and client module                         
 postgresql                           12                              client, server                              PostgreSQL server and client module
 </code></pre></div><p>In this output, we can see three versions of PostgreSQL available from the <strong>AppStream</strong> repository: <code>9.6</code>, <code>10</code>, and <code>12</code>. The stream that provides Postgres version 10 is the default, as indicated by the <code>[d]</code> following it. If we want to install that version, we could just run <code>sudo dnf install postgresql-server</code> and move on to the next step.</p>
 <p>To install PostgreSQL version 12, we have to enable that version’s module stream. When we enable a module stream, we override the default stream and make all of the packages related to the enabled stream available on the system.</p>
 <p>To enable the module stream for Postgres version 12, run the following command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf module enable postgresql:12
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf module enable postgresql:12
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">====================================================================
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">====================================================================
  Package        Architecture  Version          Repository      Size
 ====================================================================
 Enabling module streams:
@@ -344,10 +344,10 @@ Transaction Summary
 Is this ok [y/N]: y
 
 </code></pre></div><p>After enabling the version 12 module stream, we can install the <code>postgresql-server</code> package to install PostgreSQL 12 and all of its dependencies:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install postgresql-server
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo dnf install postgresql-server
 </code></pre></div><p>When given the prompt, confirm the installation by pressing <code>y</code> then <code>ENTER</code>:</p>
 <p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">. . .
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">. . .
 Install  4 Packages
 
 Total download size: 16 M
@@ -363,46 +363,46 @@ Is this ok [y/N]: y
 <p>The Postgres package we installed in the previous step comes with a handy script called <code>postgresql-setup</code> which helps with low-level database cluster administration.</p>
 <p>To create a database cluster, run the script using <code>sudo</code> and with the <code>--initdb</code> option.</p>
 <p><em>If PostgreSQL is installed using the PostgreSQL Yum repository:</em></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ /usr/pgsql-12/bin/postgresql-12-setup initdb
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ /usr/pgsql-12/bin/postgresql-12-setup initdb
 </code></pre></div><p><em>If PostgreSQL is installed using DNF:</em></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo postgresql-setup --initdb
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo postgresql-setup --initdb
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> * Initializing database in &#39;/var/lib/pgsql/data&#39;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> * Initializing database in &#39;/var/lib/pgsql/data&#39;
  * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
 </code></pre></div><p>Now start and enable PostgreSQL using <code>systemctl</code>.</p>
 <p><em>If PostgreSQL is installed using the PostgreSQL Yum repository:</em></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ systemctl enable postgresql-12
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ systemctl enable postgresql-12
 $ systemctl start postgresql-12
 </code></pre></div><p><em>If PostgreSQL is installed using DNF:</em></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo systemctl start postgresql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ sudo systemctl start postgresql
 $ sudo systemctl enable postgresql
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /usr/lib/systemd/system/postgresql.service.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /usr/lib/systemd/system/postgresql.service.
 </code></pre></div><p>Now that PostgreSQL is up and running, we will go over using roles to learn how Postgres works and how it is different from similar database management systems.</p>
 <h2 id="understanding-postgresql-roles-and-databases">Understanding PostgreSQL Roles and Databases</h2>
 <p>By default, Postgres uses a concept called roles to handle authentication and authorization. These are, in some ways, similar to regular Unix-style accounts, but Postgres does not distinguish between users and groups and instead prefers the more flexible term role.</p>
 <p>Upon installation, Postgres is set up to use <code>ident</code> authentication, meaning that it associates Postgres roles with a matching Unix/Linux system account. If a role exists within Postgres, a Unix/Linux username with the same name can sign in as that role.</p>
 <p>The installation procedure created a user account called <code>postgres</code> that is associated with the default Postgres role. To use Postgres, at first, we have to log in using that role.</p>
 <p>So we have to switch over to the <code>postgres</code> UNIX user, which is created upon installation of Postgres, and then from the <code>postgres</code> UNIX user, we will able to log on Postgres server.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo -i -u postgres
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo -i -u postgres
 [postgres@server ~]$ psql
 </code></pre></div><p>Alternatively, to access a Postgres prompt without switching users</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo -u postgres psql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo -u postgres psql
 </code></pre></div><h2 id="creating-a-new-postgres-role">Creating a New Postgres Role</h2>
 <p>To log in with ident-based authentication, we will need a Linux user with the same name as our Postgres role and database.</p>
 <p>If we don’t have a matching Linux user available, we must create one with the <code>adduser</code> command.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo adduser postgresuser
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ sudo adduser postgresuser
 </code></pre></div><p>We showed how to create a UNIX user named <code>postgresuser</code> here, but we will not use it. Instead, we will use the existing <code>arafat</code> user for a new Postgres roll.</p>
 <p>Now we will create a Postgres role. After switching to <code>postgres</code> Linux user:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgres@server:~$ createuser --interactive
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgres@server:~$ createuser --interactive
 Enter name of role to add: arafat
 Shall the new role be a superuser? (y/n) y
 </code></pre></div><p>Another assumption that the Postgres authentication system makes by default is that for any role used to log in, that role will have a database with the same name which it can access.</p>
 <p>This means that if the user we created in the last section is called <code>arafat</code>, that role will attempt to connect to a database which is also called <code>arafat</code> by default. We can create such a database with the <code>createdb</code> command.</p>
 <p>If we are logged in as the <code>postgres</code> user, we would type something like:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgres@server:~$ createdb arafat
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">postgres@server:~$ createdb arafat
 </code></pre></div><p>Now we will able to connect to <code>psql</code> from unix user <code>arafat</code> to Postgres role <code>arafat</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ psql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ psql
 psql (12.3)
 Type &amp;quot;help&amp;quot; for help.
 
@@ -421,7 +421,7 @@ arafat=#
 <li><code>\?</code>: Show the list of postgres commands</li>
 </ul>
 <h2 id="examples">Examples</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ psql
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[arafat@server ~]$ psql
 psql (12.3)
 Type &amp;quot;help&amp;quot; for help.
 
@@ -455,7 +455,7 @@ CREATE DATABASE name
 URL: https://www.postgresql.org/docs/12/sql-createdatabase.html
 
 </code></pre></div><h2 id="create-database">CREATE DATABASE</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat=# CREATE DATABASE test;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat=# CREATE DATABASE test;
 CREATE DATABASE
 arafat=# \l
                                      List of databases
@@ -473,27 +473,27 @@ arafat=# \l
 arafat=# \c test;
 You are now connected to database &amp;quot;test&amp;quot; as user &amp;quot;arafat&amp;quot;.
 </code></pre></div><h2 id="drop-database">DROP DATABASE</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat_hasan=# DROP DATABASE test;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat_hasan=# DROP DATABASE test;
 DROP DATABASE
 </code></pre></div><h2 id="create-table">CREATE TABLE</h2>
 <p>We have to create a database again as we deleted the <code>test</code> database in the previous step. Here <code>\d</code> a list of tables, and there is no table in our newly created database.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat=# CREATE DATABASE test;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">arafat=# CREATE DATABASE test;
 CREATE DATABASE
 test=# \d
 Did not find any relations.
 </code></pre></div><p>Now here we are creating a new table named <code>person</code>:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> person (
- id BIGSERIAL <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
- first_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
- last_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
- gender VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
- date_of_birth DATE <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
- email VARCHAR(150));
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> person (
+ id BIGSERIAL <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+ first_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+ last_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+ gender <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+ date_of_birth <span style="color:#b58900">DATE</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+ email <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">150</span>));
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">CREATE TABLE
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">CREATE TABLE
 </code></pre></div><p>Now check the list of tables:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d
                 List of relations
  Schema |     Name      |   Type   |    Owner     
 --------+---------------+----------+--------------
@@ -502,7 +502,7 @@ Did not find any relations.
 (2 rows)
 </code></pre></div><p><code>person_id_seq</code> is not a table, it is a sequence to maintain and increment the <code>BIGSERIAL</code> value in the <code>person</code> table. The keyword <code>NOT NULL</code> means that this field can not be null or blank, we must have enter data for that field. Someone may not have email, so have kept the field as optional.</p>
 <h2 id="table-definition">Table Definition</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=#  \d person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=#  \d person;
                                        Table &#34;public.person&#34;
     Column     |          Type          | Collation | Nullable |              Default               
 ---------------+------------------------+-----------+----------+------------------------------------
@@ -518,28 +518,28 @@ Indexes:
 </code></pre></div><h2 id="insert-into">INSERT INTO</h2>
 <p>Notice that, as email is not <code>NOT NULL</code> so it is optional to insert into the table.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, gender, date_of_birth)
- <span style="font-weight:bold">VALUES</span>(<span style="font-style:italic">&#39;Anne&#39;</span>, <span style="font-style:italic">&#39;Smith&#39;</span>, <span style="font-style:italic">&#39;female&#39;</span>, DATE <span style="font-style:italic">&#39;1988-01-09&#39;</span>);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, gender, date_of_birth)
+ <span style="color:#719e07">VALUES</span>(<span style="color:#2aa198">&#39;Anne&#39;</span>, <span style="color:#2aa198">&#39;Smith&#39;</span>, <span style="color:#2aa198">&#39;female&#39;</span>, <span style="color:#b58900">DATE</span> <span style="color:#2aa198">&#39;1988-01-09&#39;</span>);
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, gender, date_of_birth, email)
- <span style="font-weight:bold">VALUES</span>(<span style="font-style:italic">&#39;Jack&#39;</span>, <span style="font-style:italic">&#39;Doe&#39;</span>, <span style="font-style:italic">&#39;male&#39;</span>, DATE <span style="font-style:italic">&#39;1985-11-03&#39;</span>, <span style="font-style:italic">&#39;jack@example.com&#39;</span>);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, gender, date_of_birth, email)
+ <span style="color:#719e07">VALUES</span>(<span style="color:#2aa198">&#39;Jack&#39;</span>, <span style="color:#2aa198">&#39;Doe&#39;</span>, <span style="color:#2aa198">&#39;male&#39;</span>, <span style="color:#b58900">DATE</span> <span style="color:#2aa198">&#39;1985-11-03&#39;</span>, <span style="color:#2aa198">&#39;jack@example.com&#39;</span>);
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
 </code></pre></div><h2 id="select">SELECT</h2>
 <p>Fetch all data from table:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name | last_name | gender | date_of_birth |      email       
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name | last_name | gender | date_of_birth |      email       
 ----+------------+-----------+--------+---------------+------------------
   1 | Anne       | Smith     | female | 1988-01-09    | 
   2 | Jack       | Doe       | male   | 1985-11-03    | jack@example.com
 (2 rows)
 </code></pre></div><h2 id="drop-table">DROP TABLE</h2>
 <p>Now we want to delete our table <code>person</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DROP TABLE person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DROP TABLE person;
 DROP TABLE
 </code></pre></div><h1 id="the-surface-sea">The Surface Sea</h1>
 <h2 id="mockaroo-data-generator">Mockaroo Data Generator</h2>
@@ -555,21 +555,21 @@ DROP TABLE
 </ul>
 <p>Download the data as a file named <code>person.sql</code>.</p>
 <p>Now we will do some tweaking in <code>person.sql</code>, according to our needs. Open this file in the preferred editor, I&rsquo;m using vs code. Then make the following changes to the CREATE TABLE command at the top of the file.  Notice that we have added <code>id BIGSERIAL NOT NULL PRIMARY KEY</code>, changed <code>VARCHAR</code> sizes, and specified the <code>NOT NULL</code> fields.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">create</span> <span style="font-weight:bold">table</span> person (
-	id BIGSERIAL <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	first_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	last_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	email VARCHAR(150),
-	gender VARCHAR(7) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	date_of_birth DATE <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	country_of_birth VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">create</span> <span style="color:#719e07">table</span> person (
+	id BIGSERIAL <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	first_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	last_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	email <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">150</span>),
+	gender <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">7</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	date_of_birth <span style="color:#b58900">DATE</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	country_of_birth <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
 );
-<span style="font-style:italic">-- More lines containing INSERT command, We are not showing them here.
+<span style="color:#586e75">-- More lines containing INSERT command, We are not showing them here.
 </span></code></pre></div><p>After saving our changed <code>person.sql</code> file, now we will execute it. We can copy the whole file and paste it into Postgres terminal, that will work too, but we are going to do it in a better way. <code>\i</code> executes a script file of SQL commands.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/person.sql 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/person.sql 
 </code></pre></div><p>Now the script <code>person.sql</code> is executed, and there are 1000 rows in the <code>person</code> table.</p>
 <p>Our table description look like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
                            Table &#34;public.person&#34;
       Column      |          Type          | Collation | Nullable | Default 
 ------------------+------------------------+-----------+----------+---------
@@ -582,9 +582,9 @@ DROP TABLE
 
 </code></pre></div><p>Here we have made a query to fetch all the data from the <code>person</code> table.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
     1 | Ronda          | Skermer             | rskermer0@arstechnica.com               | Female | 1993-06-30    | Argentina
     2 | Hamid          | Abbett              | habbett1@cbc.ca                         | Male   | 1995-08-31    | Ethiopia
@@ -604,9 +604,9 @@ DROP TABLE
 --More--
 </code></pre></div><p>Alternatively, we can specify our required field names:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> id, first_name, last_name <span style="font-weight:bold">FROM</span> person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> id, first_name, last_name <span style="color:#719e07">FROM</span> person;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      
 ------+----------------+---------------------
     1 | Ronda          | Skermer
     2 | Hamid          | Abbett
@@ -624,9 +624,9 @@ DROP TABLE
 <h3 id="asc">ASC</h3>
 <p>For ascending order:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   475 | Koren          | Burgen              |                                         | Female | 1985-09-16    | Afghanistan
   223 | Collen         | Raubheim            | craubheim66@gravatar.com                | Female | 1968-01-31    | Afghanistan
@@ -641,9 +641,9 @@ DROP TABLE
 </code></pre></div><h3 id="desc">DESC</h3>
 <p>For dscending order:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth <span style="font-weight:bold">DESC</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth <span style="color:#719e07">DESC</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   563 | Meredeth       | Pantin              |                                         | Male   | 1971-02-22    | Zambia
   173 | Pennie         | Christauffour       | pchristauffour4s@scientificamerican.com | Male   | 2004-04-16    | Zambia
@@ -659,9 +659,9 @@ DROP TABLE
 
 </code></pre></div><p>Date of birth in dscending order:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> date_of_birth <span style="font-weight:bold">DESC</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> date_of_birth <span style="color:#719e07">DESC</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   307 | Penni          | Privost             |                                         | Female | 2010-08-07    | Indonesia
    43 | Kathye         | Bottleson           | kbottleson16@google.pl                  | Female | 2010-06-27    | China
@@ -677,9 +677,9 @@ DROP TABLE
 </code></pre></div><h3 id="order-by-with-two-parameter">ORDER BY with Two-parameter</h3>
 <p>This means that if <code>country_of_birth</code> is the same, then the rows will be sorted according to the <code>id</code> column. Check the difference with the previous one and this.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth, id;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth, id;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   223 | Collen         | Raubheim            | craubheim66@gravatar.com                | Female | 1968-01-31    | Afghanistan
   475 | Koren          | Burgen              |                                         | Female | 1985-09-16    | Afghanistan
@@ -691,9 +691,9 @@ DROP TABLE
 </code></pre></div><h2 id="distinct">DISTINCT</h2>
 <p>The <code>SELECT DISTINCT</code> statement is used to return only distinct (different) values.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">DISTINCT</span> country_of_birth <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">DISTINCT</span> country_of_birth <span style="color:#719e07">FROM</span> person <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         
 ----------------------------------
  Afghanistan
  Albania
@@ -713,9 +713,9 @@ DROP TABLE
 </code></pre></div><h2 id="where">WHERE</h2>
 <p>The <code>WHERE</code> clause is used to extract only those records that fulfill a specified condition.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">WHERE</span> gender=<span style="font-style:italic">&#39;Female&#39;</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">WHERE</span> gender<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;Female&#39;</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  |   first_name   |      last_name      |                 email                 | gender | date_of_birth |     country_of_birth     
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  |   first_name   |      last_name      |                 email                 | gender | date_of_birth |     country_of_birth     
 -----+----------------+---------------------+---------------------------------------+--------+---------------+--------------------------
    1 | Ronda          | Skermer             | rskermer0@arstechnica.com             | Female | 1993-06-30    | Argentina
    4 | Erminie        | M&#39;Quharg            | emquharg3@e-recht24.de                | Female | 1999-03-13    | Mozambique
@@ -729,9 +729,9 @@ DROP TABLE
 <p>The <code>BETWEEN</code> operator selects values within a given range. The values can be numbers, text, or dates.</p>
 <p>The <code>BETWEEN</code> operator is inclusive: begin and end values are included.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">WHERE</span> date_of_birth <span style="font-weight:bold">BETWEEN</span> <span style="font-style:italic">&#39;1985-02-02&#39;</span> <span style="font-weight:bold">AND</span> <span style="font-style:italic">&#39;1986-06-04&#39;</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">WHERE</span> date_of_birth <span style="color:#719e07">BETWEEN</span> <span style="color:#2aa198">&#39;1985-02-02&#39;</span> <span style="color:#719e07">AND</span> <span style="color:#2aa198">&#39;1986-06-04&#39;</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  | first_name |  last_name   |            email             | gender | date_of_birth |   country_of_birth    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  | first_name |  last_name   |            email             | gender | date_of_birth |   country_of_birth    
 -----+------------+--------------+------------------------------+--------+---------------+-----------------------
   25 | Billi      | Dybbe        | bdybbeo@samsung.com          | Female | 1986-02-22    | Brazil
   37 | Sorcha     | Tunesi       | stunesi10@adobe.com          | Female | 1986-04-12    | Philippines
@@ -751,9 +751,9 @@ DROP TABLE
 </ul>
 <p>Find all emails ending with <code>disqus.com</code>:</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">WHERE</span> email <span style="font-weight:bold">LIKE</span> <span style="font-style:italic">&#39;%disqus.com&#39;</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person <span style="color:#719e07">WHERE</span> email <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;%disqus.com&#39;</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  | first_name |  last_name   |           email            | gender | date_of_birth | country_of_birth 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id  | first_name |  last_name   |           email            | gender | date_of_birth | country_of_birth 
 -----+------------+--------------+----------------------------+--------+---------------+------------------
   45 | Carleen    | Dzeniskevich | cdzeniskevich18@disqus.com | Female | 1985-06-18    | China
  852 | Alex       | Garmans      | agarmansnn@disqus.com      | Male   | 1990-11-08    | China
@@ -762,9 +762,9 @@ DROP TABLE
 <p>The <code>GROUP BY</code> statement groups rows that have the same values into summary rows, like &ldquo;find the number of persons in each country&rdquo;.</p>
 <p>The <code>GROUP BY</code> statement is often used with aggregate functions (<code>COUNT</code>, <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, <code>AVG</code>) to group the result-set by one or more columns.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> country_of_birth, <span style="font-weight:bold">COUNT</span>(*) <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> country_of_birth;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> country_of_birth, <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">FROM</span> person <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> country_of_birth;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         | count 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         | count 
 ----------------------------------+-------
  Bangladesh                       |     1
  Indonesia                        |   109
@@ -780,9 +780,9 @@ DROP TABLE
 --More--
 </code></pre></div><h3 id="group-by-with-order-by">GROUP BY with ORDER BY</h3>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> country_of_birth, <span style="font-weight:bold">COUNT</span>(*) <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> country_of_birth <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> country_of_birth, <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">FROM</span> person <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> country_of_birth <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         | count 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         country_of_birth         | count 
 ----------------------------------+-------
  Afghanistan                      |     2
  Albania                          |     5
@@ -797,9 +797,9 @@ DROP TABLE
 </code></pre></div><h3 id="group-by-having">GROUP BY HAVING</h3>
 <p>The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> country_of_birth, <span style="font-weight:bold">COUNT</span>(*) <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> country_of_birth <span style="font-weight:bold">HAVING</span> <span style="font-weight:bold">COUNT</span>(*) &gt; 50 <span style="font-weight:bold">ORDER</span> <span style="font-weight:bold">BY</span> country_of_birth;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> country_of_birth, <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">FROM</span> person <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> country_of_birth <span style="color:#719e07">HAVING</span> <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">50</span> <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> country_of_birth;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> country_of_birth | count 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> country_of_birth | count 
 ------------------+-------
  China            |   180
  Indonesia        |   109
@@ -808,9 +808,9 @@ DROP TABLE
 </code></pre></div><h2 id="coalesce">COALESCE</h2>
 <p>The <code>COALESCE()</code> function returns the first non-null value in a list.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> COALESCE(email, <span style="font-style:italic">&#39;Email not provided&#39;</span>) <span style="font-weight:bold">FROM</span> person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> COALESCE(email, <span style="color:#2aa198">&#39;Email not provided&#39;</span>) <span style="color:#719e07">FROM</span> person;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">                coalesce                 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">                coalesce                 
 -----------------------------------------
  rskermer0@arstechnica.com
  habbett1@cbc.ca
@@ -835,21 +835,21 @@ DROP TABLE
 </ul>
 <p><img src="https://imgur.com/z93rIG7.jpg" alt="Generate data using Mockaroo" title=":Generate data using Mockaroo"></p>
 <p>Now edit the downloded file <code>car.sql</code> a bit—</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">create</span> <span style="font-weight:bold">table</span> car (
-	id BIGSERIAL <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	make VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	model VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	price NUMERIC(19, 2) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">create</span> <span style="color:#719e07">table</span> car (
+	id BIGSERIAL <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	make <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	model <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	price <span style="color:#b58900">NUMERIC</span>(<span style="color:#2aa198">19</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
 );
 
-<span style="font-style:italic">-- More lines containing INSERT command, We are not showing them here.
+<span style="color:#586e75">-- More lines containing INSERT command, We are not showing them here.
 </span></code></pre></div><p>After saving our changed <code>car.sql</code> file, now we will execute it.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/car.sql 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/car.sql 
 </code></pre></div><p>Here is first 10 rows from <code>car</code> table. <code>LIMIT</code> is used to get only first 10 rows.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">LIMIT</span> 10;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> car <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">10</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id |    make    |      model       |   price   
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id |    make    |      model       |   price   
 ----+------------+------------------+-----------
   1 | Daewoo     | Leganza          | 241058.40
   2 | Mitsubishi | Montero          | 269595.21
@@ -866,16 +866,16 @@ DROP TABLE
 <h3 id="max">MAX</h3>
 <p>The <code>MAX()</code> function returns the largest value of the selected column.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">MAX</span>(price) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">MAX</span>(price) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    max    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    max    
 -----------
  299959.83
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> make, <span style="font-weight:bold">MAX</span>(price) <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> make <span style="font-weight:bold">LIMIT</span> 5;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> make, <span style="color:#719e07">MAX</span>(price) <span style="color:#719e07">FROM</span> car <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> make <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">5</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |    max    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |    max    
 ----------+-----------
  Ford     | 290993.39
  Smart    | 159887.95
@@ -886,16 +886,16 @@ DROP TABLE
 </code></pre></div><h3 id="min">MIN</h3>
 <p>The <code>MIN()</code> function returns the smallest value of the selected column.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">MIN</span>(price) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">MIN</span>(price) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   min    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   min    
 ----------
  30348.16
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> make, <span style="font-weight:bold">MIN</span>(price) <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> make <span style="font-weight:bold">LIMIT</span> 5;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> make, <span style="color:#719e07">MIN</span>(price) <span style="color:#719e07">FROM</span> car <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> make <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">5</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |    min    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |    min    
 ----------+-----------
  Ford     |  31021.48
  Smart    | 159887.95
@@ -906,16 +906,16 @@ DROP TABLE
 </code></pre></div><h3 id="avg">AVG</h3>
 <p>The <code>AVG()</code> function returns the average value of a numeric column.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">AVG</span>(price) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">AVG</span>(price) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         avg         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">         avg         
 ---------------------
  164735.601300000000
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> make, <span style="font-weight:bold">AVG</span>(price) <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> make <span style="font-weight:bold">LIMIT</span> 5;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> make, <span style="color:#719e07">AVG</span>(price) <span style="color:#719e07">FROM</span> car <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> make <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">5</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |         avg         
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |         avg         
 ----------+---------------------
  Ford     | 171967.729473684211
  Smart    | 159887.950000000000
@@ -926,16 +926,16 @@ DROP TABLE
 </code></pre></div><h3 id="round">ROUND</h3>
 <p>The PostgreSQL <code>ROUND()</code> function rounds a numeric value to its nearest integer or a number with the number of decimal places.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> ROUND(<span style="font-weight:bold">AVG</span>(price)) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> ROUND(<span style="color:#719e07">AVG</span>(price)) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> round  
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> round  
 --------
  164736
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> make, ROUND(<span style="font-weight:bold">AVG</span>(price)) <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> make <span style="font-weight:bold">LIMIT</span> 5;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> make, ROUND(<span style="color:#719e07">AVG</span>(price)) <span style="color:#719e07">FROM</span> car <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> make <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">5</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   | round  
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   | round  
 ----------+--------
  Ford     | 171968
  Smart    | 159888
@@ -948,25 +948,25 @@ DROP TABLE
 </code></pre></div><h3 id="count">COUNT</h3>
 <p>The <code>COUNT()</code> function returns the number of rows that match a specified criterion.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">COUNT</span>(make) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">COUNT</span>(make) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> count 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> count 
 -------
   1000
 (1 row)
 </code></pre></div><h3 id="sum">SUM</h3>
 <p>The <code>SUM()</code> function returns the total sum of a numeric column.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">SUM</span>(price) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">SUM</span>(price) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">     sum      
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">     sum      
 --------------
  164735601.30
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> make, <span style="font-weight:bold">SUM</span>(price) <span style="font-weight:bold">FROM</span> car <span style="font-weight:bold">GROUP</span> <span style="font-weight:bold">BY</span> make <span style="font-weight:bold">LIMIT</span> 5;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> make, <span style="color:#719e07">SUM</span>(price) <span style="color:#719e07">FROM</span> car <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> make <span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">5</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |     sum     
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   make   |     sum     
 ----------+-------------
  Ford     | 16336934.30
  Smart    |   159887.95
@@ -976,32 +976,32 @@ DROP TABLE
 (5 rows)
 </code></pre></div><h2 id="basic-arithmetic-operations">Basic Arithmetic Operations</h2>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> 10 + 2;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#2aa198">10</span> <span style="color:#719e07">+</span> <span style="color:#2aa198">2</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
 ----------
        12
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> 10 / 2;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#2aa198">10</span> <span style="color:#719e07">/</span> <span style="color:#2aa198">2</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
 ----------
         5
 (1 row)
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> 10^2;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#2aa198">10</span><span style="color:#719e07">^</span><span style="color:#2aa198">2</span>;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> ?column? 
 ----------
       100
 (1 row)
 </code></pre></div><h2 id="discount-calculation">Discount Calculation</h2>
 <p>Now suppose the company offers a 10% discount on all cars. We will now calculate the amount of this 10%, and calculate the new price.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> id, make, model, price, ROUND(price * 0.10, 2), ROUND(price - (price * 0.10), 2) <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> id, make, model, price, ROUND(price <span style="color:#719e07">*</span> <span style="color:#2aa198">0</span>.<span style="color:#2aa198">10</span>, <span style="color:#2aa198">2</span>), ROUND(price <span style="color:#719e07">-</span> (price <span style="color:#719e07">*</span> <span style="color:#2aa198">0</span>.<span style="color:#2aa198">10</span>), <span style="color:#2aa198">2</span>) <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |     make      |        model         |   price   |  round   |   round   
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |     make      |        model         |   price   |  round   |   round   
 ------+---------------+----------------------+-----------+----------+-----------
     1 | Daewoo        | Leganza              | 241058.40 | 24105.84 | 216952.56
     2 | Mitsubishi    | Montero              | 269595.21 | 26959.52 | 242635.69
@@ -1018,12 +1018,12 @@ DROP TABLE
 <h2 id="alias">ALIAS</h2>
 <p>SQL aliases are used to give a table, or a column in a table, a temporary name. Aliases are often used to make column names more readable. An alias only exists for the duration of the query.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> id, make, model, price <span style="font-weight:bold">AS</span> original_price,
- ROUND(price * 0.10, 2) <span style="font-weight:bold">AS</span> ten_percent_discount,
- ROUND(price - (price * 0.10), 2) <span style="font-weight:bold">AS</span> discounted_price
- <span style="font-weight:bold">FROM</span> car;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> id, make, model, price <span style="color:#719e07">AS</span> original_price,
+ ROUND(price <span style="color:#719e07">*</span> <span style="color:#2aa198">0</span>.<span style="color:#2aa198">10</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> ten_percent_discount,
+ ROUND(price <span style="color:#719e07">-</span> (price <span style="color:#719e07">*</span> <span style="color:#2aa198">0</span>.<span style="color:#2aa198">10</span>), <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> discounted_price
+ <span style="color:#719e07">FROM</span> car;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |     make      |        model         | original_price | ten_percent_discount | discounted_price 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  id  |     make      |        model         | original_price | ten_percent_discount | discounted_price 
 ------+---------------+----------------------+----------------+----------------------+------------------
     1 | Daewoo        | Leganza              |      241058.40 |             24105.84 |        216952.56
     2 | Mitsubishi    | Montero              |      269595.21 |             26959.52 |        242635.69
@@ -1038,7 +1038,7 @@ DROP TABLE
 --More--
 </code></pre></div><h2 id="nullif">NULLIF</h2>
 <p>The NULLIF() function returns NULL if two expressions are equal. Otherwise, it returns the first expression.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NULLIF(2, 1);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NULLIF(2, 1);
  nullif 
 --------
       2
@@ -1058,12 +1058,12 @@ test=# SELECT NULLIF(0, 0);
 	
 </code></pre></div><h2 id="date">DATE</h2>
 <p>PostgreSQL provides several functions that return values related to the current date and time. These SQL-standard functions all return values based on the start time of the current transaction:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">CURRENT_DATE</span>
-<span style="font-weight:bold">CURRENT_TIME</span>
-<span style="font-weight:bold">CURRENT_TIMESTAMP</span>
-<span style="font-weight:bold">CURRENT_TIME</span>(<span style="font-weight:bold">precision</span>)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">CURRENT_DATE</span>
+<span style="color:#719e07">CURRENT_TIME</span>
+<span style="color:#719e07">CURRENT_TIMESTAMP</span>
+<span style="color:#719e07">CURRENT_TIME</span>(<span style="color:#719e07">precision</span>)
 
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">SELECT CURRENT_TIME;
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">SELECT CURRENT_TIME;
 Result: 14:39:53.662522-05
 
 SELECT CURRENT_DATE;
@@ -1072,14 +1072,14 @@ Result: 2001-12-23
 SELECT CURRENT_TIMESTAMP;
 Result: 2001-12-23 14:39:53.662522-05
 </code></pre></div><p>PostgreSQL also provides functions that return the start time of the current statement, as well as the actual current time at the instant the function is called. The complete list of non-SQL-standard time functions is:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">transaction_timestamp()
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">transaction_timestamp()
 statement_timestamp()
 clock_timestamp()
 timeofday()
 now()
 
 </code></pre></div><h3 id="now">NOW</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW();
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW();
              now              
 ------------------------------
  2020-08-19 23:39:49.18778+06
@@ -1099,7 +1099,7 @@ test=# SELECT NOW()::TIME;
 
 </code></pre></div><h3 id="addition-and-subtraction-of-date">Addition and Subtraction of Date</h3>
 <h4 id="interval">INTERVAL</h4>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW() - INTERVAL &#39;1 YEAR&#39;;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW() - INTERVAL &#39;1 YEAR&#39;;
            ?column?            
 -------------------------------
  2019-08-19 23:47:11.475305+06
@@ -1126,8 +1126,8 @@ test=# SELECT NOW() + INTERVAL &#39;40 DAYS&#39;;
 
 </code></pre></div><h3 id="extract">EXTRACT</h3>
 <p>The extract function retrieves subfields such as year or hour from date/time values. <em>source</em> must be a value expression of type <code>timestamp</code>, <code>time</code>, or <code>interval</code>. (Expressions of type date are cast to <code>timestamp</code> and can, therefore, be used as well.) <em>field</em> is an identifier or string that selects what field to extract from the source value. The extract function returns values of type double precision.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">EXTRACT(field FROM source)
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW();
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">EXTRACT(field FROM source)
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT NOW();
              now              
 ------------------------------
  2020-08-19 23:55:42.13778+06
@@ -1153,14 +1153,14 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
 
 
 </code></pre></div><h3 id="age">AGE</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">age(timestamp, timestamp)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">age(timestamp, timestamp)
 </code></pre></div><p>or</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">age(timestamp)
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">age(timestamp)
 </code></pre></div><p>The return type of both is an interval.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> first_name, last_name, gender, date_of_birth, AGE(NOW(), date_of_birth) <span style="font-weight:bold">AS</span> age <span style="font-weight:bold">FROM</span> person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> first_name, last_name, gender, date_of_birth, AGE(NOW(), date_of_birth) <span style="color:#719e07">AS</span> age <span style="color:#719e07">FROM</span> person;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   first_name   |      last_name      | gender | date_of_birth |                   age                    
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   first_name   |      last_name      | gender | date_of_birth |                   age                    
 ----------------+---------------------+--------+---------------+------------------------------------------
  Ronda          | Skermer             | Female | 1993-06-30    | 27 years 1 mon 19 days 23:56:04.414053
  Hamid          | Abbett              | Male   | 1995-08-31    | 24 years 11 mons 19 days 23:56:04.414053
@@ -1178,8 +1178,8 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
 <p>The <code>PRIMARY KEY</code> of a table is a combination of <code>NOT NULL</code> and <code>UNIQUE</code> constraint.
 Here we will see how to delete and add a primary key.</p>
 <p>At first, we check the table description, and we have found that the <code>id</code> column is a <code>PRIMARY KEY</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">\d person;
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">                                         Table &#34;public.person&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">\d person;
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">                                         Table &#34;public.person&#34;
       Column      |          Type          | Collation | Nullable |              Default               
 ------------------+------------------------+-----------+----------+------------------------------------
  id               | bigint                 |           | not null | nextval(&#39;person_id_seq&#39;::regclass)
@@ -1193,7 +1193,7 @@ Indexes:
     &#34;person_pkey&#34; PRIMARY KEY, btree (id)
     
 </code></pre></div><p>Now we will try to add a duplicate value to the table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id=1;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id=1;
  id | first_name | last_name |           email           | gender | date_of_birth | country_of_birth 
 ----+------------+-----------+---------------------------+--------+---------------+------------------
   1 | Ronda      | Skermer   | rskermer0@arstechnica.com | Female | 1993-06-30    | Argentina
@@ -1203,7 +1203,7 @@ test=# INSERT INTO person (id, first_name, last_name, email, gender, date_of_bir
 ERROR:  duplicate key value violates unique constraint &#34;person_pkey&#34;
 DETAIL:  Key (id)=(1) already exists.
 </code></pre></div><p>Insertion value is failed as the <code>id</code> column is primary, and it says <em>duplicate key value violates unique constraint</em>. Now we will drop the primary key constraint of the <code>id</code> column and will again try to insert duplicate data into the table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person DROP CONSTRAINT person_pkey;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person DROP CONSTRAINT person_pkey;
 ALTER TABLE
 test=# \d person;
                                          Table &#34;public.person&#34;
@@ -1227,11 +1227,11 @@ test=# SELECT * FROM person WHERE id=1;
 (2 rows)
 </code></pre></div><p>Here, as we can see that, after dropping the primary key constrains, we can insert a duplicate row in the table.</p>
 <p>Now we will try to add primary key constraint in the <code>id</code> column.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD PRIMARY KEY(id);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD PRIMARY KEY(id);
 ERROR:  could not create unique index &#34;person_pkey&#34;
 DETAIL:  Key (id)=(1) is duplicated.
 </code></pre></div><p>But we had failed, as there is two-row containing the same id. Now delete one of the duplicate ids and again try to add a primary key.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person WHERE id=1;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person WHERE id=1;
 DELETE 2
 test=# SELECT * FROM person WHERE id=1;
  id | first_name | last_name | email | gender | date_of_birth | country_of_birth 
@@ -1272,7 +1272,7 @@ test=#
 <p>The <code>UNIQUE</code> constraint in PostgreSQL is violated when more than one row for a column or combination of columns which have been used as a unique constraint in a table. Two <code>NULL</code> values for a column in different rows are different, and it does not violate the uniqueness of the UNIQUE constraint.</p>
 <p>When a <code>UNIQUE</code> constraint is adding, an index on a column or group of columns creates automatically.</p>
 <p>We are going to add a <code>UNIQUE CONSTRAINT</code> in the email field, and after that, we will delete the constraint of the field.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD CONSTRAINT unique_email_addr UNIQUE(email);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD CONSTRAINT unique_email_addr UNIQUE(email);
 ALTER TABLE
 test=# \d person;
                                          Table &#34;public.person&#34;
@@ -1307,7 +1307,7 @@ Indexes:
     &#34;person_pkey&#34; PRIMARY KEY, btree (id)
 
 </code></pre></div><p>Again we will add unique constraints in the email field, but without mentioning the name of our constraint, the name of the constraint will be set by Postgres itself automatically.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD UNIQUE(email);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD UNIQUE(email);
 ALTER TABLE
 test=# \d person;
                                          Table &#34;public.person&#34;
@@ -1328,7 +1328,7 @@ Indexes:
 <p>The PostgreSQL <code>CHECK</code> constraint controls the value of a column(s) being inserted.</p>
 <p>PostgreSQL provides the <code>CHECK</code> constraint, which allows the user to define a condition that a value entered into a table, has to satisfy before it can be accepted. The <code>CHECK</code> constraint consists of the keyword <code>CHECK</code>, followed by parenthesized conditions. The attempt will be rejected when update or insert column values that will make the condition false.</p>
 <p>The <code>CHECK</code> constraint in PostgreSQL can be defined as a separate name.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = &#39;Female&#39; OR gender = &#39;Male&#39;);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = &#39;Female&#39; OR gender = &#39;Male&#39;);
 ALTER TABLE
 test=# \d person;
                                          Table &#34;public.person&#34;
@@ -1349,12 +1349,12 @@ Check constraints:
 
 </code></pre></div><h2 id="delete">DELETE</h2>
 <p>Following is the usage of the PostgreSQL <code>DELETE</code> command to delete data of a PostgreSQL table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">DELETE FROM table_name ;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">DELETE FROM table_name ;
 </code></pre></div><p>Where <code>table_name</code> is the associated table, executing this command will delete all the rows of the associated table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">DELETE FROM table_name WHERE condition;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">DELETE FROM table_name WHERE condition;
 </code></pre></div><p>If we don&rsquo;t want to delete all of the rows of a table, but some specific rows which match the &ldquo;condition&rdquo;, execute the above.</p>
 <p>First, try to delete all records from a table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person;
 DELETE 1000
 test=# SELECT * FROM person;
  id | first_name | last_name | email | gender | date_of_birth | country_of_birth 
@@ -1362,7 +1362,7 @@ test=# SELECT * FROM person;
 (0 rows)
 
 </code></pre></div><p>There is no record in the <code>person</code> table now. For our learning purpose, retrieve data from the SQL file for the table again.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/person.sql 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \i /path/to/person.sql 
 psql:/path/to/person.sql:9: ERROR:  relation &#34;person&#34; already exists
 INSERT 0 1
 --More--
@@ -1398,7 +1398,7 @@ test=# SELECT * FROM person LIMIT 10;
  1011 | Aurore     | Drillingcourt | adrillingcourt9@cnet.com       | Female | 1977-10-19    | China
 (10 rows)
 </code></pre></div><p>Now try to delete a specific row or rows with the matching condition.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person WHERE id = 1002;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person WHERE id = 1002;
 DELETE 1
 test=# SELECT * FROM person LIMIT 10;
   id  | first_name |   last_name   |             email              | gender | date_of_birth | country_of_birth 
@@ -1423,7 +1423,7 @@ test=# SELECT * FROM person WHERE gender=&#39;Female&#39; AND country_of_birth=&
 (0 rows)
 
 </code></pre></div><p>For our learning purpose, now we will delete every record from the person table and restore it from our SQL file.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM person;
 DELETE 905
 test=# \i /path/to/person.sql
 psql:/path/to/person.sql:9: ERROR:  relation &#34;person&#34; already exists
@@ -1431,7 +1431,7 @@ INSERT 0 1
 --More--
 </code></pre></div><h2 id="update">UPDATE</h2>
 <p>UPDATE command is used to modify existing data of a table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person;
   id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth         
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
  2002 | Ronda          | Skermer             | rskermer0@arstechnica.com               | Female | 1993-06-30    | Argentina
@@ -1465,24 +1465,24 @@ test=# SELECT * FROM person WHERE id = 2006;
 <p>This means do nothing if the row already exists in the table. It handles duplicate key errors.</p>
 <p>First, we try to enter the duplicate record.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
-<span style="font-weight:bold">VALUES</span> (2002, <span style="font-style:italic">&#39;Ronda&#39;</span>, <span style="font-style:italic">&#39;Dante&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;dante@hotmaill.com&#39;</span>, DATE <span style="font-style:italic">&#39;1980-03-12&#39;</span>, <span style="font-style:italic">&#39;Sri Lanka&#39;</span>);
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
+<span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">2002</span>, <span style="color:#2aa198">&#39;Ronda&#39;</span>, <span style="color:#2aa198">&#39;Dante&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;dante@hotmaill.com&#39;</span>, <span style="color:#b58900">DATE</span> <span style="color:#2aa198">&#39;1980-03-12&#39;</span>, <span style="color:#2aa198">&#39;Sri Lanka&#39;</span>);
 </code></pre></div><p>As expected, an ERROR message is thrown.</p>
 <p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ERROR:  duplicate key value violates unique constraint &#34;person_pkey&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ERROR:  duplicate key value violates unique constraint &#34;person_pkey&#34;
 DETAIL:  Key (id)=(2002) already exists.
 </code></pre></div><p>Now we try to enter the duplicate record with <code>ON CONFLICT(id) DO NOTHING</code> and handle the error.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
-<span style="font-weight:bold">VALUES</span> (2002, <span style="font-style:italic">&#39;Ronda&#39;</span>, <span style="font-style:italic">&#39;Dante&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;dante@hotmaill.com&#39;</span>, DATE <span style="font-style:italic">&#39;1980-03-12&#39;</span>, <span style="font-style:italic">&#39;Sri Lanka&#39;</span>)
-<span style="font-weight:bold">ON</span> CONFLICT(id) <span style="font-weight:bold">DO</span> <span style="font-weight:bold">NOTHING</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
+<span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">2002</span>, <span style="color:#2aa198">&#39;Ronda&#39;</span>, <span style="color:#2aa198">&#39;Dante&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;dante@hotmaill.com&#39;</span>, <span style="color:#b58900">DATE</span> <span style="color:#2aa198">&#39;1980-03-12&#39;</span>, <span style="color:#2aa198">&#39;Sri Lanka&#39;</span>)
+<span style="color:#719e07">ON</span> CONFLICT(id) <span style="color:#719e07">DO</span> <span style="color:#719e07">NOTHING</span>;
 </code></pre></div><p>The output message is saying <code>0 0</code>, which means no insert operation is held.</p>
 <p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 0
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 0
 </code></pre></div><h3 id="do-update-set">DO UPDATE SET</h3>
 <p>This update some fields in the table.</p>
 <p>We will update this record in a way that conflicts with it.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id = 2002;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id = 2002;
   id  | first_name | last_name |             email         | gender | date_of_birth | country_of_birth 
 ------+------------+-----------+---------------------------+--------+---------------+------------------
  2002 | Ronda      | Skermer   | rskermer0@arstechnica.com | Female | 1993-06-30    | Argentina
@@ -1490,13 +1490,13 @@ DETAIL:  Key (id)=(2002) already exists.
 
 </code></pre></div><p>Here <code>EXCLUDED</code> refers to the new conflicted record which is trying to be inserted.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
-<span style="font-weight:bold">VALUES</span> (2002, <span style="font-style:italic">&#39;Rudi&#39;</span>, <span style="font-style:italic">&#39;Donte&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;donte@hotmaill.com&#39;</span>, DATE <span style="font-style:italic">&#39;1980-03-12&#39;</span>, <span style="font-style:italic">&#39;Sri Lanka&#39;</span>)
-<span style="font-weight:bold">ON</span> CONFLICT(id) <span style="font-weight:bold">DO</span> <span style="font-weight:bold">UPDATE</span> <span style="font-weight:bold">SET</span> first_name=EXCLUDED.first_name, last_name=EXCLUDED.last_name, email=EXCLUDED.email;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
+<span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">2002</span>, <span style="color:#2aa198">&#39;Rudi&#39;</span>, <span style="color:#2aa198">&#39;Donte&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;donte@hotmaill.com&#39;</span>, <span style="color:#b58900">DATE</span> <span style="color:#2aa198">&#39;1980-03-12&#39;</span>, <span style="color:#2aa198">&#39;Sri Lanka&#39;</span>)
+<span style="color:#719e07">ON</span> CONFLICT(id) <span style="color:#719e07">DO</span> <span style="color:#719e07">UPDATE</span> <span style="color:#719e07">SET</span> first_name<span style="color:#719e07">=</span>EXCLUDED.first_name, last_name<span style="color:#719e07">=</span>EXCLUDED.last_name, email<span style="color:#719e07">=</span>EXCLUDED.email;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">INSERT 0 1
 </code></pre></div><p>Despite the conflict, the updated record is:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id = 2002;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person WHERE id = 2002;
   id  | first_name | last_name |       email        | gender | date_of_birth | country_of_birth 
 ------+------------+-----------+--------------------+--------+---------------+------------------
  2002 | Rudi       | Donte     | donte@hotmaill.com | Female | 1993-06-30    | Argentina
@@ -1506,7 +1506,7 @@ DETAIL:  Key (id)=(2002) already exists.
 <p><img src="https://imgur.com/N0Qcfe8.jpg," alt="Forign Key, Primary Key and Relations" title="Forign Key, Primary Key and Relations"></p>
 <p>Adding relations between tables
 We will now drop the previous tables and create new ones with relations.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \dt
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \dt
            List of relations
  Schema |  Name  | Type  |    Owner     
 --------+--------+-------+--------------
@@ -1549,49 +1549,49 @@ test=# \dt
 (2 rows)
 
 </code></pre></div><p>Our new SQL file, which is named <code>car-person.sql</code> is in bellow:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> car (
-	id BIGSERIAL <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	make VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	model VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	price NUMERIC(19, 2) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> car (
+	id BIGSERIAL <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	make <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	model <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	price <span style="color:#b58900">NUMERIC</span>(<span style="color:#2aa198">19</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
 );
 
 
-<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> person (
-	id BIGSERIAL <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	first_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	last_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	email VARCHAR(150),
-	gender VARCHAR(7) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	date_of_birth DATE <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	country_of_birth VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	car_id BIGINT <span style="font-weight:bold">REFERENCES</span> car(id),
-	<span style="font-weight:bold">UNIQUE</span>(car_id)
+<span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> person (
+	id BIGSERIAL <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	first_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	last_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	email <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">150</span>),
+	gender <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">7</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	date_of_birth <span style="color:#b58900">DATE</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	country_of_birth <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	car_id <span style="color:#b58900">BIGINT</span> <span style="color:#719e07">REFERENCES</span> car(id),
+	<span style="color:#719e07">UNIQUE</span>(car_id)
 );
 
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Daewoo&#39;</span>, <span style="font-style:italic">&#39;Leganza&#39;</span>, <span style="font-style:italic">&#39;241058.40&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Mitsubishi&#39;</span>, <span style="font-style:italic">&#39;Montero&#39;</span>, <span style="font-style:italic">&#39;269595.21&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Kia&#39;</span>, <span style="font-style:italic">&#39;Rio&#39;</span>, <span style="font-style:italic">&#39;245275.16&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Jaguar&#39;</span>, <span style="font-style:italic">&#39;X-Type&#39;</span>, <span style="font-style:italic">&#39;41665.96&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Lincoln&#39;</span>, <span style="font-style:italic">&#39;Mark VIII&#39;</span>, <span style="font-style:italic">&#39;163843.38&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;GMC&#39;</span>, <span style="font-style:italic">&#39;Rally Wagon 3500&#39;</span>, <span style="font-style:italic">&#39;231169.05&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (make, model, price) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Cadillac&#39;</span>, <span style="font-style:italic">&#39;Escalade ESV&#39;</span>, <span style="font-style:italic">&#39;279951.34&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Daewoo&#39;</span>, <span style="color:#2aa198">&#39;Leganza&#39;</span>, <span style="color:#2aa198">&#39;241058.40&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Mitsubishi&#39;</span>, <span style="color:#2aa198">&#39;Montero&#39;</span>, <span style="color:#2aa198">&#39;269595.21&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Kia&#39;</span>, <span style="color:#2aa198">&#39;Rio&#39;</span>, <span style="color:#2aa198">&#39;245275.16&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Jaguar&#39;</span>, <span style="color:#2aa198">&#39;X-Type&#39;</span>, <span style="color:#2aa198">&#39;41665.96&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Lincoln&#39;</span>, <span style="color:#2aa198">&#39;Mark VIII&#39;</span>, <span style="color:#2aa198">&#39;163843.38&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;GMC&#39;</span>, <span style="color:#2aa198">&#39;Rally Wagon 3500&#39;</span>, <span style="color:#2aa198">&#39;231169.05&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (make, model, price) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Cadillac&#39;</span>, <span style="color:#2aa198">&#39;Escalade ESV&#39;</span>, <span style="color:#2aa198">&#39;279951.34&#39;</span>);
 
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Hamid&#39;</span>, <span style="font-style:italic">&#39;Abbett&#39;</span>, <span style="font-style:italic">&#39;habbett1@cbc.ca&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1995-08-31&#39;</span>, <span style="font-style:italic">&#39;Ethiopia&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Francis&#39;</span>, <span style="font-style:italic">&#39;Nickerson&#39;</span>, <span style="font-style:italic">&#39;fnickerson2@mac.com&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1998-03-16&#39;</span>, <span style="font-style:italic">&#39;Portugal&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Erminie&#39;</span>, <span style="font-style:italic">&#39;M&#39;&#39;Quharg&#39;</span>, <span style="font-style:italic">&#39;emquharg3@e-recht24.de&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;1999-03-13&#39;</span>, <span style="font-style:italic">&#39;Mozambique&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Teodoro&#39;</span>, <span style="font-style:italic">&#39;Trimmill&#39;</span>, <span style="font-weight:bold">null</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1982-04-30&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Reilly&#39;</span>, <span style="font-style:italic">&#39;Amesbury&#39;</span>, <span style="font-style:italic">&#39;ramesbury5@businessinsider.com&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1990-12-31&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;West&#39;</span>, <span style="font-style:italic">&#39;Elphey&#39;</span>, <span style="font-weight:bold">null</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;2004-03-29&#39;</span>, <span style="font-style:italic">&#39;Indonesia&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Letta&#39;</span>, <span style="font-style:italic">&#39;Caurah&#39;</span>, <span style="font-style:italic">&#39;lcaurah7@yale.edu&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;1994-09-09&#39;</span>, <span style="font-style:italic">&#39;Indonesia&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Elset&#39;</span>, <span style="font-style:italic">&#39;Agass&#39;</span>, <span style="font-style:italic">&#39;eagass8@rambler.ru&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;2004-06-26&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Aurore&#39;</span>, <span style="font-style:italic">&#39;Drillingcourt&#39;</span>, <span style="font-style:italic">&#39;adrillingcourt9@cnet.com&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;1977-10-19&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="font-weight:bold">VALUES</span> (<span style="font-style:italic">&#39;Ilse&#39;</span>, <span style="font-style:italic">&#39;Goldman&#39;</span>, <span style="font-style:italic">&#39;igoldmana@ihg.com&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;2001-07-31&#39;</span>, <span style="font-style:italic">&#39;Mongolia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Hamid&#39;</span>, <span style="color:#2aa198">&#39;Abbett&#39;</span>, <span style="color:#2aa198">&#39;habbett1@cbc.ca&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1995-08-31&#39;</span>, <span style="color:#2aa198">&#39;Ethiopia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Francis&#39;</span>, <span style="color:#2aa198">&#39;Nickerson&#39;</span>, <span style="color:#2aa198">&#39;fnickerson2@mac.com&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1998-03-16&#39;</span>, <span style="color:#2aa198">&#39;Portugal&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Erminie&#39;</span>, <span style="color:#2aa198">&#39;M&#39;&#39;Quharg&#39;</span>, <span style="color:#2aa198">&#39;emquharg3@e-recht24.de&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;1999-03-13&#39;</span>, <span style="color:#2aa198">&#39;Mozambique&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Teodoro&#39;</span>, <span style="color:#2aa198">&#39;Trimmill&#39;</span>, <span style="color:#719e07">null</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1982-04-30&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Reilly&#39;</span>, <span style="color:#2aa198">&#39;Amesbury&#39;</span>, <span style="color:#2aa198">&#39;ramesbury5@businessinsider.com&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1990-12-31&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;West&#39;</span>, <span style="color:#2aa198">&#39;Elphey&#39;</span>, <span style="color:#719e07">null</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;2004-03-29&#39;</span>, <span style="color:#2aa198">&#39;Indonesia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Letta&#39;</span>, <span style="color:#2aa198">&#39;Caurah&#39;</span>, <span style="color:#2aa198">&#39;lcaurah7@yale.edu&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;1994-09-09&#39;</span>, <span style="color:#2aa198">&#39;Indonesia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Elset&#39;</span>, <span style="color:#2aa198">&#39;Agass&#39;</span>, <span style="color:#2aa198">&#39;eagass8@rambler.ru&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;2004-06-26&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Aurore&#39;</span>, <span style="color:#2aa198">&#39;Drillingcourt&#39;</span>, <span style="color:#2aa198">&#39;adrillingcourt9@cnet.com&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;1977-10-19&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (first_name, last_name, email, gender, date_of_birth, country_of_birth) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;Ilse&#39;</span>, <span style="color:#2aa198">&#39;Goldman&#39;</span>, <span style="color:#2aa198">&#39;igoldmana@ihg.com&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;2001-07-31&#39;</span>, <span style="color:#2aa198">&#39;Mongolia&#39;</span>);
 
 </code></pre></div><p>Let&rsquo;s take a look at the two new tables to see what&rsquo;s inside.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM person;
  id | first_name |   last_name   |             email              | gender | date_of_birth | country_of_birth | car_id 
 ----+------------+---------------+--------------------------------+--------+---------------+------------------+--------
   1 | Hamid      | Abbett        | habbett1@cbc.ca                | Male   | 1995-08-31    | Ethiopia         |       
@@ -1620,7 +1620,7 @@ test=# SELECT * FROM car;
 
 </code></pre></div><p>As expected, there is no value in the <code>car_id</code> column in <code>person</code> as we did not insert any value there.</p>
 <p>As can be seen below, we have set the foreign key correctly, and it has a UNIQUE constraint and <code>car_id</code> referencing to <code>car.id</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
                                          Table &#34;public.person&#34;
       Column      |          Type          | Collation | Nullable |              Default               
 ------------------+------------------------+-----------+----------+------------------------------------
@@ -1640,7 +1640,7 @@ Foreign-key constraints:
 
 
 </code></pre></div><p>Let&rsquo;s assign the Mitsubishi, which ID is 2 from the car table to Hamid Abbett of the person table which ID is 1.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# UPDATE person SET car_id = 2 WHERE id = 1;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# UPDATE person SET car_id = 2 WHERE id = 1;
 UPDATE 1
 test=# SELECT * FROM person;
  id | first_name |   last_name   |             email              | gender | date_of_birth | country_of_birth | car_id 
@@ -1658,13 +1658,13 @@ test=# SELECT * FROM person;
 (10 rows)
 
 </code></pre></div><p>Let&rsquo;s also add a car to Francis Nickerson.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">UPDATE person SET car_id = 1 WHERE id = 2;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">UPDATE person SET car_id = 1 WHERE id = 2;
 </code></pre></div><p>Let&rsquo;s try to give one car to two people and see what happens.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# UPDATE person SET car_id = 1 WHERE id = 3;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# UPDATE person SET car_id = 1 WHERE id = 3;
 ERROR:  duplicate key value violates unique constraint &#34;person_car_id_key&#34;
 DETAIL:  Key (car_id)=(1) already exists.
 </code></pre></div><p>Okay, now assign other cars to specific persons. This is the final table.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name |   last_name   |             email              | gender | date_of_birth | country_of_birth | car_id 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name |   last_name   |             email              | gender | date_of_birth | country_of_birth | car_id 
 ----+------------+---------------+--------------------------------+--------+---------------+------------------+--------
   5 | Reilly     | Amesbury      | ramesbury5@businessinsider.com | Male   | 1990-12-31    | China            |       
   9 | Aurore     | Drillingcourt | adrillingcourt9@cnet.com       | Female | 1977-10-19    | China            |       
@@ -1679,7 +1679,7 @@ DETAIL:  Key (car_id)=(1) already exists.
 (10 rows)
 
 </code></pre></div><h3 id="delete-record-with-foreign-keys">Delete Record with Foreign Keys</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM car WHERE id = 7;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# DELETE FROM car WHERE id = 7;
 ERROR:  update or delete on table &#34;car&#34; violates foreign key constraint &#34;person_car_id_fkey&#34; on table &#34;person&#34;
 DETAIL:  Key (id)=(7) is still referenced from table &#34;person&#34;.
 test=# DELETE FROM person WHERE id = 3;
@@ -1704,17 +1704,17 @@ test=# SELECT * FROM person;
 <h3 id="inner-join">INNER JOIN</h3>
 <p>The INNER JOIN keyword selects records that have matching values in both tables.</p>
 <p>The INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate. The query compares each row of table1 with each row of table2 to find all pairs of rows which satisfy the join-predicate. When the join-predicate is satisfied, column values for each matched pair of rows of A and B are combined into a result row.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> <span style="font-weight:bold">column_name</span>(s)
-<span style="font-weight:bold">FROM</span> table1
-<span style="font-weight:bold">INNER</span> <span style="font-weight:bold">JOIN</span> table2
-<span style="font-weight:bold">ON</span> table1.<span style="font-weight:bold">column_name</span> = table2.<span style="font-weight:bold">column_name</span>;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">column_name</span>(s)
+<span style="color:#719e07">FROM</span> table1
+<span style="color:#719e07">INNER</span> <span style="color:#719e07">JOIN</span> table2
+<span style="color:#719e07">ON</span> table1.<span style="color:#719e07">column_name</span> <span style="color:#719e07">=</span> table2.<span style="color:#719e07">column_name</span>;
 </code></pre></div><p><img src="https://imgur.com/oQjyWQa.jpg," alt="INNER JOIN" title="INNER JOIN"></p>
 <p>Now let&rsquo;s join our tables based on foreign keys.</p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> * <span style="font-weight:bold">FROM</span> person
-<span style="font-weight:bold">JOIN</span> car <span style="font-weight:bold">ON</span> person.car_id = car.id;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> person
+<span style="color:#719e07">JOIN</span> car <span style="color:#719e07">ON</span> person.car_id <span style="color:#719e07">=</span> car.id;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name | last_name |         email          | gender | date_of_birth | country_of_birth | car_id | id |    make    |      model       |   price   
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> id | first_name | last_name |         email          | gender | date_of_birth | country_of_birth | car_id | id |    make    |      model       |   price   
 ----+------------+-----------+------------------------+--------+---------------+------------------+--------+----+------------+------------------+-----------
   2 | Francis    | Nickerson | fnickerson2@mac.com    | Male   | 1998-03-16    | Portugal         |      1 |  1 | Daewoo     | Leganza          | 241058.40
   1 | Hamid      | Abbett    | habbett1@cbc.ca        | Male   | 1995-08-31    | Ethiopia         |      2 |  2 | Mitsubishi | Montero          | 269595.21
@@ -1726,11 +1726,11 @@ test=# SELECT * FROM person;
 (7 rows)
 
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price
-<span style="font-weight:bold">FROM</span> person
-<span style="font-weight:bold">JOIN</span> car <span style="font-weight:bold">ON</span> person.car_id = car.id;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price
+<span style="color:#719e07">FROM</span> person
+<span style="color:#719e07">JOIN</span> car <span style="color:#719e07">ON</span> person.car_id <span style="color:#719e07">=</span> car.id;
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> first_name | last_name |    make    |      model       |   price   
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> first_name | last_name |    make    |      model       |   price   
 ------------+-----------+------------+------------------+-----------
  Francis    | Nickerson | Daewoo     | Leganza          | 241058.40
  Hamid      | Abbett    | Mitsubishi | Montero          | 269595.21
@@ -1745,12 +1745,12 @@ test=# SELECT * FROM person;
 <p>The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.</p>
 <p><img src="https://imgur.com/sS5mapo.jpg," alt="LEFT JOIN" title="LEFT JOIN"></p>
 <p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price
-<span style="font-weight:bold">FROM</span> person
-<span style="font-weight:bold">LEFT</span> <span style="font-weight:bold">JOIN</span> car <span style="font-weight:bold">ON</span> person.car_id = car.id;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price
+<span style="color:#719e07">FROM</span> person
+<span style="color:#719e07">LEFT</span> <span style="color:#719e07">JOIN</span> car <span style="color:#719e07">ON</span> person.car_id <span style="color:#719e07">=</span> car.id;
 
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> first_name |   last_name   |    make    |      model       |   price   
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> first_name |   last_name   |    make    |      model       |   price   
 ------------+---------------+------------+------------------+-----------
  Francis    | Nickerson     | Daewoo     | Leganza          | 241058.40
  Hamid      | Abbett        | Mitsubishi | Montero          | 269595.21
@@ -1775,7 +1775,7 @@ test=# SELECT * FROM person;
 <h2 id="exporting-query-results-to-csv">Exporting Query Results to CSV</h2>
 <p>By typing <code>\?</code> and check the help. In the Input/Output section, it says that <code>\copy ...    perform SQL COPY with data stream to the client host</code>.</p>
 <p>We will save this query to a CSV file.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT person.first_name, person.last_name, car.make, car.model, car.price
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT person.first_name, person.last_name, car.make, car.model, car.price
 FROM person
 LEFT JOIN car ON person.car_id = car.id;
  first_name |   last_name   |    make    |      model       |   price   
@@ -1792,14 +1792,14 @@ LEFT JOIN car ON person.car_id = car.id;
 (9 rows)
 
 </code></pre></div><p><!-- raw HTML omitted --><em>Command</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="">\</span><span style="font-weight:bold">copy</span> (<span style="font-weight:bold">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price <span style="font-weight:bold">FROM</span> person <span style="font-weight:bold">LEFT</span> <span style="font-weight:bold">JOIN</span> car <span style="font-weight:bold">ON</span> car.id = person.car_id) <span style="font-weight:bold">TO</span> <span style="font-style:italic">&#39;/home/arafat_hasan/Downloads/results.csv&#39;</span> <span style="font-weight:bold">DELIMITER</span> <span style="font-style:italic">&#39;,&#39;</span> CSV HEADER
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">\<span style="color:#719e07">copy</span> (<span style="color:#719e07">SELECT</span> person.first_name, person.last_name, car.make, car.model, car.price <span style="color:#719e07">FROM</span> person <span style="color:#719e07">LEFT</span> <span style="color:#719e07">JOIN</span> car <span style="color:#719e07">ON</span> car.id <span style="color:#719e07">=</span> person.car_id) <span style="color:#719e07">TO</span> <span style="color:#2aa198">&#39;/home/arafat_hasan/Downloads/results.csv&#39;</span> <span style="color:#719e07">DELIMITER</span> <span style="color:#2aa198">&#39;,&#39;</span> CSV HEADER
 
 </code></pre></div><p><!-- raw HTML omitted --><em>Output</em><!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">COPY 9
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">COPY 9
 
 </code></pre></div><p>The query is stored in the CSV file.</p>
 <h2 id="serials-and-sequences">Serials and Sequences</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# \d person;
                                          Table &#34;public.person&#34;
       Column      |          Type          | Collation | Nullable |              Default               
 ------------------+------------------------+-----------+----------+------------------------------------
@@ -1852,7 +1852,7 @@ test=# SELECT * FROM person_id_seq ;
 </code></pre></div><h2 id="extensions">Extensions</h2>
 <p>Simply extensions are functions that can add extra functionality to the database.</p>
 <p>List of available extensions</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM pg_available_extensions;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">test=# SELECT * FROM pg_available_extensions;
   name   | default_version | installed_version |           comment            
 ---------+-----------------+-------------------+------------------------------
  plpgsql | 1.0             | 1.0               | PL/pgSQL procedural language
@@ -1864,72 +1864,72 @@ test=# SELECT * FROM person_id_seq ;
 <pre><code>&gt; When generated according to the standard methods, UUIDs are, for practical purposes, unique. Their uniqueness does not depend on a central registration authority or coordination between the parties generating them, unlike most other numbering schemes. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible. 
 </code></pre>
 <p>We have to add the uuid-ossp extension:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">CREATE EXTENSION &#34;uuid-ossp&#34;;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">CREATE EXTENSION &#34;uuid-ossp&#34;;
 </code></pre></div><p>List of a available functions:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">\df
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">\df
 </code></pre></div><p>Now we have to invoke the function:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">SELECT uuid_generate_v4();
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ANLONGUUID
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">SELECT uuid_generate_v4();
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ANLONGUUID
 </code></pre></div><h3 id="uuid-as-primary-key">UUID as Primary Key</h3>
 <p>Drop <code>person</code> and <code>car</code> table and create another ones as below.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> car (
-	car_uid UUID <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	make VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	model VARCHAR(100) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	price NUMERIC(19, 2) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> car (
+	car_uid UUID <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	make <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	model <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">100</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	price <span style="color:#b58900">NUMERIC</span>(<span style="color:#2aa198">19</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
 );
 
 
-<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> person (
-	person_uid UUID <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span>,
-	first_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	last_name VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	email VARCHAR(150),
-	gender VARCHAR(7) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	date_of_birth DATE <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	country_of_birth VARCHAR(50) <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span>,
-	car_uid UUID <span style="font-weight:bold">REFERENCES</span> car(car_uid),
-	<span style="font-weight:bold">UNIQUE</span>(car_uid),
-	<span style="font-weight:bold">UNIQUE</span>(email)
+<span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> person (
+	person_uid UUID <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span>,
+	first_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	last_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	email <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">150</span>),
+	gender <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">7</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	date_of_birth <span style="color:#b58900">DATE</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	country_of_birth <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">50</span>) <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>,
+	car_uid UUID <span style="color:#719e07">REFERENCES</span> car(car_uid),
+	<span style="color:#719e07">UNIQUE</span>(car_uid),
+	<span style="color:#719e07">UNIQUE</span>(email)
 );
 
 
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (car_uid, make, model, price) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Mitsubishi&#39;</span>, <span style="font-style:italic">&#39;Montero&#39;</span>, <span style="font-style:italic">&#39;269595.21&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (car_uid, make, model, price) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Mitsubishi&#39;</span>, <span style="color:#2aa198">&#39;Montero&#39;</span>, <span style="color:#2aa198">&#39;269595.21&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (car_uid, make, model, price) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Kia&#39;</span>, <span style="font-style:italic">&#39;Rio&#39;</span>, <span style="font-style:italic">&#39;245275.16&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (car_uid, make, model, price) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Kia&#39;</span>, <span style="color:#2aa198">&#39;Rio&#39;</span>, <span style="color:#2aa198">&#39;245275.16&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (car_uid, make, model, price) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Jaguar&#39;</span>, <span style="font-style:italic">&#39;X-Type&#39;</span>, <span style="font-style:italic">&#39;41665.96&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (car_uid, make, model, price) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Jaguar&#39;</span>, <span style="color:#2aa198">&#39;X-Type&#39;</span>, <span style="color:#2aa198">&#39;41665.96&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> car (car_uid, make, model, price) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Lincoln&#39;</span>, <span style="font-style:italic">&#39;Mark VIII&#39;</span>, <span style="font-style:italic">&#39;163843.38&#39;</span>);
-
-
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> car (car_uid, make, model, price) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Lincoln&#39;</span>, <span style="color:#2aa198">&#39;Mark VIII&#39;</span>, <span style="color:#2aa198">&#39;163843.38&#39;</span>);
 
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Hamid&#39;</span>, <span style="font-style:italic">&#39;Abbett&#39;</span>, <span style="font-style:italic">&#39;habbett1@cbc.ca&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1995-08-31&#39;</span>, <span style="font-style:italic">&#39;Ethiopia&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Francis&#39;</span>, <span style="font-style:italic">&#39;Nickerson&#39;</span>, <span style="font-style:italic">&#39;fnickerson2@mac.com&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1998-03-16&#39;</span>, <span style="font-style:italic">&#39;Portugal&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Erminie&#39;</span>, <span style="font-style:italic">&#39;M&#39;&#39;Quharg&#39;</span>, <span style="font-style:italic">&#39;emquharg3@e-recht24.de&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;1999-03-13&#39;</span>, <span style="font-style:italic">&#39;Mozambique&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Hamid&#39;</span>, <span style="color:#2aa198">&#39;Abbett&#39;</span>, <span style="color:#2aa198">&#39;habbett1@cbc.ca&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1995-08-31&#39;</span>, <span style="color:#2aa198">&#39;Ethiopia&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Teodoro&#39;</span>, <span style="font-style:italic">&#39;Trimmill&#39;</span>, <span style="font-weight:bold">null</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1982-04-30&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Francis&#39;</span>, <span style="color:#2aa198">&#39;Nickerson&#39;</span>, <span style="color:#2aa198">&#39;fnickerson2@mac.com&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1998-03-16&#39;</span>, <span style="color:#2aa198">&#39;Portugal&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Reilly&#39;</span>, <span style="font-style:italic">&#39;Amesbury&#39;</span>, <span style="font-style:italic">&#39;ramesbury5@businessinsider.com&#39;</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;1990-12-31&#39;</span>, <span style="font-style:italic">&#39;China&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Erminie&#39;</span>, <span style="color:#2aa198">&#39;M&#39;&#39;Quharg&#39;</span>, <span style="color:#2aa198">&#39;emquharg3@e-recht24.de&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;1999-03-13&#39;</span>, <span style="color:#2aa198">&#39;Mozambique&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;West&#39;</span>, <span style="font-style:italic">&#39;Elphey&#39;</span>, <span style="font-weight:bold">null</span>, <span style="font-style:italic">&#39;Male&#39;</span>, <span style="font-style:italic">&#39;2004-03-29&#39;</span>, <span style="font-style:italic">&#39;Indonesia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Teodoro&#39;</span>, <span style="color:#2aa198">&#39;Trimmill&#39;</span>, <span style="color:#719e07">null</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1982-04-30&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
 
-<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
-<span style="font-weight:bold">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="font-style:italic">&#39;Letta&#39;</span>, <span style="font-style:italic">&#39;Caurah&#39;</span>, <span style="font-style:italic">&#39;lcaurah7@yale.edu&#39;</span>, <span style="font-style:italic">&#39;Female&#39;</span>, <span style="font-style:italic">&#39;1994-09-09&#39;</span>, <span style="font-style:italic">&#39;Indonesia&#39;</span>);
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Reilly&#39;</span>, <span style="color:#2aa198">&#39;Amesbury&#39;</span>, <span style="color:#2aa198">&#39;ramesbury5@businessinsider.com&#39;</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;1990-12-31&#39;</span>, <span style="color:#2aa198">&#39;China&#39;</span>);
+
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;West&#39;</span>, <span style="color:#2aa198">&#39;Elphey&#39;</span>, <span style="color:#719e07">null</span>, <span style="color:#2aa198">&#39;Male&#39;</span>, <span style="color:#2aa198">&#39;2004-03-29&#39;</span>, <span style="color:#2aa198">&#39;Indonesia&#39;</span>);
+
+<span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> person (person_uid, first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+<span style="color:#719e07">VALUES</span> (uuid_generate_v4(), uuid_generate_v4(), <span style="color:#2aa198">&#39;Letta&#39;</span>, <span style="color:#2aa198">&#39;Caurah&#39;</span>, <span style="color:#2aa198">&#39;lcaurah7@yale.edu&#39;</span>, <span style="color:#2aa198">&#39;Female&#39;</span>, <span style="color:#2aa198">&#39;1994-09-09&#39;</span>, <span style="color:#2aa198">&#39;Indonesia&#39;</span>);
 
 </code></pre></div>
       </div>
