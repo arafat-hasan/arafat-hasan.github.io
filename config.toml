@@ -114,6 +114,12 @@ disqusShortname = "arafathasan"
                 weight = 5
                 url = ""
 
+            [[languages.en.menu.main]]
+                name = "Policy"
+                identifier = "enPolicy"
+                weight = 6
+                url = "/en/comment-policy"
+
 
     [languages.bn]
         languagename = "বাংলা"
@@ -146,3 +152,9 @@ disqusShortname = "arafathasan"
                 identifier = "bnContact"
                 weight = 5
                 url = ""
+
+            [[languages.bn.menu.main]]
+                name = "নীতিমালা"
+                identifier = "bnPolicy"
+                weight = 6
+                url = "/bn/comment-policy/"
