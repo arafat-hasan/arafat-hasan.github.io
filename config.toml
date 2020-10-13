@@ -118,7 +118,7 @@ disqusShortname = "arafathasan"
                 name = "Policy"
                 identifier = "enPolicy"
                 weight = 6
-                url = "/en/comment-policy"
+                url = "/en/comment-policy/"
 
 
     [languages.bn]
