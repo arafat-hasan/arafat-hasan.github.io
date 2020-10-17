@@ -43,7 +43,7 @@ disqusShortname = "arafathasan"
     colorscheme = "auto"
 
     math = true
-    custom_css = ["css/custom.css"]
+    custom_css = ["css/base16.solarized.light.css","css/custom.css"]
 
 
 
