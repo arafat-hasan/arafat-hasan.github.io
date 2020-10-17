@@ -1,11 +1,15 @@
-+++ 
-draft = true
-date = {{ .Date }}
-title = ""
-description = ""
-slug = "" 
-tags = []
-categories = []
-externalLink = ""
-series = []
-+++
+---
+title: ""
+date: {{ .Date }}
+description: ""
+author: "Arafat Hasan"
+slug: "" 
+tags: []
+categories: []
+featured_image:
+externalLink: ""
+series: []
+type: posts
+draft: true
+---
+
