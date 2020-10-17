@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on Arafat Hasan</title>
+    <link>https://www.arafathasan.live/en/tags/redis/</link>
+    <description>Recent content in redis on Arafat Hasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis Introduction and Installation</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/redis-intro/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis-intro/</guid>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker.</description>
+    </item>
+    
+    <item>
+      <title>Redis: Hello World!</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/</guid>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis. If you don’t know what Redis is, or haven’t installed Redis in your system yet, check it out here.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk.</description>
+    </item>
+    
+  </channel>
+</rss>

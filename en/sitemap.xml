@@ -33,7 +33,42 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/en/categories/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/centos/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/installation/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/lamp/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/prowritings/chapters/lamp/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/note/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,7 +78,32 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/en/categories/professional-writings/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/series/redis/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/redis/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -73,6 +133,16 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/en/tags/postgres/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/postgressql/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
@@ -92,20 +162,6 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/en/writings/</loc>
     <xhtml:link
                 rel="alternate"
@@ -116,20 +172,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.arafathasan.live/en/writings/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/tags/"
                 />
   </url>
   
