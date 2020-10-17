@@ -4,6 +4,16 @@
     <title>Series on Arafat Hasan</title>
     <link>https://www.arafathasan.live/en/series/</link>
     <description>Recent content in Series on Arafat Hasan</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.arafathasan.live/en/series/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>redis</title>
+      <link>https://www.arafathasan.live/en/series/redis/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/series/redis/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

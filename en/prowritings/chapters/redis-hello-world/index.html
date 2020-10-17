@@ -7,33 +7,34 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Arafat Hasan">
-    <meta name="description" content="1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
- What is a key-value pair?
- A key-value pair is a set or pair of two linked items.">
+    <meta name="description" content="This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency.">
     <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Redis Notes"/>
-<meta name="twitter:description" content="1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
- What is a key-value pair?
- A key-value pair is a set or pair of two linked items."/>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.arafathasan.live/images/90Hyfrg.png"/>
 
-    <meta property="og:title" content="Redis Notes" />
-<meta property="og:description" content="1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
- What is a key-value pair?
- A key-value pair is a set or pair of two linked items." />
+<meta name="twitter:title" content="Hello World in Redis"/>
+<meta name="twitter:description" content="This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency."/>
+
+    <meta property="og:title" content="Hello World in Redis" />
+<meta property="og:description" content="This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.arafathasan.live/en/prowritings/chapters/redis/" />
+<meta property="og:url" content="https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/" />
+<meta property="og:image" content="https://www.arafathasan.live/images/90Hyfrg.png" />
 <meta property="article:published_time" content="2020-09-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-01T00:00:00+00:00" /><meta property="og:site_name" content="Arafat Hasan" />
+<meta property="article:modified_time" content="2020-09-01T00:00:00+00:00" /><meta property="og:site_name" content="Arafat Hasan" /><meta property="og:see_also" content="https://www.arafathasan.live/en/prowritings/chapters/redis-intro/" />
+
 
 
     <title>
-  Redis Notes · Arafat Hasan
+  Hello World in Redis · Arafat Hasan
 </title>
 
     
-      <link rel="canonical" href="https://www.arafathasan.live/en/prowritings/chapters/redis/">
+      <link rel="canonical" href="https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -152,7 +153,7 @@
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Redis Notes</h1>
+          <h1 class="title">Hello World in Redis</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -164,7 +165,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              15-minute read
+              10-minute read
             </span>
           </div>
           
@@ -174,401 +175,28 @@
 
       <div>
         
+          <img src='https://imgur.com/90Hyfrg.png' alt="Featured image"/>
+        
         <div class="imageblock text-center">
 <div class="content">
 <img src="https://imgur.com/90Hyfrg.png" alt="Redis Logo" width="600" height="400"/>
 </div>
 </div>
 
-<div class="sect1">
-<h2 id="_introduction_to_redis">1. Introduction to Redis</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.</p>
-</div>
-<div class="paragraph">
-<p><strong>What is a key-value pair?</strong></p>
-</div>
-<div class="paragraph">
-<p>A key-value pair is a set or pair of two linked items. Consider the following:</p>
-</div>
-<div class="paragraph">
-<p><em>car = Mercedes</em></p>
-</div>
-<div class="paragraph">
-<p>In this case, car is the key and Mercedes is the value. In a Redis database, this information can be  written using the syntax:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>SET  &#34;key1&#34; &#34;value1&#34;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Our example will translate to:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>SET &#34;car&#34; &#34;Mercedes&#34;</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_benefits_of_using_redis">1.1. Benefits of using Redis</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Unlike relational databases like MySQL, Redis is a NoSQL database that stores data as a key value pair. This makes it simple and flexible as there’s no need of creating any tables , columns and rows which are associated with relational databases. Feeding data to Redis is simple and straightforward.</p>
-</li>
-<li>
-<p>One of the apparent uses of Redis is its use as a caching system. While it does so, it also offers persistence to data being written on it.</p>
-</li>
-<li>
-<p>The in-memory architecture of Redis makes it super-fast in storage and retrieval of data.</p>
-</li>
-<li>
-<p>The redis cache system is quite robust and has the capacity of withstanding failures and interruptions.</p>
-</li>
-<li>
-<p>Redis ships with a Master-Slave replication feature. When changes are made to the master node, they are automatically replicated on the slave nodes to ensure high availability.</p>
-</li>
-<li>
-<p>Redis has the ability to store large key &amp; value pairs of up to 512 MB.</p>
-</li>
-<li>
-<p>Given its small footprint, Redis can be installed in IoT devices such as  Raspberry Pi and Arduino to  support IoT apps.</p>
-</li>
-<li>
-<p>Redis is a cross-platform database and caching system which can be installed in Windows , mac and Linux.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<p><em>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.</em></p>
 </div>
 <div class="sect1">
-<h2 id="_installation">2. Installation</h2>
+<h2 id="_hello_world_in_redis">1. Hello World in Redis</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_install_redis_on_centos_8">2.1. Install Redis on CentOS 8</h3>
-<div class="sect3">
-<h4 id="_update_system_repositories">2.1.1. Update system repositories</h4>
-<div class="paragraph">
-<p>Login to your CentOS 8 / RHEL 8 system and update system packages and repositories using the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo dnf update -y</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_install_redis_with_dnf">2.1.2. Install Redis with dnf</h4>
-<div class="paragraph">
-<p>Redis version 5.0.x is now included in CentOS 8 AppStream repository and installing it is a walk in the park. Simply run the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo dnf install redis -y</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>সংস্থাপন সম্পন্ন হলে নিচের কমান্ডটি চালিয়ে রেডিসের সংস্করণটি যাচাই করতে পারবেন:</p>
-</div>
-<div class="paragraph">
-<p>Once installed, you can verify the version of Redis installed by running the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>[arafat@server ~]$ rpm -q redis
-redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>আউটপুট থেকে, এটি স্পষ্ট যে আমরা রেডিস সংস্করণ ৫.০.৩ সংস্থাপন করেছি। রেডিসের সংস্করণ, আর্কিটেকচার, লাইসেন্স এবং সংক্ষিপ্ত বিবরণ পেতে এই কমান্ডটি চালান:</p>
-</div>
-<div class="paragraph">
-<p>From the output , it is clear that we have installed Redis version 5.0.3. To retrieve more information about Redis such as the version, architecture, license and a brief description, run the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ rpm -qi redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>রেডিস চালু করতে সিস্টেম কনট্রোল দিয়ে রেডিস চালু করতে হবে।</p>
-</div>
-<div class="paragraph">
-<p>To start Redis:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo systemctl start redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>প্রতি সিস্টেম বুটে স্বয়ংক্রিয়ভাবে রেডিস চালু করতে চাইলে সিস্টেম কনট্রোলে রেডিস সক্ষম করতে হবে:</p>
-</div>
-<div class="paragraph">
-<p>If you want to automatically start Redis in each system boot, you need to enable Redis:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo systemctl enable redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>রেডিসের অবস্থা:</p>
-</div>
-<div class="paragraph">
-<p>To see status:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo systemctl status redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>ডিফল্টভাবে, রেডিস ৬৩৭৯ পোর্টে চালিত হয়। <code>netstat</code> আদেশ চালিয়ে এটি নিশ্চিত হওয়া যাবে:</p>
-</div>
-<div class="paragraph">
-<p>By default, Redis runs on port 6379. This can be confirmed by running the <code>netstat</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo netstat -pnltu | grep redis</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configure_redis">3. Configure Redis</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_allow_remote_access">3.1. Allow Remote Access</h3>
-<div class="paragraph">
-<p>The default installation only allows connections from localhost or Redis server and blocks any external connections. We are going to configure Redis for remote connection from a client machine.</p>
-</div>
-<div class="paragraph">
-<p>Access the configuration file as shown:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo vim /etc/redis.conf</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Locate the <code>bind</code> parameter and replace <code>127.0.0.1</code> with <code>0.0.0.0</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>bind 0.0.0.0</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Save and close the configuration file. For the changes to come into effect, restart Redis.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo systemctl restart redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To log in to Redis shell, run the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ redis-cli</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Try to ping redis server. You should get a ‘PONG’ response as shown.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>[arafat@server ~]$ redis-cli
-127.0.0.1:6379&gt; ping
-PONG
-127.0.0.1:6379&gt;</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_securing_redis_server">3.2. Securing Redis Server</h3>
-<div class="paragraph">
-<p>Our Redis setup allows anyone to access the shell and databases without authentication which poses a grave security risk. To set a password, head back to the configuration file <code>/etc/redis.conf</code></p>
-</div>
-<div class="paragraph">
-<p>Locate and uncomment the <code>requirepass</code> parameter and specify a strong password.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>================================== SECURITY ===================================
-
-# Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other
-# commands.  This might be useful in environments in which you do not trust
-# others with access to the host running redis-server.
-#
-# This should stay commented out for backward compatibility and because most
-# people do not need auth (e.g. they run their own servers).
-#
-# Warning: since Redis is pretty fast an outside user can try up to
-# 150k passwords per second against a good box. This means that you should
-# use a very strong password otherwise it will be very easy to break.
-#
-# requirepass foobared</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Restart Redis and head back to the server.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo systemctl restart redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If you attempt to run any command before authenticating, the error shown below will be displayed</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>[arafat@server ~]$ redis-cli
-127.0.0.1:6379&gt; ping
-(error) NOAUTH Authentication required.
-127.0.0.1:6379&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To authenticate, type ‘auth’ followed by the password set.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>auth &#39;PASSWORD&#39;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Thereafter, you can continue running your commands.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>[arafat@server ~]$ redis-cli
-127.0.0.1:6379&gt; auth &#39;PASSWORD&#39;
-OK
-127.0.0.1:6379&gt; ping
-PONG
-127.0.0.1:6379&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To come out from redis-cli, type <code>exit</code></p>
-</div>
-<div class="sect3">
-<h4 id="_configuring_the_firewall_for_redis">3.2.1. Configuring the Firewall for Redis</h4>
-<div class="paragraph">
-<p>Lastly, we need to configure the firewall to allow remote connections to the Redis server. To do this, we need to open the redis port which is 6379.</p>
-</div>
-<div class="paragraph">
-<p>So, run the commands below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo firewall-cmd --add-port=6379/tcp --permanent
-$ sudo firewall-cmd --reload</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To access Redis remotely, use the syntax below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ redis-cli -h REDIS_IP_ADDRESS</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Next authenticate and hit ‘ENTER’</p>
-</div>
-<div class="paragraph">
-<p>The IP address of our Redis server is 192.168.1.5 The command from another client PC will be</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ redis-cli -h 192.168.1.5</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Next, provide the password and hit ‘ENTER’</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>auth &#39;PASSWORD&#39;</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_how_to_perform_redis_benchmark">3.3. How to perform Redis Benchmark</h3>
-<div class="paragraph">
-<p>Redis comes with a built-in tool known as <code>redis-benchmark</code> that gives insights on the system’s performance statistics such as data transfer rate, throughput and latency to mention a few.</p>
-</div>
-<div class="paragraph">
-<p>Some of the command options you can use with Redis include</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>-n</code>:	This defines the number of requests to be made. The default is 100000</p>
-</li>
-<li>
-<p><code>-c</code>:	Defines the number of parallel connections to be simulated. By default, this value is 50</p>
-</li>
-<li>
-<p><code>-p</code>:	This is the Redis port which by default is 6379</p>
-</li>
-<li>
-<p><code>-h</code>:	Used to define the host. By default, this value is set to localhost (127.0.0.1)</p>
-</li>
-<li>
-<p><code>-a</code>:	Used to prompt for a password if the server needs authentication</p>
-</li>
-<li>
-<p><code>-q</code>:	Stands for quiet mode. Displays the average requests made per second</p>
-</li>
-<li>
-<p><code>-t</code>:	Used to run a combination of tests</p>
-</li>
-<li>
-<p><code>-P</code>:	Used for pipelining for enhanced performance.</p>
-</li>
-<li>
-<p><code>-d</code>: Specifies the data size in bytes for GET and SET values. By default, this is set to 3 bytes</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p>To confirm the average no. of requests that your Redis server can handle run the command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ redis-benchmark -q</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_hello_world_in_redis">4. Hello World in Redis</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_ping">4.1. PING</h3>
+<h3 id="_ping">1.1. PING</h3>
 <div class="paragraph">
 <p>Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_echo">4.2. ECHO</h3>
+<h3 id="_echo">1.2. ECHO</h3>
 <div class="paragraph">
 <p>Returns message.</p>
 </div>
@@ -585,13 +213,13 @@ PONG
 </div>
 </div>
 <div class="sect2">
-<h3 id="_set">4.3. SET</h3>
+<h3 id="_set">1.3. SET</h3>
 <div class="paragraph">
 <p>Set key to hold the string value. If key already holds a value, it is overwritten, regardless of its type.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_get">4.4. GET</h3>
+<h3 id="_get">1.4. GET</h3>
 <div class="paragraph">
 <p>Get the value of key. If the key does not exist the special value nil is returned. An error is returned if the value stored at key is not a string, because GET only handles string values.</p>
 </div>
@@ -611,13 +239,13 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_incr">4.5. INCR</h3>
+<h3 id="_incr">1.5. INCR</h3>
 <div class="paragraph">
 <p>Increments the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_decr">4.6. DECR</h3>
+<h3 id="_decr">1.6. DECR</h3>
 <div class="paragraph">
 <p>Decrements the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers.</p>
 </div>
@@ -635,7 +263,7 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exists">4.7. EXISTS</h3>
+<h3 id="_exists">1.7. EXISTS</h3>
 <div class="paragraph">
 <p>Returns if key exists:
 - 1 if the key exists.
@@ -643,7 +271,7 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_del">4.8. DEL</h3>
+<h3 id="_del">1.8. DEL</h3>
 <div class="paragraph">
 <p>Removes the specified keys. A key is ignored if it does not exist.</p>
 </div>
@@ -665,7 +293,7 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_flushall">4.9. FLUSHALL</h3>
+<h3 id="_flushall">1.9. FLUSHALL</h3>
 <div class="paragraph">
 <p>Delete all the keys of all the existing databases, not just the currently selected one. This command never fails.</p>
 </div>
@@ -680,13 +308,13 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_expire">4.10. EXPIRE</h3>
+<h3 id="_expire">1.10. EXPIRE</h3>
 <div class="paragraph">
 <p>Set a timeout on key. After the timeout has expired, the key will automatically be deleted. A key with an associated timeout is often said to be volatile in Redis terminology.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ttl">4.11. TTL</h3>
+<h3 id="_ttl">1.11. TTL</h3>
 <div class="paragraph">
 <p>Returns the remaining time to live of a key that has a timeout. This introspection capability allows a Redis client to check how many seconds a given key will continue to be part of the dataset.</p>
 </div>
@@ -720,7 +348,7 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_setex">4.12. SETEX</h3>
+<h3 id="_setex">1.12. SETEX</h3>
 <div class="paragraph">
 <p>Set key to hold the string value and set key to timeout after a given number of seconds. This command is equivalent to executing the following commands:</p>
 </div>
@@ -732,7 +360,7 @@ EXPIRE mykey seconds</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_persist">4.13. PERSIST</h3>
+<h3 id="_persist">1.13. PERSIST</h3>
 <div class="paragraph">
 <p>Remove the existing timeout on key, turning the key from volatile (a key with an expire set) to persistent (a key that will never expire as no timeout is associated).</p>
 </div>
@@ -758,19 +386,19 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mset">4.14. MSET</h3>
+<h3 id="_mset">1.14. MSET</h3>
 <div class="paragraph">
 <p>Sets the given keys to their respective values. MSET replaces existing values with new values, just as regular SET. See MSETNX if you don’t want to overwrite existing values.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_append">4.15. APPEND</h3>
+<h3 id="_append">1.15. APPEND</h3>
 <div class="paragraph">
 <p>If key already exists and is a string, this command appends the value at the end of the string. If key does not exist it is created and set as an empty string, so APPEND will be similar to SET in this special case.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rename">4.16. RENAME</h3>
+<h3 id="_rename">1.16. RENAME</h3>
 <div class="paragraph">
 <p>Renames key to newkey. It returns an error when key does not exist. If newkey already exists it is overwritten, when this happens RENAME executes an implicit DEL operation, so if the deleted key contains a very big value it may cause high latency even if RENAME itself is usually a constant-time operation.</p>
 </div>
@@ -798,7 +426,7 @@ OK
 </div>
 </div>
 <div class="sect1">
-<h2 id="_redis_datatypes">5. Redis Datatypes</h2>
+<h2 id="_redis_datatypes">2. Redis Datatypes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Official Documentation: <a href="https://redis.io/topics/data-types">Redis Datatypes</a></p>
@@ -826,21 +454,21 @@ OK
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_lists">5.1. Lists</h3>
+<h3 id="_lists">2.1. Lists</h3>
 <div class="sect3">
-<h4 id="_lpush">5.1.1. LPUSH</h4>
+<h4 id="_lpush">2.1.1. LPUSH</h4>
 <div class="paragraph">
 <p>Insert all the specified values at the head of the list stored at key. If key does not exist, it is created as empty list before performing the push operations.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_lrange">5.1.2. LRANGE</h4>
+<h4 id="_lrange">2.1.2. LRANGE</h4>
 <div class="paragraph">
 <p>Returns the specified elements of the list stored at key. The offsets start and stop are zero-based indexes, with 0 being the first element of the list (the head of the list), 1 being the next element and so on.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_rpush">5.1.3. RPUSH</h4>
+<h4 id="_rpush">2.1.3. RPUSH</h4>
 <div class="paragraph">
 <p>Insert all the specified values at the tail of the list stored at key. If key does not exist, it is created as empty list before performing the push operation.</p>
 </div>
@@ -870,13 +498,13 @@ OK
 </div>
 </div>
 <div class="sect3">
-<h4 id="_lpop">5.1.4. LPOP</h4>
+<h4 id="_lpop">2.1.4. LPOP</h4>
 <div class="paragraph">
 <p>Removes and returns the first element of the list stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_rpop">5.1.5. RPOP</h4>
+<h4 id="_rpop">2.1.5. RPOP</h4>
 <div class="paragraph">
 <p>Removes and returns the last element of the list stored at key.</p>
 </div>
@@ -901,7 +529,7 @@ OK
 </div>
 </div>
 <div class="sect3">
-<h4 id="_linsert">5.1.6. LINSERT</h4>
+<h4 id="_linsert">2.1.6. LINSERT</h4>
 <div class="paragraph">
 <p>Inserts element in the list stored at key either before or after the reference value pivot.</p>
 </div>
@@ -924,21 +552,21 @@ OK
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sets">5.2. Sets</h3>
+<h3 id="_sets">2.2. Sets</h3>
 <div class="sect3">
-<h4 id="_sadd">5.2.1. SADD</h4>
+<h4 id="_sadd">2.2.1. SADD</h4>
 <div class="paragraph">
 <p>Add the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_smembers">5.2.2. SMEMBERS</h4>
+<h4 id="_smembers">2.2.2. SMEMBERS</h4>
 <div class="paragraph">
 <p>Returns all the members of the set value stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_sismember">5.2.3. SISMEMBER</h4>
+<h4 id="_sismember">2.2.3. SISMEMBER</h4>
 <div class="paragraph">
 <p>Returns if member is a member of the set stored at key.</p>
 </div>
@@ -962,19 +590,19 @@ OK
 </div>
 </div>
 <div class="sect3">
-<h4 id="_scard">5.2.4. SCARD</h4>
+<h4 id="_scard">2.2.4. SCARD</h4>
 <div class="paragraph">
 <p>Returns the set cardinality (number of elements) of the set stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_smove">5.2.5. SMOVE</h4>
+<h4 id="_smove">2.2.5. SMOVE</h4>
 <div class="paragraph">
 <p>Move member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_srem">5.2.6. SREM</h4>
+<h4 id="_srem">2.2.6. SREM</h4>
 <div class="paragraph">
 <p>Remove the specified members from the set stored at key. Specified members that are not a member of this set are ignored. If key does not exist, it is treated as an empty set and this command returns 0.</p>
 </div>
@@ -1004,27 +632,27 @@ OK</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sorted_sets">5.3. Sorted Sets</h3>
+<h3 id="_sorted_sets">2.3. Sorted Sets</h3>
 <div class="sect3">
-<h4 id="_zadd">5.3.1. ZADD</h4>
+<h4 id="_zadd">2.3.1. ZADD</h4>
 <div class="paragraph">
 <p>Adds all the specified members with the specified scores to the sorted set stored at key. It is possible to specify multiple score / member pairs. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_zrank">5.3.2. ZRANK</h4>
+<h4 id="_zrank">2.3.2. ZRANK</h4>
 <div class="paragraph">
 <p>Returns the rank of member in the sorted set stored at key, with the scores ordered from low to high. The rank (or index) is 0-based, which means that the member with the lowest score has rank 0.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_zrange">5.3.3. ZRANGE</h4>
+<h4 id="_zrange">2.3.3. ZRANGE</h4>
 <div class="paragraph">
 <p>Returns the specified range of elements in the sorted set stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_zincrby">5.3.4. ZINCRBY</h4>
+<h4 id="_zincrby">2.3.4. ZINCRBY</h4>
 <div class="paragraph">
 <p>Increments the score of member in the sorted set stored at key by increment. If member does not exist in the sorted set, it is added with increment as its score (as if its previous score was 0.0). If key does not exist, a new sorted set with the specified member as its sole member is created.</p>
 </div>
@@ -1062,21 +690,21 @@ OK</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_hash">5.4. Hash</h3>
+<h3 id="_hash">2.4. Hash</h3>
 <div class="sect3">
-<h4 id="_hset">5.4.1. HSET</h4>
+<h4 id="_hset">2.4.1. HSET</h4>
 <div class="paragraph">
 <p>Sets field in the hash stored at key to value. If key does not exist, a new key holding a hash is created. If field already exists in the hash, it is overwritten.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hget">5.4.2. HGET</h4>
+<h4 id="_hget">2.4.2. HGET</h4>
 <div class="paragraph">
 <p>Returns the value associated with field in the hash stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hgetall">5.4.3. HGETALL</h4>
+<h4 id="_hgetall">2.4.3. HGETALL</h4>
 <div class="paragraph">
 <p>Returns all fields and values of the hash stored at key. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash.</p>
 </div>
@@ -1097,19 +725,19 @@ OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hmset">5.4.4. HMSET</h4>
+<h4 id="_hmset">2.4.4. HMSET</h4>
 <div class="paragraph">
 <p>Sets the specified fields to their respective values in the hash stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hkeys">5.4.5. HKEYS</h4>
+<h4 id="_hkeys">2.4.5. HKEYS</h4>
 <div class="paragraph">
 <p>Returns all field names in the hash stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hvals">5.4.6. HVALS</h4>
+<h4 id="_hvals">2.4.6. HVALS</h4>
 <div class="paragraph">
 <p>Returns all values in the hash stored at key.</p>
 </div>
@@ -1136,19 +764,19 @@ OK
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hincrby">5.4.7. HINCRBY</h4>
+<h4 id="_hincrby">2.4.7. HINCRBY</h4>
 <div class="paragraph">
 <p>Increments the number stored at field in the hash stored at key by increment.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hdel">5.4.8. HDEL</h4>
+<h4 id="_hdel">2.4.8. HDEL</h4>
 <div class="paragraph">
 <p>Removes the specified fields from the hash stored at key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hlen">5.4.9. HLEN</h4>
+<h4 id="_hlen">2.4.9. HLEN</h4>
 <div class="paragraph">
 <p>Returns the number of fields contained in the hash stored at key.</p>
 </div>
@@ -1172,10 +800,10 @@ OK
 </div>
 </div>
 <div class="sect1">
-<h2 id="_redis_persistence">6. Redis Persistence</h2>
+<h2 id="_redis_persistence">3. Redis Persistence</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Official Documentation: <a href="https://redis.io/topics/persistence" target="_blank" rel="noopener">Read More Here</a></p>
+<p>Official Documentation: <a href="https://redis.io/topics/persistence" target="_blank" rel="noopener">Redis Persistence</a></p>
 </div>
 </div>
 </div>
@@ -1185,6 +813,30 @@ OK
 
       <footer>
         
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3>See also in redis</h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="https://www.arafathasan.live/en/prowritings/chapters/redis-intro/">Redis Introduction and Installation</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
 
 
         <div id="disqus_thread"></div>

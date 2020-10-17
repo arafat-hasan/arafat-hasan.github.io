@@ -16,14 +16,23 @@
     </item>
     
     <item>
-      <title>Redis Notes</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/redis/</link>
+      <title>Hello World in Redis</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis/</guid>
-      <description>1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker. Redis supports a wide array of data structures including sets, lists, hashes, strings, HyperLogLogs and so many more.
- What is a key-value pair?
- A key-value pair is a set or pair of two linked items.</description>
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis-hello-world/</guid>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk. This command is often used to test if a connection is still alive, or to measure latency.</description>
+    </item>
+    
+    <item>
+      <title>Redis Introduction and Installation</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/redis-intro/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/redis-intro/</guid>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
+ 1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker.</description>
     </item>
     
     <item>
