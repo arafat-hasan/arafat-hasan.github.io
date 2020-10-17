@@ -12,11 +12,11 @@
     <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Redis Introduction and Installation"/>
+<meta name="twitter:title" content="Hello World in Redis"/>
 <meta name="twitter:description" content="This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
  1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker."/>
 
-    <meta property="og:title" content="Redis Introduction and Installation" />
+    <meta property="og:title" content="Hello World in Redis" />
 <meta property="og:description" content="This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
  1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker." />
 <meta property="og:type" content="article" />
@@ -27,7 +27,7 @@
 
 
     <title>
-  Redis Introduction and Installation · Arafat Hasan
+  Hello World in Redis · Arafat Hasan
 </title>
 
     
@@ -54,6 +54,8 @@
       
     
 
+    
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/base16.solarized.light.css" />
     
       <link rel="stylesheet" href="https://www.arafathasan.live/css/custom.css" />
     
@@ -150,7 +152,7 @@
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Redis Introduction and Installation</h1>
+          <h1 class="title">Hello World in Redis</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -172,7 +174,7 @@
 
       <div>
         
-          <img src='https://imgur.com/90Hyfrg.png' alt="Featured image"/>
+          <img src='./../../images/90Hyfrg.png' alt="Featured image"/>
         
         
 <div class="paragraph">
@@ -198,7 +200,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>SET  &#34;key1&#34; &#34;value1&#34;</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>SET  &#34;key1&#34; &#34;value1&#34;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -206,7 +210,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>SET &#34;car&#34; &#34;Mercedes&#34;</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>SET &#34;car&#34; &#34;Mercedes&#34;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -254,7 +260,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo dnf update -y</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo dnf update -y
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -265,7 +273,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo dnf install redis -y</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo dnf install redis -y
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -276,8 +286,11 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>[arafat@server ~]$ rpm -q redis
-redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>[arafat@server ~]$ rpm -q redis
+redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -288,7 +301,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ rpm -qi redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ rpm -qi redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -299,7 +314,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl start redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo systemctl start redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -310,7 +327,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl enable redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo systemctl enable redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -321,7 +340,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl status redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo systemctl status redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -332,7 +353,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo netstat -pnltu | grep redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo netstat -pnltu | grep redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -352,7 +375,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo vim /etc/redis.conf</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo vim /etc/redis.conf
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -360,7 +385,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>bind 0.0.0.0</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>bind 0.0.0.0
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -368,7 +395,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl restart redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo systemctl restart redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -376,7 +405,9 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ redis-cli</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ redis-cli
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -384,10 +415,15 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>[arafat@server ~]$ redis-cli
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>[arafat@server ~]$ redis-cli
 127.0.0.1:6379&gt; ping
 PONG
-127.0.0.1:6379&gt;</pre>
+127.0.0.1:6379&gt;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -401,7 +437,21 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>================================== SECURITY ===================================
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre>================================== SECURITY ===================================
 
 # Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other
 # commands.  This might be useful in environments in which you do not trust
@@ -414,7 +464,8 @@ PONG
 # 150k passwords per second against a good box. This means that you should
 # use a very strong password otherwise it will be very easy to break.
 #
-# requirepass foobared</pre>
+# requirepass foobared
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -422,7 +473,9 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl restart redis</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ sudo systemctl restart redis
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -430,10 +483,15 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>[arafat@server ~]$ redis-cli
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>[arafat@server ~]$ redis-cli
 127.0.0.1:6379&gt; ping
 (error) NOAUTH Authentication required.
-127.0.0.1:6379&gt;</pre>
+127.0.0.1:6379&gt;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -441,7 +499,9 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>auth &#39;PASSWORD&#39;</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>auth &#39;PASSWORD&#39;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -449,12 +509,19 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>[arafat@server ~]$ redis-cli
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>[arafat@server ~]$ redis-cli
 127.0.0.1:6379&gt; auth &#39;PASSWORD&#39;
 OK
 127.0.0.1:6379&gt; ping
 PONG
-127.0.0.1:6379&gt;</pre>
+127.0.0.1:6379&gt;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -470,8 +537,11 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo firewall-cmd --add-port=6379/tcp --permanent
-$ sudo firewall-cmd --reload</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>$ sudo firewall-cmd --add-port=6379/tcp --permanent
+$ sudo firewall-cmd --reload
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -479,7 +549,9 @@ $ sudo firewall-cmd --reload</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ redis-cli -h REDIS_IP_ADDRESS</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ redis-cli -h REDIS_IP_ADDRESS
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -490,7 +562,9 @@ $ sudo firewall-cmd --reload</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ redis-cli -h 192.168.1.5</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ redis-cli -h 192.168.1.5
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -498,7 +572,9 @@ $ sudo firewall-cmd --reload</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>auth &#39;PASSWORD&#39;</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>auth &#39;PASSWORD&#39;
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -550,7 +626,9 @@ $ sudo firewall-cmd --reload</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ redis-benchmark -q</pre>
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>$ redis-benchmark -q
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
