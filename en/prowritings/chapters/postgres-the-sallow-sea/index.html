@@ -7,21 +7,18 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Arafat Hasan">
-    <meta name="description" content="1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.
- At first, we check the table description, and we have found that the id column is a PRIMARY KEY.
- \d person;    Table &#34;public.person&#34; Column | Type | Collation | Nullable | Default ------------------&#43;------------------------&#43;-----------&#43;----------&#43;------------------------------------ id | bigint | | not null | nextval(&#39;person_id_seq&#39;::regclass) first_name | character varying(50) | | not null | last_name | character varying(50) | | not null | email | character varying(150) | | | gender | character varying(7) | | not null | date_of_birth | date | | not null | country_of_birth | character varying(50) | | not null | Indexes: &#34;person_pkey&#34; PRIMARY KEY, btree (id)   Now we will try to add a duplicate value to the table.">
+    <meta name="description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.">
     <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL: The Sallow Sea"/>
-<meta name="twitter:description" content="1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.
- At first, we check the table description, and we have found that the id column is a PRIMARY KEY.
- \d person;    Table &#34;public.person&#34; Column | Type | Collation | Nullable | Default ------------------&#43;------------------------&#43;-----------&#43;----------&#43;------------------------------------ id | bigint | | not null | nextval(&#39;person_id_seq&#39;::regclass) first_name | character varying(50) | | not null | last_name | character varying(50) | | not null | email | character varying(150) | | | gender | character varying(7) | | not null | date_of_birth | date | | not null | country_of_birth | character varying(50) | | not null | Indexes: &#34;person_pkey&#34; PRIMARY KEY, btree (id)   Now we will try to add a duplicate value to the table."/>
+<meta name="twitter:description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key."/>
 
     <meta property="og:title" content="PostgreSQL: The Sallow Sea" />
-<meta property="og:description" content="1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.
- At first, we check the table description, and we have found that the id column is a PRIMARY KEY.
- \d person;    Table &#34;public.person&#34; Column | Type | Collation | Nullable | Default ------------------&#43;------------------------&#43;-----------&#43;----------&#43;------------------------------------ id | bigint | | not null | nextval(&#39;person_id_seq&#39;::regclass) first_name | character varying(50) | | not null | last_name | character varying(50) | | not null | email | character varying(150) | | | gender | character varying(7) | | not null | date_of_birth | date | | not null | country_of_birth | character varying(50) | | not null | Indexes: &#34;person_pkey&#34; PRIMARY KEY, btree (id)   Now we will try to add a duplicate value to the table." />
+<meta property="og:description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/" />
 <meta property="article:published_time" content="2020-08-12T00:00:00+00:00" />
@@ -189,7 +186,11 @@
         
           <img src='./../../images/postgres/postgres-logo.png' alt="Featured image"/>
         
-        <div class="sect1">
+        
+<div class="paragraph">
+<p><em>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.</em></p>
+</div>
+<div class="sect1">
 <h2 id="_the_shallow_sea">1. The Shallow Sea</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -1226,13 +1227,17 @@ test=# SELECT * FROM person_id_seq ;
 <div class="sect2">
 <h3 id="_uuid_datatype">1.11. UUID Datatype</h3>
 <div class="paragraph">
-<p>From wikipedia:
-    &gt; A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. The term globally unique identifier (GUID) is also used, typically in software created by Microsoft.</p>
+<p>From wikipedia:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>&gt; When generated according to the standard methods, UUIDs are, for practical purposes, unique. Their uniqueness does not depend on a central registration authority or coordination between the parties generating them, unlike most other numbering schemes. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible.</pre>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. The term globally unique identifier (GUID) is also used, typically in software created by Microsoft.</p>
 </div>
+<div class="paragraph">
+<p>When generated according to the standard methods, UUIDs are, for practical purposes, unique. Their uniqueness does not depend on a central registration authority or coordination between the parties generating them, unlike most other numbering schemes. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible.</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>We have to add the uuid-ossp extension:</p>

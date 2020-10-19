@@ -41,8 +41,8 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</guid>
-      <description>1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
- PostgreSQL has earned a strong reputation for its proven architecture, reliability, data integrity, robust feature set, extensibility, and the dedication of the open source community behind the software to consistently deliver performant and innovative solutions. PostgreSQL runs on all major operating systems, including Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64), and Windows.</description>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
     </item>
     
     <item>
@@ -51,9 +51,8 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</guid>
-      <description>1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.
- At first, we check the table description, and we have found that the id column is a PRIMARY KEY.
- \d person;    Table &amp;#34;public.person&amp;#34; Column | Type | Collation | Nullable | Default ------------------+------------------------+-----------+----------+------------------------------------ id | bigint | | not null | nextval(&amp;#39;person_id_seq&amp;#39;::regclass) first_name | character varying(50) | | not null | last_name | character varying(50) | | not null | email | character varying(150) | | | gender | character varying(7) | | not null | date_of_birth | date | | not null | country_of_birth | character varying(50) | | not null | Indexes: &amp;#34;person_pkey&amp;#34; PRIMARY KEY, btree (id)   Now we will try to add a duplicate value to the table.</description>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.</description>
     </item>
     
     <item>
@@ -62,10 +61,8 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</guid>
-      <description>1. The Surface Sea 1.1. Mockaroo Data Generator We will use a site named Mockaroo to insert a lot of data into our table for our learning convenience. Mockaroo is an online realist test data generator. We will download a bunch of dummy but realistic data in SQL format and execute the SQL file in the terminal.
- 
- Notes:
-   Field Names and types in Mockaroo according to the image above.</description>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Surface Sea 1.1. Mockaroo Data Generator We will use a site named Mockaroo to insert a lot of data into our table for our learning convenience. Mockaroo is an online realist test data generator.</description>
     </item>
     
     <item>
@@ -74,22 +71,11 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</guid>
-      <description>1. Some Very First Commands   \q: Quit/Exit
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. Some Very First Commands   \q: Quit/Exit
   \l: List all databases in the current PostgreSQL database server
   \h: Show the list of SQL commands
-  \c database: Connect to a database
-  \d: To describe (list) what tables are in the database
-  \d table: Show table definition (columns, etc.) including triggers
-  \i filename: to run (include) a script file of SQL commands</description>
-    </item>
-    
-    <item>
-      <title>PostgresSQL Notes</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres/</guid>
-      <description>Table of Content  Introduction to PostgreSQL 🚧 Installation  Install PostgreSQL in Ubuntu Install PostgreSQL in CentOS  Method 1: PostgreSQL Yum Repository Method 2: Using DNF     Initial Configuration  Creating a New PostgreSQL Database Cluster Understanding PostgreSQL Roles and Databases Creating a New Postgres Role   Some Very First Commands  Examples CREATE DATABASE DROP DATABASE CREATE TABLE Table Definition INSERT INTO SELECT DROP TABLE   The Surface Sea  Mockaroo Data Generator ORDER BY  ASC DESC ORDER BY with Two-parameter   DISTINCT WHERE  BETWEEN LIKE   GROUP BY  GROUP BY with ORDER BY GROUP BY HAVING   COALESCE Another Table Called car Basic Functions  MAX MIN AVG ROUND COUNT SUM   Basic Arithmetic Operations Discount Calculation ALIAS NULLIF DATE  NOW Addition and Subtraction of Date  INTERVAL   EXTRACT AGE     The Shallow Sea  PRIMARY KEY CONSTRAINTS  UNIQUE constraint CHECK Constraint   DELETE UPDATE ON CONFLICT  DO NOTHING DO UPDATE SET   Foreign Keys, Joins and Relationships  Delete Record with Foreign Keys   JOIN  INNER JOIN LEFT JOIN RIGHT JOIN FULL OUTER JOIN   Exporting Query Results to CSV Serials and Sequences Extensions UUID Datatype  UUID as Primary Key      Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
+  \c database: Connect to a database</description>
     </item>
     
   </channel>
