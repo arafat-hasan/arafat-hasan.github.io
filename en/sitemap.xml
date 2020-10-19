@@ -138,7 +138,32 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/postgressql/</loc>
+    <loc>https://www.arafathasan.live/en/series/postgresql/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/tags/postgresql/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   

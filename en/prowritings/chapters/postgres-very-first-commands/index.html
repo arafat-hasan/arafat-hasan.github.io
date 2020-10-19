@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Arafat Hasan">
+    <meta name="description" content="1. Some Very First Commands   \q: Quit/Exit
+  \l: List all databases in the current PostgreSQL database server
+  \h: Show the list of SQL commands
+  \c database: Connect to a database
+  \d: To describe (list) what tables are in the database
+  \d table: Show table definition (columns, etc.) including triggers
+  \i filename: to run (include) a script file of SQL commands">
+    <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PostgreSQL: Very First Commands"/>
+<meta name="twitter:description" content="1. Some Very First Commands   \q: Quit/Exit
+  \l: List all databases in the current PostgreSQL database server
+  \h: Show the list of SQL commands
+  \c database: Connect to a database
+  \d: To describe (list) what tables are in the database
+  \d table: Show table definition (columns, etc.) including triggers
+  \i filename: to run (include) a script file of SQL commands"/>
+
+    <meta property="og:title" content="PostgreSQL: Very First Commands" />
+<meta property="og:description" content="1. Some Very First Commands   \q: Quit/Exit
+  \l: List all databases in the current PostgreSQL database server
+  \h: Show the list of SQL commands
+  \c database: Connect to a database
+  \d: To describe (list) what tables are in the database
+  \d table: Show table definition (columns, etc.) including triggers
+  \i filename: to run (include) a script file of SQL commands" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/" />
+<meta property="article:published_time" content="2020-08-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-12T00:00:00+00:00" /><meta property="og:site_name" content="Arafat Hasan" />
+
+
+
+    <title>
+  PostgreSQL: Very First Commands · Arafat Hasan
+</title>
+
+    
+      <link rel="canonical" href="https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.arafathasan.live/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/base16.solarized.light.css" />
+    
+      <link rel="stylesheet" href="https://www.arafathasan.live/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://www.arafathasan.live/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.arafathasan.live/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.75.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.arafathasan.live/en">
+      Arafat Hasan
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/about/">About Me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/prowritings/">Tech Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/">Contact</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://www.arafathasan.live/en/comment-policy/">Policy</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="https://www.arafathasan.live/bn/">বাংলা</a>
+              </li>
+            
+          
+            
+          
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">PostgreSQL: Very First Commands</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2020-08-12T00:00:00Z'>
+                August 12, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://www.arafathasan.live/en/categories/professional-writings/">professional writings</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="https://www.arafathasan.live/en/tags/postgresql/">postgresql</a>
+      <span class="separator">•</span>
+    <a href="https://www.arafathasan.live/en/tags/note/">note</a>
+      <span class="separator">•</span>
+    <a href="https://www.arafathasan.live/en/tags/postgres/">postgres</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+          <img src='./../../images/postgres/postgres-logo.png' alt="Featured image"/>
+        
+        <div class="sect1">
+<h2 id="_some_very_first_commands">1. Some Very First Commands</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>\q</code>: Quit/Exit</p>
+</li>
+<li>
+<p><code>\l</code>:  List all databases in the current PostgreSQL database server</p>
+</li>
+<li>
+<p><code>\h</code>: Show the list of SQL commands</p>
+</li>
+<li>
+<p><code>\c <em>database</em></code>:  Connect to a database</p>
+</li>
+<li>
+<p><code>\d</code>: To describe (list) what tables are in the database</p>
+</li>
+<li>
+<p><code>\d <em>table</em></code>: Show table definition (columns, etc.) including triggers</p>
+</li>
+<li>
+<p><code>\i <em>filename</em></code>: to run (include) a script file of SQL commands</p>
+</li>
+<li>
+<p><code>\w <em>filename</em></code>: To write the last SQL command to a file</p>
+</li>
+<li>
+<p><code>\h <em>command</em></code>: Show syntax on this SQL command</p>
+</li>
+<li>
+<p><code>\?</code>: Show the list of postgres commands</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_examples">1.1. Examples</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>[arafat@server ~]$ psql
+psql (12.3)
+Type &amp;quot;help&amp;quot; for help.
+
+arafat=# \l
+                                   List of databases
+     Name     |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+--------------+----------+----------+-------------+-------------+-----------------------
+ arafat       | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+              |          |          |             |             | postgres=CTc/postgres
+ template1    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+              |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+arafat=# \h CREATE DATABASE;
+Command:     CREATE DATABASE
+Description: create a new database
+Syntax:
+CREATE DATABASE name
+    [ [ WITH ] [ OWNER [=] user_name ]
+           [ TEMPLATE [=] template ]
+           [ ENCODING [=] encoding ]
+           [ LC_COLLATE [=] lc_collate ]
+           [ LC_CTYPE [=] lc_ctype ]
+           [ TABLESPACE [=] tablespace_name ]
+           [ ALLOW_CONNECTIONS [=] allowconn ]
+           [ CONNECTION LIMIT [=] connlimit ]
+           [ IS_TEMPLATE [=] istemplate ] ]
+
+URL: https://www.postgresql.org/docs/12/sql-createdatabase.html</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_database">1.2. CREATE DATABASE</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>arafat=# CREATE DATABASE test;
+CREATE DATABASE
+arafat=# \l
+                                     List of databases
+     Name     |    Owner     | Encoding |   Collate   |    Ctype    |   Access privileges
+--------------+--------------+----------+-------------+-------------+-----------------------
+ arafat       | postgres     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres     | postgres     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0    | postgres     | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+              |              |          |             |             | postgres=CTc/postgres
+ template1    | postgres     | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+              |              |          |             |             | postgres=CTc/postgres
+ test         | arafat       | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+(5 rows)
+
+arafat=# \c test;
+You are now connected to database &amp;quot;test&amp;quot; as user &amp;quot;arafat&amp;quot;.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_drop_database">1.3. DROP DATABASE</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>arafat_hasan=# DROP DATABASE test;
+DROP DATABASE</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_table">1.4. CREATE TABLE</h3>
+<div class="paragraph">
+<p>We have to create a database again as we deleted the <code>test</code> database in the previous step. Here <code>\d</code> a list of tables, and there is no table in our newly created database.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>arafat=# CREATE DATABASE test;
+CREATE DATABASE
+test=# \d
+Did not find any relations.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now here we are creating a new table named <code>person</code>:</p>
+</div>
+<div class="paragraph">
+<p><sub><em>Command</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">person</span> <span class="p">(</span>
+ <span class="n">id</span> <span class="n">BIGSERIAL</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+ <span class="n">first_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+ <span class="n">last_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+ <span class="n">gender</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+ <span class="n">date_of_birth</span> <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+ <span class="n">email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">));</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub><em>Output</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>CREATE TABLE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now check the list of tables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>test=# \d
+                List of relations
+ Schema |     Name      |   Type   |    Owner
+--------+---------------+----------+--------------
+ public | person        | table    | arafat_hasan
+ public | person_id_seq | sequence | arafat_hasan
+(2 rows)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>person_id_seq</code> is not a table, it is a sequence to maintain and increment the <code>BIGSERIAL</code> value in the <code>person</code> table. The keyword <code>NOT NULL</code> means that this field can not be null or blank, we must have enter data for that field. Someone may not have email, so have kept the field as optional.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_table_definition">1.5. Table Definition</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>test=#  \d person;
+                                       Table &#34;public.person&#34;
+    Column     |          Type          | Collation | Nullable |              Default
+---------------+------------------------+-----------+----------+------------------------------------
+ id            | bigint                 |           | not null | nextval(&#39;person_id_seq&#39;::regclass)
+ first_name    | character varying(50)  |           | not null |
+ last_name     | character varying(50)  |           | not null |
+ gender        | character varying(50)  |           | not null |
+ date_of_birth | date                   |           | not null |
+ email         | character varying(150) |           |          |
+Indexes:
+    &#34;person_pkey&#34; PRIMARY KEY, btree (id)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_insert_into">1.6. INSERT INTO</h3>
+<div class="paragraph">
+<p>Notice that, as email is not <code>NOT NULL</code> so it is optional to insert into the table.</p>
+</div>
+<div class="paragraph">
+<p><sub><em>Command</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">person</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="p">)</span>
+ <span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;Anne&#39;</span><span class="p">,</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="nb">DATE</span> <span class="s1">&#39;1988-01-09&#39;</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub><em>Output</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>INSERT 0 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub><em>Command</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">person</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+ <span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="nb">DATE</span> <span class="s1">&#39;1985-11-03&#39;</span><span class="p">,</span> <span class="s1">&#39;jack@example.com&#39;</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub><em>Output</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>INSERT 0 1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_select">1.7. SELECT</h3>
+<div class="paragraph">
+<p>Fetch all data from table:</p>
+</div>
+<div class="paragraph">
+<p><sub><em>Command</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">person</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub><em>Output</em></sub></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code> id | first_name | last_name | gender | date_of_birth |      email
+----+------------+-----------+--------+---------------+------------------
+  1 | Anne       | Smith     | female | 1988-01-09    |
+  2 | Jack       | Doe       | male   | 1985-11-03    | jack@example.com
+(2 rows)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_drop_table">1.8. DROP TABLE</h3>
+<div class="paragraph">
+<p>Now we want to delete our table <code>person</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>test=# DROP TABLE person;
+DROP TABLE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3>See also in PostgreSQL</h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/">PostgreSQL Introduction and Installation</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/">PostgreSQL: The Sallow Sea</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/">PostgreSQL: The Surface Sea</a>
+            </li>
+          
+        
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "arafathasan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Want to talk? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a></p>
+      
+      
+        ©
+        
+        2020
+         Arafat Hasan 
+      
+      
+        
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://www.arafathasan.live/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178245243-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+    
+
+  </body>
+
+</html>

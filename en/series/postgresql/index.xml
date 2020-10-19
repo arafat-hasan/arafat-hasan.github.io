@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostgreSQL on Arafat Hasan</title>
+    <link>https://www.arafathasan.live/en/series/postgresql/</link>
+    <description>Recent content in PostgreSQL on Arafat Hasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/series/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL Introduction and Installation</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</guid>
+      <description>1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+ PostgreSQL has earned a strong reputation for its proven architecture, reliability, data integrity, robust feature set, extensibility, and the dedication of the open source community behind the software to consistently deliver performant and innovative solutions. PostgreSQL runs on all major operating systems, including Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64), and Windows.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL: The Sallow Sea</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</guid>
+      <description>1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.
+ At first, we check the table description, and we have found that the id column is a PRIMARY KEY.
+ \d person;    Table &amp;#34;public.person&amp;#34; Column | Type | Collation | Nullable | Default ------------------+------------------------+-----------+----------+------------------------------------ id | bigint | | not null | nextval(&amp;#39;person_id_seq&amp;#39;::regclass) first_name | character varying(50) | | not null | last_name | character varying(50) | | not null | email | character varying(150) | | | gender | character varying(7) | | not null | date_of_birth | date | | not null | country_of_birth | character varying(50) | | not null | Indexes: &amp;#34;person_pkey&amp;#34; PRIMARY KEY, btree (id)   Now we will try to add a duplicate value to the table.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL: The Surface Sea</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</guid>
+      <description>1. The Surface Sea 1.1. Mockaroo Data Generator We will use a site named Mockaroo to insert a lot of data into our table for our learning convenience. Mockaroo is an online realist test data generator. We will download a bunch of dummy but realistic data in SQL format and execute the SQL file in the terminal.
+ 
+ Notes:
+   Field Names and types in Mockaroo according to the image above.</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL: Very First Commands</title>
+      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</guid>
+      <description>1. Some Very First Commands   \q: Quit/Exit
+  \l: List all databases in the current PostgreSQL database server
+  \h: Show the list of SQL commands
+  \c database: Connect to a database
+  \d: To describe (list) what tables are in the database
+  \d table: Show table definition (columns, etc.) including triggers
+  \i filename: to run (include) a script file of SQL commands</description>
+    </item>
+    
+  </channel>
+</rss>

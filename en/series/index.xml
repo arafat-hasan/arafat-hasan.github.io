@@ -15,5 +15,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://www.arafathasan.live/en/series/postgresql/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/series/postgresql/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
