@@ -96,20 +96,20 @@ disqusShortname = "arafathasan"
         [languages.en.menu]
 
             [[languages.en.menu.main]]
-                name = "About"
+                name = "About Me"
                 identifier = "enAbout"
                 weight = 1
                 url = "/en/about/"
                 
             [[languages.en.menu.main]]
-                name = "Tech"
+                name = "Tech Blog"
                 identifier = "enTech"
                 weight = 2
                 url = "/en/prowritings/"
 
 
             [[languages.en.menu.main]]
-                name = "Contact me"
+                name = "Contact"
                 identifier = "enContact"
                 weight = 5
                 url = ""
@@ -136,19 +136,19 @@ disqusShortname = "arafathasan"
         [languages.bn.menu]
 
             [[languages.bn.menu.main]]
-                name = "জানুন"
+                name = "আমার সম্পর্কে"
                 identifier = "bnAbout"
                 weight = 1
                 url = "/bn/about/"
 
             [[languages.bn.menu.main]]
-                name = "লেখা"
+                name = "ব্লগ"
                 identifier = "bnBlog"
                 weight = 2
                 url = "/bn/writings/"
 
             [[languages.bn.menu.main]]
-                name = "যোগাযোগ করুন"
+                name = "যোগাযোগ"
                 identifier = "bnContact"
                 weight = 5
                 url = ""
