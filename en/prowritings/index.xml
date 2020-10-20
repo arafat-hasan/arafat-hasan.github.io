@@ -42,7 +42,7 @@
       
       <guid>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.</description>
+ 1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
     </item>
     
     <item>

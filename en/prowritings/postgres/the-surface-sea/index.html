@@ -164,7 +164,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              17-minute read
+              19-minute read
             </span>
           </div>
           <div class="categories">
@@ -231,7 +231,17 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">person</span> <span class="p">(</span>
+<pre class="rouge highlight"><code data-lang="sql"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+</pre></td><td class="code"><pre><span class="k">create</span> <span class="k">table</span> <span class="n">person</span> <span class="p">(</span>
 	<span class="n">id</span> <span class="n">BIGSERIAL</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
 	<span class="n">first_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
 	<span class="n">last_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -240,7 +250,8 @@
 	<span class="n">date_of_birth</span> <span class="nb">DATE</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
 	<span class="n">country_of_birth</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
 <span class="p">);</span>
-<span class="c1">-- More lines containing INSERT command, We are not showing them here.</span></code></pre>
+<span class="c1">-- More lines containing INSERT command, We are not showing them here.</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -259,7 +270,17 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>test=# \d person;
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+</pre></td><td class="code"><pre>test=# \d person;
                            Table &#34;public.person&#34;
       Column      |          Type          | Collation | Nullable | Default
 ------------------+------------------------+-----------+----------+---------
@@ -268,7 +289,8 @@
  email            | character varying(150) |           |          |
  gender           | character varying(7)   |           | not null |
  date_of_birth    | date                   |           | not null |
- country_of_birth | character varying(50)  |           | not null |</code></pre>
+ country_of_birth | character varying(50)  |           | not null |
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -287,7 +309,25 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
     1 | Ronda          | Skermer             | rskermer0@arstechnica.com               | Female | 1993-06-30    | Argentina
     2 | Hamid          | Abbett              | habbett1@cbc.ca                         | Male   | 1995-08-31    | Ethiopia
@@ -304,7 +344,8 @@
    13 | Neale          | Dubery              | nduberyc@soundcloud.com                 | Male   | 1975-12-22    | Portugal
    14 | Gnni           | Dickman             | gdickmand@people.com.cn                 | Female | 1977-10-12    | Guatemala
    15 | Flori          | Giroldi             | fgiroldie@ameblo.jp                     | Female | 1975-11-14    | China
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -323,7 +364,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name
 ------+----------------+---------------------
     1 | Ronda          | Skermer
     2 | Hamid          | Abbett
@@ -335,7 +389,8 @@
     8 | Letta          | Caurah
     9 | Elset          | Agass
    10 | Aurore         | Drillingcourt
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -362,7 +417,19 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   475 | Koren          | Burgen              |                                         | Female | 1985-09-16    | Afghanistan
   223 | Collen         | Raubheim            | craubheim66@gravatar.com                | Female | 1968-01-31    | Afghanistan
@@ -373,7 +440,8 @@
   583 | Nikolia        | Whodcoat            | nwhodcoatg6@army.mil                    | Female | 1993-01-01    | Albania
   751 | Kyrstin        | Wimpenny            | kwimpennyku@slideshare.net              | Female | 1986-07-12    | Algeria
   837 | Dalis          | McLinden            |                                         | Male   | 1989-09-24    | Angola
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -395,7 +463,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   563 | Meredeth       | Pantin              |                                         | Male   | 1971-02-22    | Zambia
   173 | Pennie         | Christauffour       | pchristauffour4s@scientificamerican.com | Male   | 2004-04-16    | Zambia
@@ -407,7 +488,8 @@
   725 | Sadye          | Garman              |                                         | Female | 1985-11-05    | Yemen
   537 | Isadore        | Tasker              | itaskerew@example.com                   | Male   | 1977-03-05    | Vietnam
   602 | Nevins         | Blenkinship         | nblenkinshipgp@psu.edu                  | Male   | 2010-02-04    | Vietnam
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -426,7 +508,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   307 | Penni          | Privost             |                                         | Female | 2010-08-07    | Indonesia
    43 | Kathye         | Bottleson           | kbottleson16@google.pl                  | Female | 2010-06-27    | China
@@ -438,7 +533,8 @@
   974 | Noll           | Pidgin              | npidginr1@wiley.com                     | Male   | 2010-04-13    | Indonesia
   676 | Edwina         | Presdee             | epresdeeir@icio.us                      | Female | 2010-04-10    | China
   813 | Terri          | Blockey             | tblockeymk@gnu.org                      | Female | 2010-04-08    | China
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -460,7 +556,16 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre>  id  |   first_name   |      last_name      |                  email                  | gender | date_of_birth |         country_of_birth
 ------+----------------+---------------------+-----------------------------------------+--------+---------------+----------------------------------
   223 | Collen         | Raubheim            | craubheim66@gravatar.com                | Female | 1968-01-31    | Afghanistan
   475 | Koren          | Burgen              |                                         | Female | 1985-09-16    | Afghanistan
@@ -468,7 +573,8 @@
   583 | Nikolia        | Whodcoat            | nwhodcoatg6@army.mil                    | Female | 1993-01-01    | Albania
   662 | Una            | Chevis              | uchevisid@whitehouse.gov                | Female | 2001-10-03    | Albania
   831 | Cordy          | Aries               |                                         | Male   | 2007-07-06    | Albania
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -491,7 +597,24 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>         country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre>         country_of_birth
 ----------------------------------
  Afghanistan
  Albania
@@ -507,7 +630,8 @@
  Bolivia
  Bosnia and Herzegovina
  Brazil
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -529,7 +653,17 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> id  |   first_name   |      last_name      |                 email                 | gender | date_of_birth |     country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+</pre></td><td class="code"><pre> id  |   first_name   |      last_name      |                 email                 | gender | date_of_birth |     country_of_birth
 -----+----------------+---------------------+---------------------------------------+--------+---------------+--------------------------
    1 | Ronda          | Skermer             | rskermer0@arstechnica.com             | Female | 1993-06-30    | Argentina
    4 | Erminie        | M&#39;Quharg            | emquharg3@e-recht24.de                | Female | 1999-03-13    | Mozambique
@@ -538,7 +672,8 @@
   10 | Aurore         | Drillingcourt       | adrillingcourt9@cnet.com              | Female | 1977-10-19    | China
   11 | Ilse           | Goldman             | igoldmana@ihg.com                     | Female | 2001-07-31    | Mongolia
   12 | Penny          | Nayer               | pnayerb@harvard.edu                   | Female | 1969-02-05    | Colombia
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -562,7 +697,18 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> id  | first_name |  last_name   |            email             | gender | date_of_birth |   country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+</pre></td><td class="code"><pre> id  | first_name |  last_name   |            email             | gender | date_of_birth |   country_of_birth
 -----+------------+--------------+------------------------------+--------+---------------+-----------------------
   25 | Billi      | Dybbe        | bdybbeo@samsung.com          | Female | 1986-02-22    | Brazil
   37 | Sorcha     | Tunesi       | stunesi10@adobe.com          | Female | 1986-04-12    | Philippines
@@ -572,7 +718,8 @@
  157 | Juline     | Wanek        |                              | Female | 1985-11-30    | Sweden
  162 | Amelia     | Braferton    |                              | Female | 1986-05-03    | New Zealand
  168 | West       | Glowacz      | wglowacz4n@yolasite.com      | Male   | 1985-12-02    | Canada
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -610,11 +757,17 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> id  | first_name |  last_name   |           email            | gender | date_of_birth | country_of_birth
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre> id  | first_name |  last_name   |           email            | gender | date_of_birth | country_of_birth
 -----+------------+--------------+----------------------------+--------+---------------+------------------
   45 | Carleen    | Dzeniskevich | cdzeniskevich18@disqus.com | Female | 1985-06-18    | China
  852 | Alex       | Garmans      | agarmansnn@disqus.com      | Male   | 1990-11-08    | China
-(2 rows)</code></pre>
+(2 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -640,7 +793,21 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>         country_of_birth         | count
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre>         country_of_birth         | count
 ----------------------------------+-------
  Bangladesh                       |     1
  Indonesia                        |   109
@@ -653,7 +820,8 @@
  Macedonia                        |     4
  Papua New Guinea                 |     2
  Sri Lanka                        |     1
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -671,7 +839,19 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>         country_of_birth         | count
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+</pre></td><td class="code"><pre>         country_of_birth         | count
 ----------------------------------+-------
  Afghanistan                      |     2
  Albania                          |     5
@@ -682,7 +862,8 @@
  Australia                        |     1
  Azerbaijan                       |     3
  Bangladesh                       |     1
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -704,12 +885,19 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> country_of_birth | count
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre> country_of_birth | count
 ------------------+-------
  China            |   180
  Indonesia        |   109
  Russia           |    56
-(3 rows)</code></pre>
+(3 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -732,7 +920,22 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>                coalesce
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre>                coalesce
 -----------------------------------------
  rskermer0@arstechnica.com
  habbett1@cbc.ca
@@ -746,7 +949,8 @@
  adrillingcourt9@cnet.com
  igoldmana@ihg.com
  pnayerb@harvard.edu
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -767,14 +971,23 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">car</span> <span class="p">(</span>
+<pre class="rouge highlight"><code data-lang="sql"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="k">create</span> <span class="k">table</span> <span class="n">car</span> <span class="p">(</span>
 	<span class="n">id</span> <span class="n">BIGSERIAL</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
 	<span class="n">make</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
 	<span class="n">model</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
 	<span class="n">price</span> <span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
 <span class="p">);</span>
 
-<span class="c1">-- More lines containing INSERT command, We are not showing them here.</span></code></pre>
+<span class="c1">-- More lines containing INSERT command, We are not showing them here.</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -801,7 +1014,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> id |    make    |      model       |   price
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre> id |    make    |      model       |   price
 ----+------------+------------------+-----------
   1 | Daewoo     | Leganza          | 241058.40
   2 | Mitsubishi | Montero          | 269595.21
@@ -813,7 +1039,8 @@
   8 | Cadillac   | Escalade ESV     | 279951.34
   9 | Volvo      | XC70             | 269436.96
  10 | Isuzu      | Rodeo            |  65421.58
-(10 rows)</code></pre>
+(10 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -837,10 +1064,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>    max
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>    max
 -----------
  299959.83
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -856,14 +1088,23 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   make   |    max
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>   make   |    max
 ----------+-----------
  Ford     | 290993.39
  Smart    | 159887.95
  Maserati | 221349.10
  Dodge    | 299766.43
  Infiniti | 298245.19
-(5 rows)</code></pre>
+(5 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -885,10 +1126,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   min
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>   min
 ----------
  30348.16
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -904,14 +1150,23 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   make   |    min
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>   make   |    min
 ----------+-----------
  Ford     |  31021.48
  Smart    | 159887.95
  Maserati |  38668.83
  Dodge    |  33495.17
  Infiniti |  47912.88
-(5 rows)</code></pre>
+(5 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -933,10 +1188,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>         avg
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>         avg
 ---------------------
  164735.601300000000
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -952,14 +1212,23 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   make   |         avg
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>   make   |         avg
 ----------+---------------------
  Ford     | 171967.729473684211
  Smart    | 159887.950000000000
  Maserati | 122897.857500000000
  Dodge    | 166337.502307692308
  Infiniti | 179690.643846153846
-(5 rows)</code></pre>
+(5 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -981,10 +1250,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> round
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre> round
 --------
  164736
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1000,14 +1274,25 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   make   | round
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre>   make   | round
 ----------+--------
  Ford     | 171968
  Smart    | 159888
  Maserati | 122898
  Dodge    | 166338
  Infiniti | 179691
-(5 rows)</code></pre>
+(5 rows)
+
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1029,10 +1314,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> count
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre> count
 -------
   1000
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1054,10 +1344,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>     sum
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>     sum
 --------------
  164735601.30
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1073,14 +1368,23 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   make   |     sum
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>   make   |     sum
 ----------+-------------
  Ford     | 16336934.30
  Smart    |   159887.95
  Maserati |   491591.43
  Dodge    |  8649550.12
  Infiniti |  2335978.37
-(5 rows)</code></pre>
+(5 rows)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1100,10 +1404,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> ?column?
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre> ?column?
 ----------
        12
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1119,10 +1428,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> ?column?
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre> ?column?
 ----------
         5
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1138,10 +1452,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code> ?column?
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre> ?column?
 ----------
       100
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1163,7 +1482,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |     make      |        model         |   price   |  round   |   round
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>  id  |     make      |        model         |   price   |  round   |   round
 ------+---------------+----------------------+-----------+----------+-----------
     1 | Daewoo        | Leganza              | 241058.40 | 24105.84 | 216952.56
     2 | Mitsubishi    | Montero              | 269595.21 | 26959.52 | 242635.69
@@ -1175,7 +1507,8 @@
     8 | Cadillac      | Escalade ESV         | 279951.34 | 27995.13 | 251956.21
     9 | Volvo         | XC70                 | 269436.96 | 26943.70 | 242493.26
    10 | Isuzu         | Rodeo                |  65421.58 |  6542.16 |  58879.42
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1192,10 +1525,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">price</span> <span class="k">AS</span> <span class="n">original_price</span><span class="p">,</span>
+<pre class="rouge highlight"><code data-lang="sql"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">price</span> <span class="k">AS</span> <span class="n">original_price</span><span class="p">,</span>
  <span class="n">ROUND</span><span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ten_percent_discount</span><span class="p">,</span>
  <span class="n">ROUND</span><span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">discounted_price</span>
- <span class="k">FROM</span> <span class="n">car</span><span class="p">;</span></code></pre>
+ <span class="k">FROM</span> <span class="n">car</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1203,7 +1541,20 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>  id  |     make      |        model         | original_price | ten_percent_discount | discounted_price
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>  id  |     make      |        model         | original_price | ten_percent_discount | discounted_price
 ------+---------------+----------------------+----------------+----------------------+------------------
     1 | Daewoo        | Leganza              |      241058.40 |             24105.84 |        216952.56
     2 | Mitsubishi    | Montero              |      269595.21 |             26959.52 |        242635.69
@@ -1215,7 +1566,8 @@
     8 | Cadillac      | Escalade ESV         |      279951.34 |             27995.13 |        251956.21
     9 | Volvo         | XC70                 |      269436.96 |             26943.70 |        242493.26
    10 | Isuzu         | Rodeo                |       65421.58 |              6542.16 |         58879.42
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1226,7 +1578,24 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>test=# SELECT NULLIF(2, 1);
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre>test=# SELECT NULLIF(2, 1);
  nullif
 --------
       2
@@ -1242,7 +1611,8 @@ test=# SELECT NULLIF(0, 0);
  nullif
 --------
 
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1253,22 +1623,36 @@ test=# SELECT NULLIF(0, 0);
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sql"><span class="k">CURRENT_DATE</span>
+<pre class="rouge highlight"><code data-lang="sql"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">CURRENT_DATE</span>
 <span class="k">CURRENT_TIME</span>
 <span class="k">CURRENT_TIMESTAMP</span>
-<span class="k">CURRENT_TIME</span><span class="p">(</span><span class="nb">precision</span><span class="p">)</span></code></pre>
+<span class="k">CURRENT_TIME</span><span class="p">(</span><span class="nb">precision</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>SELECT CURRENT_TIME;
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>SELECT CURRENT_TIME;
 Result: 14:39:53.662522-05
 
 SELECT CURRENT_DATE;
 Result: 2001-12-23
 
 SELECT CURRENT_TIMESTAMP;
-Result: 2001-12-23 14:39:53.662522-05</code></pre>
+Result: 2001-12-23 14:39:53.662522-05
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1276,18 +1660,41 @@ Result: 2001-12-23 14:39:53.662522-05</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sql"><span class="n">transaction_timestamp</span><span class="p">()</span>
+<pre class="rouge highlight"><code data-lang="sql"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="n">transaction_timestamp</span><span class="p">()</span>
 <span class="n">statement_timestamp</span><span class="p">()</span>
 <span class="n">clock_timestamp</span><span class="p">()</span>
 <span class="n">timeofday</span><span class="p">()</span>
-<span class="n">now</span><span class="p">()</span></code></pre>
+<span class="n">now</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_now">1.13.1. NOW</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>test=# SELECT NOW();
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre>test=# SELECT NOW();
              now
 ------------------------------
  2020-08-19 23:39:49.18778+06
@@ -1303,7 +1710,8 @@ test=# SELECT NOW()::TIME;
        now
 -----------------
  23:40:44.645625
-(1 row)</code></pre>
+(1 row)
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1313,7 +1721,31 @@ test=# SELECT NOW()::TIME;
 <h5 id="_interval">INTERVAL</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>test=# SELECT NOW() - INTERVAL &#39;1 YEAR&#39;;
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre>test=# SELECT NOW() - INTERVAL &#39;1 YEAR&#39;;
            ?column?
 -------------------------------
  2019-08-19 23:47:11.475305+06
@@ -1335,7 +1767,9 @@ test=# SELECT NOW() + INTERVAL &#39;40 DAYS&#39;;
            ?column?
 -------------------------------
  2020-09-28 23:48:31.419856+06
-(1 row)</code></pre>
+(1 row)
+
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1347,12 +1781,36 @@ test=# SELECT NOW() + INTERVAL &#39;40 DAYS&#39;;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>EXTRACT(field FROM source)</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">EXTRACT</span><span class="p">(</span><span class="n">field</span> <span class="k">FROM</span> <span class="k">source</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>test=# SELECT NOW();
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre>test=# SELECT NOW();
              now
 ------------------------------
  2020-08-19 23:55:42.13778+06
@@ -1374,7 +1832,9 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
  date_part
 -----------
         21
-(1 row)</code></pre>
+(1 row)
+
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 </div>
@@ -1382,7 +1842,7 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
 <h4 id="_age">1.13.4. AGE</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>age(timestamp, timestamp)</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="n">age</span><span class="p">(</span><span class="nb">timestamp</span><span class="p">,</span> <span class="nb">timestamp</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1390,7 +1850,7 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>age(timestamp)</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="n">age</span><span class="p">(</span><span class="nb">timestamp</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1409,7 +1869,19 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>   first_name   |      last_name      | gender | date_of_birth |                   age
+<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+</pre></td><td class="code"><pre>   first_name   |      last_name      | gender | date_of_birth |                   age
 ----------------+---------------------+--------+---------------+------------------------------------------
  Ronda          | Skermer             | Female | 1993-06-30    | 27 years 1 mon 19 days 23:56:04.414053
  Hamid          | Abbett              | Male   | 1995-08-31    | 24 years 11 mons 19 days 23:56:04.414053
@@ -1420,7 +1892,8 @@ test=# SELECT EXTRACT(CENTURY FROM NOW());
  West           | Elphey              | Male   | 2004-03-29    | 16 years 4 mons 21 days 23:56:04.414053
  Letta          | Caurah              | Female | 1994-09-09    | 25 years 11 mons 10 days 23:56:04.414053
  Elset          | Agass               | Female | 2004-06-26    | 16 years 1 mon 23 days 23:56:04.414053
---More--</code></pre>
+--More--
+</pre></td></tr></tbody></table></code></pre>
 </div>
 </div>
 <div class="paragraph">

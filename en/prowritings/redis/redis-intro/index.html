@@ -204,24 +204,7 @@
 <p><em>car = Mercedes</em></p>
 </div>
 <div class="paragraph">
-<p>In this case, car is the key and Mercedes is the value. In a Redis database, this information can be  written using the syntax:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>SET  &#34;key1&#34; &#34;value1&#34;
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Our example will translate to:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>SET &#34;car&#34; &#34;Mercedes&#34;
-</pre></td></tr></tbody></table></code></pre>
-</div>
+<p>In this case, car is the key and Mercedes is the value. In a Redis database, this information can be  written using the syntax: <code>SET  &#34;key1&#34; &#34;value1&#34;</code>. Our example will translate to: <code>SET &#34;car&#34; &#34;Mercedes&#34;</code>.</p>
 </div>
 <div class="sect2">
 <h3 id="_benefits_of_using_redis">1.1. Benefits of using Redis</h3>
@@ -268,9 +251,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo dnf update -y
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo dnf update -y</code></pre>
 </div>
 </div>
 </div>
@@ -281,9 +262,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo dnf install redis -y
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo dnf install redis -y</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -309,9 +288,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ rpm -qi redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ rpm -qi redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -322,9 +299,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo systemctl start redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo systemctl start redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -335,9 +310,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo systemctl enable redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo systemctl enable redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -348,9 +321,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo systemctl status redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo systemctl status redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -361,9 +332,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo netstat -pnltu | grep redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo netstat -pnltu | grep redis</code></pre>
 </div>
 </div>
 </div>
@@ -383,9 +352,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo vim /etc/redis.conf
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo vim /etc/redis.conf</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -393,9 +360,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>bind 0.0.0.0
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>bind 0.0.0.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -403,9 +368,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo systemctl restart redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo systemctl restart redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -413,9 +376,7 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ redis-cli
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ redis-cli</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -423,15 +384,10 @@ redis-5.0.3-2.module_el8.2.0+318+3d7e67ea.x86_64
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre>[arafat@server ~]$ redis-cli
+<pre class="rouge highlight"><code>[arafat@server ~]$ redis-cli
 127.0.0.1:6379&gt; ping
 PONG
-127.0.0.1:6379&gt;
-</pre></td></tr></tbody></table></code></pre>
+127.0.0.1:6379&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -481,9 +437,7 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ sudo systemctl restart redis
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ sudo systemctl restart redis</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -491,15 +445,10 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre>[arafat@server ~]$ redis-cli
+<pre class="rouge highlight"><code>[arafat@server ~]$ redis-cli
 127.0.0.1:6379&gt; ping
 (error) NOAUTH Authentication required.
-127.0.0.1:6379&gt;
-</pre></td></tr></tbody></table></code></pre>
+127.0.0.1:6379&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -507,9 +456,7 @@ PONG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>auth &#39;PASSWORD&#39;
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>auth &#39;PASSWORD&#39;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -557,9 +504,7 @@ $ sudo firewall-cmd --reload
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ redis-cli -h REDIS_IP_ADDRESS
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ redis-cli -h REDIS_IP_ADDRESS</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -570,9 +515,7 @@ $ sudo firewall-cmd --reload
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ redis-cli -h 192.168.1.5
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ redis-cli -h 192.168.1.5</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -580,9 +523,7 @@ $ sudo firewall-cmd --reload
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>auth &#39;PASSWORD&#39;
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>auth &#39;PASSWORD&#39;</code></pre>
 </div>
 </div>
 </div>
@@ -634,9 +575,7 @@ $ sudo firewall-cmd --reload
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="text"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-</pre></td><td class="code"><pre>$ redis-benchmark -q
-</pre></td></tr></tbody></table></code></pre>
+<pre class="rouge highlight"><code>$ redis-benchmark -q</code></pre>
 </div>
 </div>
 </div>
