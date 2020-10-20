@@ -1,10 +1,32 @@
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
+
+
+.highlight table td {
+  padding: 5px;
+  border:solid black 1px;
+  border-left:solid black 0px;
+  border-top:solid black 0px;
+}
+
+
+.highlight table td:nth-child(1) {
+  background: #ddd6bf;
+}
+
+
+.highlight table pre {
+  margin: 0; 
+}
+
 .highlight, .highlight .w {
   color: #586e75;
-  /* background-color: #fdf6e3; */
-
+  background-color: #eee8d5;
+  border:solid rgb(65, 65, 65) 1px;
+  border-radius:6px;
+  -moz-border-radius:6px;
+  width:100%
 }
+
+
 .highlight .err {
   color: #002b36;
   background-color: #dc322f;
