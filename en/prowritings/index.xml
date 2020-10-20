@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Prowritings on Arafat Hasan</title>
+    <title>Technological Posts on Arafat Hasan</title>
     <link>https://www.arafathasan.live/en/prowritings/</link>
-    <description>Recent content in Prowritings on Arafat Hasan</description>
+    <description>Recent content in Technological Posts on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/prowritings/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,6 +13,16 @@
       
       <guid>https://www.arafathasan.live/en/prowritings/lamp/lamp/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories. However, the file can be download manually.  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-languages.zip  Extract the .zip file archive:  unzip phpMyAdmin-4.9.4-all-languages.zip  Move the extracted files to the /usr/share/phpmyadmin directory:  sudo mv phpMyAdmin-4.9.4-all-languages.zip /usr/share/phpmyadmin  Change directories:  cd /usr/share/phpmyadmin  Rename the sample php configuration file:  sudo mv config.</description>
+    </item>
+    
+    <item>
+      <title>Redis: Hello World!</title>
+      <link>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</guid>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis. If you don’t know what Redis is, or haven’t installed Redis in your system yet, check it out here.
+ 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk.</description>
     </item>
     
     <item>
@@ -26,29 +36,9 @@
     </item>
     
     <item>
-      <title>Redis: Hello World!</title>
-      <link>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</guid>
-      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis. If you don’t know what Redis is, or haven’t installed Redis in your system yet, check it out here.
- 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk.</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</guid>
-      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
-    </item>
-    
-    <item>
       <title>PostgreSQL: The Sallow Sea</title>
       <link>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
@@ -68,7 +58,7 @@
     <item>
       <title>PostgreSQL: Very First Commands</title>
       <link>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
@@ -76,6 +66,16 @@
   \l: List all databases in the current PostgreSQL database server
   \h: Show the list of SQL commands
   \c database: Connect to a database</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL: Introduction and Installation</title>
+      <link>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</guid>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
     </item>
     
   </channel>

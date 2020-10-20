@@ -78,11 +78,6 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/en/tags/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -98,28 +93,28 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/en/prowritings/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/series/redis/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/tags/redis/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/series/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -133,28 +128,28 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/tags/postgres/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/series/postgresql/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/tags/postgresql/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -164,7 +159,12 @@
   
   <url>
     <loc>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
