@@ -14,7 +14,7 @@ googleAnalytics = "UA-178245243-1"
 paginate = 20
 canonifyurls = true
 
-pygmentsstyle = "solarized-dark"
+pygmentsstyle = "solarized-light"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
