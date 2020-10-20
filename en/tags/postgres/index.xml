@@ -8,40 +8,40 @@
     <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</link>
+      <link>https://www.arafathasan.live/en/prowritings/postgres/postgres-intro-installation/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-intro-installation/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/postgres/postgres-intro-installation/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
  1. Introduction to PostgreSQL PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Sallow Sea</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</link>
+      <link>https://www.arafathasan.live/en/prowritings/postgres/postgres-the-sallow-sea/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-sallow-sea/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/postgres/postgres-the-sallow-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
  1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Surface Sea</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</link>
+      <link>https://www.arafathasan.live/en/prowritings/postgres/postgres-the-surface-sea/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-the-surface-sea/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/postgres/postgres-the-surface-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
  1. The Surface Sea 1.1. Mockaroo Data Generator We will use a site named Mockaroo to insert a lot of data into our table for our learning convenience. Mockaroo is an online realist test data generator.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Very First Commands</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</link>
+      <link>https://www.arafathasan.live/en/prowritings/postgres/postgres-very-first-commands/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/postgres-very-first-commands/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/postgres/postgres-very-first-commands/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
  1. Some Very First Commands   \q: Quit/Exit
   \l: List all databases in the current PostgreSQL database server

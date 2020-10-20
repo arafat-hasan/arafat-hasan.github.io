@@ -8,10 +8,10 @@
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/lamp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
-      <link>https://www.arafathasan.live/en/prowritings/chapters/lamp/</link>
+      <link>https://www.arafathasan.live/en/prowritings/lamp/lamp/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/chapters/lamp/</guid>
+      <guid>https://www.arafathasan.live/en/prowritings/lamp/lamp/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories. However, the file can be download manually.  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-languages.zip  Extract the .zip file archive:  unzip phpMyAdmin-4.9.4-all-languages.zip  Move the extracted files to the /usr/share/phpmyadmin directory:  sudo mv phpMyAdmin-4.9.4-all-languages.zip /usr/share/phpmyadmin  Change directories:  cd /usr/share/phpmyadmin  Rename the sample php configuration file:  sudo mv config.</description>
     </item>
     
