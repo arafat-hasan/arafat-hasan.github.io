@@ -12,8 +12,8 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</guid>
-      <description>require &amp;#39;asciidoctor&amp;#39; (1) Asciidoctor.convert_file &amp;#39;mysample.adoc&amp;#39; (2)     1 Imports the library   2 Reads, parses, and converts the file    This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint.</description>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.</description>
     </item>
     
     <item>
@@ -22,8 +22,8 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</guid>
-      <description>require &amp;#39;asciidoctor&amp;#39; (1) Asciidoctor.convert_file &amp;#39;mysample.adoc&amp;#39; (2)     1 Imports the library   2 Reads, parses, and converts the file    This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint.</description>
+      <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
+ 1. The Shallow Sea 1.1. PRIMARY KEY The PRIMARY KEY of a table is a combination of NOT NULL and UNIQUE constraint. Here we will see how to delete and add a primary key.</description>
     </item>
     
     <item>

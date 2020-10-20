@@ -187,39 +187,39 @@
 <ul>
 <li>The phpMyAdmin tool is not included in the default CentOS 8 repositories. However, the file can be download manually.</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-languages.zip
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-languages.zip
 </code></pre></div><ul>
 <li>Extract the .zip file archive:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">unzip phpMyAdmin-4.9.4-all-languages.zip
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">unzip phpMyAdmin-4.9.4-all-languages.zip
 </code></pre></div><ul>
 <li>Move the extracted files to the <code>/usr/share/phpmyadmin</code> directory:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo mv phpMyAdmin-4.9.4-all-languages.zip /usr/share/phpmyadmin
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo mv phpMyAdmin-4.9.4-all-languages.zip /usr/share/phpmyadmin
 </code></pre></div><ul>
 <li>Change directories:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd /usr/share/phpmyadmin
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd /usr/share/phpmyadmin
 </code></pre></div><ul>
 <li>Rename the sample php configuration file:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo mv config.sample.inc.php config.inc.php
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo mv config.sample.inc.php config.inc.php
 </code></pre></div><ul>
 <li>Open the php configuration file for editing:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano config.inc.php
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano config.inc.php
 </code></pre></div><ul>
 <li>Find the following line:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$cfg[&#39;blowfish_secret&#39;] = &#39;&#39;;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$cfg[&#39;blowfish_secret&#39;] = &#39;&#39;;
 </code></pre></div><ul>
 <li>Edit the line and enter the new php root password between the single-quotes, as follows:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$cfg[&#39;blowfish_secret&#39;]=&#39;my_password&#39;;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$cfg[&#39;blowfish_secret&#39;]=&#39;my_password&#39;;
 </code></pre></div><ul>
 <li>Next, create and set permissions on a temporary phpMyAdmin directory:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mkdir /usr/share/phpmyadmin/tmp
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mkdir /usr/share/phpmyadmin/tmp
 
 chown -R apache:apache /usr/share/phpmyadmin
 
@@ -228,11 +228,11 @@ chmod 777 /usr/share/phpmyadmin/tmp
 <ul>
 <li>Create an Apache configuration file:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano /etc/httpd/conf.d/phpmyadmin.conf
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano /etc/httpd/conf.d/phpmyadmin.conf
 </code></pre></div><ul>
 <li>This creates a new, blank configuration file. Enter the following code:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Alias /phpmyadmin /usr/share/phpmyadmin
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Alias /phpmyadmin /usr/share/phpmyadmin
 
 &lt;Directory /usr/share/phpmyadmin/&gt;
    AddDefaultCharset UTF-8
@@ -275,19 +275,19 @@ chmod 777 /usr/share/phpmyadmin/tmp
 <p>Finally, restart the Apache service to apply the changes made in the configuration file:</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">systemctl restart httpd
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">systemctl restart httpd
 
 </code></pre></div><h3 id="step-3-configure-selinux-and-firewall">Step 3: Configure SELinux and Firewall</h3>
 <p>SELinux stands for Security-Enhanced Linux. This is a kernel-level enhancement that improves security. Reconfigure this protocol for phpMyAdmin to work.</p>
 <ul>
 <li>Start by installing the following software package:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">yum -y install policycoreutils-python-utils
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">yum -y install policycoreutils-python-utils
 </code></pre></div><p>Some versions of CentOS 8 may already have this package installed. In that case, the output indicates it has nothing to do and you can move on to the next step.</p>
 <ul>
 <li>Next, enable access to the phpmyadmin directory with the following commands:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">semanage fcontext -a -t httpd_sys_rw_content_t &#39;/usr/share/phpmyadmin/&#39;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">semanage fcontext -a -t httpd_sys_rw_content_t &#39;/usr/share/phpmyadmin/&#39;
 
 semanage fcontext -a -t httpd_sys_rw_content_t &#34;usr/share/phpmyadmin/tmp(/.*)?&#34;
 
@@ -297,23 +297,23 @@ restorecon -Rv &#39;/usr/share/phpmyadmin/&#39;
 <ul>
 <li>Create a firewall rule to allow HTTP traffic with the command:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">firewall-cmd --permanent --add-service=http
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">firewall-cmd --permanent --add-service=http
 </code></pre></div><ul>
 <li>Make sure to reload the firewall after making these modifications:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">firewall-cmd --reload
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">firewall-cmd --reload
 </code></pre></div><h3 id="step-4-test-phpmyadmin">Step 4: Test phpMyAdmin</h3>
 <ul>
 <li>Open a web browser, and navigate to the following URL:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">localhost/phpmyadmin
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">localhost/phpmyadmin
 </code></pre></div><p>The browser should display the phpMyAdmin login page. However, if you attempt to log in, an error message may appear:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&#34;The server requested an authentication method unknown to the client.&#34;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&#34;The server requested an authentication method unknown to the client.&#34;
 </code></pre></div><p>This error occurs because MySQL 8.x upgraded the password authentication mechanism. PhpMyAdmin has not been updated yet to use this authentication method.</p>
 <ul>
 <li>To bypass this measure, open the MySQL shell and alter the root user:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mysql -u root -p
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mysql -u root -p
 
 password
 
@@ -332,7 +332,7 @@ Allow phpMyAdmin Only From a Specific IP Address</p>
 <ul>
 <li>Open the phpmyadmin.conf file in a text editor (we will be using nano):</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano /etc/httpd/conf.d/phpmyadmin.conf
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo nano /etc/httpd/conf.d/phpmyadmin.conf
 </code></pre></div><ul>
 <li>Find the following sections:</li>
 </ul>
@@ -340,7 +340,7 @@ Allow phpMyAdmin Only From a Specific IP Address</p>
 <ul>
 <li>Replace these lines with the following:</li>
 </ul>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Require ip your_system&#39;s_ip_address
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Require ip your_system&#39;s_ip_address
 Require ip ::1
 </code></pre></div><ul>
 <li>Save and close the file.</li>
@@ -348,23 +348,23 @@ Require ip ::1
 <h3 id="if-you-are-using-selinux-check-this-out">If you are using SELinux, check this out</h3>
 <p>I was running CentOS 8 with SELinux enforcing, and I was getting an error (<code>mysqli_real_connect(): (HY000/2002): No such file or directory</code>) despite having all the configurations fixed correctly. I later got out of trouble after allowing MySQL connections through SELinux.</p>
 <p>Check SELinux status using this command:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sestatus
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sestatus
 </code></pre></div><p>Allow Apache to connect database through SELinux</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">setsebool httpd_can_network_connect_db 1
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">setsebool httpd_can_network_connect_db 1
 </code></pre></div><p>Use <code>-P</code> option makes the change permanent. Without this option, the boolean would be reset to 0 at reboot.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">setsebool -P httpd_can_network_connect_db 1
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">setsebool -P httpd_can_network_connect_db 1
 </code></pre></div><h3 id="secure-phpmyadmin">Secure phpMyAdmin</h3>
 <p>At this point, the phpMyAdmin instance is functioning properly. However, securing your phpMyAdmin instance from the outside world it an important task for you. In this section, we will show you how to secure your phpMyAdmin instance.</p>
 <h4 id="allow-phpmyadmin-from-specific-ip">Allow phpMyAdmin from Specific IP</h4>
 <p>First, you will need to configure your phpMyAdmin to accessible only from your home connection&rsquo;s IP address.</p>
 <p>You can configure it by editing <code>/etc/httpd/conf.d/phpmyadmin.conf</code> file:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nano /etc/httpd/conf.d/phpmyadmin.conf
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nano /etc/httpd/conf.d/phpmyadmin.conf
 </code></pre></div><p>Find the following lines:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">     &lt;RequireAny&gt;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">     &lt;RequireAny&gt;
        Require all granted
      &lt;/RequireAny&gt;
 </code></pre></div><p>And, replace them with the following:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;RequireAny&gt;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;RequireAny&gt;
     Require ip your-home--connection-ip-address
     Require ip ::1
 &lt;/RequireAny&gt;
@@ -372,23 +372,23 @@ Require ip ::1
 <h4 id="configure-extra-layer-of-authentication">Configure Extra Layer of Authentication</h4>
 <p>It is a good idea to password protect your phpmyadmin directory by setting up a basic authentication.</p>
 <p>To do so, create a new authentication file using the htpasswd tool as shown below:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mkdir /etc/phpmyadmin
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mkdir /etc/phpmyadmin
  htpasswd -c /etc/phpmyadmin/.htpasswd admin
 </code></pre></div><p>You will be asked to provide your admin password as shown below:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">New password: 
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">New password: 
 Re-type new password: 
 Adding password for user admin
 </code></pre></div><p>Next, you will need to configure Apache to use the .htpasswd file. You can do this by editing the file /etc/httpd/conf.d/phpmyadmin.conf.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nano /etc/httpd/conf.d/phpmyadmin.conf
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nano /etc/httpd/conf.d/phpmyadmin.conf
 </code></pre></div><p>Add the following lines below the line &ldquo;AddDefaultCharset UTF-8&rdquo;:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    Options  +FollowSymLinks +Multiviews +Indexes
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    Options  +FollowSymLinks +Multiviews +Indexes
     AllowOverride None
     AuthType basic
     AuthName &#34;Authentication Required&#34;
     AuthUserFile /etc/phpmyadmin/.htpasswd
     Require valid-user
 </code></pre></div><p>Save the file and restart the Apache service for changes to take effect:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">systemctl restart httpd
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">systemctl restart httpd
 </code></pre></div><h3 id="access-phpmyadmin">Access phpMyAdmin</h3>
 <p>Now, your phpMyAdmin instance is secured with an extra layer of security. Open your web browser and type the URL http://your-server-ip/phpmyadmin. You will be asked to enter the login credentials of the user you previously created.</p>
 <p>Provide your admin username and password, then click on the OK button. You will be redirected to the phpMyAdmin login page. Now, provide your MySQL administrative user login credentials and click on the Go button.</p>
@@ -402,7 +402,7 @@ Adding password for user admin
 <p>The repository configuration file is included in the newest centos-release package. First update your system with dnf update to get the new centos-release package, then run dnf config-manager &ndash;enable cr to enable the CR repository.</p>
 </blockquote>
 <p>SELinux Alert Browser এ এই সাজেশন দিয়েছে: তা চালালাম:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">You should report this as a bug.
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">You should report this as a bug.
 You can generate a local policy module to allow this access.
 Allow this access for now by executing:
 # ausearch -c &#39;snapd&#39; --raw | audit2allow -M my-snapd
