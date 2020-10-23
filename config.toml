@@ -1,6 +1,9 @@
 baseurl = "https://www.arafathasan.live/"
 
-theme = "hugo-coder"
+theme = "liva-hugo"
+summaryLength = "10"
+paginate = 6
+
 
 
 defaultcontentlanguage = "en"
@@ -11,15 +14,17 @@ enableRobotsTXT = true
 
 googleAnalytics = "UA-178245243-1"
 
-paginate = 20
 canonifyurls = true
 
-pygmentsstyle = "solarized-light"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+#pygmentsstyle = "solarized-light"
+#pygmentscodefences = true
+#pygmentscodefencesguesssyntax = true
 
 disqusShortname = "arafathasan"
 
+
+
+#################### default parameters ################################
 
 [params]
     keywords = "blog,developer,personal,resume,computer,technology,programmer,curriculum vitae"
@@ -33,17 +38,66 @@ disqusShortname = "arafathasan"
     hidecredits = false
     hidecopyright = false
 
-    rtl = false
+    # rtl = false
     
     # Specify light/dark colorscheme
     # Supported values:
     # "auto" (use preference set by browser)
     # "dark" (dark background, light foreground)
     # "light" (light background, dark foreground) (default)
-    colorscheme = "auto"
+    # colorscheme = "auto"
 
     math = true
-    custom_css = ["css/base16.solarized.light.css","css/custom.css"]
+    # custom_css = ["css/base16.solarized.light.css","css/custom.css"]
+
+
+    description = "This is meta description"
+    # author = "Themefisher"
+    # Contact Information
+
+    # copyright
+    copyright = "copyright &copy; 2020 Themefisher All Rights Reserved"
+
+
+    # Preloader
+    [params.preloader]
+        enable = true
+        preloader = "" # use .png , .svg or .gif format
+
+    # search
+    [params.search]
+        enable = true
+
+
+
+    ############################# Plugins ##############################
+    [params.plugins]
+
+        # CSS Plugins
+        [[params.plugins.css]]
+            URL = "plugins/bootstrap/bootstrap.min.css"
+        [[params.plugins.css]]
+           URL = "plugins/slick/slick.css"
+        [[params.plugins.css]]
+           URL = "plugins/themify-icons/themify-icons.css"
+        [[params.plugins.css]]
+          URL = "plugins/venobox/venobox.css"
+
+        # JS Plugins
+        [[params.plugins.js]]
+            URL = "plugins/jQuery/jquery.min.js"
+        [[params.plugins.js]]
+            URL = "plugins/bootstrap/bootstrap.min.js"
+        [[params.plugins.js]]
+            URL = "plugins/slick/slick.min.js"
+        [[params.plugins.js]]
+            URL = "plugins/venobox/venobox.min.js"
+        [[params.plugins.js]]
+            URL = "plugins/search/fuse.min.js"
+        [[params.plugins.js]]
+            URL = "plugins/search/mark.js"
+        [[params.plugins.js]]
+            URL = "plugins/search/search.js"
 
 
 
@@ -53,53 +107,40 @@ disqusShortname = "arafathasan"
     tag = "tags"
 
 
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fa fa-linkedin"
-    weight = 1
-    url = "https://www.linkedin.com/in/arafat-hasan/"
-[[params.social]]
-    name = "Github"
-    icon = "fa fa-github"
-    weight = 3
-    url = "https://github.com/arafat-hasan/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fa fa-twitter"
-    weight = 4
-    url = "https://twitter.com/Arafat_HJ/"
-[[params.social]]
-    name = "Facebook"
-    icon = "fa fa-facebook"
-    weight = 5
-    url = "https://www.facebook.com/OpenDoor.Arafat"
-[[params.social]]
-    name = "Stackoverflow"
-    icon = "fa fa-stack-overflow"
-    weight = 2
-    url = "https://stackoverflow.com/users/7829174/arafat-hasan"
-
-
 [languages]
     [languages.en]
         languagename = "English"
 		title = "Arafat Hasan"
 		contentDir = "content/en"
+        languageCode = "en"
+
+        [languages.en.outputs]
+        home = ["HTML", "RSS", "JSON"]
 
         [languages.en.params]
             author = "Arafat Hasan"
-            info = "Continuous Learner ⦁ Computer Nerd"
+            logo = "assets/images/logo.en.png"
+            home = "OOOOOO"
+            tagline = "Continuous Learner ⦁ Computer Nerd"
             description = "Arafat Hasan's personal website"
-            footercontent = "Want to talk? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a>"
+            location = "Rangpur, Bangladedsh"
+            mobile = "+8801521303510"
+            email = "opendoor.arafat@gmail.com"
+            copyright = "copyright &copy; 2020 Arafat Hasan All Rights Reserved"
+
+            [languages.en.params.newsletter]
+                enable = false
+                title = "Join Our Newsletter"
+                content = "Generally I share articles what i found insightfull with my newsletter subcribers"
 
 
         [languages.en.menu]
 
             [[languages.en.menu.main]]
-                name = "About Me"
-                identifier = "enAbout"
+                name = "Home"
+                identifier = "enHome"
                 weight = 1
-                url = "/en/about/"
+                url = "/en/"
                 
             [[languages.en.menu.main]]
                 name = "Tech Blog"
@@ -111,35 +152,103 @@ disqusShortname = "arafathasan"
             [[languages.en.menu.main]]
                 name = "Contact"
                 identifier = "enContact"
-                weight = 5
-                url = ""
+                weight = 3
+                url = "/en/contact"
 
             [[languages.en.menu.main]]
+                name = "About"
+                identifier = "enAbout"
+                weight = 4
+                url = "/en/about/"
+
+            [[languages.en.menu.footer]]
+                name = "About"
+                identifier = "enAbout"
+                weight = 1
+                url = "/en/about/"
+                
+            [[languages.en.menu.footer]]
+                name = "Tech Blog"
+                identifier = "enTech"
+                weight = 2
+                url = "/en/prowritings/"
+
+
+            [[languages.en.menu.footer]]
+                name = "Contact"
+                identifier = "enContact"
+                weight = 5
+                url = "/en/contact"
+
+            [[languages.en.menu.footer]]
                 name = "Policy"
                 identifier = "enPolicy"
                 weight = 6
                 url = "/en/comment-policy/"
 
 
+            ############################# social site ########################
+
+            [[languages.en.params.social]]
+                title = "facebook"
+                icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+                link = "https://www.facebook.com/arafathasanjenin"
+
+            [[languages.en.params.social]]
+                title = "twitter"
+                icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+                link = "https://twitter.com/Arafat_HJ"
+
+            [[languages.en.params.social]]
+                title = "stackoverflow"
+                icon = " ti-stack-overflow " # themify icon : https://themify.me/themify-icons
+                link = "https://stackoverflow.com/users/7829174/arafat-hasan"
+
+            [[languages.en.params.social]]
+                title = "github"
+                icon = "ti-github" # themify icon : https://themify.me/themify-icons
+                link = "https://www.github.com/arafat-hasan"
+
+            [[languages.en.params.social]]
+                title = "linkedin"
+                icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+                link = "https://www.linkedin.com/in/arafat-hasan"
+
+
+
     [languages.bn]
         languagename = "বাংলা"
         title = "আরাফাত হাসান"
         contentDir = "content/bn"
+        languageCode = "bn"
+        
+        [languages.bn.outputs]
+        home = ["HTML", "RSS", "JSON"]
 
         [languages.bn.params]
             author = "আরাফাত হাসান"
-            info = "ঋষি দরবেশ ⦁ ভড়ুয়া বাঙাল ⦁ বহিরাগত দর্শক"
+            logo = "assets/images/logo.bn.png"
+            home = "/bn"
+            tagline = "ঋষি দরবেশ ⦁ ভড়ুয়া বাঙাল ⦁ বহিরাগত দর্শক"
             description = "আরাফাত হাসানের ওয়েবসাইট"
-            footercontent = "আলাপ করতে চান? <a href='mailto:opendoor.arafat@gmail.com'>ইমেইল করুন!</a>"
+            location = "রংপুর, বাংলাদেশ"
+            mobile = "+8801521303510"
+            email = "opendoor.arafat@gmail.com"
+            copyright = "স্বত্ব &copy; ২০২০ আরাফাত হাসান কর্তৃক সর্বস্বত্ব সংরক্ষিত"
 
+
+            [languages.bn.params.newsletter]
+                enable = false
+                title = "আমার নিউজলেটারে সংযুক্ত হোন"
+                content = "আমি নতুন যা পড়ছি বিশেষত গুরুত্বপুর্ণ কোন আর্টিকেলের লিংক আমি নিউজলেটারে শেয়ার করে থাকি"
     
         [languages.bn.menu]
 
             [[languages.bn.menu.main]]
-                name = "আমার সম্পর্কে"
-                identifier = "bnAbout"
+                name = "নীড়পাতা"
+                identifier = "bnHome"
                 weight = 1
-                url = "/bn/about/"
+                url = "/bn/"
 
             [[languages.bn.menu.main]]
                 name = "ব্লগ"
@@ -150,11 +259,63 @@ disqusShortname = "arafathasan"
             [[languages.bn.menu.main]]
                 name = "যোগাযোগ"
                 identifier = "bnContact"
-                weight = 5
-                url = ""
+                weight = 3
+                url = "/bn/contact/"
 
             [[languages.bn.menu.main]]
+                name = "আমার সম্পর্কে"
+                identifier = "bnAbout"
+                weight = 4
+                url = "/bn/about/"
+
+
+            [[languages.bn.menu.footer]]
+                name = "আমার সম্পর্কে"
+                identifier = "bnAbout"
+                weight = 1
+                url = "/bn/about/"
+
+            [[languages.bn.menu.footer]]
+                name = "ব্লগ"
+                identifier = "bnBlog"
+                weight = 2
+                url = "/bn/writings/"
+
+            [[languages.bn.menu.footer]]
+                name = "যোগাযোগ"
+                identifier = "bnContact"
+                weight = 5
+                url = "/bn/contact/"
+
+            [[languages.bn.menu.footer]]
                 name = "নীতিমালা"
                 identifier = "bnPolicy"
                 weight = 6
                 url = "/bn/comment-policy/"
+
+            ############################# social site ########################
+
+            [[languages.bn.params.social]]
+                title = "ফেসবুক"
+                icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+                link = "https://www.facebook.com/arafathasanjenin"
+
+            [[languages.bn.params.social]]
+                title = "টুইটার"
+                icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+                link = "https://twitter.com/Arafat_HJ"
+
+            [[languages.bn.params.social]]
+                title = "স্ট্যাকওভারফ্লো"
+                icon = " ti-stack-overflow " # themify icon : https://themify.me/themify-icons
+                link = "https://stackoverflow.com/users/7829174/arafat-hasan"
+
+            [[languages.bn.params.social]]
+                title = "গিটহাব"
+                icon = "ti-github" # themify icon : https://themify.me/themify-icons
+                link = "https://www.github.com/arafat-hasan"
+
+            [[languages.bn.params.social]]
+                title = "লিংকডইন"
+                icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+                link = "https://www.linkedin.com/in/arafat-hasan"
