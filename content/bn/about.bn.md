@@ -1,1 +1,0 @@
-../../submodules/writings/about.bn.md
