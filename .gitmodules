@@ -7,3 +7,6 @@
 [submodule "submodules/writings"]
 	path = submodules/writings
 	url = git@github.com:arafat-hasan/writings.git
+[submodule "themes/liva-hugo"]
+	path = themes/liva-hugo
+	url = git@github.com:arafat-hasan/liva-hugo.git
