@@ -5,6 +5,7 @@
     <link>https://www.arafathasan.live/en/tags/redis/</link>
     <description>Recent content in redis on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis: Hello World!</title>
@@ -12,8 +13,7 @@
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</guid>
-      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis. If you don’t know what Redis is, or haven’t installed Redis in your system yet, check it out here.
- 1. Hello World in Redis 1.1. PING Returns PONG if no argument is provided, otherwise return a copy of the argument as a bulk.</description>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
@@ -22,8 +22,7 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</guid>
-      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned. But I think this note will be helpful for those who want to learn Redis.
- 1. Introduction to Redis Redis is an acronym for Remote dictionary server. It’s an open source, in-memory and persistent key-value database / store which stores data as key-value pairs and also doubles up as a message broker.</description>
+      <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
   </channel>

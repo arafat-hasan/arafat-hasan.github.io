@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.arafathasan.live/en/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/en/comment-policy/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -14,21 +29,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.arafathasan.live/en/comment-policy/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/en/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/"
                 />
   </url>
   
@@ -63,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/lamp/lamp/</loc>
+    <loc>https://www.arafathasan.live/en/prowritings/lamp/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -165,6 +165,36 @@
   <url>
     <loc>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/contact/</loc>
+    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/contact/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/en/search/</loc>
+    <lastmod>2019-10-29T13:49:23+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/search/"
+                />
   </url>
   
   <url>

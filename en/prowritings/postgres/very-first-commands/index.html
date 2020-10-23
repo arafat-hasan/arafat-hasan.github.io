@@ -1,201 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Arafat Hasan</title>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Arafat Hasan&#39;s personal website">
+  <meta name="author" content="Arafat Hasan">
+  <meta name="generator" content="Hugo 0.75.1" />
 
-    <meta name="author" content="Arafat Hasan">
-    <meta name="description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. Some Very First Commands   \q: Quit/Exit
-  \l: List all databases in the current PostgreSQL database server
-  \h: Show the list of SQL commands
-  \c database: Connect to a database">
-    <meta name="keywords" content="blog,developer,personal,resume,computer,technology,programmer,curriculum vitae">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PostgreSQL: Very First Commands"/>
-<meta name="twitter:description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. Some Very First Commands   \q: Quit/Exit
-  \l: List all databases in the current PostgreSQL database server
-  \h: Show the list of SQL commands
-  \c database: Connect to a database"/>
-
-    <meta property="og:title" content="PostgreSQL: Very First Commands" />
-<meta property="og:description" content="This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.
- 1. Some Very First Commands   \q: Quit/Exit
-  \l: List all databases in the current PostgreSQL database server
-  \h: Show the list of SQL commands
-  \c database: Connect to a database" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/" />
-<meta property="article:published_time" content="2020-08-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="Arafat Hasan" />
-
-
-
-    <title>
-  PostgreSQL: Very First Commands · Arafat Hasan
-</title>
-
-    
-      <link rel="canonical" href="https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
-    
-      
-      
-      <link rel="stylesheet" href="https://www.arafathasan.live/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://www.arafathasan.live/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-      <link rel="stylesheet" href="https://www.arafathasan.live/css/base16.solarized.light.css" />
-    
-      <link rel="stylesheet" href="https://www.arafathasan.live/css/custom.css" />
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://www.arafathasan.live/assets/images/knight-2-right-16x16.png" sizes="16x16">
-
-    <link rel="apple-touch-icon" href="https://www.arafathasan.live/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.arafathasan.live/images/apple-touch-icon.png">
-
-    
-
-    <meta name="generator" content="Hugo 0.75.1" />
-  </head>
-
+  <!-- plugins -->
   
+  <link rel="stylesheet" href="https://www.arafathasan.live/plugins/bootstrap/bootstrap.min.css ">
   
-    
+  <link rel="stylesheet" href="https://www.arafathasan.live/plugins/slick/slick.css ">
   
-  <body class="colorscheme-auto"
-        onload=""
-  >
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://www.arafathasan.live/en">
-      Arafat Hasan
-    </a>
+  <link rel="stylesheet" href="https://www.arafathasan.live/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://www.arafathasan.live/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://www.arafathasan.live/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://www.arafathasan.live/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://www.arafathasan.live/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
     
-      
-        <span id="dark-mode-toggle" class="float-right">
-          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-        </span>
-      
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://www.arafathasan.live/en/about/">About Me</a>
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://www.arafathasan.live/en"><img class="img-fluid"
+          src="https://www.arafathasan.live/assets/images/logo.en.png" alt="Arafat Hasan"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/arafathasanjenin"><i class="ti-facebook"></i></a>
             </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://www.arafathasan.live/en/prowritings/">Tech Blog</a>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/Arafat_HJ"><i class="ti-twitter-alt"></i></a>
             </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://www.arafathasan.live/en/">Contact</a>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://stackoverflow.com/users/7829174/arafat-hasan"><i class=" ti-stack-overflow "></i></a>
             </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://www.arafathasan.live/en/comment-policy/">Policy</a>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.github.com/arafat-hasan"><i class="ti-github"></i></a>
             </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/arafat-hasan"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://www.arafathasan.live/en"><img class="img-fluid"
+            src="https://www.arafathasan.live/assets/images/logo.en.png" alt="Arafat Hasan"></a>
+
+        <ul class="navbar-nav">
           
-        
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.arafathasan.live/en/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.arafathasan.live/en/prowritings/">Tech Blog</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.arafathasan.live/en/contact">Contact</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.arafathasan.live/en/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
         
           
           
           
             
+          
+            
               
-                <li class="navigation-item menu-separator">
-                  <span>|</span>
-                </li>
                 
               
-              <li class="navigation-item">
+              <li>
                 <a href="https://www.arafathasan.live/bn/">বাংলা</a>
               </li>
             
           
-            
-          
         
-        
-          <li class="navigation-item separator">
-            <span>|</span>
-          </li>
-        
-      </ul>
-    
-  </section>
-</nav>
 
-
-      <div class="content">
         
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">PostgreSQL: Very First Commands</h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2020-08-11T00:00:00Z'>
-                August 11, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
-            </span>
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://www.arafathasan.live//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
           </div>
-          <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="https://www.arafathasan.live/en/categories/professional-writings/">professional writings</a></div>
-
-          <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <a href="https://www.arafathasan.live/en/tags/postgresql/">postgresql</a>
-      <span class="separator">•</span>
-    <a href="https://www.arafathasan.live/en/tags/note/">note</a>
-      <span class="separator">•</span>
-    <a href="https://www.arafathasan.live/en/tags/postgres/">postgres</a></div>
-
         </div>
-      </header>
+        
 
-      <div>
         
-          <img src='postgres-logo.png' alt="Featured image"/>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
         
+        <a href="https://www.arafathasan.live/en/categories/professional-writings"
+          class="text-primary">Professional writings</a>
         
+        <h2>PostgreSQL: Very First Commands</h2>
+        <div class="mb-3 post-meta">
+          <span>By Arafat Hasan</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>11 August 2020</span>
+          
+        </div>
+        
+        <img src="https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/postgres-logo.png" class="img-fluid w-100 mb-4" alt="PostgreSQL: Very First Commands">
+        
+        <div class="content mb-5">
+          
 <div class="paragraph">
 <p><em>This writing is actually a draft note made for me so that I myself don’t forget what I have learned. For that, I think this note will be helpful for those who want to learn new Postgres.</em></p>
 </div>
@@ -464,49 +429,9 @@ DROP TABLE</code></pre>
 </div>
 </div>
 
-      </div>
+        </div>
 
-
-      <footer>
         
-
-<section class="see-also">
-  
-    
-    
-    
-      <h3>See also in PostgreSQL</h3>
-      <nav>
-        <ul>
-        
-        
-          
-            <li>
-              <a href="https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/">PostgreSQL: The Sallow Sea</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://www.arafathasan.live/en/prowritings/postgres/the-surface-sea/">PostgreSQL: The Surface Sea</a>
-            </li>
-          
-        
-          
-        
-          
-            <li>
-              <a href="https://www.arafathasan.live/en/prowritings/postgres/intro-installation/">PostgreSQL: Introduction and Installation</a>
-            </li>
-          
-        
-        </ul>
-      </nav>
-    
-  
-</section>
-
-
         <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
@@ -527,80 +452,112 @@ DROP TABLE</code></pre>
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  </section>
-
       </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Want to talk? <a href='mailto:opendoor.arafat@gmail.com'>Email me!</a></p>
-      
-      
-        ©
-        
-        2020
-         Arafat Hasan 
-      
-      
-        
-      
-      
-    </section>
-  </footer>
+    </div>
+  </div>
+</section>
 
 
-    </main>
 
-    
-      
-      <script src="https://www.arafathasan.live/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
-    
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <a href="https://www.arafathasan.live/"><img src="https://www.arafathasan.live/assets/images/logo.en.png" alt="Arafat Hasan"></a>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark" href="tel:&#43;8801521303510"><i
+                class="ti-mobile mr-3 text-primary"></i>&#43;8801521303510</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Rangpur, Bangladedsh</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:opendoor.arafat@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>opendoor.arafat@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/arafathasanjenin">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://twitter.com/Arafat_HJ">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://stackoverflow.com/users/7829174/arafat-hasan">stackoverflow</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.github.com/arafat-hasan">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.linkedin.com/in/arafat-hasan">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="https://www.arafathasan.live/en/categories/professional-writings">Professional writings</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.arafathasan.live/en/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.arafathasan.live/en/prowritings/">Tech Blog</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.arafathasan.live/en/contact">Contact</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.arafathasan.live/en/comment-policy/">Policy</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        copyright © 2020 Arafat Hasan All Rights Reserved
+      </div>
+    </div>
+  </div>
+</footer>
 
-    
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-178245243-1', 'auto');
-	
-	ga('send', 'pageview');
-}
+<script>
+  var indexURL = "https://www.arafathasan.live/index.json"
 </script>
 
+<!-- JS Plugins -->
 
-    
+<script src="https://www.arafathasan.live/plugins/jQuery/jquery.min.js"></script>
 
-    
+<script src="https://www.arafathasan.live/plugins/bootstrap/bootstrap.min.js"></script>
 
-  </body>
+<script src="https://www.arafathasan.live/plugins/slick/slick.min.js"></script>
 
+<script src="https://www.arafathasan.live/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://www.arafathasan.live/plugins/search/fuse.min.js"></script>
+
+<script src="https://www.arafathasan.live/plugins/search/mark.js"></script>
+
+<script src="https://www.arafathasan.live/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://www.arafathasan.live/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script></body>
 </html>
