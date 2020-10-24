@@ -48,15 +48,7 @@ disqusShortname = "arafathasan"
     # colorscheme = "auto"
 
     math = true
-    # custom_css = ["css/base16.solarized.light.css","css/custom.css"]
 
-
-    description = "This is meta description"
-    # author = "Themefisher"
-    # Contact Information
-
-    # copyright
-    copyright = "copyright &copy; 2020 Themefisher All Rights Reserved"
 
 
     # Preloader
