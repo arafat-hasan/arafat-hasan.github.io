@@ -16,13 +16,15 @@
             </div>
             <div class="col-md-6 offset-md-1">
               <div class="card-body">
-                <div class="mb-3 post-meta">
-                  <span>By {{ .Site.Params.Author }}</span>
+                <ul class="list-inline post-meta mb-3">
                   {{ if not .Params.HideDate }}
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>{{ .PublishDate.Format "02 January 2006" }}</span>
+                  <li class="list-inline-item">
+                    <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                      {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+                    </time>
+                  </li>
                   {{ end }}
-                </div>
+                </ul>
                 <a href="{{ .Permalink }}"
                   class="h1 font-weight-bold d-block text-dark mb-4 card-title">{{ .Title | markdownify }}</a>
                 <p class="card-text">{{.Summary}}...</p>
@@ -85,13 +87,15 @@
                   class="text-primary">{{ . | title | humanize }}</a>
                 {{ end }}
                 <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
-                <div class="mb-3 post-meta">
-                  <span>By {{ .Site.Params.Author }}</span>
+                <ul class="list-inline post-meta mb-3">
                   {{ if not .Params.HideDate }}
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>{{ .PublishDate.Format "02 January 2006" }}</span>
+                  <li class="list-inline-item">
+                    <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                      {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+                    </time>
+                  </li>
                   {{ end }}
-                </div>
+                </ul>
                 <p class="card-text">{{ .Summary }}</p>
                 <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a>
               </div>
