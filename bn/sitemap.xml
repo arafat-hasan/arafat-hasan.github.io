@@ -328,18 +328,23 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/bn/contact/</loc>
+    <loc>https://www.arafathasan.live/bn/contact/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/en/contact/"
+                href="https://www.arafathasan.live/en/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/bn/contact/"
+                href="https://www.arafathasan.live/bn/contact/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%85%E0%A6%A8%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%AF/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
