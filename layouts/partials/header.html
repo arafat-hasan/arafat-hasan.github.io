@@ -45,20 +45,19 @@
           {{ end }}
         </ul>
 
+
+
         {{ if .Site.IsMultiLingual }}
-          {{ $node := . }}
-          {{ .Scratch.Set "separator" true }}
-          {{ range (default .Site.Home.AllTranslations .Translations) }}
-            {{ if ne $.Site.Language .Language }}
-              {{ if $node.Scratch.Get "separator" }}
-                {{ $node.Scratch.Set "separator" false }}
-              {{ end }}
-              <li>
-                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-              </li>
-            {{ end }}
-          {{ end }}
+        <select class="m-2 border-0" id="select-language" onchange="location = this.value;">
+        {{ range (default .Site.Home.AllTranslations) }}
+          {{ if ne $.Site.Language .Language }}
+          <option id = "{{ .Language.LanguageName }}" value="{{ .Permalink }}"> {{ .Language.LanguageName }} </option>
+          {{ else }}
+          <option id = "{{ .Language.LanguageName }}" value="{{ .Permalink }}" selected="{{ .Language.LanguageName }}"> {{ .Language.LanguageName }} </option>
+          {{end}}
         {{ end }}
+      </select>
+      {{ end }}
 
         {{ if .Site.Params.search.enable }}
         {{ "<!-- search -->" | safeHTML }}
