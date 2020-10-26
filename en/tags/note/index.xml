@@ -9,64 +9,64 @@
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
-      <link>https://www.arafathasan.live/en/prowritings/lamp/</link>
+      <link>https://www.arafathasan.live/en/post/lamp-config/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/lamp/</guid>
+      <guid>https://www.arafathasan.live/en/post/lamp-config/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories.</description>
     </item>
     
     <item>
       <title>Redis: Hello World!</title>
-      <link>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</link>
+      <link>https://www.arafathasan.live/en/post/redis-hello-world/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</guid>
+      <guid>https://www.arafathasan.live/en/post/redis-hello-world/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>Redis Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</link>
+      <link>https://www.arafathasan.live/en/post/redis-intro/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</guid>
+      <guid>https://www.arafathasan.live/en/post/redis-intro/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Sallow Sea</title>
-      <link>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</link>
+      <link>https://www.arafathasan.live/en/post/postgres-sallow-sea/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</guid>
+      <guid>https://www.arafathasan.live/en/post/postgres-sallow-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Surface Sea</title>
-      <link>https://www.arafathasan.live/en/prowritings/postgres/the-surface-sea/</link>
+      <link>https://www.arafathasan.live/en/post/postgres-surface-sea/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/postgres/the-surface-sea/</guid>
+      <guid>https://www.arafathasan.live/en/post/postgres-surface-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Very First Commands</title>
-      <link>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</link>
+      <link>https://www.arafathasan.live/en/post/postgres-very-first-commands/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</guid>
+      <guid>https://www.arafathasan.live/en/post/postgres-very-first-commands/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</link>
+      <link>https://www.arafathasan.live/en/post/postgres-intro/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</guid>
+      <guid>https://www.arafathasan.live/en/post/postgres-intro/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     

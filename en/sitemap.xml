@@ -63,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/lamp/</loc>
+    <loc>https://www.arafathasan.live/en/post/lamp-config/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -95,6 +95,16 @@
   <url>
     <loc>https://www.arafathasan.live/en/prowritings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/prowritings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/prowritings/"
+                />
   </url>
   
   <url>
@@ -108,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</loc>
+    <loc>https://www.arafathasan.live/en/post/redis-hello-world/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -128,7 +138,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</loc>
+    <loc>https://www.arafathasan.live/en/post/redis-intro/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -148,22 +158,22 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/postgres/the-sallow-sea/</loc>
+    <loc>https://www.arafathasan.live/en/post/postgres-sallow-sea/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/postgres/the-surface-sea/</loc>
+    <loc>https://www.arafathasan.live/en/post/postgres-surface-sea/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/postgres/very-first-commands/</loc>
+    <loc>https://www.arafathasan.live/en/post/postgres-very-first-commands/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/postgres/intro-installation/</loc>
+    <loc>https://www.arafathasan.live/en/post/postgres-intro/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   

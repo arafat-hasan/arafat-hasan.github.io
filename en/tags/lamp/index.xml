@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/lamp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
-      <link>https://www.arafathasan.live/en/prowritings/lamp/</link>
+      <link>https://www.arafathasan.live/en/post/lamp-config/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/lamp/</guid>
+      <guid>https://www.arafathasan.live/en/post/lamp-config/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories.</description>
     </item>
     

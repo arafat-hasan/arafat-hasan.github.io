@@ -9,19 +9,19 @@
     <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis: Hello World!</title>
-      <link>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</link>
+      <link>https://www.arafathasan.live/en/post/redis-hello-world/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-hello-world/</guid>
+      <guid>https://www.arafathasan.live/en/post/redis-hello-world/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>Redis Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</link>
+      <link>https://www.arafathasan.live/en/post/redis-intro/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/prowritings/redis/redis-intro/</guid>
+      <guid>https://www.arafathasan.live/en/post/redis-intro/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
