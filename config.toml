@@ -271,6 +271,13 @@ disqusShortname = "arafathasan"
                 url = "/bn/categories/পেশাগত/"
 
             [[languages.bn.menu.main]]
+                name = "অন্যান্য"
+                parent = "bnBlog"
+                identifier = "bnOther"
+                weight = 5
+                url = "/bn/categories/অন্যান্য/"
+
+            [[languages.bn.menu.main]]
                 name = "যোগাযোগ"
                 identifier = "bnContact"
                 weight = 3
