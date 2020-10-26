@@ -243,10 +243,31 @@ disqusShortname = "arafathasan"
                 url = "/bn/"
 
             [[languages.bn.menu.main]]
-                name = "ব্লগ"
+                name = "সব লেখা"
                 identifier = "bnBlog"
                 weight = 2
                 url = "/bn/writings/"
+
+            [[languages.bn.menu.main]]
+                name = "প্রবন্ধ"
+                parent = "bnBlog"
+                identifier = "bnArticle"
+                weight = 2
+                url = "/bn/categories/প্রবন্ধ/"
+
+            [[languages.bn.menu.main]]
+                name = "গল্প"
+                parent = "bnBlog"
+                identifier = "bnStory"
+                weight = 2
+                url = "/bn/categories/গল্প/"
+
+            [[languages.bn.menu.main]]
+                name = "পেশাগত"
+                parent = "bnBlog"
+                identifier = "bnProf"
+                weight = 2
+                url = "/bn/categories/পেশাগত/"
 
             [[languages.bn.menu.main]]
                 name = "যোগাযোগ"
