@@ -10,12 +10,12 @@
     <p><h5>{{ .Site.Params.author }}</h5>
     <em>{{ .Site.Params.tagline }}</em> </p>
     <p>{{ .Summary }}</p>
-    <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a>
+    <a href="{{ .Permalink }}" class="btn btn-outline-primary"> {{i18n "know_more"}}</a>
     {{ end }}
   </div>
   <!-- category -->
   <div class="widget">
-    <h4 class="widget-title">Category</h4>
+    <h4 class="widget-title">{{i18n "category"}}</h4>
     {{- if isset .Site.Taxonomies "categories" }}
     {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
     <ul class="list-unstyled">
@@ -30,7 +30,7 @@
   </div>
   <!-- Tags -->
   <div class="widget">
-    <h4 class="widget-title">Tag</h4>
+    <h4 class="widget-title">{{i18n "tag"}}</h4>
     {{- if isset .Site.Taxonomies "tags" }}
     {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
     <ul class="list-inline">
@@ -44,7 +44,7 @@
   </div>
   <!-- social -->
   <div class="widget">
-    <h4 class="widget-title">Social</h4>
+    <h4 class="widget-title">{{i18n "netigen"}}</h4>
     <ul class="list-inline social-links">
       {{ range .Site.Params.social }}
       <li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>

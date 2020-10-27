@@ -25,3 +25,49 @@ other = "Powered by"
 
 [see_also]
 other = "See also in"
+
+[know_more]
+other = "Know More"
+
+[read_more]
+other = "Read More"
+
+[netigen]
+other = "Internet Societies" 
+
+
+[quick_links]
+other = "Quick Links"
+
+
+[contact]
+other = "Contact"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Phone"
+
+
+[address]
+other = "Address"
+
+[write_to_me]
+other = "Hi Write To Me"
+
+[send_message]
+other = "Send Message"
+
+
+[your_name]
+other = "Your Name"
+
+[your_email]
+other = "Your Email"
+
+[subject]
+other = "Subject"
+
+[your_message]
+other = "Your Message"

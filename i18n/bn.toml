@@ -5,7 +5,7 @@ other = "বিভাগ"
 other = "ট্যাগ"
 
 [series]
-other = "সারি"
+other = "সিরিজ"
 
 [reading_time]
 one = "পড়তে এক মিনিট লাগবে"
@@ -28,3 +28,48 @@ other = "আরও দেখুন"
 
 [posts]
 other = "সব পোস্ট"
+
+[know_more]
+other = "আরও জানুন"
+
+[read_more]
+other = "আরও পড়ুন"
+
+[netigen]
+other = "ইন্টারনেট সমাজ" 
+
+[quick_links]
+other = "হাতের কাছে"
+
+[contact]
+other = "যোগাযোগ"
+
+[email]
+other = "বৈদ্যুতিন ঠিকানা"
+
+[phone]
+other = "ফোন"
+
+[address]
+other = "ঠিকানা"
+
+[write_to_me]
+other = "আমাকে লিখুন"
+
+[send_message]
+other = "পাঠিয়ে দিন"
+
+[your_name]
+other = "আপনার নাম"
+
+[your_email]
+other = "আপনার বৈদ্যুতিন ঠিকানা"
+
+[subject]
+other = "বিষয়"
+
+[your_message]
+other = "আপনার বার্তা"
+
+
+

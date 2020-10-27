@@ -30,7 +30,7 @@
         <a href="{{ .Site.BaseURL | relLangURL }}"><img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" width="150px"></a>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Contact Me</h6>
+        <h6 class="mb-4">{{i18n "contact"}}</h6>
         <ul class="list-unstyled">
           <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.mobile }}"><i
                 class="ti-mobile mr-3 text-primary"></i>{{ .Site.Params.mobile }}</a></li>
@@ -41,7 +41,7 @@
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Social Contacts</h6>
+        <h6 class="mb-4">{{i18n "netigen"}}</h6>
         <ul class="list-unstyled">
           {{ range .Site.Params.social }}
           <li class="mb-3"><a class="text-dark" href="{{ .link | safeURL }}">{{ .title }}</a></li>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Categories</h6>
+        <h6 class="mb-4">{{i18n "category"}}</h6>
         {{- if isset .Site.Taxonomies "categories" }}
         {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
         <ul class="list-unstyled">
@@ -63,7 +63,7 @@
         {{- end }}
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Quick Links</h6>
+        <h6 class="mb-4">{{i18n "quick_links"}}</h6>
         <ul class="list-unstyled">
           {{ range .Site.Menus.footer }}
           <li class="mb-3"><a class="text-dark" href="{{ .URL | absURL }}">{{ .Name }}</a></li>
