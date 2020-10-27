@@ -316,7 +316,7 @@ disqusShortname = "arafathasan"
                 link = "https://twitter.com/Arafat_HJ"
 
             [[languages.bn.params.social]]
-                title = "স্ট্যাকওভারফ্লো"
+                title = "স্ট্যাক ওভারফ্লো"
                 icon = " ti-stack-overflow " # themify icon : https://themify.me/themify-icons
                 link = "https://stackoverflow.com/users/7829174/arafat-hasan"
 
