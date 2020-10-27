@@ -118,7 +118,7 @@ disqusShortname = "arafathasan"
             location = "Rangpur, Bangladedsh"
             mobile = "+8801521303510"
             email = "opendoor.arafat@gmail.com"
-            copyright = "copyright &copy; 2020 Arafat Hasan All Rights Reserved"
+            copyright = "copyright &copy; 2020 Arafat Hasan"
 
             [languages.en.params.newsletter]
                 enable = false
@@ -158,12 +158,6 @@ disqusShortname = "arafathasan"
                 identifier = "enAbout"
                 weight = 1
                 url = "/en/about/"
-                
-            [[languages.en.menu.footer]]
-                name = "Tech Blog"
-                identifier = "enTech"
-                weight = 2
-                url = "/en/prowritings/"
 
 
             [[languages.en.menu.footer]]
@@ -221,12 +215,12 @@ disqusShortname = "arafathasan"
             author = "আরাফাত হাসান"
             logo = "assets/images/logo.bn.png"
             home = "/bn"
-            tagline = "ঋষি দরবেশ ⦁ ভড়ুয়া বাঙাল ⦁ বহিরাগত দর্শক"
+            tagline = "ঋষি দরবেশ ⦁ শিখছি দিবারাত্র ⦁ আগন্তুক দর্শক"
             description = "আরাফাত হাসানের ওয়েবসাইট"
             location = "রংপুর, বাংলাদেশ"
             mobile = "+8801521303510"
             email = "opendoor.arafat@gmail.com"
-            copyright = "স্বত্ব &copy; ২০২০ আরাফাত হাসান কর্তৃক সর্বস্বত্ব সংরক্ষিত"
+            copyright = "স্বত্ব &copy; ২০২০ আরাফাত হাসান"
 
 
             [languages.bn.params.newsletter]
@@ -296,11 +290,6 @@ disqusShortname = "arafathasan"
                 weight = 1
                 url = "/bn/about/"
 
-            [[languages.bn.menu.footer]]
-                name = "ব্লগ"
-                identifier = "bnBlog"
-                weight = 2
-                url = "/bn/writings/"
 
             [[languages.bn.menu.footer]]
                 name = "যোগাযোগ"
