@@ -1,11 +1,11 @@
 [category]
-other = "category"
+other = "Category"
 
 [tag]
-other = "tag"
+other = "Tag"
 
 [series]
-other = "series"
+other = "Series"
 
 [reading_time]
 one = "One-minute read"

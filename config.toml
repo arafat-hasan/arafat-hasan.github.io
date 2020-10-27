@@ -58,7 +58,7 @@ disqusShortname = "arafathasan"
 
     # search
     [params.search]
-        enable = true
+        enable = false
 
 
 
