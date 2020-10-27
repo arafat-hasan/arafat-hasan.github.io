@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = true
 # Enable robots.txt generation
 enableRobotsTXT = true
 
-googleAnalytics = "UA-178245243-1"
+googleAnalitycsID = "UA-178245243-1"
 
 canonifyurls = true
 
