@@ -12,8 +12,6 @@ defaultContentLanguageInSubdir = true
 # Enable robots.txt generation
 enableRobotsTXT = true
 
-googleAnalitycsID = "UA-178245243-1"
-
 canonifyurls = true
 
 #pygmentsstyle = "solarized-light"
@@ -49,7 +47,7 @@ disqusShortname = "arafathasan"
 
     math = true
 
-
+    googleAnalitycsID = "UA-178245243-1"
 
     # Preloader
     [params.preloader]
