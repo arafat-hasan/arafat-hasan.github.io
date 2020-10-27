@@ -12,14 +12,18 @@
         <ul class="list-inline post-meta mb-3">
             {{ if not .Params.HideDate }}
             <li class="list-inline-item">
-              <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
-                {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+              <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML}}'>
+                {{ if ne $.Language.Lang "bn" }}
+                  {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+                {{ else }}
+                  {{ index $.Site.Data.dois (printf "%d" .Date.Day) }}{{ index $.Site.Data.dcois (printf "%d" .Date.Day) }} {{ index $.Site.Data.mois (printf "%d" .Date.Month) }}, {{ index $.Site.Data.yois (printf "%d" .Date.Year) }} খ্রিষ্টাব্দ
+                {{end}}
               </time>
             </li>
             {{ end }}
           </ul>
         <p class="card-text">{{ .Summary }}</p>
-        <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a>
+        <a href="{{ .Permalink }}" class="btn btn-outline-primary">{{i18n "read_more"}}</a>
         </div>
     </article>
 </div>

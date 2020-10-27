@@ -14,7 +14,6 @@
           {{ if not .Params.HideDate }}
           <li class="list-inline-item">
             <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML}}'>
-              
               {{ if ne $.Language.Lang "bn" }}
                 {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
               {{ else }}
