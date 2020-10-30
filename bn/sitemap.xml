@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.arafathasan.live/bn/categories/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/bn/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +44,86 @@
                 rel="alternate"
                 hreflang="bn"
                 href="https://www.arafathasan.live/bn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%87%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%81%E0%A7%9F%E0%A7%87%E0%A6%B2-%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%81/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%BE%E0%A6%AE/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9F%E0%A7%81%E0%A6%A8/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%9A%E0%A6%B2%E0%A6%A4%E0%A6%BF-%E0%A6%98%E0%A6%9F%E0%A6%A8%E0%A6%BE/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%A6%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A6%A8/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A7%E0%A6%B0%E0%A7%8D%E0%A6%AE%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A6%AA%E0%A7%87%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A6%BE/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A8%E0%A6%BF%E0%A6%B7%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%A7%E0%A6%95%E0%A6%B0%E0%A6%A3/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A7/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%B8/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/post/free-speech-vs-hate-speech/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%AE%E0%A6%A4%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A7%87%E0%A6%B0-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%A7%E0%A7%80%E0%A6%A8%E0%A6%A4%E0%A6%BE/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%B0%E0%A7%87%E0%A6%9A%E0%A7%87%E0%A6%AA-%E0%A6%A4%E0%A6%BE%E0%A6%87%E0%A7%9F%E0%A7%87%E0%A6%AA-%E0%A6%8F%E0%A6%B0%E0%A6%A6%E0%A7%8B%E0%A6%97%E0%A6%BE%E0%A6%A8/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%B6%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%B2%E0%A6%BF-%E0%A6%B9%E0%A7%87%E0%A6%AC%E0%A6%A6%E0%A7%8B/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/writings/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.arafathasan.live/en/writings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="https://www.arafathasan.live/bn/writings/"
                 />
   </url>
   
@@ -33,36 +143,6 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/categories/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/tags/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/tags/%E0%A6%85%E0%A6%AA%E0%A6%B0%E0%A6%BE%E0%A6%A7/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
@@ -78,22 +158,12 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%A6%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A6%A8/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A6%E0%A7%83%E0%A6%B7%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A6%AE%E0%A7%82%E0%A6%B2%E0%A6%95-%E0%A6%B6%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%BF/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A7/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -120,21 +190,6 @@
   <url>
     <loc>https://www.arafathasan.live/bn/tags/%E0%A6%B6%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%BF/</loc>
     <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/writings/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.arafathasan.live/en/writings/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="https://www.arafathasan.live/bn/writings/"
-                />
   </url>
   
   <url>
@@ -268,6 +323,31 @@
   </url>
   
   <url>
+    <loc>https://www.arafathasan.live/bn/categories/%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF/</loc>
+    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%81%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%AC/</loc>
+    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/post/ten-principles-of-masculinity/</loc>
+    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%AC%E0%A6%BF%E0%A6%B7%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%A4-%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%81%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%AC/</loc>
+    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%AF%E0%A7%8C%E0%A6%A8-%E0%A6%AC%E0%A7%88%E0%A6%B6%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%9F%E0%A7%8D%E0%A6%AF/</loc>
+    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.arafathasan.live/bn/prowritings/</loc>
     <lastmod>2019-11-07T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -368,17 +448,7 @@
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%BE%E0%A6%AE/</loc>
-    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A7%E0%A6%B0%E0%A7%8D%E0%A6%AE/</loc>
-    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.arafathasan.live/bn/tags/%E0%A6%A7%E0%A6%B0%E0%A7%8D%E0%A6%AE%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A6%AA%E0%A7%87%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A6%BE/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
