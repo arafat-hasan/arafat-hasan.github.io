@@ -28,9 +28,14 @@
             {{ i18n "reading_time"  .ReadingTime}}
           </li>
         </ul>
+        <figure> 
         {{ if .Params.image }}
         <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100 mb-4" alt="{{ .Title | markdownify }}">
         {{ end }}
+        {{ if .Params.image }}
+        <figcaption>{{ .Params.Image_Caption}}</figcaption>
+        {{end}}
+      </figure>
         <div class="content mb-5">
           {{ .Content }}
         </div>

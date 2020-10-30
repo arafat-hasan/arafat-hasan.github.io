@@ -175,27 +175,27 @@ disqusShortname = "arafathasan"
             ############################# social site ########################
 
             [[languages.en.params.social]]
-                title = "facebook"
+                title = "Facebook"
                 icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
                 link = "https://www.facebook.com/arafathasanjenin"
 
             [[languages.en.params.social]]
-                title = "twitter"
+                title = "Twitter"
                 icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
                 link = "https://twitter.com/Arafat_HJ"
 
             [[languages.en.params.social]]
-                title = "stackoverflow"
+                title = "Stackoverflow"
                 icon = " ti-stack-overflow " # themify icon : https://themify.me/themify-icons
                 link = "https://stackoverflow.com/users/7829174/arafat-hasan"
 
             [[languages.en.params.social]]
-                title = "github"
+                title = "Github"
                 icon = "ti-github" # themify icon : https://themify.me/themify-icons
                 link = "https://www.github.com/arafat-hasan"
 
             [[languages.en.params.social]]
-                title = "linkedin"
+                title = "Linkedin"
                 icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
                 link = "https://www.linkedin.com/in/arafat-hasan"
 
