@@ -1,4 +1,4 @@
-baseurl = "https://www.arafathasan.live/"
+baseurl = "https://www.arafathasan.me/"
 
 theme = "liva-hugo"
 summaryLength = "10"
