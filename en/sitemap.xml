@@ -3,235 +3,235 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.arafathasan.live/en/</loc>
+    <loc>https://www.arafathasan.me/en/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/"
+                href="https://www.arafathasan.me/bn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/"
+                href="https://www.arafathasan.me/en/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/comment-policy/</loc>
+    <loc>https://www.arafathasan.me/en/comment-policy/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/comment-policy/"
+                href="https://www.arafathasan.me/bn/comment-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/comment-policy/"
+                href="https://www.arafathasan.me/en/comment-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/categories/</loc>
+    <loc>https://www.arafathasan.me/en/categories/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/categories/"
+                href="https://www.arafathasan.me/bn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/categories/"
+                href="https://www.arafathasan.me/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/centos/</loc>
+    <loc>https://www.arafathasan.me/en/tags/centos/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/installation/</loc>
+    <loc>https://www.arafathasan.me/en/tags/installation/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/lamp/</loc>
+    <loc>https://www.arafathasan.me/en/tags/lamp/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/lamp-config/</loc>
+    <loc>https://www.arafathasan.me/en/post/lamp-config/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/note/</loc>
+    <loc>https://www.arafathasan.me/en/tags/note/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/categories/professional-writings/</loc>
+    <loc>https://www.arafathasan.me/en/categories/professional-writings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/</loc>
+    <loc>https://www.arafathasan.me/en/tags/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/tags/"
+                href="https://www.arafathasan.me/bn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/tags/"
+                href="https://www.arafathasan.me/en/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/prowritings/</loc>
+    <loc>https://www.arafathasan.me/en/prowritings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/prowritings/"
+                href="https://www.arafathasan.me/bn/prowritings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/prowritings/"
+                href="https://www.arafathasan.me/en/prowritings/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/series/redis/</loc>
+    <loc>https://www.arafathasan.me/en/series/redis/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/redis/</loc>
+    <loc>https://www.arafathasan.me/en/tags/redis/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/redis-hello-world/</loc>
+    <loc>https://www.arafathasan.me/en/post/redis-hello-world/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/series/</loc>
+    <loc>https://www.arafathasan.me/en/series/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/series/"
+                href="https://www.arafathasan.me/bn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/series/"
+                href="https://www.arafathasan.me/en/series/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/redis-intro/</loc>
+    <loc>https://www.arafathasan.me/en/post/redis-intro/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/postgres/</loc>
+    <loc>https://www.arafathasan.me/en/tags/postgres/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/series/postgresql/</loc>
+    <loc>https://www.arafathasan.me/en/series/postgresql/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/tags/postgresql/</loc>
+    <loc>https://www.arafathasan.me/en/tags/postgresql/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/postgres-sallow-sea/</loc>
+    <loc>https://www.arafathasan.me/en/post/postgres-sallow-sea/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/postgres-surface-sea/</loc>
+    <loc>https://www.arafathasan.me/en/post/postgres-surface-sea/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/postgres-very-first-commands/</loc>
+    <loc>https://www.arafathasan.me/en/post/postgres-very-first-commands/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/post/postgres-intro/</loc>
+    <loc>https://www.arafathasan.me/en/post/postgres-intro/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/contact/</loc>
+    <loc>https://www.arafathasan.me/en/contact/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/contact/"
+                href="https://www.arafathasan.me/bn/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/contact/"
+                href="https://www.arafathasan.me/en/contact/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/search/</loc>
+    <loc>https://www.arafathasan.me/en/search/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/search/"
+                href="https://www.arafathasan.me/bn/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/search/"
+                href="https://www.arafathasan.me/en/search/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/about/</loc>
+    <loc>https://www.arafathasan.me/en/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/about/"
+                href="https://www.arafathasan.me/bn/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/about/"
+                href="https://www.arafathasan.me/en/about/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.live/en/writings/</loc>
+    <loc>https://www.arafathasan.me/en/writings/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.live/bn/writings/"
+                href="https://www.arafathasan.me/bn/writings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.live/en/writings/"
+                href="https://www.arafathasan.me/en/writings/"
                 />
   </url>
   

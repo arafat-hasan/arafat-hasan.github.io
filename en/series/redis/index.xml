@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on Arafat Hasan</title>
-    <link>https://www.arafathasan.live/en/series/redis/</link>
+    <link>https://www.arafathasan.me/en/series/redis/</link>
     <description>Recent content in Redis on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.live/en/series/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.me/en/series/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis: Hello World!</title>
-      <link>https://www.arafathasan.live/en/post/redis-hello-world/</link>
+      <link>https://www.arafathasan.me/en/post/redis-hello-world/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/post/redis-hello-world/</guid>
+      <guid>https://www.arafathasan.me/en/post/redis-hello-world/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>Redis Introduction and Installation</title>
-      <link>https://www.arafathasan.live/en/post/redis-intro/</link>
+      <link>https://www.arafathasan.me/en/post/redis-intro/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.live/en/post/redis-intro/</guid>
+      <guid>https://www.arafathasan.me/en/post/redis-intro/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
