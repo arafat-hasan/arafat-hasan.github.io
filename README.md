@@ -1,3 +1,1 @@
-www.arafathasan.me
-
-[![Build Status](https://travis-ci.com/arafat-hasan/arafat-hasan.github.io.svg?token=J3Qe6GbyGv13zKmxMqDM&branch=master)](https://travis-ci.com/arafat-hasan/arafat-hasan.github.io)
+## **www.arafathasan.me** &nbsp;&nbsp; [![powered-by-Jekyll](https://img.shields.io/badge/Powered%20by-HUGO-ff69b4.svg)](https://jekyllrb.com) [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)] [![Build Status](https://travis-ci.com/arafat-hasan/arafat-hasan.github.io.svg?token=J3Qe6GbyGv13zKmxMqDM&branch=master)](https://travis-ci.com/arafat-hasan/arafat-hasan.github.io)
