@@ -1,38 +1,47 @@
-name: github pages
+
+
+name: GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+     - master
+  schedule:
+    # Run on the hour
+    - cron: '0 * * * *'
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    - uses: actions/checkout@v2
+      with:
+        submodules: true  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod                  
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.79.1'
-          extended: true
+    - name: Install Ruby Dev                     
+      run: sudo apt-get install ruby-dev
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
+    - name: Install AsciiDoctor and Rouge
+      run: sudo gem install asciidoctor rouge
 
-      - run: gem install asciidoctor
+    - name: Setup Hugo                           
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.79.0'
+        extended: true
 
-      - name: Run Hugo
-        run: |
-          alias asciidoctor="asciidoctor --attribute=experimental=true --attribute=icons=font"
-          hugo --minify
+    - name: Build                                
+      run: hugo
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy                               
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: gh-pages
+        # Without `keep_files` the `CNAME` file in the target repo will get removed
+        # and the custom domain configured for GitHub pages will get dropped every 
+        # time the action runs…
+        keep_files: true
+        publish_dir: ./public
+
