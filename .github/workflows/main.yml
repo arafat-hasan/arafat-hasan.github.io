@@ -15,9 +15,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: true  # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
     - name: Checkout submodule
       uses: actions/checkout@v2.0.0
@@ -25,6 +22,14 @@ jobs:
         token: ${{ secrets.GITHUBPAT }}
         repository: arafat-hasan/writings
         path: submodules/writings
+        ref: 'master'
+
+    - name: Checkout submodule
+      uses: actions/checkout@v2.0.0
+      with:
+        token: ${{ secrets.GITHUBPAT }}
+        repository: arafat-hasan/techNotes
+        path: submodules/techNotes
         ref: 'master'
 
     - name: Install Ruby Dev
