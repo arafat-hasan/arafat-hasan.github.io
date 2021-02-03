@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
 
@@ -39,10 +39,10 @@ jobs:
       run: sudo gem install asciidoctor rouge
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: '0.75.1'
-        extended: true
+      run: |
+        curl -LO https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_extended_0.75.1_Linux-64bit.deb
+        sudo dpkg -i hugo_extended_0.75.1_Linux-64bit.deb
+
 
     - name: Build
       run: hugo
