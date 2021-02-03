@@ -14,17 +14,15 @@ on:
     build-deploy:
       runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      - name: Checkout submodule
-        uses: actions/checkout@v2.0.0
-        with:
-          token: ${{ secrets.WRITINGSREPO }}
-        repository: arafat-hasan/writings
-        path: submodules/writings
-        ref: 'master'
+    - uses: actions/checkout@v2
+
+    - name: Checkout submodule
+      uses: actions/checkout@v2.0.0
+      with:
+        token: ${{ secrets.WRITINGSREPO }}
+      repository: arafat-hasan/writings
+      path: submodules/writings
+      ref: 'master'
 
     - name: Install Ruby Dev
       run: sudo apt-get install ruby-dev
