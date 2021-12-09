@@ -1,4 +1,4 @@
-baseurl = "https://www.arafat-hasan.github.io/"
+baseurl = "https://arafat-hasan.github.io/"
 
 theme = "liva-hugo"
 summaryLength = "10"
