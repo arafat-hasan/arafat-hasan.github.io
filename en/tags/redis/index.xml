@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redis on Arafat Hasan</title>
-    <link>https://www.arafat-hasan.github.io/en/tags/redis/</link>
+    <link>https://arafat-hasan.github.io/en/tags/redis/</link>
     <description>Recent content in redis on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafat-hasan.github.io/en/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://arafat-hasan.github.io/en/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis: Hello World!</title>
-      <link>https://www.arafat-hasan.github.io/en/post/redis-hello-world/</link>
+      <link>https://arafat-hasan.github.io/en/post/redis-hello-world/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/redis-hello-world/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/redis-hello-world/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>Redis Introduction and Installation</title>
-      <link>https://www.arafat-hasan.github.io/en/post/redis-intro/</link>
+      <link>https://arafat-hasan.github.io/en/post/redis-intro/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/redis-intro/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/redis-intro/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     

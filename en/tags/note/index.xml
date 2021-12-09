@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>note on Arafat Hasan</title>
-    <link>https://www.arafat-hasan.github.io/en/tags/note/</link>
+    <link>https://arafat-hasan.github.io/en/tags/note/</link>
     <description>Recent content in note on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafat-hasan.github.io/en/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://arafat-hasan.github.io/en/tags/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAMP Installation and Config</title>
-      <link>https://www.arafat-hasan.github.io/en/post/lamp-config/</link>
+      <link>https://arafat-hasan.github.io/en/post/lamp-config/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/lamp-config/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/lamp-config/</guid>
       <description>Install phpMyAdmin on Centos 8 Step 1: Install phpMyAdmin  The phpMyAdmin tool is not included in the default CentOS 8 repositories.</description>
     </item>
     
     <item>
       <title>Redis: Hello World!</title>
-      <link>https://www.arafat-hasan.github.io/en/post/redis-hello-world/</link>
+      <link>https://arafat-hasan.github.io/en/post/redis-hello-world/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/redis-hello-world/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/redis-hello-world/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>Redis Introduction and Installation</title>
-      <link>https://www.arafat-hasan.github.io/en/post/redis-intro/</link>
+      <link>https://arafat-hasan.github.io/en/post/redis-intro/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/redis-intro/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/redis-intro/</guid>
       <description>This writing is actually a draft note made for myself, so that I myself don’t forget what I had learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Sallow Sea</title>
-      <link>https://www.arafat-hasan.github.io/en/post/postgres-sallow-sea/</link>
+      <link>https://arafat-hasan.github.io/en/post/postgres-sallow-sea/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/postgres-sallow-sea/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/postgres-sallow-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Surface Sea</title>
-      <link>https://www.arafat-hasan.github.io/en/post/postgres-surface-sea/</link>
+      <link>https://arafat-hasan.github.io/en/post/postgres-surface-sea/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/postgres-surface-sea/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/postgres-surface-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Very First Commands</title>
-      <link>https://www.arafat-hasan.github.io/en/post/postgres-very-first-commands/</link>
+      <link>https://arafat-hasan.github.io/en/post/postgres-very-first-commands/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/postgres-very-first-commands/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/postgres-very-first-commands/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Introduction and Installation</title>
-      <link>https://www.arafat-hasan.github.io/en/post/postgres-intro/</link>
+      <link>https://arafat-hasan.github.io/en/post/postgres-intro/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/post/postgres-intro/</guid>
+      <guid>https://arafat-hasan.github.io/en/post/postgres-intro/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     

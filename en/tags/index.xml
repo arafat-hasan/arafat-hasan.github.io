@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Arafat Hasan</title>
-    <link>https://www.arafat-hasan.github.io/en/tags/</link>
+    <link>https://arafat-hasan.github.io/en/tags/</link>
     <description>Recent content in Tags on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafat-hasan.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://arafat-hasan.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>centos</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/centos/</link>
+      <link>https://arafat-hasan.github.io/en/tags/centos/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/centos/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>installation</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/installation/</link>
+      <link>https://arafat-hasan.github.io/en/tags/installation/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/installation/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/installation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lamp</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/lamp/</link>
+      <link>https://arafat-hasan.github.io/en/tags/lamp/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/lamp/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/lamp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>note</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/note/</link>
+      <link>https://arafat-hasan.github.io/en/tags/note/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/note/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/note/</guid>
       <description></description>
     </item>
     
     <item>
       <title>redis</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/redis/</link>
+      <link>https://arafat-hasan.github.io/en/tags/redis/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/redis/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>postgres</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/postgres/</link>
+      <link>https://arafat-hasan.github.io/en/tags/postgres/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/postgres/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/postgres/</guid>
       <description></description>
     </item>
     
     <item>
       <title>postgresql</title>
-      <link>https://www.arafat-hasan.github.io/en/tags/postgresql/</link>
+      <link>https://arafat-hasan.github.io/en/tags/postgresql/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafat-hasan.github.io/en/tags/postgresql/</guid>
+      <guid>https://arafat-hasan.github.io/en/tags/postgresql/</guid>
       <description></description>
     </item>
     
