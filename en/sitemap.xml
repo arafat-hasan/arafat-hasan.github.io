@@ -3,235 +3,235 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.arafathasan.me/en/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/"
+                href="https://www.arafat-hasan.github.io/bn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/"
+                href="https://www.arafat-hasan.github.io/en/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/comment-policy/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/comment-policy/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/comment-policy/"
+                href="https://www.arafat-hasan.github.io/bn/comment-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/comment-policy/"
+                href="https://www.arafat-hasan.github.io/en/comment-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/categories/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/categories/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/categories/"
+                href="https://www.arafat-hasan.github.io/bn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/categories/"
+                href="https://www.arafat-hasan.github.io/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/centos/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/centos/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/installation/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/installation/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/lamp/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/lamp/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/lamp-config/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/lamp-config/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/note/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/note/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/categories/professional-writings/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/categories/professional-writings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/tags/"
+                href="https://www.arafat-hasan.github.io/bn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/tags/"
+                href="https://www.arafat-hasan.github.io/en/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/prowritings/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/prowritings/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/prowritings/"
+                href="https://www.arafat-hasan.github.io/bn/prowritings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/prowritings/"
+                href="https://www.arafat-hasan.github.io/en/prowritings/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/series/redis/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/series/redis/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/redis/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/redis/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/redis-hello-world/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/redis-hello-world/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/series/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/series/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/series/"
+                href="https://www.arafat-hasan.github.io/bn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/series/"
+                href="https://www.arafat-hasan.github.io/en/series/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/redis-intro/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/redis-intro/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/postgres/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/postgres/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/series/postgresql/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/series/postgresql/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/tags/postgresql/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/tags/postgresql/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/postgres-sallow-sea/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/postgres-sallow-sea/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/postgres-surface-sea/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/postgres-surface-sea/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/postgres-very-first-commands/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/postgres-very-first-commands/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/post/postgres-intro/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/post/postgres-intro/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/contact/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/contact/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/contact/"
+                href="https://www.arafat-hasan.github.io/bn/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/contact/"
+                href="https://www.arafat-hasan.github.io/en/contact/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/search/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/search/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/search/"
+                href="https://www.arafat-hasan.github.io/bn/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/search/"
+                href="https://www.arafat-hasan.github.io/en/search/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/about/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/about/"
+                href="https://www.arafat-hasan.github.io/bn/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/about/"
+                href="https://www.arafat-hasan.github.io/en/about/"
                 />
   </url>
   
   <url>
-    <loc>https://www.arafathasan.me/en/writings/</loc>
+    <loc>https://www.arafat-hasan.github.io/en/writings/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="https://www.arafathasan.me/bn/writings/"
+                href="https://www.arafat-hasan.github.io/bn/writings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.arafathasan.me/en/writings/"
+                href="https://www.arafat-hasan.github.io/en/writings/"
                 />
   </url>
   

@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgres on Arafat Hasan</title>
-    <link>https://www.arafathasan.me/en/tags/postgres/</link>
+    <link>https://www.arafat-hasan.github.io/en/tags/postgres/</link>
     <description>Recent content in postgres on Arafat Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafathasan.me/en/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.arafat-hasan.github.io/en/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL: The Sallow Sea</title>
-      <link>https://www.arafathasan.me/en/post/postgres-sallow-sea/</link>
+      <link>https://www.arafat-hasan.github.io/en/post/postgres-sallow-sea/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.me/en/post/postgres-sallow-sea/</guid>
+      <guid>https://www.arafat-hasan.github.io/en/post/postgres-sallow-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: The Surface Sea</title>
-      <link>https://www.arafathasan.me/en/post/postgres-surface-sea/</link>
+      <link>https://www.arafat-hasan.github.io/en/post/postgres-surface-sea/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.me/en/post/postgres-surface-sea/</guid>
+      <guid>https://www.arafat-hasan.github.io/en/post/postgres-surface-sea/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Very First Commands</title>
-      <link>https://www.arafathasan.me/en/post/postgres-very-first-commands/</link>
+      <link>https://www.arafat-hasan.github.io/en/post/postgres-very-first-commands/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.me/en/post/postgres-very-first-commands/</guid>
+      <guid>https://www.arafat-hasan.github.io/en/post/postgres-very-first-commands/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
     <item>
       <title>PostgreSQL: Introduction and Installation</title>
-      <link>https://www.arafathasan.me/en/post/postgres-intro/</link>
+      <link>https://www.arafat-hasan.github.io/en/post/postgres-intro/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.arafathasan.me/en/post/postgres-intro/</guid>
+      <guid>https://www.arafat-hasan.github.io/en/post/postgres-intro/</guid>
       <description>This writing is actually a draft note made for me so that I myself don’t forget what I have learned.</description>
     </item>
     
