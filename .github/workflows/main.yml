@@ -6,9 +6,9 @@ on:
   push:
     branches:
     - master
-  schedule:
+  # schedule:
     # Run on the hour
-    - cron: '0 * * * *'
+    # - cron: '0 * * * *'
 
 jobs:
   build-deploy:
