@@ -7,7 +7,18 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
+      screens: {
+        'xs': '475px',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.touch-manipulation': {
+          'touch-action': 'manipulation',
+        },
+      })
+    },
+  ],
 }
