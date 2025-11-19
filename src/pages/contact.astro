@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contact - Arafat Hasan" description="Get in touch with Arafat Hasan">
+  <Navbar slot="navbar" />
+
+  <div class="max-w-2xl">
+    <h1 class="text-4xl font-bold mb-8">Get In Touch</h1>
+
+    <div class="space-y-6 text-gray-700">
+      <p class="text-lg">
+        I'm always interested in hearing about new opportunities, collaborations, or just
+        having a chat about technology and software engineering.
+      </p>
+
+      <div class="space-y-4 mt-8">
+        <h2 class="text-2xl font-semibold text-gray-900">Contact Information</h2>
+
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="font-medium text-gray-900 min-w-[80px]">Email:</span>
+            <a href="mailto:opendoor.arafat[at]gmail[dot]com" class="text-blue-600 hover:underline">
+              opendoor.arafat[at]gmail[dot]com
+            </a>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="font-medium text-gray-900 min-w-[80px]">GitHub:</span>
+            <a
+              href="https://github.com/arafat-hasan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+            >
+              github.com/arafat-hasan
+            </a>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="font-medium text-gray-900 min-w-[80px]">LinkedIn:</span>
+            <a
+              href="https://linkedin.com/in/arafat-hasan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+            >
+              linkedin.com/in/arafat-hasan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-gray-50 rounded-lg">
+        <h3 class="font-semibold text-gray-900 mb-2">Preferred Contact Method</h3>
+        <p class="text-gray-700">
+          Email is the best way to reach me. I typically respond within 24-48 hours.
+          For urgent matters, please mention "URGENT" in the subject line.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="font-semibold text-gray-900 mb-3">What I'm interested in:</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Software engineering opportunities</li>
+          <li>Open-source collaborations</li>
+          <li>Technical consulting</li>
+          <li>Speaking engagements or podcast appearances</li>
+          <li>Interesting technical challenges</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

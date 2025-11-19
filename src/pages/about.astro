@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="About - Arafat Hasan" description="Learn more about Arafat Hasan">
+  <Navbar slot="navbar" />
+
+  <article class="prose prose-slate max-w-none">
+    <h1 class="text-4xl font-bold mb-8">About Me</h1>
+
+    <div class="space-y-6 text-gray-700 leading-relaxed">
+      <p>
+        I am a software engineer with 4 years of experience building efficient and reliable systems, 
+        supported by a strong background in competitive programming with extensive problem-solving expertise. 
+        My experience spans backend engineering, DevOps, and machine learning, including work on classification, 
+        recommendation, and document review systems. I thrive on tackling complex challenges with clarity, 
+        exploring big ideas, and staying curious about everything while pursuing technical excellence with 
+        intellectual depth.
+      </p>
+
+      <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-600">
+        "You become what you give your attention to."
+      </blockquote>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">Professional Background</h2>
+      <p>
+        Currently working as a Software Engineer at Dynamic Solution Innovators, I contribute to Envize, 
+        Consilio's large-scale document classification and Technology-Assisted Review (TAR) platform used 
+        in enterprise eDiscovery workflows. I've developed and maintained core services using Python, Java 
+        Spring Boot, and Next.js, handling millions of documents with ML-driven classification pipelines.
+      </p>
+      <p>
+        Previously, I interned at MATs Inc. where I contributed to a stock market recommendation system, 
+        building web crawlers and scrapers to extract financial data from NASDAQ and other market sources.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">Technical Expertise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Languages</h3>
+          <p>Python, Java, Go, C/C++, Bash, SQL</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Frameworks</h3>
+          <p>Spring Boot, FastAPI, Flask, Chi, Next.js, Hibernate</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">DevOps & Tools</h3>
+          <p>Docker, Jenkins, GitHub Actions, CI/CD, Git, Maven, Linux</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">ML & Data</h3>
+          <p>Scikit-Learn, Gensim, NumPy, Pandas, PyTorch, TensorFlow</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">Problem Solving Journey</h2>
+      <p>
+        With over 1500+ algorithmic problems solved across major online judges and participation in 300+ 
+        online contests, competitive programming has been a cornerstone of my technical development. I've 
+        competed in 15+ national inter-university contests and served as a Competitive Programming Trainer 
+        at MBSTU, where I trained students for ICPC and conducted workshops on algorithms and data structures.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">Research & Community</h2>
+      <p>
+        I've published research on intelligent waste management systems using deep learning with IoT in the 
+        Journal of King Saud University. Beyond coding, I'm passionate about sharing knowledge and helping 
+        others grow in their technical journey through training, mentorship, and open-source contributions.
+      </p>
+    </div>
+
+
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <p class="text-gray-600">
+        Want to know more? Check out my <a href="/resume" class="text-blue-600 hover:underline">resume</a>
+        or <a href="/contact" class="text-blue-600 hover:underline">get in touch</a>.
+      </p>
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Arafat Hasan - Software Engineer & Problem Solver">
+  <Navbar slot="navbar" />
+
+  <div class="min-h-[70vh] flex flex-col justify-center">
+    <section class="max-w-2xl">
+      <h1 class="text-5xl font-bold mb-6 text-gray-900">
+        Hello, I'm Arafat Hasan
+      </h1>
+
+      <p class="text-xl text-gray-700 leading-relaxed mb-8">
+        I'm a software engineer passionate about building elegant solutions to complex problems.
+        With expertise in algorithms, system design, and modern web technologies, I create
+        efficient and scalable applications that make a difference.
+      </p>
+
+      <div class="flex gap-4">
+        <a
+          href="/blog"
+          class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+        >
+          Read My Blog
+        </a>
+        <a
+          href="/contact"
+          class="px-6 py-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Get In Touch
+        </a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <h2 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">
+          Quick Links
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+          <a href="/about" class="text-gray-700 hover:text-gray-900 flex items-center gap-2">
+            <span class="text-lg">→</span>
+            About Me
+          </a>
+          <a href="/resume" class="text-gray-700 hover:text-gray-900 flex items-center gap-2">
+            <span class="text-lg">→</span>
+            Resume
+          </a>
+          <a href="/blog" class="text-gray-700 hover:text-gray-900 flex items-center gap-2">
+            <span class="text-lg">→</span>
+            Blog Posts
+          </a>
+          <a href="/contact" class="text-gray-700 hover:text-gray-900 flex items-center gap-2">
+            <span class="text-lg">→</span>
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

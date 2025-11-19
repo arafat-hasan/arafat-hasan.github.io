@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const allPosts = await getCollection('blog');
+
+// Filter out drafts and sort by date (newest first)
+const publishedPosts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout title="Blog - Arafat Hasan" description="Thoughts on software engineering, algorithms, and technology">
+  <Navbar slot="navbar" />
+
+  <div class="mb-12">
+    <h1 class="text-4xl font-bold mb-4">Blog</h1>
+    <p class="text-gray-600">
+      Thoughts on software engineering, algorithms, and technology
+    </p>
+  </div>
+
+  <div class="space-y-8">
+    {publishedPosts.length === 0 ? (
+      <p class="text-gray-600">No posts yet. Check back soon!</p>
+    ) : (
+      publishedPosts.map((post) => {
+        const formattedDate = post.data.publishedAt.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+        return (
+          <article class="border-b border-gray-200 pb-8">
+            <a href={`/blog/${post.slug}`} class="block group">
+              <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                {post.data.title}
+              </h2>
+              <div class="text-sm text-gray-600 mb-3">
+                <time datetime={post.data.publishedAt.toISOString()}>
+                  {formattedDate}
+                </time>
+              </div>
+              <p class="text-gray-700 mb-3">
+                {post.data.description}
+              </p>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="flex gap-2 flex-wrap">
+                  {post.data.tags.map((tag) => (
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </a>
+          </article>
+        );
+      })
+    )}
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
