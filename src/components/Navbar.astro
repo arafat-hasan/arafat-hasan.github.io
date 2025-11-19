@@ -161,7 +161,7 @@ function isActive(href: string) {
   });
 
   // Handle window resize - close menu if resizing to desktop
-  let resizeTimer: number;
+  let resizeTimer: ReturnType<typeof setTimeout>;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
