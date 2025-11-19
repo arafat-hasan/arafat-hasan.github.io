@@ -1,13 +1,7 @@
 ---
-const currentPath = Astro.url.pathname;
+import { NAV_LINKS, SITE_CONFIG } from '../config/constants';
 
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'About', href: '/about' },
-  { name: 'Resume', href: '/resume' },
-  { name: 'Contact', href: '/contact' },
-];
+const currentPath = Astro.url.pathname;
 
 function isActive(href: string) {
   if (href === '/') {
@@ -21,12 +15,12 @@ function isActive(href: string) {
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
     <div class="flex items-center justify-between">
       <a href="/" class="text-xl font-semibold text-gray-900 hover:text-gray-700 relative z-50">
-        Arafat Hasan
+        {SITE_CONFIG.name}
       </a>
 
       <!-- Desktop Navigation -->
       <ul class="hidden md:flex gap-6">
-        {navLinks.map((link) => (
+        {NAV_LINKS.map((link) => (
           <li>
             <a
               href={link.href}
@@ -69,7 +63,7 @@ function isActive(href: string) {
     >
       <nav class="flex flex-col pt-20 px-6">
         <ul class="flex flex-col gap-1">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <li>
               <a
                 href={link.href}

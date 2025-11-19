@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { formatDate, formatDateISO } from '../../utils/helpers';
 
 const allPosts = await getCollection('blog');
 
@@ -15,36 +16,30 @@ const publishedPosts = allPosts
 <BaseLayout title="Blog - Arafat Hasan" description="Thoughts on software engineering, algorithms, and technology">
   <Navbar slot="navbar" />
 
-  <div class="mb-12">
-    <h1 class="text-4xl font-bold mb-4">Blog</h1>
-    <p class="text-gray-600">
+  <div class="mb-8 sm:mb-12">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Blog</h1>
+    <p class="text-gray-600 text-sm sm:text-base">
       Thoughts on software engineering, algorithms, and technology
     </p>
   </div>
 
-  <div class="space-y-8">
+  <div class="space-y-6 sm:space-y-8">
     {publishedPosts.length === 0 ? (
-      <p class="text-gray-600">No posts yet. Check back soon!</p>
+      <p class="text-gray-600 text-center py-8">No posts yet. Check back soon!</p>
     ) : (
       publishedPosts.map((post) => {
-        const formattedDate = post.data.publishedAt.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-
         return (
-          <article class="border-b border-gray-200 pb-8">
-            <a href={`/blog/${post.slug}`} class="block group">
-              <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+          <article class="border-b border-gray-200 pb-6 sm:pb-8">
+            <a href={`/blog/${post.slug}`} class="block group touch-manipulation">
+              <h2 class="text-xl sm:text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                 {post.data.title}
               </h2>
-              <div class="text-sm text-gray-600 mb-3">
-                <time datetime={post.data.publishedAt.toISOString()}>
-                  {formattedDate}
+              <div class="text-xs sm:text-sm text-gray-600 mb-3">
+                <time datetime={formatDateISO(post.data.publishedAt)}>
+                  {formatDate(post.data.publishedAt)}
                 </time>
               </div>
-              <p class="text-gray-700 mb-3">
+              <p class="text-gray-700 mb-3 text-sm sm:text-base">
                 {post.data.description}
               </p>
               {post.data.tags && post.data.tags.length > 0 && (
