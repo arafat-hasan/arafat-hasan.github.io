@@ -6,15 +6,15 @@ interface Props {
   ogType?: string;
 }
 
-const { 
-  title, 
-  description = 'Software engineer with 4 years of experience building efficient and reliable systems. Expertise in backend engineering, DevOps, and machine learning.',
-  ogImage = '/og-image.jpg',
-  ogType = 'website'
+const {
+  title,
+  description = "Software engineer, multidisciplinary thinker and critic, outsider observer.",
+  ogImage = "/og-image.jpg",
+  ogType = "website",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const siteTitle = 'Arafat Hasan';
+const siteTitle = "Arafat Hasan";
 const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 ---
 
@@ -22,14 +22,17 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta name="description" content={description} />
-    
+
     <!-- SEO -->
     <link rel="canonical" href={canonicalURL} />
     <meta name="author" content="Arafat Hasan" />
     <meta name="theme-color" content="#ffffff" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
@@ -37,43 +40,43 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
     <meta property="og:site_name" content={siteTitle} />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
+
     <!-- Page Title -->
     <title>{fullTitle}</title>
-    
+
     <!-- Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="min-h-screen bg-white text-gray-900 antialiased">
     <!-- Skip to main content for accessibility -->
-    <a 
-      href="#main-content" 
+    <a
+      href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-gray-900 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
     >
       Skip to main content
     </a>
-    
+
     <slot name="navbar" />
-    
+
     <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <slot />
     </main>
-    
+
     <slot name="footer" />
   </body>
 </html>
@@ -84,7 +87,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
     outline: 2px solid #1f2937;
     outline-offset: 2px;
   }
-  
+
   /* Screen reader only utility */
   .sr-only {
     position: absolute;
@@ -97,7 +100,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
     white-space: nowrap;
     border-width: 0;
   }
-  
+
   .sr-only:not(.focus\:not-sr-only:focus) {
     position: absolute;
     width: 1px;
@@ -109,15 +112,27 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
     white-space: nowrap;
     border-width: 0;
   }
-  
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Better text rendering */
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>

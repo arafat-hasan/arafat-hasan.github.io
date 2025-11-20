@@ -24,3 +24,8 @@ pnpm-debug.log*
 
 # misc
 *.log
+
+# performance testing
+.lighthouseci/
+lhci-reports/
+stats.html
