@@ -1,0 +1,130 @@
+---
+/**
+ * Writing Layout
+ * Layout for individual writing pieces with category badge and metadata
+ */
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Badge from '../components/common/Badge.astro';
+import ReadingTime from '../components/writing/ReadingTime.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishedAt: Date;
+  category: 'tech' | 'geopolitics' | 'literature' | 'philosophy' | 'fiction';
+  tags?: string[];
+  content: string; // For reading time
+}
+
+const { title, description, publishedAt, category, tags, content } = Astro.props;
+
+const formattedDate = publishedAt.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <Navbar slot="navbar" />
+
+  <article class="prose prose-slate max-w-none">
+    <header class="mb-8 pb-8 border-b border-gray-200">
+      <!-- Breadcrumb -->
+      <nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/writing" class="hover:text-gray-900">Writing</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href={`/writing/${category}`} class="hover:text-gray-900 capitalize">{category}</a></li>
+        </ol>
+      </nav>
+
+      <!-- Category Badge -->
+      <div class="mb-4">
+        <Badge text={category} variant={category} />
+      </div>
+
+      <h1 class="text-4xl font-bold mb-4">{title}</h1>
+      
+      <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
+        <time datetime={publishedAt.toISOString()}>📅 {formattedDate}</time>
+        <span>•</span>
+        <ReadingTime content={content} />
+      </div>
+
+      {tags && tags.length > 0 && (
+        <div class="flex gap-2 flex-wrap">
+          {tags.map((tag) => (
+            <Badge text={tag} variant="default" />
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="writing-content">
+      <slot />
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style is:global>
+  .writing-content {
+    @apply text-gray-800 leading-relaxed;
+  }
+
+  .writing-content h2 {
+    @apply text-2xl font-semibold mt-8 mb-4;
+  }
+
+  .writing-content h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+
+  .writing-content p {
+    @apply mb-4;
+  }
+
+  .writing-content ul, .writing-content ol {
+    @apply mb-4 ml-6;
+  }
+
+  .writing-content li {
+    @apply mb-2;
+  }
+
+  .writing-content a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+  }
+
+  .writing-content code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+  }
+
+  .writing-content pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .writing-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .writing-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+  }
+
+  .writing-content table {
+    @apply w-full mb-4 border-collapse;
+  }
+
+  .writing-content th, .writing-content td {
+    @apply border border-gray-300 px-4 py-2;
+  }
+
+  .writing-content th {
+    @apply bg-gray-100 font-semibold;
+  }
+</style>

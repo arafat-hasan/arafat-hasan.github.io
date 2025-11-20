@@ -2,6 +2,7 @@
 title: "The Philosophy of Clean Code"
 publishedAt: "2024-12-28"
 description: "Exploring the principles and mindset behind writing code that is not just functional, but elegant, maintainable, and a joy to work with."
+category: "tech"
 tags: ["software-engineering", "best-practices", "philosophy"]
 ---
 

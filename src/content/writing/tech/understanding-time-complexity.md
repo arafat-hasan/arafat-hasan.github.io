@@ -2,6 +2,7 @@
 title: "Understanding Time Complexity: A Practical Guide"
 publishedAt: "2025-01-10"
 description: "Learn how to analyze and optimize the time complexity of your algorithms with practical examples and real-world applications."
+category: "tech"
 tags: ["algorithms", "computer-science", "optimization"]
 ---
 

@@ -1,0 +1,38 @@
+---
+/**
+ * Activity Grid Component
+ * Displays a grid of activity cards
+ */
+import type { CollectionEntry } from 'astro:content';
+import ActivityCard from './ActivityCard.astro';
+import Empty from '../common/Empty.astro';
+
+interface Props {
+  activities: CollectionEntry<'activities'>[];
+  class?: string;
+}
+
+const { activities, class: className = '' } = Astro.props;
+---
+
+{activities.length > 0 ? (
+  <div class={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${className}`.trim()}>
+    {activities.map((activity) => (
+      <ActivityCard
+        title={activity.data.title}
+        description={activity.data.description}
+        date={activity.data.date}
+        location={activity.data.location}
+        activityType={activity.data.activityType}
+        distance={activity.data.distance}
+        featuredImage={activity.data.featuredImage}
+        slug={activity.slug}
+      />
+    ))}
+  </div>
+) : (
+  <Empty
+    title="No activities yet"
+    message="There are no activities to display yet. Check back soon for cycling adventures and more!"
+  />
+)}

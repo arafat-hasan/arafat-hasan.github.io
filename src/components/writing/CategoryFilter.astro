@@ -1,0 +1,44 @@
+---
+/**
+ * Category Filter Component
+ * Navigation for writing categories
+ */
+import { WRITING_CATEGORIES } from '../../config/constants';
+
+interface Props {
+  currentCategory?: string; // undefined means 'all'
+  class?: string;
+}
+
+const { currentCategory, class: className = '' } = Astro.props;
+
+const categories = [
+  { name: 'All', slug: undefined },
+  ...Object.values(WRITING_CATEGORIES),
+];
+---
+
+<nav class={`border-b border-gray-200 ${className}`.trim()} aria-label="Writing categories">
+  <ul class="flex flex-wrap gap-1 -mb-px">
+    {categories.map((category) => {
+      const isActive = currentCategory === category.slug;
+      const href = category.slug ? `/writing/${category.slug}` : '/writing';
+      
+      return (
+        <li>
+          <a
+            href={href}
+            class={`inline-block px-4 py-2 border-b-2 text-sm font-medium transition-colors ${
+              isActive
+                ? 'border-gray-900 text-gray-900'
+                : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
+            }`}
+            aria-current={isActive ? 'page' : undefined}
+          >
+            {category.name}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>

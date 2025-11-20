@@ -1,0 +1,45 @@
+---
+/**
+ * Writing - All Categories
+ * Unified view of all writing across all categories
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import CategoryFilter from '../../components/writing/CategoryFilter.astro';
+import WritingList from '../../components/writing/WritingList.astro';
+
+// Get all writing posts, filter out drafts, sort by date
+const allPosts = await getCollection('writing', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort by published date (newest first)
+const sortedPosts = allPosts.sort((a, b) => 
+  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+---
+
+<BaseLayout
+  title="Writing"
+  description="Explore my writing across technology, geo-politics, literature, philosophy, and fiction."
+>
+  <Navbar slot="navbar" />
+
+  <div class="mb-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+      Writing
+    </h1>
+    <p class="text-lg text-gray-600 max-w-2xl">
+      Thoughts and explorations across multiple domains — from software engineering to philosophy, 
+      from geo-politics to fiction. All writings organized by category.
+    </p>
+  </div>
+
+  <CategoryFilter class="mb-8" />
+
+  <WritingList posts={sortedPosts} />
+
+  <Footer slot="footer" />
+</BaseLayout>

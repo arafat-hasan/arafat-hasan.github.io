@@ -2,6 +2,7 @@
 title: "Getting Started with Competitive Programming: A Comprehensive Guide"
 publishedAt: "2025-01-15"
 description: "A comprehensive guide for beginners who want to start their competitive programming journey and improve their problem-solving skills."
+category: "tech"
 tags: ["competitive-programming", "algorithms", "learning"]
 ---
 

@@ -1,0 +1,78 @@
+---
+/**
+ * Gallery Collection Page
+ * Dynamic route for specific photo collections
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PhotoGrid from '../../components/gallery/PhotoGrid.astro';
+import CollectionFilter from '../../components/gallery/CollectionFilter.astro';
+import Lightbox from '../../components/gallery/Lightbox.astro';
+
+export async function getStaticPaths() {
+  const allPhotos = await getCollection('gallery');
+  
+  // Extract unique collections
+  const collections = [...new Set(
+    allPhotos
+      .map(photo => photo.data.collection)
+      .filter(Boolean) as string[]
+  )];
+  
+  // Create a path for each collection
+  return collections.map(collection => ({
+    params: { 
+      collection: collection.toLowerCase().replace(/\s+/g, '-')
+    },
+    props: { 
+      collection,
+      photos: allPhotos.filter(photo => photo.data.collection === collection)
+    },
+  }));
+}
+
+interface Props {
+  collection: string;
+  photos: any[];
+}
+
+const { collection, photos } = Astro.props;
+
+// Get all photos to build the filter
+const allPhotos = await getCollection('gallery');
+const allCollections = [...new Set(
+  allPhotos
+    .map(photo => photo.data.collection)
+    .filter(Boolean) as string[]
+)].sort();
+---
+
+<BaseLayout
+  title={`${collection} - Gallery`}
+  description={`Photos from ${collection}. A collection of ${photos.length} travel photographs.`}
+>
+  <Navbar slot="navbar" />
+
+  <div class="mb-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+      {collection}
+    </h1>
+    <p class="text-lg text-gray-600 max-w-2xl">
+      {photos.length} {photos.length === 1 ? 'photo' : 'photos'} from this collection
+    </p>
+  </div>
+
+  <CollectionFilter 
+    collections={allCollections} 
+    currentCollection={collection}
+    class="mb-8" 
+  />
+
+  <PhotoGrid photos={photos} />
+
+  <Lightbox />
+
+  <Footer slot="footer" />
+</BaseLayout>

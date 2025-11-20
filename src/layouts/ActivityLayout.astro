@@ -1,0 +1,151 @@
+---
+/**
+ * Activity Layout
+ * Layout for individual activity pages
+ */
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Badge from '../components/common/Badge.astro';
+import ActivityStats from '../components/activities/ActivityStats.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  activityType: 'cycling' | 'hiking' | 'running' | 'other';
+  location: string;
+  distance?: number;
+  duration?: string;
+  elevation?: number;
+  featuredImage: string;
+  images?: string[];
+}
+
+const {
+  title,
+  description,
+  date,
+  activityType,
+  location,
+  distance,
+  duration,
+  elevation,
+  featuredImage,
+  images = [],
+} = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// Activity type icons
+const activityIcons = {
+  cycling: '🚴',
+  hiking: '🥾',
+  running: '🏃',
+  other: '⚡',
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <Navbar slot="navbar" />
+
+  <article class="max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
+        <li><a href="/activities" class="hover:text-gray-900">Activities</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-gray-900 capitalize">{title}</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-8">
+      <!-- Activity Type Badge -->
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl" aria-hidden="true">{activityIcons[activityType]}</span>
+        <Badge text={activityType} variant={activityType} />
+      </div>
+
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
+
+      <div class="flex flex-wrap gap-3 text-gray-600 mb-6">
+        <span class="flex items-center gap-1">
+          📍 {location}
+        </span>
+        <span>•</span>
+        <time datetime={date.toISOString()}>
+          📅 {formattedDate}
+        </time>
+      </div>
+
+      <!-- Activity Stats -->
+      <ActivityStats
+        distance={distance}
+        duration={duration}
+        elevation={elevation}
+      />
+    </header>
+
+    <!-- Featured Image -->
+    <div class="aspect-video w-full rounded-lg overflow-hidden mb-8">
+      <img
+        src={featuredImage}
+        alt={title}
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-slate max-w-none mb-8">
+      <slot />
+    </div>
+
+    <!-- Additional Images -->
+    {images.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Gallery</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images.map((image) => (
+            <div class="aspect-square rounded-lg overflow-hidden">
+              <img
+                src={image}
+                alt=""
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style is:global>
+  .prose p {
+    @apply mb-4 text-gray-700 leading-relaxed;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-gray-900;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-gray-900;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 ml-6 text-gray-700;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+</style>

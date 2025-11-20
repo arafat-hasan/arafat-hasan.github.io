@@ -1,0 +1,49 @@
+# Content Security Policy and Security Headers
+# For Netlify, Cloudflare Pages, and other platforms that support _headers
+
+# ============================================
+# Performance Optimization: Cache Headers
+# ============================================
+
+# Cache static assets for 1 year (immutable)
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images for 1 year
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache fonts for 1 year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - short cache with revalidation
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root index
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ============================================
+# Security Headers
+# ============================================
+
+/*
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+  
+  # Prevent clickjacking attacks
+  X-Frame-Options: DENY
+  
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Referrer Policy
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Permissions Policy
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # Enable XSS Protection
+  X-XSS-Protection: 1; mode=block

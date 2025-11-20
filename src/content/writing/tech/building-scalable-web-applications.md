@@ -2,6 +2,7 @@
 title: "Building Scalable Web Applications: Lessons Learned"
 publishedAt: "2025-01-05"
 description: "Key principles and practical strategies for building web applications that can scale from hundreds to millions of users."
+category: "tech"
 tags: ["web-development", "architecture", "scalability"]
 ---
 

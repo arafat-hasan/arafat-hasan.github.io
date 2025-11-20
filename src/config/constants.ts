@@ -25,9 +25,46 @@ export const SOCIAL_LINKS = {
     },
 } as const;
 
+/**
+ * Writing categories configuration
+ * Used for multi-domain content organization
+ */
+export const WRITING_CATEGORIES = {
+    tech: {
+        name: 'Tech',
+        slug: 'tech',
+        description: 'Software engineering, programming, algorithms, and system design',
+        color: 'blue',
+    },
+    geopolitics: {
+        name: 'Geo-Politics',
+        slug: 'geopolitics',
+        description: 'International relations, political analysis, current affairs',
+        color: 'red',
+    },
+    literature: {
+        name: 'Literature',
+        slug: 'literature',
+        description: 'Book reviews, literary analysis, reading notes',
+        color: 'green',
+    },
+    philosophy: {
+        name: 'Philosophy',
+        slug: 'philosophy',
+        description: 'Philosophical musings, ethical discussions, thought experiments',
+        color: 'purple',
+    },
+    fiction: {
+        name: 'Fiction',
+        slug: 'fiction',
+        description: 'Short stories, creative writing, narrative experiments',
+        color: 'orange',
+    },
+} as const;
+
 export const NAV_LINKS = [
     { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Blog', href: '/blog' }, // Will be replaced with Writing dropdown in Phase 2
     { name: 'About', href: '/about' },
     { name: 'Resume', href: '/resume' },
     { name: 'Contact', href: '/contact' },
@@ -50,3 +87,4 @@ export const FOOTER_LINKS = [
         external: false,
     },
 ] as const;
+

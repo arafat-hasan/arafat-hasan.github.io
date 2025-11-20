@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  # Optionally trigger on push to master (uncomment to enable)
+  # push:
+  #   branches: [master]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -32,8 +35,76 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # ============================================
+      # Performance Optimization: Image Processing
+      # ============================================
+      # - name: Optimize Images
+      #   run: |
+      #     echo "🖼️ Starting image optimization..."
+      #     npm run optimize-images
+      #     echo "✅ Image optimization complete"
+
+      # ============================================
+      # Build with TypeScript Checking
+      # ============================================
       - name: Build with Astro
         run: npm run build
+
+      # ============================================
+      # Performance Analysis: Bundle Size
+      # ============================================
+      # - name: Analyze Bundle Size
+      #   run: |
+      #     echo "📊 Analyzing bundle size..."
+      #     du -sh dist/
+      #     echo ""
+      #     echo "Static Assets:"
+      #     du -sh dist/_astro/ 2>/dev/null || echo "No _astro directory"
+      #     echo ""
+      #     echo "Images:"
+      #     du -sh dist/images/ 2>/dev/null || echo "No images directory"
+      #     echo ""
+      #     echo "Largest files:"
+      #     find dist -type f -exec du -h {} + | sort -rh | head -20
+      #   continue-on-error: true
+
+      # ============================================
+      # Performance Testing: Lighthouse CI
+      # ============================================
+      # - name: Run Lighthouse CI
+      #   run: |
+      #     echo "🔦 Running Lighthouse CI..."
+      #     npm run lighthouse
+      #   continue-on-error: true
+      #   env:
+      #     LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      # ============================================
+      # Performance Report Summary
+      # ============================================
+      # - name: Performance Summary
+      #   run: |
+      #     echo "================================================"
+      #     echo "📊 PERFORMANCE SUMMARY"
+      #     echo "================================================"
+      #     echo ""
+      #     echo "Build Information:"
+      #     echo "  - Build Time: $(date)"
+      #     echo "  - Node Version: $(node --version)"
+      #     echo "  - NPM Version: $(npm --version)"
+      #     echo ""
+      #     echo "Build Artifacts:"
+      #     DIST_SIZE=$(du -sh dist/ | cut -f1)
+      #     echo "  - Total Size: $DIST_SIZE"
+          
+      #     ASTRO_SIZE=$(du -sh dist/_astro/ 2>/dev/null | cut -f1 || echo "N/A")
+      #     echo "  - JS/CSS Bundles: $ASTRO_SIZE"
+          
+      #     IMG_SIZE=$(du -sh dist/images/ 2>/dev/null | cut -f1 || echo "N/A")
+      #     echo "  - Images: $IMG_SIZE"
+      #     echo ""
+      #     echo "✅ Build completed successfully!"
+      #     echo "================================================"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

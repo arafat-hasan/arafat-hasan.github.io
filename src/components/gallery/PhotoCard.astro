@@ -1,0 +1,71 @@
+---
+/**
+ * Photo Card Component
+ * Displays a single photo in the gallery grid
+ */
+interface Props {
+  id: string;
+  image: string;
+  title: string;
+  alt: string;
+  location: string;
+  date: Date;
+  collection?: string;
+  class?: string;
+}
+
+const {
+  id,
+  image,
+  title,
+  alt,
+  location,
+  date,
+  collection,
+  class: className = '',
+} = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+});
+---
+
+<div
+  class={`group cursor-pointer ${className}`.trim()}
+  data-photo-id={id}
+  data-photo-src={image}
+  data-photo-title={title}
+  data-photo-alt={alt}
+  data-photo-location={location}
+  data-photo-date={formattedDate}
+  role="button"
+  tabindex="0"
+  aria-label={`View photo: ${title}`}
+>
+  <!-- Image Container -->
+  <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 relative">
+    <img
+      src={image}
+      alt={alt}
+      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      loading="lazy"
+    />
+    
+    <!-- Overlay on Hover -->
+    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-end p-4">
+      <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+        <h3 class="font-semibold text-sm mb-1">{title}</h3>
+        <div class="flex items-center gap-2 text-xs">
+          <span>📍 {location}</span>
+          {collection && (
+            <>
+              <span>•</span>
+              <span>{collection}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

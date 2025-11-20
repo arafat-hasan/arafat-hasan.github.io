@@ -1,0 +1,45 @@
+---
+/**
+ * Photo Grid Component
+ * Displays photos in a responsive masonry-style grid
+ */
+import type { CollectionEntry } from 'astro:content';
+import PhotoCard from './PhotoCard.astro';
+import Empty from '../common/Empty.astro';
+
+interface Props {
+  photos: CollectionEntry<'gallery'>[];
+  class?: string;
+}
+
+const { photos, class: className = '' } = Astro.props;
+
+// Sort photos by date (newest first)
+const sortedPhotos = photos.sort((a, b) => 
+  b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+{sortedPhotos.length > 0 ? (
+  <div 
+    id="photo-grid"
+    class={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ${className}`.trim()}
+  >
+    {sortedPhotos.map((photo) => (
+      <PhotoCard
+        id={photo.id}
+        image={photo.data.image}
+        title={photo.data.title}
+        alt={photo.data.alt}
+        location={photo.data.location}
+        date={photo.data.date}
+        collection={photo.data.collection}
+      />
+    ))}
+  </div>
+) : (
+  <Empty
+    title="No photos yet"
+    message="There are no photos in the gallery yet. Check back soon for travel photography!"
+  />
+)}
