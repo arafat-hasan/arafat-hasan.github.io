@@ -1,0 +1,107 @@
+---
+/**
+ * Activity Card Component
+ * Displays a preview of an activity with image and key details
+ */
+import Badge from '../common/Badge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  location: string;
+  activityType: 'cycling' | 'hiking' | 'running' | 'other';
+  distance?: number;
+  featuredImage: string;
+  slug: string;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  date,
+  location,
+  activityType,
+  distance,
+  featuredImage,
+  slug,
+  class: className = '',
+} = Astro.props;
+
+// Format date
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+// Activity type icons
+const activityIcons = {
+  cycling: '🚴',
+  hiking: '🥾',
+  running: '🏃',
+  other: '⚡',
+};
+
+const url = `/activities/${slug}`;
+---
+
+<article class={`group border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all ${className}`.trim()}>
+  <a href={url} class="block">
+    <!-- Featured Image -->
+    <div class="aspect-video w-full bg-gray-200 overflow-hidden">
+      <img
+        src={featuredImage}
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="p-6">
+      <!-- Activity Type Badge -->
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xl" aria-hidden="true">{activityIcons[activityType]}</span>
+        <Badge text={activityType} variant={activityType} />
+      </div>
+
+      <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
+        {title}
+      </h3>
+
+      <p class="text-gray-600 mb-4 line-clamp-2">
+        {description}
+      </p>
+
+      <!-- Metadata -->
+      <div class="flex flex-wrap gap-3 text-sm text-gray-500">
+        <span class="flex items-center gap-1">
+          📍 {location}
+        </span>
+        {distance && (
+          <>
+            <span>•</span>
+            <span class="flex items-center gap-1">
+              📏 {distance} km
+            </span>
+          </>
+        )}
+        <span>•</span>
+        <time datetime={date.toISOString()}>
+          📅 {formattedDate}
+        </time>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+/**
+ * Literature Writing Page
+ * Book reviews, literary analysis, reading notes
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import CategoryFilter from '../../components/writing/CategoryFilter.astro';
+import WritingList from '../../components/writing/WritingList.astro';
+import { WRITING_CATEGORIES } from '../../config/constants';
+
+const category = 'literature';
+const categoryInfo = WRITING_CATEGORIES[category];
+
+// Get all literature writing posts
+const posts = await getCollection('writing', ({ data }) => {
+  return data.category === category && !data.draft;
+});
+
+// Sort by published date (newest first)
+const sortedPosts = posts.sort((a, b) => 
+  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+---
+
+<BaseLayout
+  title={`${categoryInfo.name} Writing`}
+  description={categoryInfo.description}
+>
+  <Navbar slot="navbar" />
+
+  <div class="mb-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+      {categoryInfo.name}
+    </h1>
+    <p class="text-lg text-gray-600 max-w-2xl">
+      {categoryInfo.description}
+    </p>
+  </div>
+
+  <CategoryFilter currentCategory={category} class="mb-8" />
+
+  <WritingList posts={sortedPosts} />
+
+  <Footer slot="footer" />
+</BaseLayout>

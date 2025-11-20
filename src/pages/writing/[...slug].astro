@@ -1,0 +1,41 @@
+---
+/**
+ * Individual Writing Post Page
+ * Dynamic route for all writing posts
+ * URL format: /writing/{category}/{slug}
+ */
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import WritingLayout from '../../layouts/WritingLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing');
+  
+  return posts.map((post) => ({
+    params: { 
+      // The slug already contains the full path from content/writing/{category}/{slug}
+      // We want just: {category}/{post-slug}
+      slug: `${post.data.category}/${post.id.split('/').pop()?.replace('.md', '')}` 
+    },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'writing'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<WritingLayout
+  title={post.data.title}
+  description={post.data.description}
+  publishedAt={post.data.publishedAt}
+  category={post.data.category}
+  tags={post.data.tags}
+  content={post.body}
+>
+  <Content />
+</WritingLayout>

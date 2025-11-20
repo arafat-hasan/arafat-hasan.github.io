@@ -1,5 +1,6 @@
 ---
-import { NAV_LINKS, SITE_CONFIG } from '../config/constants';
+import { WRITING_CATEGORIES } from '../config/constants';
+import { SITE_CONFIG } from '../config/constants';
 
 const currentPath = Astro.url.pathname;
 
@@ -9,6 +10,21 @@ function isActive(href: string) {
   }
   return currentPath.startsWith(href);
 }
+
+// Check if we're on any writing page
+const isWritingActive = currentPath.startsWith('/writing') || currentPath.startsWith('/blog');
+
+// Main nav links (excluding Writing which has dropdown)
+const mainNavLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Activities', href: '/activities' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'About', href: '/about' },
+  { name: 'Resume', href: '/resume' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const writingCategories = Object.values(WRITING_CATEGORIES);
 ---
 
 <nav class="border-b border-gray-200">
@@ -19,8 +35,8 @@ function isActive(href: string) {
       </a>
 
       <!-- Desktop Navigation -->
-      <ul class="hidden md:flex gap-6">
-        {NAV_LINKS.map((link) => (
+      <ul class="hidden md:flex gap-6 items-center">
+        {mainNavLinks.map((link) => (
           <li>
             <a
               href={link.href}
@@ -34,6 +50,47 @@ function isActive(href: string) {
             </a>
           </li>
         ))}
+        
+        <!-- Writing Dropdown -->
+        <li class="relative">
+          <button
+            id="writing-menu-button"
+            class={`text-sm transition-colors flex items-center gap-1 ${
+              isWritingActive
+                ? 'text-gray-900 font-medium'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Writing
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div
+            id="writing-dropdown"
+            class="hidden absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50"
+          >
+            <a
+              href="/writing"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            >
+              All Writing
+            </a>
+            <div class="border-t border-gray-200 my-2"></div>
+            {writingCategories.map((category) => (
+              <a
+                href={`/writing/${category.slug}`}
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+              >
+                {category.name}
+              </a>
+            ))}
+          </div>
+        </li>
       </ul>
 
       <!-- Mobile Hamburger Button -->
@@ -59,11 +116,11 @@ function isActive(href: string) {
     <!-- Mobile Menu Panel -->
     <div
       id="mobile-menu-panel"
-      class="absolute top-0 right-0 w-64 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out"
+      class="absolute top-0 right-0 w-64 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
     >
       <nav class="flex flex-col pt-20 px-6">
         <ul class="flex flex-col gap-1">
-          {NAV_LINKS.map((link) => (
+          {mainNavLinks.map((link) => (
             <li>
               <a
                 href={link.href}
@@ -77,97 +134,55 @@ function isActive(href: string) {
               </a>
             </li>
           ))}
+          
+          <!-- Mobile Writing Section -->
+          <li>
+            <button
+              id="mobile-writing-toggle"
+              class={`w-full flex items-center justify-between py-3 px-4 rounded-lg text-base transition-colors ${
+                isWritingActive
+                  ? 'bg-gray-100 text-gray-900 font-medium'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+              }`}
+              aria-expanded="false"
+            >
+              <span>Writing</span>
+              <svg id="mobile-writing-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <!-- Mobile Writing Submenu -->
+            <div id="mobile-writing-submenu" class="hidden mt-1 ml-4 space-y-1">
+              <a
+                href="/writing"
+                class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
+              >
+                All Writing
+              </a>
+              {writingCategories.map((category) => (
+                <a
+                  href={`/writing/${category.slug}`}
+                  class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
+                >
+                  {category.name}
+                </a>
+              ))}
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
 </nav>
 
-<style>
-  /* Hamburger animation when menu is open */
-  #mobile-menu-button.menu-open .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  #mobile-menu-button.menu-open .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  #mobile-menu-button.menu-open .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
+<!-- External CSS -->
+<link rel="stylesheet" href="/src/styles/components/navbar.css" />
+<link rel="stylesheet" href="/src/styles/components/dropdown.css" />
 
-  /* Prevent body scroll when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
-</style>
+<!-- External JavaScript -->
+<script src="../scripts/navbar.ts"></script>
+<script src="../scripts/dropdown.ts"></script>
+<script src="../scripts/mobile-writing-toggle.ts"></script>
 
-<script>
-  // Mobile menu toggle functionality
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-  
-  let isMenuOpen = false;
 
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    
-    if (isMenuOpen) {
-      // Open menu
-      mobileMenuButton?.classList.add('menu-open');
-      mobileMenuButton?.setAttribute('aria-expanded', 'true');
-      mobileMenu?.classList.remove('pointer-events-none', 'opacity-0');
-      mobileMenu?.setAttribute('aria-hidden', 'false');
-      mobileMenuPanel?.classList.remove('translate-x-full');
-      document.body.classList.add('menu-open');
-    } else {
-      // Close menu
-      mobileMenuButton?.classList.remove('menu-open');
-      mobileMenuButton?.setAttribute('aria-expanded', 'false');
-      mobileMenu?.classList.add('pointer-events-none', 'opacity-0');
-      mobileMenu?.setAttribute('aria-hidden', 'true');
-      mobileMenuPanel?.classList.add('translate-x-full');
-      document.body.classList.remove('menu-open');
-    }
-  }
-
-  // Toggle menu on button click
-  mobileMenuButton?.addEventListener('click', toggleMenu);
-
-  // Close menu when clicking on the backdrop
-  mobileMenu?.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      toggleMenu();
-    }
-  });
-
-  // Close menu when clicking on a link
-  const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a');
-  mobileMenuLinks?.forEach(link => {
-    link.addEventListener('click', () => {
-      if (isMenuOpen) {
-        toggleMenu();
-      }
-    });
-  });
-
-  // Close menu on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isMenuOpen) {
-      toggleMenu();
-    }
-  });
-
-  // Handle window resize - close menu if resizing to desktop
-  let resizeTimer: ReturnType<typeof setTimeout>;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (window.innerWidth >= 768 && isMenuOpen) {
-        toggleMenu();
-      }
-    }, 250);
-  });
-</script>

@@ -1,0 +1,22 @@
+---
+/**
+ * Reading Time Component
+ * Calculates and displays estimated reading time based on word count
+ * Average reading speed: 200 words per minute
+ */
+interface Props {
+  content: string;
+  class?: string;
+}
+
+const { content, class: className = '' } = Astro.props;
+
+// Calculate reading time (200 words per minute average)
+const wordsPerMinute = 200;
+const words = content.trim().split(/\s+/).length;
+const readingTime = Math.ceil(words / wordsPerMinute);
+---
+
+<span class={`text-sm text-gray-600 ${className}`.trim()}>
+  {readingTime} min read
+</span>

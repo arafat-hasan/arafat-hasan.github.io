@@ -1,52 +1,107 @@
 # Arafat Hasan - Portfolio Website
 
-A minimalistic, fast, and modern portfolio website built with Astro, featuring a blog, resume, and contact pages. All content is statically generated from Markdown files for optimal performance.
+A minimalistic, fast, and modern portfolio website built with Astro, featuring multi-domain writing, activities, gallery, resume, and contact pages. All content is statically generated from Markdown files for optimal performance.
 
 ## Features
 
 - **Ultra-fast static site generation** with Astro
-- **Blog system** powered by Astro Content Collections
+- **Multi-domain writing platform** with categories (Tech, Geo-Politics, Literature, Philosophy, Fiction)
+- **Activities section** for cycling adventures and other physical activities
+- **Photo gallery** for travel photography
 - **Minimalistic design** with Tailwind CSS
-- **Fully responsive** layout
+- **Fully responsive** layout with mobile hamburger menu
 - **SEO-friendly** with proper meta tags
-- **No JavaScript overhead** - pure static HTML
+- **Strict Content Security Policy (CSP)** - No inline scripts or styles
 - **Type-safe** with TypeScript
+- **Modular components** following best practices
+
+## 🚧 Development Status
+
+This project is currently being expanded following a phased implementation plan:
+
+- ✅ **Phase 1 (COMPLETE):** Foundation & CSP Implementation
+  - Content collections for writing, activities, and gallery
+  - CSP-compliant architecture (external scripts/styles)
+  - Base components (Card, Badge, Section, Empty)
+  - Content migration to new structure
+
+- 🔄 **Phase 2 (IN PROGRESS):** Writing Platform
+  - Writing components and category pages
+  - Navigation dropdown for writing categories
+  - Unified /writing page
+
+- ⏳ **Phase 3-6:** Activities, Gallery, Homepage Integration, Polish & Testing
+
+See `docs/feature-expansion-plan.md` for complete roadmap.
 
 ## Project Structure
 
 ```
 /
+├── docs/                       # Documentation and implementation plans
+│   ├── feature-expansion-plan.md
+│   └── phase-1-completion.md
 ├── public/
+│   ├── _headers               # CSP and security headers
 │   ├── favicon.svg
-│   └── resume.pdf          # Your PDF resume (replace placeholder)
+│   ├── resume.pdf
+│   └── images/
+│       ├── activities/        # Activity photos
+│       └── gallery/           # Travel photography
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.astro    # Site navigation
-│   │   └── Footer.astro    # Site footer
+│   │   ├── common/            # Reusable components
+│   │   │   ├── Card.astro
+│   │   │   ├── Badge.astro
+│   │   │   ├── Section.astro
+│   │   │   └── Empty.astro
+│   │   ├── writing/           # Writing-specific components (Phase 2)
+│   │   ├── activities/        # Activities components (Phase 3)
+│   │   ├── gallery/           # Gallery components (Phase 4)
+│   │   ├── Navbar.astro       # CSP-compliant navigation
+│   │   ├── Footer.astro
+│   │   └── ExternalLink.astro
 │   ├── layouts/
 │   │   ├── BaseLayout.astro    # Base layout for all pages
-│   │   └── BlogLayout.astro    # Layout for blog posts
+│   │   └── BlogLayout.astro    # Layout for content posts
 │   ├── pages/
 │   │   ├── index.astro         # Landing page
 │   │   ├── about.astro         # About page
 │   │   ├── contact.astro       # Contact page
 │   │   ├── resume.astro        # Resume page
-│   │   └── blog/
-│   │       ├── index.astro         # Blog listing
-│   │       └── [...slug].astro     # Individual blog posts
+│   │   ├── blog/               # Legacy blog routes
+│   │   │   ├── index.astro
+│   │   │   └── [...slug].astro
+│   │   ├── writing/            # New writing routes (Phase 2)
+│   │   ├── activities/         # Activities routes (Phase 3)
+│   │   └── gallery/            # Gallery routes (Phase 4)
 │   ├── content/
 │   │   ├── config.ts           # Content collections config
-│   │   └── blog/               # Blog posts (Markdown)
-│   │       ├── getting-started-with-competitive-programming.md
-│   │       ├── understanding-time-complexity.md
-│   │       ├── building-scalable-web-applications.md
-│   │       └── the-philosophy-of-clean-code.md
+│   │   ├── blog/               # Legacy blog posts
+│   │   ├── writing/            # Multi-domain writing
+│   │   │   ├── tech/           # Tech articles
+│   │   │   ├── geopolitics/    # Geo-politics articles
+│   │   │   ├── literature/     # Literature articles
+│   │   │   ├── philosophy/     # Philosophy articles
+│   │   │   └── fiction/        # Fiction writing
+│   │   ├── activities/         # Cycling and adventure content
+│   │   └── gallery/            # Photo metadata
+│   ├── scripts/                # External JavaScript (CSP-compliant)
+│   │   └── navbar.ts
+│   ├── styles/                 # External CSS (CSP-compliant)
+│   │   └── components/
+│   │       └── navbar.css
+│   ├── config/
+│   │   └── constants.ts        # Site configuration
+│   ├── utils/
+│   │   └── content.ts
 │   └── env.d.ts
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 ├── tsconfig.json
 └── package.json
 ```
+
 
 ## Getting Started
 
