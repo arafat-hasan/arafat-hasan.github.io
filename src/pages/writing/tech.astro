@@ -3,25 +3,25 @@
  * Tech Writing Page
  * Software engineering, programming, algorithms, and system design
  */
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
-import CategoryFilter from '../../components/writing/CategoryFilter.astro';
-import WritingList from '../../components/writing/WritingList.astro';
-import { WRITING_CATEGORIES } from '../../config/constants';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import CategoryFilter from "../../components/writing/CategoryFilter.astro";
+import WritingList from "../../components/writing/WritingList.astro";
+import { WRITING_CATEGORIES } from "../../config/constants";
 
-const category = 'tech';
+const category = "tech";
 const categoryInfo = WRITING_CATEGORIES[category];
 
 // Get all tech writing posts
-const posts = await getCollection('writing', ({ data }) => {
+const posts = await getCollection("writing", ({ data }) => {
   return data.category === category && !data.draft;
 });
 
 // Sort by published date (newest first)
-const sortedPosts = posts.sort((a, b) => 
-  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+const sortedPosts = posts.sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
 );
 ---
 

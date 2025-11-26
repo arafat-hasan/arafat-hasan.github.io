@@ -1,23 +1,8 @@
 import { defineCollection, z } from 'astro:content';
 
 /**
- * Blog collection (legacy - will be migrated to 'writing')
- * Keeping for backward compatibility during migration
- */
-const blog = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    publishedAt: z.coerce.date(),
-    description: z.string(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional(),
-  }),
-});
-
-/**
  * Writing collection - Multi-domain content platform
- * Categories: tech, geopolitics, literature, philosophy, fiction
+ * Categories: tech, geopolitics, literature, philosophy, fiction, activities
  */
 const writing = defineCollection({
   type: 'content',
@@ -26,31 +11,12 @@ const writing = defineCollection({
     description: z.string(),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
-    category: z.enum(['tech', 'geopolitics', 'literature', 'philosophy', 'fiction']),
+    category: z.enum(['tech', 'geopolitics', 'literature', 'philosophy', 'fiction', 'activities']),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
-  }),
-});
-
-/**
- * Activities collection - Cycling, hiking, and other adventures
- */
-const activities = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    activityType: z.enum(['cycling', 'hiking', 'running', 'other']),
-    location: z.string(),
-    distance: z.number().optional(), // in km
-    duration: z.string().optional(), // e.g., "4h 30m"
-    elevation: z.number().optional(), // in meters
-    featuredImage: z.string(),
-    images: z.array(z.string()).default([]),
-    tags: z.array(z.string()).default([]),
-    gpxFile: z.string().optional(), // future enhancement
+    featuredImage: z.string().optional(), // Featured image for posts
+    url: z.string().optional(), // Custom URL slug (without category prefix)
   }),
 });
 
@@ -78,8 +44,6 @@ const gallery = defineCollection({
 });
 
 export const collections = {
-  blog,
   writing,
-  activities,
   gallery,
 };

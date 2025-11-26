@@ -4,6 +4,8 @@ publishedAt: "2025-01-15"
 description: "A comprehensive guide for beginners who want to start their competitive programming journey and improve their problem-solving skills."
 category: "tech"
 tags: ["competitive-programming", "algorithms", "learning"]
+draft: false
+url: "getting-started-with-cp"
 ---
 
 If you've ever wondered how some programmers seem to solve complex problems in minutes or ace technical interviews with ease, chances are they've spent time in the world of competitive programming. But what exactly is competitive programming, and more importantly, how do you get started? Let me walk you through everything you need to know.

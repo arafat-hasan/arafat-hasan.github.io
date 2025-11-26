@@ -3,27 +3,42 @@
  * Writing Layout
  * Layout for individual writing pieces with category badge and metadata
  */
-import BaseLayout from './BaseLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import Badge from '../components/common/Badge.astro';
-import ReadingTime from '../components/writing/ReadingTime.astro';
+import BaseLayout from "./BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Badge from "../components/common/Badge.astro";
+import ReadingTime from "../components/writing/ReadingTime.astro";
 
 interface Props {
   title: string;
   description: string;
   publishedAt: Date;
-  category: 'tech' | 'geopolitics' | 'literature' | 'philosophy' | 'fiction';
+  category:
+    | "tech"
+    | "geopolitics"
+    | "literature"
+    | "philosophy"
+    | "fiction"
+    | "activities";
   tags?: string[];
   content: string; // For reading time
+  featuredImage?: string;
 }
 
-const { title, description, publishedAt, category, tags, content } = Astro.props;
+const {
+  title,
+  description,
+  publishedAt,
+  category,
+  tags,
+  content,
+  featuredImage,
+} = Astro.props;
 
-const formattedDate = publishedAt.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
+const formattedDate = publishedAt.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 });
 ---
 
@@ -37,31 +52,54 @@ const formattedDate = publishedAt.toLocaleDateString('en-US', {
         <ol class="flex items-center gap-2">
           <li><a href="/writing" class="hover:text-gray-900">Writing</a></li>
           <li aria-hidden="true">/</li>
-          <li><a href={`/writing/${category}`} class="hover:text-gray-900 capitalize">{category}</a></li>
+          <li>
+            <a
+              href={`/writing/${category}`}
+              class="hover:text-gray-900 capitalize">{category}</a
+            >
+          </li>
         </ol>
       </nav>
 
       <!-- Category Badge -->
       <div class="mb-4">
-        <Badge text={category} variant={category} />
+        <Badge
+          text={category}
+          variant={category === "activities" ? "other" : category}
+        />
       </div>
 
       <h1 class="text-4xl font-bold mb-4">{title}</h1>
-      
+
       <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
-        <time datetime={publishedAt.toISOString()}>📅 {formattedDate}</time>
+        <time datetime={publishedAt.toISOString()}>{formattedDate}</time>
         <span>•</span>
         <ReadingTime content={content} />
       </div>
 
-      {tags && tags.length > 0 && (
-        <div class="flex gap-2 flex-wrap">
-          {tags.map((tag) => (
-            <Badge text={tag} variant="default" />
-          ))}
-        </div>
-      )}
+      {
+        tags && tags.length > 0 && (
+          <div class="flex gap-2 flex-wrap">
+            {tags.map((tag) => (
+              <Badge text={tag} variant="default" />
+            ))}
+          </div>
+        )
+      }
     </header>
+
+    <!-- Featured Image -->
+    {
+      featuredImage && (
+        <div class="aspect-video w-full rounded-lg overflow-hidden mb-8">
+          <img
+            src={featuredImage}
+            alt={title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      )
+    }
 
     <div class="writing-content">
       <slot />
@@ -88,7 +126,8 @@ const formattedDate = publishedAt.toLocaleDateString('en-US', {
     @apply mb-4;
   }
 
-  .writing-content ul, .writing-content ol {
+  .writing-content ul,
+  .writing-content ol {
     @apply mb-4 ml-6;
   }
 
@@ -120,7 +159,8 @@ const formattedDate = publishedAt.toLocaleDateString('en-US', {
     @apply w-full mb-4 border-collapse;
   }
 
-  .writing-content th, .writing-content td {
+  .writing-content th,
+  .writing-content td {
     @apply border border-gray-300 px-4 py-2;
   }
 

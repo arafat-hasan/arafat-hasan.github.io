@@ -175,12 +175,23 @@ publishedAt: "2025-01-20"
 description: "Brief description"
 category: "tech"  # tech | geopolitics | literature | philosophy | fiction
 tags: ["tag1", "tag2"]
-draft: false
+draft: false  # Set to true to exclude from build and website
 featured: false
+url: "custom-url-slug"  # Optional: custom URL (default: uses filename)
 ---
 
 Your content here in Markdown...
 ```
+
+**Draft Mode:**
+- Posts with `draft: true` will NOT appear in listings
+- They will NOT have pages generated in the `dist` directory
+- Useful for works-in-progress
+
+**Custom URLs:**
+- Use `url` field to specify a custom slug (e.g., `url: "my-article"`)
+- The post will be accessible at `/writing/{category}/my-article`
+- If omitted, the filename is used as the URL
 
 **The post automatically:**
 - Appears in `/writing` and `/writing/{category}`
@@ -206,10 +217,16 @@ featuredImage: "/images/activities/photo.jpg"
 images:  # optional gallery
   - "/images/activities/photo1.jpg"
 tags: ["tag1"]
+draft: false  # Set to true to exclude from build and website
+url: "custom-activity-slug"  # Optional: custom URL (default: uses filename)
 ---
 
 Your narrative here...
 ```
+
+**Draft Mode:** Same as writing posts - activities with `draft: true` won't appear on the site.
+
+**Custom URLs:** Use `url` field to customize the activity URL (e.g., `/activities/my-trip`).
 
 ### Adding Gallery Photos
 

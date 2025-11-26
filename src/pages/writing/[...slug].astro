@@ -4,25 +4,33 @@
  * Dynamic route for all writing posts
  * URL format: /writing/{category}/{slug}
  */
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import WritingLayout from '../../layouts/WritingLayout.astro';
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import WritingLayout from "../../layouts/WritingLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('writing');
-  
-  return posts.map((post) => ({
-    params: { 
-      // The slug already contains the full path from content/writing/{category}/{slug}
-      // We want just: {category}/{post-slug}
-      slug: `${post.data.category}/${post.id.split('/').pop()?.replace('.md', '')}` 
-    },
-    props: { post },
-  }));
+  // Filter out drafts - they won't have pages generated
+  const posts = await getCollection("writing", ({ data }) => {
+    return !data.draft;
+  });
+
+  return posts.map((post) => {
+    // Use custom URL if provided, otherwise use filename
+    const filename = post.id.split("/").pop()?.replace(".md", "") || "";
+    const slug = post.data.url || filename;
+
+    return {
+      params: {
+        // Generate URL as: {category}/{custom-url or filename}
+        slug: `${post.data.category}/${slug}`,
+      },
+      props: { post },
+    };
+  });
 }
 
 interface Props {
-  post: CollectionEntry<'writing'>;
+  post: CollectionEntry<"writing">;
 }
 
 const { post } = Astro.props;
@@ -36,6 +44,7 @@ const { Content } = await post.render();
   category={post.data.category}
   tags={post.data.tags}
   content={post.body}
+  featuredImage={post.data.featuredImage}
 >
   <Content />
 </WritingLayout>

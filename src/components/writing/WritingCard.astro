@@ -3,14 +3,20 @@
  * Writing Card Component
  * Displays a preview of a writing piece with metadata
  */
-import Badge from '../common/Badge.astro';
-import ReadingTime from './ReadingTime.astro';
+import Badge from "../common/Badge.astro";
+import ReadingTime from "./ReadingTime.astro";
 
 interface Props {
   title: string;
   description: string;
   publishedAt: Date;
-  category: 'tech' | 'geopolitics' | 'literature' | 'philosophy' | 'fiction';
+  category:
+    | "tech"
+    | "geopolitics"
+    | "literature"
+    | "philosophy"
+    | "fiction"
+    | "activities";
   slug: string;
   tags?: string[];
   content?: string; // For reading time calculation
@@ -27,14 +33,14 @@ const {
   tags = [],
   content,
   featured = false,
-  class: className = '',
+  class: className = "",
 } = Astro.props;
 
 // Format date
-const formattedDate = publishedAt.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
+const formattedDate = publishedAt.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
 });
 
 // Build the URL
@@ -45,18 +51,26 @@ const url = `/writing/${slug}`;
 
 <article
   class={`group border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-gray-300 transition-all ${
-    featured ? 'ring-2 ring-gray-900' : ''
+    featured ? "ring-2 ring-gray-900" : ""
   } ${className}`.trim()}
 >
   <a href={url} class="block">
     <div class="flex items-start gap-3 mb-3">
       <Badge text={category} variant={category} />
-      {featured && (
-        <Badge text="Featured" variant="default" class="bg-gray-900 text-white" />
-      )}
+      {
+        featured && (
+          <Badge
+            text="Featured"
+            variant="default"
+            class="bg-gray-900 text-white"
+          />
+        )
+      }
     </div>
 
-    <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
+    <h3
+      class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors"
+    >
       {title}
     </h3>
 
@@ -65,24 +79,18 @@ const url = `/writing/${slug}`;
     </p>
 
     <div class="flex items-center gap-3 text-sm text-gray-500">
-      <time datetime={publishedAt.toISOString()}>
+      <!-- <time datetime={publishedAt.toISOString()}>
         📅 {formattedDate}
-      </time>
-      {content && (
-        <>
-          <span>•</span>
-          <ReadingTime content={content} />
-        </>
-      )}
+      </time> -->
+      {
+        content && (
+          <>
+            // <span>•</span>
+            <ReadingTime content={content} />
+          </>
+        )
+      }
     </div>
-
-    {tags.length > 0 && (
-      <div class="flex flex-wrap gap-2 mt-4">
-        {tags.map((tag) => (
-          <Badge text={tag} variant="default" />
-        ))}
-      </div>
-    )}
   </a>
 </article>
 
