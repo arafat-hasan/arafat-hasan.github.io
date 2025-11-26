@@ -60,13 +60,19 @@ export const WRITING_CATEGORIES = {
         description: 'Short stories, creative writing, narrative experiments',
         color: 'orange',
     },
+    activities: {
+        name: 'Activities',
+        slug: 'activities',
+        description: 'Cycling adventures, hiking trips, and outdoor explorations',
+        color: 'teal',
+    },
 } as const;
 
 export const NAV_LINKS = [
     { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' }, // Will be replaced with Writing dropdown in Phase 2
     { name: 'About', href: '/about' },
     { name: 'Resume', href: '/resume' },
+    { name: 'Writing', href: '/writing' },
     { name: 'Contact', href: '/contact' },
 ] as const;
 

@@ -3,36 +3,46 @@
  * Writing List Component
  * Displays a grid of writing cards
  */
-import type { CollectionEntry } from 'astro:content';
-import WritingCard from './WritingCard.astro';
-import Empty from '../common/Empty.astro';
+import type { CollectionEntry } from "astro:content";
+import WritingCard from "./WritingCard.astro";
+import Empty from "../common/Empty.astro";
 
 interface Props {
-  posts: CollectionEntry<'writing'>[];
+  posts: CollectionEntry<"writing">[];
   class?: string;
 }
 
-const { posts, class: className = '' } = Astro.props;
+const { posts, class: className = "" } = Astro.props;
 ---
 
-{posts.length > 0 ? (
-  <div class={`grid gap-6 md:grid-cols-2 lg:grid-cols-2 ${className}`.trim()}>
-    {posts.map((post) => (
-      <WritingCard
-        title={post.data.title}
-        description={post.data.description}
-        publishedAt={post.data.publishedAt}
-        category={post.data.category}
-        slug={post.slug}
-        tags={post.data.tags}
-        content={post.body}
-        featured={post.data.featured}
-      />
-    ))}
-  </div>
-) : (
-  <Empty
-    title="No posts yet"
-    message="There are no published posts in this category yet. Check back soon!"
-  />
-)}
+{
+  posts.length > 0 ? (
+    <div class={`grid gap-6 md:grid-cols-2 lg:grid-cols-2 ${className}`.trim()}>
+      {posts.map((post) => {
+        // Generate slug using same logic as dynamic route
+        // Use custom URL if provided, otherwise use filename
+        const filename = post.id.split("/").pop()?.replace(".md", "") || "";
+        const slug = post.data.url || filename;
+        const fullSlug = `${post.data.category}/${slug}`;
+
+        return (
+          <WritingCard
+            title={post.data.title}
+            description={post.data.description}
+            publishedAt={post.data.publishedAt}
+            category={post.data.category}
+            slug={fullSlug}
+            tags={post.data.tags}
+            content={post.body}
+            featured={post.data.featured}
+          />
+        );
+      })}
+    </div>
+  ) : (
+    <Empty
+      title="No posts yet"
+      message="There are no published posts in this category yet. Check back soon!"
+    />
+  )
+}

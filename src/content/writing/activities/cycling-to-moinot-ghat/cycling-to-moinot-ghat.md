@@ -1,20 +1,12 @@
 ---
 title: "Cycling to Moinot Ghat: A 134km Journey to the Banks of the Padma"
 description: "A 134km cycling adventure from Dhaka to the banks of the Padma River, through historic villages, riverside ghats, and vast wetlands."
-date: "2024-05-01"
-activityType: "cycling"
-location: "Dhaka to Moinot Ghat, Bangladesh"
-distance: 134
-duration: "13h 56m"
-elevation: 218
+publishedAt: "2024-05-01"
+category: "activities"
 featuredImage: "/images/activities/moinot-ghat/3.jpeg"
-images:
-  - "/images/activities/moinot-ghat/1.jpeg"
-  - "/images/activities/moinot-ghat/2.jpeg"
-  - "/images/activities/moinot-ghat/4.jpeg"
-  - "/images/activities/moinot-ghat/20250501_145802.jpg"
-  - "/images/activities/moinot-ghat/20250501_145917.jpg"
 tags: ["cycling", "bangladesh", "munshiganj", "adventure"]
+draft: false
+url: "cycling-to-moinot-ghat"
 ---
 
 The idea was simple: cycle from Badda to the banks of the Padma River and back in a day. On May 1, 2025, my friend Abdur Rahim and I turned that idea into reality with a 134-kilometer ride to Moinot Ghat in Munshiganj—a journey that took us through highways, village roads, rainstorms, and darkness.

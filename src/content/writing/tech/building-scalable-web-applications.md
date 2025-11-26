@@ -4,6 +4,7 @@ publishedAt: "2025-01-05"
 description: "Key principles and practical strategies for building web applications that can scale from hundreds to millions of users."
 category: "tech"
 tags: ["web-development", "architecture", "scalability"]
+url: "building-scalable-web-app"
 ---
 
 Building applications that scale reliably is neither guesswork nor brute force—it’s the result of deliberate architectural choices, disciplined engineering, and constant measurement. Over the years, working with systems that ranged from small internal tools to large-scale distributed platforms, I’ve gathered a set of lessons that consistently prove their value.
