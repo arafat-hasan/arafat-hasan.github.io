@@ -54,7 +54,7 @@ The workflow will:
 2. Click on the workflow run to see detailed logs
 3. Wait for both the **build** and **deploy** jobs to complete (usually 1-2 minutes)
 4. Once complete, your site will be live at:
-   - Custom domain: https://arafat-hasan.com
+   - Custom domain: https://arafathasan.com
    - Or GitHub Pages URL: https://arafat-hasan.github.io/arafat-hasan.com
 
 ## Workflow Configuration

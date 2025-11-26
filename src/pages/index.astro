@@ -3,33 +3,33 @@
  * Homepage - Minimalist Design with Hero Photo
  * Integrates all sections: Writing, Activities, Gallery
  */
-import { getCollection } from "astro:content";
+// import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import WritingCard from "../components/writing/WritingCard.astro";
-import ActivityCard from "../components/activities/ActivityCard.astro";
+// import WritingCard from "../components/writing/WritingCard.astro";
+// import ActivityCard from "../components/activities/ActivityCard.astro";
 
 // Get latest content from each section
-const allWriting = await getCollection("writing", ({ data }) => !data.draft);
-const latestWriting = allWriting
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-  .slice(0, 3);
+// const allWriting = await getCollection("writing", ({ data }) => !data.draft);
+// const latestWriting = allWriting
+// .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+// .slice(0, 3);
 
-const allActivities = await getCollection("activities");
-const latestActivity = allActivities.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-)[0];
+// const allActivities = await getCollection("activities");
+// const latestActivity = allActivities.sort(
+// (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+// )[0];
 
-const allPhotos = await getCollection("gallery");
-const featuredPhotos = allPhotos
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 4);
+// const allPhotos = await getCollection("gallery");
+// const featuredPhotos = allPhotos
+// .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+// .slice(0, 4);
 ---
 
 <BaseLayout
-  title="Arafat Hasan - Software Engineer & Adventurer"
-  description="SSoftware engineer, multidisciplinary thinker and critic, outsider observer."
+  title="Arafat Hasan - Software Engineer"
+  description="Software engineer, outsider observer."
 >
   <Navbar slot="navbar" />
 
@@ -44,18 +44,18 @@ const featuredPhotos = allPhotos
         Arafat Hasan
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-        Software engineer, multidisciplinary thinker and critic, outsider
-        observer.
+        Software engineer, outsider observer.
       </p>
       <p class="text-lg text-gray-700 mb-10 leading-relaxed">
-        I design clear, resilient software, study complex systems, and explore
-        the big ideas that shape our world. I build things, break things, and
-        try to understand them at their core. Stoic by temperament and critical
-        by habit, I move across disciplines to understand the universe from
-        first principles. My curiosity spans history, philosophy, politics, and
-        great literature—disciplines that sharpen how I think and how I build.
+        I’m a software engineer who treats systems—technical or human—as puzzles
+        worth dissecting. I build resilient architectures, tear them down when
+        they fail, and study the mechanisms underneath.
         <br />
-        Welcome to my corner of the internet.
+        My curiosity moves across disciplines: history, philosophy, geopolitics,
+        literature—the big ideas that shape our world. Stoic in temperament, critical
+        by instinct, I look for first principles behind the noise.
+        <br />
+        This is where I document what I learn and what I question.
       </p>
 
       <!-- CTA Buttons -->
@@ -89,7 +89,7 @@ const featuredPhotos = allPhotos
   </section>
 
   <!-- Latest Writing -->
-  {
+  <!-- {
     latestWriting.length > 0 && (
       <section class="py-16 border-t border-gray-200">
         <div class="flex items-baseline justify-between mb-8">
@@ -118,10 +118,10 @@ const featuredPhotos = allPhotos
         </div>
       </section>
     )
-  }
+  } -->
 
   <!-- Latest Activity -->
-  {
+  <!-- {
     latestActivity && (
       <section class="py-16 border-t border-gray-200">
         <div class="flex items-baseline justify-between mb-8">
@@ -148,10 +148,10 @@ const featuredPhotos = allPhotos
         </div>
       </section>
     )
-  }
+  } -->
 
   <!-- Gallery Preview -->
-  {
+  <!-- {
     featuredPhotos.length > 0 && (
       <section class="py-16 border-t border-gray-200">
         <div class="flex items-baseline justify-between mb-8">
@@ -180,10 +180,10 @@ const featuredPhotos = allPhotos
         </div>
       </section>
     )
-  }
+  } -->
 
   <!-- About Preview -->
-  <section class="py-16 border-t border-gray-200">
+  <!-- <section class="py-16 border-t border-gray-200">
     <div class="max-w-2xl">
       <h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
       <p class="text-lg text-gray-700 leading-relaxed mb-6">
@@ -205,7 +205,7 @@ const featuredPhotos = allPhotos
         <span class="ml-1">→</span>
       </a>
     </div>
-  </section>
+  </section> -->
 
   <Footer slot="footer" />
 </BaseLayout>
