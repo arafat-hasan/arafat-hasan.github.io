@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import CategoryFilter from "../../components/writing/CategoryFilter.astro";
 import WritingList from "../../components/writing/WritingList.astro";
+import BrowseTagsButton from "../../components/writing/BrowseTagsButton.astro";
 import { WRITING_CATEGORIES } from "../../config/constants";
 
 const category = "tech";
@@ -43,6 +44,8 @@ const sortedPosts = posts.sort(
   <CategoryFilter currentCategory={category} class="mb-8" />
 
   <WritingList posts={sortedPosts} />
+
+  <BrowseTagsButton />
 
   <Footer slot="footer" />
 </BaseLayout>
