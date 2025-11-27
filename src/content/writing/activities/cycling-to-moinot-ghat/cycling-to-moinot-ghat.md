@@ -1,7 +1,7 @@
 ---
 title: "Cycling to Moinot Ghat: A 134km Journey to the Banks of the Padma"
 description: "A 134km cycling adventure from Dhaka to the banks of the Padma River, through historic villages, riverside ghats, and vast wetlands."
-publishedAt: "2024-05-01"
+publishedAt: "2024-05-02"
 category: "activities"
 featuredImage: "/images/activities/moinot-ghat/3.jpeg"
 tags: ["cycling", "bangladesh", "munshiganj", "adventure"]
@@ -9,11 +9,11 @@ draft: false
 url: "cycling-to-moinot-ghat"
 ---
 
-The idea was simple: cycle from Badda to the banks of the Padma River and back in a day. On May 1, 2025, my friend Abdur Rahim and I turned that idea into reality with a 134-kilometer ride to Moinot Ghat in Munshiganj—a journey that took us through highways, village roads, rainstorms, and darkness.
+The idea was simple: cycle from Dhaka to the banks of the Padma River and back in a day. On May 1, 2025, my friend Abdur Rahim and I turned that idea into reality with a 134-kilometer ride to Moinot Ghat in Munshiganj—a journey that took us through highways, village roads, rainstorms, and darkness.
 
 ## The Route
 
-We set out from Badda at around 7 AM, cycling through the bustling streets of Puran Dhaka where we stopped for breakfast. Our route took us along the Dhaka-Mawa highway, but we wisely chose the service lane designated for local vehicles. This slower lane proved to be a much safer option—I cannot stress enough how dangerous the fast lane can be for cyclists.
+We set out from Dhaka at around 7 AM, cycling through the bustling streets of Puran Dhaka where we stopped for breakfast. Our route took us along the Dhaka-Mawa highway, but we wisely chose the service lane designated for local vehicles. This slower lane proved to be a much safer option—I cannot stress enough how dangerous the fast lane can be for cyclists.
 
 After leaving the highway, we entered the quieter upazila roads that wound through the countryside. Our path led us through Rarikhal village, the birthplace of the legendary polymath Jagadish Chandra Bose. The complete route was: Dhaka → Sreenagar → Moinot Ghat → Ruhitpur → Dhaka.
 
