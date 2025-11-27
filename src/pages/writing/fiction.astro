@@ -3,25 +3,26 @@
  * Fiction Writing Page
  * Short stories, creative writing, narrative experiments
  */
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
-import CategoryFilter from '../../components/writing/CategoryFilter.astro';
-import WritingList from '../../components/writing/WritingList.astro';
-import { WRITING_CATEGORIES } from '../../config/constants';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import CategoryFilter from "../../components/writing/CategoryFilter.astro";
+import WritingList from "../../components/writing/WritingList.astro";
+import BrowseTagsButton from "../../components/writing/BrowseTagsButton.astro";
+import { WRITING_CATEGORIES } from "../../config/constants";
 
-const category = 'fiction';
+const category = "fiction";
 const categoryInfo = WRITING_CATEGORIES[category];
 
 // Get all fiction writing posts
-const posts = await getCollection('writing', ({ data }) => {
+const posts = await getCollection("writing", ({ data }) => {
   return data.category === category && !data.draft;
 });
 
 // Sort by published date (newest first)
-const sortedPosts = posts.sort((a, b) => 
-  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+const sortedPosts = posts.sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
 );
 ---
 
@@ -43,6 +44,8 @@ const sortedPosts = posts.sort((a, b) =>
   <CategoryFilter currentCategory={category} class="mb-8" />
 
   <WritingList posts={sortedPosts} />
+
+  <BrowseTagsButton />
 
   <Footer slot="footer" />
 </BaseLayout>
