@@ -1,0 +1,100 @@
+---
+/**
+ * Individual Tag Page
+ * Shows all writings with a specific tag
+ */
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import WritingList from "../../../components/writing/WritingList.astro";
+
+export const getStaticPaths = (async () => {
+    // Get all published writing posts
+    const allPosts = await getCollection("writing", ({ data }) => !data.draft);
+
+    // Collect all unique tags
+    const allTags = new Set<string>();
+    allPosts.forEach((post) => {
+        post.data.tags?.forEach((tag) => {
+            allTags.add(tag.toLowerCase());
+        });
+    });
+
+    // Generate a path for each tag
+    return Array.from(allTags).map((tag) => ({
+        params: { tag },
+        props: { tag },
+    }));
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.props;
+
+// Get all posts with this tag (case-insensitive)
+const allPosts = await getCollection("writing", ({ data }) => {
+    if (data.draft) return false;
+    return (
+        data.tags?.some((t) => t.toLowerCase() === tag.toLowerCase()) || false
+    );
+});
+
+// Sort by published date (newest first)
+const sortedPosts = allPosts.sort(
+    (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+
+// Get the original case of the tag from the first post
+const displayTag =
+    sortedPosts[0]?.data.tags?.find(
+        (t) => t.toLowerCase() === tag.toLowerCase(),
+    ) || tag;
+---
+
+<BaseLayout
+    title={`${displayTag} - Tags`}
+    description={`All writings tagged with "${displayTag}"`}
+>
+    <Navbar slot="navbar" />
+
+    <div>
+        <!-- Breadcrumb -->
+        <nav class="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2">
+                <li>
+                    <a href="/writing" class="hover:text-gray-900">Writing</a>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li>
+                    <a href="/writing/tags" class="hover:text-gray-900">Tags</a>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li class="text-gray-900">{displayTag}</li>
+            </ol>
+        </nav>
+
+        <div class="mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Tag: {displayTag}
+            </h1>
+            <p class="text-lg text-gray-600">
+                {sortedPosts.length}
+                {sortedPosts.length === 1 ? "post" : "posts"} tagged with "{
+                    displayTag
+                }"
+            </p>
+        </div>
+
+        {
+            sortedPosts.length > 0 ? (
+                <WritingList posts={sortedPosts} />
+            ) : (
+                <div class="text-center py-12 text-gray-500">
+                    <p>No posts found with this tag.</p>
+                </div>
+            )
+        }
+    </div>
+
+    <Footer slot="footer" />
+</BaseLayout>

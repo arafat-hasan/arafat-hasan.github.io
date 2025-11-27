@@ -1,0 +1,85 @@
+---
+/**
+ * Tags Index Page
+ * Displays all available tags with post counts
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import Badge from "../../../components/common/Badge.astro";
+
+// Get all published writing posts
+const allPosts = await getCollection("writing", ({ data }) => !data.draft);
+
+// Collect all tags with their counts
+const tagCounts = new Map<string, number>();
+
+allPosts.forEach((post) => {
+    post.data.tags?.forEach((tag) => {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+});
+
+// Convert to array and sort by count (descending), then alphabetically
+const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => {
+    if (b[1] !== a[1]) return b[1] - a[1]; // Sort by count descending
+    return a[0].localeCompare(b[0]); // Then alphabetically
+});
+---
+
+<BaseLayout
+    title="Tags - Writing"
+    description="Browse all writing topics and tags"
+>
+    <Navbar slot="navbar" />
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2">
+                <li>
+                    <a href="/writing" class="hover:text-gray-900">Writing</a>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li class="text-gray-900">Tags</li>
+            </ol>
+        </nav>
+
+        <div class="mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                All Tags
+            </h1>
+            <p class="text-lg text-gray-600">
+                Browse writings by topic. {sortedTags.length}
+                {sortedTags.length === 1 ? "tag" : "tags"} available.
+            </p>
+        </div>
+
+        {
+            sortedTags.length > 0 ? (
+                <div class="flex flex-wrap gap-3">
+                    {sortedTags.map(([tag, count]) => (
+                        <a
+                            href={`/writing/tags/${encodeURIComponent(tag.toLowerCase())}`}
+                            class="group inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:border-gray-300 hover:shadow-md transition-all"
+                        >
+                            <span class="text-gray-900 font-medium group-hover:text-gray-700">
+                                {tag}
+                            </span>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                                {count}
+                            </span>
+                        </a>
+                    ))}
+                </div>
+            ) : (
+                <div class="text-center py-12 text-gray-500">
+                    <p>No tags found.</p>
+                </div>
+            )
+        }
+    </div>
+
+    <Footer slot="footer" />
+</BaseLayout>

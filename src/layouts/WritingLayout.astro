@@ -68,21 +68,11 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
 
       <h1 class="text-4xl font-bold mb-4">{title}</h1>
 
-      <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
+      <div class="flex items-center gap-4 text-sm text-gray-600">
         <time datetime={publishedAt.toISOString()}>{formattedDate}</time>
         <span>•</span>
         <ReadingTime content={content} />
       </div>
-
-      {
-        tags && tags.length > 0 && (
-          <div class="flex gap-2 flex-wrap">
-            {tags.map((tag) => (
-              <Badge text={tag} variant="default" />
-            ))}
-          </div>
-        )
-      }
     </header>
 
     <!-- Featured Image -->
@@ -101,6 +91,26 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
     <div class="writing-content">
       <slot />
     </div>
+
+    {
+      tags && tags.length > 0 && (
+        <footer class="mt-12 pt-8 border-t border-gray-200">
+          <div class="flex items-start gap-3">
+            <span class="text-sm font-medium text-gray-700">Tags:</span>
+            <div class="flex gap-2 flex-wrap">
+              {tags.map((tag) => (
+                <a
+                  href={`/writing/tags/${encodeURIComponent(tag.toLowerCase())}`}
+                  class="inline-block"
+                >
+                  <Badge text={tag} variant="default" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </footer>
+      )
+    }
   </article>
 
   <Footer slot="footer" />
