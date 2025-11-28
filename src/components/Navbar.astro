@@ -12,8 +12,7 @@ function isActive(href: string) {
 }
 
 // Check if we're on any writing page
-const isWritingActive =
-  currentPath.startsWith("/writing") || currentPath.startsWith("/blog");
+const isWritingActive = currentPath.startsWith("/writing");
 
 // Main nav links (excluding Writing which has dropdown)
 const mainNavLinks = [

@@ -7,7 +7,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
-import Badge from "../../../components/common/Badge.astro";
 
 // Get all published writing posts
 const allPosts = await getCollection("writing", ({ data }) => !data.draft);

@@ -8,6 +8,10 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Badge from "../components/common/Badge.astro";
 import ReadingTime from "../components/writing/ReadingTime.astro";
+import { Image } from "astro:assets";
+import "../styles/markdown.css";
+
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
@@ -22,7 +26,7 @@ interface Props {
     | "activities";
   tags?: string[];
   content: string; // For reading time
-  featuredImage?: string;
+  featuredImage?: ImageMetadata;
 }
 
 const {
@@ -79,16 +83,18 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
     {
       featuredImage && (
         <div class="aspect-video w-full rounded-lg overflow-hidden mb-8">
-          <img
+          <Image
             src={featuredImage}
             alt={title}
             class="w-full h-full object-cover"
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 800px"
           />
         </div>
       )
     }
 
-    <div class="writing-content">
+    <div class="markdown-content">
       <slot />
     </div>
 
@@ -115,63 +121,3 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<style is:global>
-  .writing-content {
-    @apply text-gray-800 leading-relaxed;
-  }
-
-  .writing-content h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
-  }
-
-  .writing-content h3 {
-    @apply text-xl font-semibold mt-6 mb-3;
-  }
-
-  .writing-content p {
-    @apply mb-4;
-  }
-
-  .writing-content ul,
-  .writing-content ol {
-    @apply mb-4 ml-6;
-  }
-
-  .writing-content li {
-    @apply mb-2;
-  }
-
-  .writing-content a {
-    @apply text-blue-600 hover:text-blue-800 underline;
-  }
-
-  .writing-content code {
-    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
-  }
-
-  .writing-content pre {
-    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
-  }
-
-  .writing-content pre code {
-    @apply bg-transparent p-0;
-  }
-
-  .writing-content blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4;
-  }
-
-  .writing-content table {
-    @apply w-full mb-4 border-collapse;
-  }
-
-  .writing-content th,
-  .writing-content td {
-    @apply border border-gray-300 px-4 py-2;
-  }
-
-  .writing-content th {
-    @apply bg-gray-100 font-semibold;
-  }
-</style>

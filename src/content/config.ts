@@ -6,7 +6,7 @@ import { defineCollection, z } from 'astro:content';
  */
 const writing = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     publishedAt: z.coerce.date(),
@@ -15,7 +15,7 @@ const writing = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
-    featuredImage: z.string().optional(), // Featured image for posts
+    featuredImage: image().optional(), // Featured image for posts (supports relative paths)
     url: z.string().optional(), // Custom URL slug (without category prefix)
   }),
 });

@@ -16,7 +16,8 @@ interface Props {
     | "literature"
     | "philosophy"
     | "fiction"
-    | "activities";
+    | "activities"
+    | "other";
   slug: string;
   tags?: string[];
   content?: string; // For reading time calculation
@@ -27,21 +28,21 @@ interface Props {
 const {
   title,
   description,
-  publishedAt,
+  // publishedAt,
   category,
   slug,
-  tags = [],
+  // tags = [],
   content,
   featured = false,
   class: className = "",
 } = Astro.props;
 
 // Format date
-const formattedDate = publishedAt.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
+// const formattedDate = publishedAt.toLocaleDateString("en-US", {
+//   year: "numeric",
+//   month: "short",
+//   day: "numeric",
+// });
 
 // Build the URL
 // The slug already includes the category path (e.g., "tech/post-name")
