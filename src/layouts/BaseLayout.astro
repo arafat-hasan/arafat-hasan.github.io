@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  mainClass?: string;
 }
 
 const {
@@ -73,7 +74,10 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 
     <slot name="navbar" />
 
-    <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <main
+      id="main-content"
+      class={`${Astro.props.mainClass || "max-w-4xl"} mx-auto px-4 sm:px-6 py-6 sm:py-8`}
+    >
       <slot />
     </main>
 
