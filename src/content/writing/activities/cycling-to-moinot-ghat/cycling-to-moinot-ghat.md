@@ -3,7 +3,7 @@ title: "Cycling to Moinot Ghat: A 134km Journey to the Banks of the Padma"
 description: "A 134km cycling adventure from Dhaka to the banks of the Padma River, through historic villages, riverside ghats, and vast wetlands."
 publishedAt: "2024-05-02"
 category: "activities"
-featuredImage: "/images/activities/moinot-ghat/3.jpeg"
+featuredImage: "./3.jpeg"
 tags: ["cycling", "bangladesh", "munshiganj", "adventure"]
 draft: false
 url: "cycling-to-moinot-ghat"
@@ -42,6 +42,20 @@ After leaving the highway, we entered the quieter upazila roads that wound throu
 **Cycling Against the Wind:** The headwind after the rain made every pedal stroke a challenge. Cycling against wind is always demanding, but the air was incredibly fresh—clean, oxygen-rich, and cool from the recent downpour. It was exhausting and exhilarating in equal measure.
 
 **The Dark Ride Through the Beel:** Navigating past Arial Beel in complete darkness was both thrilling and slightly frightening. The area was far from any settlement, and concerns about security crossed our minds more than once. Yet there was something primal and liberating about cycling through the darkness with only our lights to guide us.
+
+## Photo Gallery
+
+![Scenic view along the cycling route](./1.jpeg)
+
+![The mighty Padma River at Moinot Ghat](./2.jpeg)
+
+![Riverside landscape at the ghat](./4.jpeg)
+
+![Taking a break during the journey](./20250501_145802.jpg)
+
+![Cycling through the countryside](./20250501_145917.jpg)
+
+## Conclusion
 
 We finally rolled back into Dhaka around 10 PM, completing our 134-kilometer circuit. Exhausted but triumphant, we had experienced a side of Bangladesh that few see—from the historical villages to the mighty Padma, from the innovative cottage homes to the vast wetlands.
 
