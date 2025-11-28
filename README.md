@@ -77,9 +77,6 @@ A minimalist, production-ready portfolio website showcasing software engineering
 │   │   ├── about.astro
 │   │   ├── contact.astro
 │   │   ├── resume.astro
-│   │   ├── blog/                   # Legacy routes
-│   │   │   ├── index.astro
-│   │   │   └── [...slug].astro
 │   │   ├── writing/                # Multi-domain writing
 │   │   │   ├── index.astro         # All writing
 │   │   │   ├── tech.astro
@@ -96,7 +93,6 @@ A minimalist, production-ready portfolio website showcasing software engineering
 │   │       └── [collection].astro
 │   ├── content/
 │   │   ├── config.ts               # Content collections
-│   │   ├── blog/                   # Legacy (empty)
 │   │   ├── writing/                # Writing content
 │   │   │   ├── tech/               # 4 posts
 │   │   │   ├── geopolitics/

@@ -9,7 +9,6 @@ This guide will help you customize the portfolio website with your own informati
 - [ ] Add your resume PDF
 - [ ] Update contact information
 - [ ] Customize social media links
-- [ ] Add your blog posts
 - [ ] Update site metadata
 - [ ] Test the build
 
@@ -110,17 +109,12 @@ Change the site name:
 </a>
 ```
 
-### 5. Blog Posts
+### 5. Writings
 
-#### Remove Example Posts
-
-```bash
-rm src/content/blog/*.md
-```
 
 #### Add Your Posts
 
-Create new files in `src/content/blog/`:
+Create new files in `src/content/`:
 
 ```markdown
 ---
@@ -200,7 +194,7 @@ npm run preview
 
 ## Content Writing Tips
 
-### Blog Posts
+### Writings
 
 - Use descriptive titles
 - Include relevant tags
@@ -249,7 +243,7 @@ Create `src/pages/404.astro` for a custom not-found page.
 
 ### Build Errors
 
-- Check that all blog posts have required frontmatter fields
+- Check that all writings have required frontmatter fields
 - Ensure TypeScript types are correct
 - Verify all file paths are correct
 
@@ -263,7 +257,7 @@ Create `src/pages/404.astro` for a custom not-found page.
 
 - Check file extensions (.md, .astro)
 - Verify frontmatter format
-- Check for `draft: true` in blog posts
+- Check for `draft: true` in writings
 
 ## Next Steps
 

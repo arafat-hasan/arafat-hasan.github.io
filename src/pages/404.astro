@@ -1,18 +1,22 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout 
+<BaseLayout
   title="404 - Page Not Found"
   description="The page you're looking for doesn't exist."
 >
   <Navbar slot="navbar" />
 
-  <div class="min-h-[60vh] flex flex-col items-center justify-center text-center">
+  <div
+    class="min-h-[60vh] flex flex-col items-center justify-center text-center"
+  >
     <h1 class="text-6xl sm:text-8xl font-bold text-gray-900 mb-4">404</h1>
-    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-700 mb-4">Page Not Found</h2>
+    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-700 mb-4">
+      Page Not Found
+    </h2>
     <p class="text-gray-600 mb-8 max-w-md text-sm sm:text-base">
       Sorry, the page you're looking for doesn't exist or has been moved.
     </p>
@@ -22,12 +26,6 @@ import Footer from '../components/Footer.astro';
         class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium touch-manipulation"
       >
         Go Home
-      </a>
-      <a
-        href="/blog"
-        class="px-6 py-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-colors font-medium touch-manipulation"
-      >
-        Read Blog
       </a>
     </div>
   </div>
