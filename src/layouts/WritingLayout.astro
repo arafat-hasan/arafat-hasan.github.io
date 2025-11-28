@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Badge from "../components/common/Badge.astro";
 import ReadingTime from "../components/writing/ReadingTime.astro";
+import "../styles/markdown.css";
 
 interface Props {
   title: string;
@@ -88,7 +89,7 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
       )
     }
 
-    <div class="writing-content">
+    <div class="markdown-content">
       <slot />
     </div>
 
@@ -115,63 +116,3 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<style is:global>
-  .writing-content {
-    @apply text-gray-800 leading-relaxed;
-  }
-
-  .writing-content h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
-  }
-
-  .writing-content h3 {
-    @apply text-xl font-semibold mt-6 mb-3;
-  }
-
-  .writing-content p {
-    @apply mb-4;
-  }
-
-  .writing-content ul,
-  .writing-content ol {
-    @apply mb-4 ml-6;
-  }
-
-  .writing-content li {
-    @apply mb-2;
-  }
-
-  .writing-content a {
-    @apply text-blue-600 hover:text-blue-800 underline;
-  }
-
-  .writing-content code {
-    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
-  }
-
-  .writing-content pre {
-    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
-  }
-
-  .writing-content pre code {
-    @apply bg-transparent p-0;
-  }
-
-  .writing-content blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4;
-  }
-
-  .writing-content table {
-    @apply w-full mb-4 border-collapse;
-  }
-
-  .writing-content th,
-  .writing-content td {
-    @apply border border-gray-300 px-4 py-2;
-  }
-
-  .writing-content th {
-    @apply bg-gray-100 font-semibold;
-  }
-</style>

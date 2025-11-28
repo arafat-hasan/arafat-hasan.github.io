@@ -43,7 +43,20 @@ const gallery = defineCollection({
   }),
 });
 
+/**
+ * Resume collection - Professional resume content
+ */
+const resume = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    lastUpdated: z.coerce.date(),
+  }),
+});
+
 export const collections = {
   writing,
   gallery,
+  resume,
 };
