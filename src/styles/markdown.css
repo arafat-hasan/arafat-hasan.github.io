@@ -15,9 +15,12 @@
     @apply mb-4;
 }
 
-.markdown-content ul,
+.markdown-content ul {
+    @apply mb-4 ml-6 list-disc;
+}
+
 .markdown-content ol {
-    @apply mb-4 ml-6;
+    @apply mb-4 ml-6 list-decimal;
 }
 
 .markdown-content li {
