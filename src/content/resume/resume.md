@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 description: "Professional resume of Arafat Hasan"
-lastUpdated: "2025-11-27"
+lastUpdated: "2025-11-28"
 ---
 
 ## Summary
@@ -18,13 +18,14 @@ I am a software engineer with 4 years of experience building efficient and relia
 *Client: Consilio LLC, USA – Envize Development Team*
 
 - Contributed to the design and development of Envize, Consilio's large-scale document classification and Technology-Assisted Review (TAR) platform used in enterprise eDiscovery workflows
-- Developed and maintained three core services: Envize Core (Python), Envity (Java, Spring Boot), and EnvizeNext (Next.js)
-- Implemented ML-driven document similarity and classification pipelines using Gensim, NumPy, and SVM models; improved processing throughput for millions of documents
-- Built middleware integrations between Envize Core and RelativityOne, ensuring reliable, performant API communication at scale
+- Developed and maintained three core services:
+  - **Envize Core (Python):** Implemented ML-driven document similarity and classification pipelines using Gensim, NumPy, and SVM models; improved processing throughput for millions of documents
+  - **Envity (Java, Spring Boot):** Built middleware integrations between Envize Core and RelativityOne, ensuring reliable, performant API communication at scale
+  - **EnvizeNext (Next.js):** Delivered key UI features enabling seamless user interaction and review operations
 - Led performance optimizations across services, reducing latency and strengthening system reliability under high-volume workloads
-- Designed and maintained Jenkins CI/CD pipelines, automated deployments, and improved DevOps workflows
+- Designed and maintained Jenkins CI/CD pipelines, automated deployments, and improved DevOps workflows for consistent and fault-tolerant releases
 - Participated actively in architecture reviews, long-term system design decisions, and roadmap planning
-- Coordinated effectively across multiple time zones with Consilio's global teams to resolve operational issues and drive end-to-end system efficiency
+- Coordinated effectively across multiple time zones with Consilio's global teams to resolve operational issues, strengthen platform stability, and drive end-to-end system efficiency
 
 ### Software Engineer, Intern
 
@@ -32,8 +33,8 @@ I am a software engineer with 4 years of experience building efficient and relia
 *July 2018 - September 2018*
 
 - Worked in a four-member engineering team, contributing to data acquisition and automation tasks
-- Contributed to the initial development of a stock market recommendation system, sourcing high-quality financial data from NASDAQ and other market sources
-- Built web crawlers and scrapers using Python (Scrapy) and Java Selenium WebDriver to extract structured and unstructured data
+- Contributed to the initial development of a stock market recommendation system, sourcing high-quality financial data from NASDAQ and other market sources via scraping and APIs
+- Built web crawlers and scrapers using Python (Scrapy) and Java Selenium WebDriver to extract structured and unstructured data from diverse sites
 - Performed automated testing using Selenium, validating site functionality
 - Gained hands-on exposure to Jenkins, participating in early CI/CD workflow setup
 
@@ -76,6 +77,11 @@ I am a software engineer with 4 years of experience building efficient and relia
     <h4 class="font-medium text-gray-900 mb-2">Databases</h4>
     <p class="text-gray-700">PostgreSQL, MSSQL, SQLite, MongoDB</p>
   </div>
+
+  <div>
+    <h4 class="font-medium text-gray-900 mb-2">Languages</h4>
+    <p class="text-gray-700">English (Fluent), Bengali (Native)</p>
+  </div>
 </div>
 
 ## Projects
@@ -109,9 +115,9 @@ I am a software engineer with 4 years of experience building efficient and relia
 
 [DOI: 10.1016/j.jksuci.2020.08.016](https://doi.org/10.1016/j.jksuci.2020.08.016)
 
-- Led core ML and system design work for a research project integrating deep learning with IoT for smart waste classification
+- Led core ML and system design work for a research project that integrates deep learning with IoT for smart waste classification and management
 - Proposed a CNN-based model achieving 95.31% accuracy in classifying degradable vs. non-degradable waste
-- Designed a smart trash-bin prototype using IoT sensors for real-time monitoring and data communication via Bluetooth
+- Designed a smart trash-bin prototype using IoT sensors (microcontroller + multiple sensors) for real-time monitoring and data communication via Bluetooth
 - Conducted a System Usability Scale (SUS) evaluation, achieving a score of 86, demonstrating high usability
 
 ## Problem Solving & Competitive Programming
@@ -121,6 +127,8 @@ I am a software engineer with 4 years of experience building efficient and relia
 **LeetCode:** Username: arafat_hasan, 220+ problems solved
 
 **UVa:** Username: 859424, 370+ problems solved
+
+**Other Platforms:** Occasionally practiced on AtCoder, SPOJ, LightOJ
 
 **HackerRank:** Username: arafat_hasan, C++: Gold level, Problem Solving: Silver level
 
