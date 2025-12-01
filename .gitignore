@@ -29,3 +29,4 @@ pnpm-debug.log*
 .lighthouseci/
 lhci-reports/
 stats.html
+src/content/writing/
