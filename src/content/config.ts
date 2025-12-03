@@ -34,6 +34,7 @@ const gallery = defineCollection({
     image: z.string(),
     thumbnail: z.string().optional(),
     alt: z.string(),
+    featured: z.boolean().default(false), // Mark photos to display in featured gallery view
     camera: z.string().optional(),
     settings: z.object({
       aperture: z.string().optional(),
