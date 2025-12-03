@@ -3,7 +3,8 @@
     "description": "Dhal Char is the southernmost island of Bhola district in Bangladesh.",
     "date": "2024-09-10",
     "location": "Dhal Char, Char Fasson, Bhola, Bangladesh",
-    "collection": "Bangladesh 2024",
+    "collection": "Dhal Char, Bhola",
     "image": "/images/gallery/dhal-char/IMG_20241117_113737.jpg",
-    "alt": "Before Entering the Mangrove forest"
+    "alt": "Before Entering the Mangrove forest",
+    "featured": true
 }

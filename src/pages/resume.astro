@@ -2,6 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { getResumeFilename, getResumeVersion } from "../utils/resume";
+
+// Auto-detect the resume filename
+const resumeFilename = getResumeFilename();
+const resumeVersion = getResumeVersion(resumeFilename);
+const resumePath = `/${resumeFilename}`;
 ---
 
 <BaseLayout
@@ -15,8 +21,8 @@ import Footer from "../components/Footer.astro";
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold text-gray-900">Resume</h1>
       <a
-        href="/resume.pdf"
-        download="Arafat_Hasan_Resume.pdf"
+        href={resumePath}
+        download={resumeFilename}
         class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium"
       >
         <svg
@@ -41,7 +47,7 @@ import Footer from "../components/Footer.astro";
       class="w-full aspect-[1/1.42] bg-gray-100 rounded-lg overflow-hidden shadow-sm border border-gray-200"
     >
       <iframe
-        src="/resume.pdf#view=FitH"
+        src={`${resumePath}#view=FitH`}
         class="w-full h-full"
         title="Resume PDF"></iframe>
     </div>

@@ -63,7 +63,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-white text-gray-900 antialiased">
+  <body class="flex flex-col min-h-screen bg-white text-gray-900 antialiased">
     <!-- Skip to main content for accessibility -->
     <a
       href="#main-content"
@@ -76,7 +76,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 
     <main
       id="main-content"
-      class={`${Astro.props.mainClass || "max-w-4xl"} mx-auto px-4 sm:px-6 py-6 sm:py-8`}
+      class={`flex-grow w-full ${Astro.props.mainClass || "max-w-4xl"} mx-auto px-4 sm:px-6 py-6 sm:py-8`}
     >
       <slot />
     </main>

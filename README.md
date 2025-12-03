@@ -236,7 +236,8 @@ Create JSON file in `src/content/gallery/{collection}/`:
   "location": "City, Country",
   "collection": "Collection Name",
   "image": "/images/gallery/collection/photo.jpg",
-  "alt": "Descriptive alt text"
+  "alt": "Descriptive alt text",
+  "featured": true
 }
 ```
 

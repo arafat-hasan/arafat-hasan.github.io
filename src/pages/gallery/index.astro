@@ -1,25 +1,28 @@
 ---
 /**
  * Gallery Index Page
- * Displays all photos from all collections
+ * Displays featured photos only
  */
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
-import PhotoGrid from '../../components/gallery/PhotoGrid.astro';
-import CollectionFilter from '../../components/gallery/CollectionFilter.astro';
-import Lightbox from '../../components/gallery/Lightbox.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import PhotoGrid from "../../components/gallery/PhotoGrid.astro";
+import CollectionFilter from "../../components/gallery/CollectionFilter.astro";
+import Lightbox from "../../components/gallery/Lightbox.astro";
 
 // Get all gallery photos
-const allPhotos = await getCollection('gallery');
+const allPhotos = await getCollection("gallery");
 
-// Extract unique collections
-const collections = [...new Set(
-  allPhotos
-    .map(photo => photo.data.collection)
-    .filter(Boolean) as string[]
-)].sort();
+// Filter to featured photos only
+const featuredPhotos = allPhotos.filter((photo) => photo.data.featured);
+
+// Extract unique collections from all photos
+const collections = [
+  ...new Set(
+    allPhotos.map((photo) => photo.data.collection).filter(Boolean) as string[],
+  ),
+].sort();
 ---
 
 <BaseLayout
@@ -29,20 +32,20 @@ const collections = [...new Set(
   <Navbar slot="navbar" />
 
   <div class="mb-8">
-    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-      Gallery
-    </h1>
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Gallery</h1>
     <p class="text-lg text-gray-600 max-w-2xl">
-      A visual journey through places I've explored, cultures I've encountered, 
+      A visual journey through places I've explored, cultures I've encountered,
       and moments I've captured. Each photo tells a story.
     </p>
   </div>
 
-  {collections.length > 0 && (
-    <CollectionFilter collections={collections} class="mb-8" />
-  )}
+  {
+    collections.length > 0 && (
+      <CollectionFilter collections={collections} class="mb-8" />
+    )
+  }
 
-  <PhotoGrid photos={allPhotos} />
+  <PhotoGrid photos={featuredPhotos} />
 
   <Lightbox />
 
