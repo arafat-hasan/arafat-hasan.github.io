@@ -60,17 +60,6 @@ const formattedDate = date.toLocaleDateString("en-US", {
         class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
       >
         <h3 class="font-semibold text-sm mb-1">{title}</h3>
-        <div class="flex items-center gap-2 text-xs">
-          <span>{location}</span>
-          {
-            collection && (
-              <>
-                <span>•</span>
-                <span>{collection}</span>
-              </>
-            )
-          }
-        </div>
       </div>
     </div>
   </div>
