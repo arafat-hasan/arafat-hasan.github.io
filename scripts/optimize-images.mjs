@@ -12,7 +12,7 @@
  */
 
 import sharp from 'sharp';
-import { readdir, stat } from 'fs/promises';
+import { readdir, stat, unlink, rename } from 'fs/promises';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -24,9 +24,9 @@ const __dirname = dirname(__filename);
 const CONFIG = {
     maxWidth: 1920,
     maxHeight: 1920,
-    jpegQuality: 85,
-    pngQuality: 85,
-    webpQuality: 85,
+    jpegQuality: 75,
+    pngQuality: 75,
+    webpQuality: 75,
     imagesDir: join(__dirname, '../public/images'),
     extensions: ['.jpg', '.jpeg', '.png'],
 };
@@ -101,8 +101,9 @@ async function optimizeImage(filePath) {
     const webpPath = `${basename}.webp`;
 
     try {
-        // Get original size
-        const originalSize = await getFileSize(filePath);
+        // Get original stats
+        const originalStats = await stat(filePath);
+        const originalSize = originalStats.size;
         stats.originalSize += originalSize;
 
         // Load image
@@ -128,12 +129,14 @@ async function optimizeImage(filePath) {
             await pipeline.png({ quality: CONFIG.pngQuality, compressionLevel: 9 }).toFile(`${filePath}.tmp`);
         }
 
-        // Replace original with optimized
-        const { rename, unlink } = await import('fs/promises');
-        const tmpSize = await getFileSize(`${filePath}.tmp`);
+        // Check results
+        const tmpStats = await stat(`${filePath}.tmp`);
+        const tmpSize = tmpStats.size;
+        const savings = originalSize - tmpSize;
+        const savingsPercent = (savings / originalSize) * 100;
 
-        // Only replace if optimized version is smaller
-        if (tmpSize < originalSize) {
+        // Only replace if savings are significant (>5%) to prevent quality degradation loops
+        if (savingsPercent > 5) {
             await unlink(filePath);
             await rename(`${filePath}.tmp`, filePath);
             stats.optimizedSize += tmpSize;
@@ -149,44 +152,65 @@ async function optimizeImage(filePath) {
             await webpPipeline.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
 
             const webpSize = await getFileSize(webpPath);
-            const savings = originalSize - tmpSize;
-            const savingsPercent = Math.round((savings / originalSize) * 100);
 
             console.log(
                 `✓ ${filePath.replace(CONFIG.imagesDir, '')}\n` +
                 `  Original: ${formatBytes(originalSize)} → Optimized: ${formatBytes(tmpSize)} ` +
-                `(${savingsPercent}% reduction)\n` +
+                `(${Math.round(savingsPercent)}% reduction)\n` +
                 `  WebP: ${formatBytes(webpSize)}`
             );
 
             stats.processed++;
         } else {
-            // Optimized version is larger, keep original but still create WebP
+            // Savings too small, keep original
             await unlink(`${filePath}.tmp`);
             stats.optimizedSize += originalSize;
 
-            // Generate WebP version from original
-            let webpPipeline = sharp(filePath);
-            if (needsResize) {
-                webpPipeline = webpPipeline.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
-                    fit: 'inside',
-                    withoutEnlargement: true,
-                });
+            // Check if WebP needs update
+            let needsWebP = true;
+            try {
+                const webpStats = await stat(webpPath);
+                // If WebP exists and is newer than original, skip
+                if (webpStats.mtime >= originalStats.mtime) {
+                    needsWebP = false;
+                }
+            } catch {
+                // WebP doesn't exist
             }
-            await webpPipeline.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
 
-            const webpSize = await getFileSize(webpPath);
-            console.log(
-                `⊘ ${filePath.replace(CONFIG.imagesDir, '')}\n` +
-                `  Already optimized: ${formatBytes(originalSize)}\n` +
-                `  WebP: ${formatBytes(webpSize)}`
-            );
+            if (needsWebP) {
+                // Generate WebP version from original
+                let webpPipeline = sharp(filePath);
+                if (needsResize) {
+                    webpPipeline = webpPipeline.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
+                        fit: 'inside',
+                        withoutEnlargement: true,
+                    });
+                }
+                await webpPipeline.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
 
-            stats.skipped++;
+                const webpSize = await getFileSize(webpPath);
+                console.log(
+                    `✓ ${filePath.replace(CONFIG.imagesDir, '')} (WebP updated)\n` +
+                    `  Original kept (savings < 5%)\n` +
+                    `  WebP: ${formatBytes(webpSize)}`
+                );
+                stats.processed++;
+            } else {
+                console.log(
+                    `⊘ ${filePath.replace(CONFIG.imagesDir, '')}\n` +
+                    `  Skipped: Already optimized`
+                );
+                stats.skipped++;
+            }
         }
     } catch (error) {
         console.error(`✗ Error optimizing ${filePath}:`, error.message);
         stats.errors++;
+        // Clean up tmp file if it exists
+        try {
+            await unlink(`${filePath}.tmp`);
+        } catch { }
     }
 }
 
