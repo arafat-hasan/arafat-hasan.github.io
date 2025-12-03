@@ -24,9 +24,9 @@ const __dirname = dirname(__filename);
 const CONFIG = {
     maxWidth: 1920,
     maxHeight: 1920,
-    jpegQuality: 85,
-    pngQuality: 85,
-    webpQuality: 85,
+    jpegQuality: 75,
+    pngQuality: 75,
+    webpQuality: 75,
     imagesDir: join(__dirname, '../public/images'),
     extensions: ['.jpg', '.jpeg', '.png'],
 };
