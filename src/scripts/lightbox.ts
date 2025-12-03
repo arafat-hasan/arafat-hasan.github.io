@@ -107,7 +107,7 @@ function showPhoto(index: number) {
     }
 
     if (lightboxTitle) lightboxTitle.textContent = title;
-    if (lightboxLocation) lightboxLocation.textContent = `📍 ${location}`;
+    if (lightboxLocation) lightboxLocation.textContent = location;
     if (lightboxDate) lightboxDate.textContent = date;
     if (lightboxCurrent) lightboxCurrent.textContent = (index + 1).toString();
 
