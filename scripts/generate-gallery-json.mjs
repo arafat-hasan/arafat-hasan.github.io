@@ -26,7 +26,7 @@ const TEMPLATE = {
     location: "",
     collection: "",
     image: "",
-    Camera: "",
+    camera: "",
     alt: "",
     featured: false
 };
@@ -114,7 +114,7 @@ async function main() {
 
             // Extract data
             let date = TEMPLATE.date;
-            let camera = TEMPLATE.Camera;
+            let camera = TEMPLATE.camera;
             let location = TEMPLATE.location;
 
             // Camera
@@ -155,11 +155,11 @@ async function main() {
                 location: location,
                 collection: collectionName,
                 image: webPath,
-                Camera: camera,
+                camera: camera,
                 alt: `${collectionName} - ${fileBasename}`
             };
 
-            await writeFile(jsonPath, JSON.stringify(jsonContent, null, 4));
+            await writeFile(jsonPath, JSON.stringify(jsonContent, null, 4) + "\n");
             console.log(`Generated ${jsonPath}`);
         }
 
