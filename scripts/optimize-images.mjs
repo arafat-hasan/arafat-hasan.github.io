@@ -13,10 +13,11 @@
 
 import sharp from 'sharp';
 import heicConvert from 'heic-convert';
-import { readdir, stat, unlink, rename, readFile } from 'fs/promises';
+import { readdir, stat, unlink, rename, readFile, writeFile } from 'fs/promises';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { exiftool } from 'exiftool-vendored';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -94,6 +95,51 @@ function formatBytes(bytes) {
 }
 
 /**
+ * Copy metadata from source to destination file
+ */
+async function copyMetadata(sourcePath, destPath) {
+    try {
+        // Read metadata from source
+        const tags = await exiftool.read(sourcePath);
+
+        // Write important metadata to destination
+        // Preserve: Date/Time, GPS, Camera info, Orientation
+        const metadataToPreserve = {
+            DateTimeOriginal: tags.DateTimeOriginal,
+            CreateDate: tags.CreateDate,
+            ModifyDate: tags.ModifyDate,
+            GPSLatitude: tags.GPSLatitude,
+            GPSLongitude: tags.GPSLongitude,
+            GPSAltitude: tags.GPSAltitude,
+            GPSDateStamp: tags.GPSDateStamp,
+            GPSTimeStamp: tags.GPSTimeStamp,
+            Make: tags.Make,
+            Model: tags.Model,
+            LensModel: tags.LensModel,
+            FocalLength: tags.FocalLength,
+            FNumber: tags.FNumber,
+            ISO: tags.ISO,
+            ExposureTime: tags.ExposureTime,
+            // Note: Orientation is NOT preserved because .rotate() already applies it to pixels
+            Artist: tags.Artist,
+            Copyright: tags.Copyright,
+        };
+
+        // Filter out undefined values
+        const filteredMetadata = Object.fromEntries(
+            Object.entries(metadataToPreserve).filter(([_, v]) => v !== undefined)
+        );
+
+        if (Object.keys(filteredMetadata).length > 0) {
+            await exiftool.write(destPath, filteredMetadata, ['-overwrite_original']);
+        }
+    } catch (error) {
+        // Metadata copy is non-critical, just log the error
+        console.warn(`  Warning: Could not copy metadata: ${error.message}`);
+    }
+}
+
+/**
  * Optimize a single image
  */
 async function optimizeImage(filePath) {
@@ -130,10 +176,12 @@ async function optimizeImage(filePath) {
                 format: 'JPEG',
                 quality: 1, // High quality intermediate
             });
-            image = sharp(outputBuffer);
+            // Load with Sharp and apply orientation transformation
+            // .rotate() without arguments auto-rotates based on EXIF orientation
+            image = sharp(outputBuffer).rotate();
         } else {
-            // Load image normally
-            image = sharp(filePath);
+            // Load image normally and apply orientation transformation
+            image = sharp(filePath).rotate();
         }
 
         const metadata = await image.metadata();
@@ -142,7 +190,9 @@ async function optimizeImage(filePath) {
         const needsResize = metadata.width > CONFIG.maxWidth || metadata.height > CONFIG.maxHeight;
 
         // Optimize original format
-        let pipeline = image.clone();
+        // Note: withMetadata() preserves ICC profile and basic metadata
+        // We'll use exiftool to copy comprehensive EXIF/XMP data after saving
+        let pipeline = image.clone().withMetadata();
 
         if (needsResize) {
             pipeline = pipeline.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
@@ -156,8 +206,11 @@ async function optimizeImage(filePath) {
             const jpgPath = `${basename}.jpg`;
             await pipeline.jpeg({ quality: CONFIG.jpegQuality, mozjpeg: true }).toFile(jpgPath);
 
+            // Copy metadata from original HEIF to JPG
+            await copyMetadata(filePath, jpgPath);
+
             // Generate WebP
-            let webpInstance = image.clone();
+            let webpInstance = image.clone().withMetadata();
             if (needsResize) {
                 webpInstance = webpInstance.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
                     fit: 'inside',
@@ -165,6 +218,9 @@ async function optimizeImage(filePath) {
                 });
             }
             await webpInstance.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
+
+            // Copy metadata from original HEIF to WebP
+            await copyMetadata(filePath, webpPath);
 
             // Get new sizes
             const jpgSize = await getFileSize(jpgPath);
@@ -199,12 +255,19 @@ async function optimizeImage(filePath) {
 
         // Only replace if savings are significant (>5%) to prevent quality degradation loops
         if (savingsPercent > 5) {
-            await unlink(filePath);
+            // Before replacing, save original for metadata extraction
+            const originalPath = `${filePath}.original`;
+            await rename(filePath, originalPath);
             await rename(`${filePath}.tmp`, filePath);
+
+            // Copy metadata from original to optimized file
+            await copyMetadata(originalPath, filePath);
+            await unlink(originalPath);
+
             stats.optimizedSize += tmpSize;
 
             // Generate WebP version
-            let webpPipeline = sharp(filePath);
+            let webpPipeline = sharp(filePath).withMetadata();
             if (needsResize) {
                 webpPipeline = webpPipeline.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
                     fit: 'inside',
@@ -212,6 +275,9 @@ async function optimizeImage(filePath) {
                 });
             }
             await webpPipeline.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
+
+            // Copy metadata to WebP
+            await copyMetadata(filePath, webpPath);
 
             const webpSize = await getFileSize(webpPath);
 
@@ -242,7 +308,7 @@ async function optimizeImage(filePath) {
 
             if (needsWebP) {
                 // Generate WebP version from original
-                let webpPipeline = sharp(filePath);
+                let webpPipeline = sharp(filePath).withMetadata();
                 if (needsResize) {
                     webpPipeline = webpPipeline.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
                         fit: 'inside',
@@ -250,6 +316,9 @@ async function optimizeImage(filePath) {
                     });
                 }
                 await webpPipeline.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
+
+                // Copy metadata to WebP
+                await copyMetadata(filePath, webpPath);
 
                 const webpSize = await getFileSize(webpPath);
                 console.log(
@@ -320,8 +389,16 @@ async function main() {
     console.log('='.repeat(60));
 
     if (stats.errors > 0) {
+        await exiftool.end();
         process.exit(1);
     }
+
+    // Clean up exiftool process
+    await exiftool.end();
 }
 
-main().catch(console.error);
+main().catch(async (error) => {
+    console.error(error);
+    await exiftool.end();
+    process.exit(1);
+});
