@@ -12,7 +12,8 @@
  */
 
 import sharp from 'sharp';
-import { readdir, stat, unlink, rename } from 'fs/promises';
+import heicConvert from 'heic-convert';
+import { readdir, stat, unlink, rename, readFile } from 'fs/promises';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -28,7 +29,7 @@ const CONFIG = {
     pngQuality: 75,
     webpQuality: 75,
     imagesDir: join(__dirname, '../public/images'),
-    extensions: ['.jpg', '.jpeg', '.png'],
+    extensions: ['.jpg', '.jpeg', '.png', '.heif', '.heic'],
 };
 
 // Statistics
@@ -96,9 +97,22 @@ function formatBytes(bytes) {
  * Optimize a single image
  */
 async function optimizeImage(filePath) {
+    // Check for 0-byte files first and delete them
+    try {
+        const stats = await stat(filePath);
+        if (stats.size === 0) {
+            await unlink(filePath);
+            console.log(`🗑️  Deleted 0-byte file: ${filePath.replace(CONFIG.imagesDir, '')}`);
+            return;
+        }
+    } catch {
+        return; // File might not exist
+    }
+
     const ext = extname(filePath).toLowerCase();
     const basename = filePath.substring(0, filePath.lastIndexOf('.'));
     const webpPath = `${basename}.webp`;
+    const isHeif = ext === '.heif' || ext === '.heic';
 
     try {
         // Get original stats
@@ -106,8 +120,22 @@ async function optimizeImage(filePath) {
         const originalSize = originalStats.size;
         stats.originalSize += originalSize;
 
-        // Load image
-        const image = sharp(filePath);
+        let image;
+
+        if (isHeif) {
+            // Convert HEIF to JPEG buffer using heic-convert
+            const inputBuffer = await readFile(filePath);
+            const outputBuffer = await heicConvert({
+                buffer: inputBuffer,
+                format: 'JPEG',
+                quality: 1, // High quality intermediate
+            });
+            image = sharp(outputBuffer);
+        } else {
+            // Load image normally
+            image = sharp(filePath);
+        }
+
         const metadata = await image.metadata();
 
         // Check if image needs resizing
@@ -121,6 +149,40 @@ async function optimizeImage(filePath) {
                 fit: 'inside',
                 withoutEnlargement: true,
             });
+        }
+
+        if (isHeif) {
+            // Convert HEIF to JPG
+            const jpgPath = `${basename}.jpg`;
+            await pipeline.jpeg({ quality: CONFIG.jpegQuality, mozjpeg: true }).toFile(jpgPath);
+
+            // Generate WebP
+            let webpInstance = image.clone();
+            if (needsResize) {
+                webpInstance = webpInstance.resize(CONFIG.maxWidth, CONFIG.maxHeight, {
+                    fit: 'inside',
+                    withoutEnlargement: true,
+                });
+            }
+            await webpInstance.webp({ quality: CONFIG.webpQuality }).toFile(webpPath);
+
+            // Get new sizes
+            const jpgSize = await getFileSize(jpgPath);
+            const webpSize = await getFileSize(webpPath);
+
+            // Delete original HEIF
+            await unlink(filePath);
+            stats.optimizedSize += jpgSize;
+
+            console.log(
+                `✓ ${filePath.replace(CONFIG.imagesDir, '')} (Converted to JPG)\n` +
+                `  Original: ${formatBytes(originalSize)} → JPG: ${formatBytes(jpgSize)}\n` +
+                `  WebP: ${formatBytes(webpSize)}\n` +
+                `  Original HEIF deleted`
+            );
+
+            stats.processed++;
+            return; // Done with HEIF
         }
 
         if (ext === '.jpg' || ext === '.jpeg') {
@@ -206,6 +268,9 @@ async function optimizeImage(filePath) {
         }
     } catch (error) {
         console.error(`✗ Error optimizing ${filePath}:`, error.message);
+        if (error.message.includes('No decoding plugin installed')) {
+            console.error('  Hint: Your environment might lack HEVC support for HEIF/HEIC files.');
+        }
         stats.errors++;
         // Clean up tmp file if it exists
         try {
