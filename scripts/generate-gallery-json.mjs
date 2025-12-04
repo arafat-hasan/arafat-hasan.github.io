@@ -40,11 +40,58 @@ async function getExifData(filePath) {
     }
 }
 
-function formatGPS(tags) {
-    if (tags.GPSLatitude && tags.GPSLongitude) {
-        return `${tags.GPSLatitude.toFixed(6)}° N, ${tags.GPSLongitude.toFixed(6)}° E`; // exiftool returns numbers
+async function getPlaceNameFromGPS(lat, lon) {
+    try {
+        const url = "https://nominatim.openstreetmap.org/reverse";
+        const params = new URLSearchParams({
+            lat: lat.toString(),
+            lon: lon.toString(),
+            format: "jsonv2"
+        });
+
+        const response = await fetch(`${url}?${params}`, {
+            headers: {
+                "User-Agent": "Arafat-GalleryScript/1.0"
+            }
+        });
+
+        if (!response.ok) {
+            console.warn(`Warning: Nominatim API returned status ${response.status}`);
+            return "";
+        }
+
+        const data = await response.json();
+
+        // Extract: place name + city + state + country
+        const parts = [];
+
+        // Place name (could be in name, railway, tourism, etc.)
+        if (data.name) {
+            parts.push(data.name);
+        }
+
+        // City (could be in city, town, village, etc.)
+        const address = data.address || {};
+        const city = address.city || address.town || address.village || address.municipality;
+        if (city && city !== data.name) {
+            parts.push(city);
+        }
+
+        // State
+        if (address.state) {
+            parts.push(address.state);
+        }
+
+        // Country
+        if (address.country) {
+            parts.push(address.country);
+        }
+
+        return parts.length > 0 ? parts.join(", ") : "";
+    } catch (error) {
+        console.warn(`Warning: Could not fetch place name for ${lat}, ${lon}: ${error.message}`);
+        return "";
     }
-    return "";
 }
 
 function formatDate(date) {
@@ -131,7 +178,7 @@ async function main() {
 
             // Location
             if (tags.GPSLatitude && tags.GPSLongitude) {
-                location = `${tags.GPSLatitude.toFixed(6)}°, ${tags.GPSLongitude.toFixed(6)}°`;
+                location = await getPlaceNameFromGPS(tags.GPSLatitude, tags.GPSLongitude);
             }
 
             // Construct JSON
