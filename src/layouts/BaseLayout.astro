@@ -1,9 +1,13 @@
 ---
+import SEO from "../components/common/SEO.astro";
+
 interface Props {
     title: string;
     description?: string;
     ogImage?: string;
-    ogType?: string;
+    ogImageAlt?: string;
+    ogType?: "website" | "article" | "profile";
+    twitterHandle?: string;
     mainClass?: string;
 }
 
@@ -11,7 +15,9 @@ const {
     title,
     description = "Software engineer, outsider observer.",
     ogImage = "/og-image.jpg",
+    ogImageAlt,
     ogType = "website",
+    twitterHandle,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -34,20 +40,16 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
         <meta name="author" content="Arafat Hasan" />
         <meta name="theme-color" content="#ffffff" />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content={ogType} />
-        <meta property="og:url" content={canonicalURL} />
-        <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-        <meta property="og:site_name" content={siteTitle} />
-
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={canonicalURL} />
-        <meta name="twitter:title" content={fullTitle} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+        <!-- Enhanced SEO Component -->
+        <SEO
+            title={fullTitle}
+            description={description}
+            image={ogImage}
+            imageAlt={ogImageAlt}
+            type={ogType}
+            siteName={siteTitle}
+            twitterHandle={twitterHandle}
+        />
 
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
