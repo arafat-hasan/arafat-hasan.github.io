@@ -4,20 +4,20 @@
  * Ensures all external links have proper security attributes and styling
  */
 interface Props {
-  href: string;
-  class?: string;
-  children: any;
+    href: string;
+    class?: string;
+    children: any;
 }
 
-const { href, class: className = '', ...rest } = Astro.props;
+const { href, class: className = "", ...rest } = Astro.props;
 ---
 
 <a
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer"
-  class={`${className} touch-manipulation`}
-  {...rest}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`${className} touch-manipulation`}
+    {...rest}
 >
-  <slot />
+    <slot />
 </a>

@@ -4,37 +4,39 @@
  * Display when there's no content to show
  */
 interface Props {
-  title?: string;
-  message: string;
-  actionText?: string;
-  actionHref?: string;
-  class?: string;
+    title?: string;
+    message: string;
+    actionText?: string;
+    actionHref?: string;
+    class?: string;
 }
 
 const {
-  title = 'No content found',
-  message,
-  actionText,
-  actionHref,
-  class: className = '',
+    title = "No content found",
+    message,
+    actionText,
+    actionHref,
+    class: className = "",
 } = Astro.props;
 ---
 
 <div class={`text-center py-12 ${className}`.trim()}>
-  <div class="max-w-md mx-auto">
-    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-      {title}
-    </h3>
-    <p class="text-gray-600 mb-6">
-      {message}
-    </p>
-    {actionText && actionHref && (
-      <a
-        href={actionHref}
-        class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-      >
-        {actionText}
-      </a>
-    )}
-  </div>
+    <div class="max-w-md mx-auto">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            {title}
+        </h3>
+        <p class="text-gray-600 mb-6">
+            {message}
+        </p>
+        {
+            actionText && actionHref && (
+                <a
+                    href={actionHref}
+                    class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                    {actionText}
+                </a>
+            )
+        }
+    </div>
 </div>

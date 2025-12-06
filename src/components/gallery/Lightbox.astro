@@ -7,70 +7,106 @@
 
 <!-- Lightbox Modal -->
 <div
-  id="lightbox"
-  class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden items-center justify-center"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Photo viewer"
+    id="lightbox"
+    class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden items-center justify-center"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Photo viewer"
 >
-  <!-- Close Button -->
-  <button
-    id="lightbox-close"
-    class="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
-    aria-label="Close photo viewer"
-  >
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
+    <!-- Close Button -->
+    <button
+        id="lightbox-close"
+        class="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+        aria-label="Close photo viewer"
+    >
+        <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
 
-  <!-- Previous Button -->
-  <button
-    id="lightbox-prev"
-    class="absolute left-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
-    aria-label="Previous photo"
-  >
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
-  </button>
+    <!-- Previous Button -->
+    <button
+        id="lightbox-prev"
+        class="absolute left-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+        aria-label="Previous photo"
+    >
+        <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </button>
 
-  <!-- Next Button -->
-  <button
-    id="lightbox-next"
-    class="absolute right-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
-    aria-label="Next photo"
-  >
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
+    <!-- Next Button -->
+    <button
+        id="lightbox-next"
+        class="absolute right-4 z-10 w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+        aria-label="Next photo"
+    >
+        <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
 
-  <!-- Image Container -->
-  <div class="relative max-w-7xl max-h-screen w-full h-full flex flex-col items-center justify-center p-4">
-    <!-- Image -->
-    <img
-      id="lightbox-image"
-      src=""
-      alt=""
-      class="max-w-full max-h-[80vh] object-contain"
-    />
+    <!-- Image Container -->
+    <div
+        class="relative max-w-7xl max-h-screen w-full h-full flex flex-col items-center justify-center p-4"
+    >
+        <!-- Image -->
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+            class="max-w-full max-h-[80vh] object-contain"
+        />
 
-    <!-- Photo Info -->
-    <div id="lightbox-info" class="mt-4 text-center text-white max-w-2xl">
-      <h2 id="lightbox-title" class="text-2xl font-semibold mb-2"></h2>
-      <div class="flex items-center justify-center gap-4 text-sm text-gray-300">
-        <span id="lightbox-location"></span>
-        <span>•</span>
-        <span id="lightbox-date"></span>
-      </div>
+        <!-- Photo Info -->
+        <div id="lightbox-info" class="mt-4 text-center text-white max-w-2xl">
+            <h2 id="lightbox-title" class="text-2xl font-semibold mb-2"></h2>
+            <div
+                class="flex items-center justify-center gap-4 text-sm text-gray-300"
+            >
+                <span id="lightbox-location"></span>
+                <span>•</span>
+                <span id="lightbox-date"></span>
+            </div>
+        </div>
+
+        <!-- Photo Counter -->
+        <div
+            id="lightbox-counter"
+            class="absolute top-4 left-4 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded"
+        >
+            <span id="lightbox-current">1</span> / <span id="lightbox-total"
+                >1</span
+            >
+        </div>
     </div>
-
-    <!-- Photo Counter -->
-    <div id="lightbox-counter" class="absolute top-4 left-4 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded">
-      <span id="lightbox-current">1</span> / <span id="lightbox-total">1</span>
-    </div>
-  </div>
 </div>
 
 <!-- External Lightbox Script -->

@@ -5,91 +5,98 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="About - Arafat Hasan"
-  description="Learn more about Arafat Hasan"
+    title="About - Arafat Hasan"
+    description="Learn more about Arafat Hasan"
 >
-  <Navbar slot="navbar" />
+    <Navbar slot="navbar" />
 
-  <article class="prose prose-slate max-w-none">
-    <h1 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">About Me</h1>
+    <article class="prose prose-slate max-w-none">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">About Me</h1>
 
-    <div class="space-y-6 text-gray-700 leading-relaxed">
-      <p class="text-lg">
-        Hi! I'm Arafat — a software engineer who builds efficient and reliable
-        systems while staying endlessly curious about the world. I thrive on
-        tackling complex technical challenges, but I also love exploring big
-        ideas across diverse disciplines. Whether it's diving into code or
-        getting lost in a book about history or philosophy, I'm always learning
-        and connecting dots.
-      </p>
+        <div class="space-y-6 text-gray-700 leading-relaxed">
+            <p class="text-lg">
+                Hi! I'm Arafat — a software engineer who builds efficient and
+                reliable systems while staying endlessly curious about the
+                world. I thrive on tackling complex technical challenges, but I
+                also love exploring big ideas across diverse disciplines.
+                Whether it's diving into code or getting lost in a book about
+                history or philosophy, I'm always learning and connecting dots.
+            </p>
 
-      <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-600">
-        "You become what you give your attention to."
-      </blockquote>
+            <blockquote
+                class="border-l-4 border-gray-300 pl-4 italic text-gray-600"
+            >
+                "You become what you give your attention to."
+            </blockquote>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">
-        Beyond Code
-      </h2>
+            <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">
+                Beyond Code
+            </h2>
 
-      <div class="space-y-4">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">
-            Reading & Learning
-          </h3>
-          <p>
-            I'm an avid reader with a deep curiosity for big ideas that shape
-            our world. My interests span across history, geopolitics,
-            philosophy, religion, literature, and psychology. I love exploring
-            diverse perspectives and understanding how ideas interconnect across
-            different disciplines.
-          </p>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        Reading & Learning
+                    </h3>
+                    <p>
+                        I'm an avid reader with a deep curiosity for big ideas
+                        that shape our world. My interests span across history,
+                        geopolitics, philosophy, religion, literature, and
+                        psychology. I love exploring diverse perspectives and
+                        understanding how ideas interconnect across different
+                        disciplines.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        Travel & Culture
+                    </h3>
+                    <p>
+                        I'm passionate about traveling — not as a tourist
+                        checking off landmarks, but as a cultural explorer
+                        seeking to understand people and their stories. I've
+                        traveled extensively around Bangladesh, immersing myself
+                        in local cultures, traditions, and the rich tapestry of
+                        human experiences that make each place unique.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">
+                What I Do
+            </h2>
+            <p>
+                I'm currently a Software Engineer at <strong
+                    >Dynamic Solution Innovators</strong
+                >, working on
+                <strong>Envize</strong> — Consilio's large-scale document classification
+                and Technology-Assisted Review platform used in enterprise eDiscovery.
+                I build and maintain services using Python, Java Spring Boot, and
+                Next.js, handling millions of documents with ML-driven pipelines.
+            </p>
+            <p>
+                My technical experience spans backend engineering, DevOps, and
+                machine learning. I also have a strong competitive programming
+                background with 1500+ problems solved and have served as a CP
+                trainer. I've published research on intelligent waste management
+                systems using deep learning with IoT in the Journal of King Saud
+                University.
+            </p>
         </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">
-            Travel & Culture
-          </h3>
-          <p>
-            I'm passionate about traveling — not as a tourist checking off
-            landmarks, but as a cultural explorer seeking to understand people
-            and their stories. I've traveled extensively around Bangladesh,
-            immersing myself in local cultures, traditions, and the rich
-            tapestry of human experiences that make each place unique.
-          </p>
+        <div class="mt-12 pt-8 border-t border-gray-200">
+            <p class="text-gray-600">
+                Want the full professional details? Check out my <a
+                    href="/resume"
+                    class="text-blue-600 hover:underline">resume</a
+                >
+                or <a href="/contact" class="text-blue-600 hover:underline"
+                    >get in touch</a
+                >.
+            </p>
         </div>
-      </div>
+    </article>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">What I Do</h2>
-      <p>
-        I'm currently a Software Engineer at <strong
-          >Dynamic Solution Innovators</strong
-        >, working on
-        <strong>Envize</strong> — Consilio's large-scale document classification
-        and Technology-Assisted Review platform used in enterprise eDiscovery. I
-        build and maintain services using Python, Java Spring Boot, and Next.js,
-        handling millions of documents with ML-driven pipelines.
-      </p>
-      <p>
-        My technical experience spans backend engineering, DevOps, and machine
-        learning. I also have a strong competitive programming background with
-        1500+ problems solved and have served as a CP trainer. I've published
-        research on intelligent waste management systems using deep learning
-        with IoT in the Journal of King Saud University.
-      </p>
-    </div>
-
-    <div class="mt-12 pt-8 border-t border-gray-200">
-      <p class="text-gray-600">
-        Want the full professional details? Check out my <a
-          href="/resume"
-          class="text-blue-600 hover:underline">resume</a
-        >
-        or <a href="/contact" class="text-blue-600 hover:underline"
-          >get in touch</a
-        >.
-      </p>
-    </div>
-  </article>
-
-  <Footer slot="footer" />
+    <Footer slot="footer" />
 </BaseLayout>
