@@ -14,110 +14,116 @@ import "../styles/markdown.css";
 import type { ImageMetadata } from "astro";
 
 interface Props {
-  title: string;
-  description: string;
-  publishedAt: Date;
-  category:
-    | "tech"
-    | "geopolitics"
-    | "literature"
-    | "philosophy"
-    | "fiction"
-    | "activities";
-  tags?: string[];
-  content: string; // For reading time
-  featuredImage?: ImageMetadata;
+    title: string;
+    description: string;
+    publishedAt: Date;
+    category:
+        | "tech"
+        | "geopolitics"
+        | "literature"
+        | "philosophy"
+        | "fiction"
+        | "activities";
+    tags?: string[];
+    content: string; // For reading time
+    featuredImage?: ImageMetadata;
 }
 
 const {
-  title,
-  description,
-  publishedAt,
-  category,
-  tags,
-  content,
-  featuredImage,
+    title,
+    description,
+    publishedAt,
+    category,
+    tags,
+    content,
+    featuredImage,
 } = Astro.props;
 
 const formattedDate = publishedAt.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
 });
 ---
 
 <BaseLayout title={title} description={description}>
-  <Navbar slot="navbar" />
+    <Navbar slot="navbar" />
 
-  <article class="prose prose-slate max-w-none">
-    <header class="mb-8 pb-8 border-b border-gray-200">
-      <!-- Breadcrumb -->
-      <nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
-        <ol class="flex items-center gap-2">
-          <li><a href="/writing" class="hover:text-gray-900">Writing</a></li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <a
-              href={`/writing/${category}`}
-              class="hover:text-gray-900 capitalize">{category}</a
-            >
-          </li>
-        </ol>
-      </nav>
+    <article class="prose prose-slate max-w-none">
+        <header class="mb-8 pb-8 border-b border-gray-200">
+            <!-- Breadcrumb -->
+            <nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+                <ol class="flex items-center gap-2">
+                    <li>
+                        <a href="/writing" class="hover:text-gray-900"
+                            >Writing</a>
+                    </li>
+                    <li aria-hidden="true">/</li>
+                    <li>
+                        <a
+                            href={`/writing/${category}`}
+                            class="hover:text-gray-900 capitalize">{category}</a
+                        >
+                    </li>
+                </ol>
+            </nav>
 
-      <!-- Category Badge -->
-      <div class="mb-4">
-        <Badge text={category} variant={category} />
-      </div>
-
-      <h1 class="text-4xl font-bold mb-4">{title}</h1>
-
-      <div class="flex items-center gap-4 text-sm text-gray-600">
-        <time datetime={publishedAt.toISOString()}>{formattedDate}</time>
-        <span>•</span>
-        <ReadingTime content={content} />
-      </div>
-    </header>
-
-    <!-- Featured Image -->
-    {
-      featuredImage && (
-        <div class="aspect-video w-full rounded-lg overflow-hidden mb-8">
-          <Image
-            src={featuredImage}
-            alt={title}
-            class="w-full h-full object-cover"
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, 800px"
-          />
-        </div>
-      )
-    }
-
-    <div class="markdown-content">
-      <slot />
-    </div>
-
-    {
-      tags && tags.length > 0 && (
-        <footer class="mt-12 pt-8 border-t border-gray-200">
-          <div class="flex items-start gap-3">
-            <span class="text-sm font-medium text-gray-700">Tags:</span>
-            <div class="flex gap-2 flex-wrap">
-              {tags.map((tag) => (
-                <a
-                  href={`/writing/tags/${encodeURIComponent(tag.toLowerCase())}`}
-                  class="inline-block"
-                >
-                  <Badge text={tag} variant="default" />
-                </a>
-              ))}
+            <!-- Category Badge -->
+            <div class="mb-4">
+                <Badge text={category} variant={category} />
             </div>
-          </div>
-        </footer>
-      )
-    }
-  </article>
 
-  <Footer slot="footer" />
+            <h1 class="text-4xl font-bold mb-4">{title}</h1>
+
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+                <time datetime={publishedAt.toISOString()}>{formattedDate}</time
+                >
+                <span>•</span>
+                <ReadingTime content={content} />
+            </div>
+        </header>
+
+        <!-- Featured Image -->
+        {
+            featuredImage && (
+                <div class="aspect-video w-full rounded-lg overflow-hidden mb-8">
+                    <Image
+                        src={featuredImage}
+                        alt={title}
+                        class="w-full h-full object-cover"
+                        widths={[400, 800, 1200]}
+                        sizes="(max-width: 768px) 100vw, 800px"
+                    />
+                </div>
+            )
+        }
+
+        <div class="markdown-content">
+            <slot />
+        </div>
+
+        {
+            tags && tags.length > 0 && (
+                <footer class="mt-12 pt-8 border-t border-gray-200">
+                    <div class="flex items-start gap-3">
+                        <span class="text-sm font-medium text-gray-700">
+                            Tags:
+                        </span>
+                        <div class="flex gap-2 flex-wrap">
+                            {tags.map((tag) => (
+                                <a
+                                    href={`/writing/tags/${encodeURIComponent(tag.toLowerCase())}`}
+                                    class="inline-block"
+                                >
+                                    <Badge text={tag} variant="default" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </footer>
+            )
+        }
+    </article>
+
+    <Footer slot="footer" />
 </BaseLayout>

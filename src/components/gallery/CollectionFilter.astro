@@ -4,41 +4,50 @@
  * Navigation for photo collections
  */
 interface Props {
-  collections: string[];
-  currentCollection?: string; // undefined means 'all'
-  class?: string;
+    collections: string[];
+    currentCollection?: string; // undefined means 'all'
+    class?: string;
 }
 
-const { collections, currentCollection, class: className = '' } = Astro.props;
+const { collections, currentCollection, class: className = "" } = Astro.props;
 
 // Add "All" option at the beginning
-const allCollections = ['All', ...collections];
+const allCollections = ["All", ...collections];
 ---
 
-{allCollections.length > 1 && (
-  <nav class={`border-b border-gray-200 ${className}`.trim()} aria-label="Photo collections">
-    <ul class="flex flex-wrap gap-1 -mb-px">
-      {allCollections.map((collection) => {
-        const isAll = collection === 'All';
-        const isActive = isAll ? !currentCollection : currentCollection === collection;
-        const href = isAll ? '/gallery' : `/gallery/${collection.toLowerCase().replace(/\s+/g, '-')}`;
-        
-        return (
-          <li>
-            <a
-              href={href}
-              class={`inline-block px-4 py-2 border-b-2 text-sm font-medium transition-colors ${
-                isActive
-                  ? 'border-gray-900 text-gray-900'
-                  : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
-              }`}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              {collection}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
-  </nav>
-)}
+{
+    allCollections.length > 1 && (
+        <nav
+            class={`border-b border-gray-200 ${className}`.trim()}
+            aria-label="Photo collections"
+        >
+            <ul class="flex flex-wrap gap-1 -mb-px">
+                {allCollections.map((collection) => {
+                    const isAll = collection === "All";
+                    const isActive = isAll
+                        ? !currentCollection
+                        : currentCollection === collection;
+                    const href = isAll
+                        ? "/gallery"
+                        : `/gallery/${collection.toLowerCase().replace(/\s+/g, "-")}`;
+
+                    return (
+                        <li>
+                            <a
+                                href={href}
+                                class={`inline-block px-4 py-2 border-b-2 text-sm font-medium transition-colors ${
+                                    isActive
+                                        ? "border-gray-900 text-gray-900"
+                                        : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300"
+                                }`}
+                                aria-current={isActive ? "page" : undefined}
+                            >
+                                {collection}
+                            </a>
+                        </li>
+                    );
+                })}
+            </ul>
+        </nav>
+    )
+}

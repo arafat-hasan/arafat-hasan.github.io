@@ -5,10 +5,10 @@ import { SITE_CONFIG } from "../config/constants";
 const currentPath = Astro.url.pathname;
 
 function isActive(href: string) {
-  if (href === "/") {
-    return currentPath === "/";
-  }
-  return currentPath.startsWith(href);
+    if (href === "/") {
+        return currentPath === "/";
+    }
+    return currentPath.startsWith(href);
 }
 
 // Check if we're on any writing page
@@ -16,199 +16,202 @@ const isWritingActive = currentPath.startsWith("/writing");
 
 // Main nav links (excluding Writing which has dropdown)
 const mainNavLinks = [
-  { name: "Home", href: "/" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "About", href: "/about" },
-  { name: "Resume", href: "/resume" },
-  { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "About", href: "/about" },
+    { name: "Resume", href: "/resume" },
+    { name: "Contact", href: "/contact" },
 ];
 
 const writingCategories = Object.values(WRITING_CATEGORIES);
 ---
 
 <nav class="border-b border-gray-200">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-    <div class="flex items-center justify-between">
-      <a
-        href="/"
-        class="text-xl font-semibold text-gray-900 hover:text-gray-700 relative z-50"
-      >
-        {SITE_CONFIG.name}
-      </a>
-
-      <!-- Desktop Navigation -->
-      <ul class="hidden md:flex gap-6 items-center">
-        {
-          mainNavLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class={`text-sm transition-colors ${
-                  isActive(link.href)
-                    ? "text-gray-900 font-medium"
-                    : "text-gray-600 hover:text-gray-900"
-                }`}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))
-        }
-
-        <!-- Writing Dropdown -->
-        <li class="relative">
-          <button
-            id="writing-menu-button"
-            class={`text-sm transition-colors flex items-center gap-1 ${
-              isWritingActive
-                ? "text-gray-900 font-medium"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            Writing
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-
-          <!-- Dropdown Menu -->
-          <div
-            id="writing-dropdown"
-            class="hidden absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50"
-          >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+        <div class="flex items-center justify-between">
             <a
-              href="/writing"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                href="/"
+                class="text-xl font-semibold text-gray-900 hover:text-gray-700 relative z-50"
             >
-              All Writing
+                {SITE_CONFIG.name}
             </a>
-            <div class="border-t border-gray-200 my-2"></div>
-            {
-              writingCategories.map((category) => (
-                <a
-                  href={`/writing/${category.slug}`}
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                >
-                  {category.name}
-                </a>
-              ))
-            }
-          </div>
-        </li>
-      </ul>
 
-      <!-- Mobile Hamburger Button -->
-      <button
-        id="mobile-menu-button"
-        class="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 rounded"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-      >
-        <span
-          class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
-        ></span>
-        <span
-          class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
-        ></span>
-        <span
-          class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
-        ></span>
-      </button>
-    </div>
-  </div>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex gap-6 items-center">
+                {
+                    mainNavLinks.map((link) => (
+                        <li>
+                            <a
+                                href={link.href}
+                                class={`text-sm transition-colors ${
+                                    isActive(link.href)
+                                        ? "text-gray-900 font-medium"
+                                        : "text-gray-600 hover:text-gray-900"
+                                }`}
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))
+                }
 
-  <!-- Mobile Menu Overlay -->
-  <div
-    id="mobile-menu"
-    class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out md:hidden"
-    aria-hidden="true"
-  >
-    <!-- Mobile Menu Panel -->
-    <div
-      id="mobile-menu-panel"
-      class="absolute top-0 right-0 w-64 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
-    >
-      <nav class="flex flex-col pt-20 px-6">
-        <ul class="flex flex-col gap-1">
-          {
-            mainNavLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class={`block py-3 px-4 rounded-lg text-base transition-colors ${
-                    isActive(link.href)
-                      ? "bg-gray-100 text-gray-900 font-medium"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                  }`}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))
-          }
+                <!-- Writing Dropdown -->
+                <li class="relative">
+                    <button
+                        id="writing-menu-button"
+                        class={`text-sm transition-colors flex items-center gap-1 ${
+                            isWritingActive
+                                ? "text-gray-900 font-medium"
+                                : "text-gray-600 hover:text-gray-900"
+                        }`}
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        Writing
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
 
-          <!-- Mobile Writing Section -->
-          <li>
+                    <!-- Dropdown Menu -->
+                    <div
+                        id="writing-dropdown"
+                        class="hidden absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50"
+                    >
+                        <a
+                            href="/writing"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                        >
+                            All Writing
+                        </a>
+                        <div class="border-t border-gray-200 my-2"></div>
+                        {
+                            writingCategories.map((category) => (
+                                <a
+                                    href={`/writing/${category.slug}`}
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                                >
+                                    {category.name}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Mobile Hamburger Button -->
             <button
-              id="mobile-writing-toggle"
-              class={`w-full flex items-center justify-between py-3 px-4 rounded-lg text-base transition-colors ${
-                isWritingActive
-                  ? "bg-gray-100 text-gray-900 font-medium"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-              }`}
-              aria-expanded="false"
+                id="mobile-menu-button"
+                class="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 rounded"
+                aria-label="Toggle mobile menu"
+                aria-expanded="false"
             >
-              <span>Writing</span>
-              <svg
-                id="mobile-writing-icon"
-                class="w-4 h-4 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
+                <span
+                    class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
+                ></span>
+                <span
+                    class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
+                ></span>
+                <span
+                    class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out"
+                ></span>
             </button>
-
-            <!-- Mobile Writing Submenu -->
-            <div id="mobile-writing-submenu" class="hidden mt-1 ml-4 space-y-1">
-              <a
-                href="/writing"
-                class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
-              >
-                All Writing
-              </a>
-              {
-                writingCategories.map((category) => (
-                  <a
-                    href={`/writing/${category.slug}`}
-                    class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
-                  >
-                    {category.name}
-                  </a>
-                ))
-              }
-            </div>
-          </li>
-        </ul>
-      </nav>
+        </div>
     </div>
-  </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out md:hidden"
+        aria-hidden="true"
+    >
+        <!-- Mobile Menu Panel -->
+        <div
+            id="mobile-menu-panel"
+            class="absolute top-0 right-0 w-64 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+        >
+            <nav class="flex flex-col pt-20 px-6">
+                <ul class="flex flex-col gap-1">
+                    {
+                        mainNavLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class={`block py-3 px-4 rounded-lg text-base transition-colors ${
+                                        isActive(link.href)
+                                            ? "bg-gray-100 text-gray-900 font-medium"
+                                            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                    }`}
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+
+                    <!-- Mobile Writing Section -->
+                    <li>
+                        <button
+                            id="mobile-writing-toggle"
+                            class={`w-full flex items-center justify-between py-3 px-4 rounded-lg text-base transition-colors ${
+                                isWritingActive
+                                    ? "bg-gray-100 text-gray-900 font-medium"
+                                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                            }`}
+                            aria-expanded="false"
+                        >
+                            <span>Writing</span>
+                            <svg
+                                id="mobile-writing-icon"
+                                class="w-4 h-4 transition-transform"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+
+                        <!-- Mobile Writing Submenu -->
+                        <div
+                            id="mobile-writing-submenu"
+                            class="hidden mt-1 ml-4 space-y-1"
+                        >
+                            <a
+                                href="/writing"
+                                class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
+                            >
+                                All Writing
+                            </a>
+                            {
+                                writingCategories.map((category) => (
+                                    <a
+                                        href={`/writing/${category.slug}`}
+                                        class="block py-2 px-4 text-sm text-gray-600 hover:text-gray-900"
+                                    >
+                                        {category.name}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </nav>
 
 <!-- External CSS -->

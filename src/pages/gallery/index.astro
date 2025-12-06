@@ -19,35 +19,39 @@ const featuredPhotos = allPhotos.filter((photo) => photo.data.featured);
 
 // Extract unique collections from all photos
 const collections = [
-  ...new Set(
-    allPhotos.map((photo) => photo.data.collection).filter(Boolean) as string[],
-  ),
+    ...new Set(
+        allPhotos
+            .map((photo) => photo.data.collection)
+            .filter(Boolean) as string[],
+    ),
 ].sort();
 ---
 
 <BaseLayout
-  title="Gallery"
-  description="Travel photography and moments captured from around the world. A visual journey through places, cultures, and experiences."
+    title="Gallery"
+    description="Travel photography and moments captured from around the world. A visual journey through places, cultures, and experiences."
 >
-  <Navbar slot="navbar" />
+    <Navbar slot="navbar" />
 
-  <div class="mb-8">
-    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Gallery</h1>
-    <p class="text-lg text-gray-600 max-w-2xl">
-      A visual journey through places I've explored, cultures I've encountered,
-      and moments I've captured. Each photo tells a story.
-    </p>
-  </div>
+    <div class="mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Gallery
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl">
+            A visual journey through places I've explored, cultures I've
+            encountered, and moments I've captured. Each photo tells a story.
+        </p>
+    </div>
 
-  {
-    collections.length > 0 && (
-      <CollectionFilter collections={collections} class="mb-8" />
-    )
-  }
+    {
+        collections.length > 0 && (
+            <CollectionFilter collections={collections} class="mb-8" />
+        )
+    }
 
-  <PhotoGrid photos={featuredPhotos} />
+    <PhotoGrid photos={featuredPhotos} />
 
-  <Lightbox />
+    <Lightbox />
 
-  <Footer slot="footer" />
+    <Footer slot="footer" />
 </BaseLayout>
