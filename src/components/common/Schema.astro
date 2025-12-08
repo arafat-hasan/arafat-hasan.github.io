@@ -4,6 +4,8 @@
  * Implements JSON-LD markup for SEO (Person, Website, Article, Breadcrumb)
  */
 
+import { SITE_CONFIG, SOCIAL_LINKS } from "../../config/constants";
+
 type SchemaType = "Person" | "Website" | "Article" | "BreadcrumbList";
 
 interface Props {
@@ -12,40 +14,27 @@ interface Props {
 }
 
 const { type, data = {} } = Astro.props;
-const siteUrl = Astro.site?.toString() || import.meta.env.SITE_URL;
+const siteUrl = Astro.site?.toString() || SITE_CONFIG.url;
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
-// Get metadata from environment variables with fallbacks
-const siteTitle = import.meta.env.SITE_TITLE;
-const siteDescription = import.meta.env.SITE_DESCRIPTION;
+// Get metadata from centralized configuration
+const siteTitle = SITE_CONFIG.title;
+const siteDescription = SITE_CONFIG.description;
 
-// Social profile URLs from environment variables
-const socialProfiles = [
-    import.meta.env.MYGITHUB_URL,
-    import.meta.env.LINKEDIN_URL,
-    import.meta.env.TWITTER_URL,
-    import.meta.env.STACKOVERFLOW_URL,
-    import.meta.env.SUBSTACK_URL,
-].filter(Boolean);
+// Social profile URLs from centralized configuration
+const socialProfiles = Object.values(SOCIAL_LINKS).map((link) => link.url);
 
 // Person Schema (for homepage and about page)
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: siteTitle,
+    name: SITE_CONFIG.name,
     url: siteUrl,
-    image: `${siteUrl}og-image.jpg`,
-    jobTitle: "Software Engineer",
+    image: `${siteUrl}${SITE_CONFIG.seo.ogImage}`,
+    jobTitle: SITE_CONFIG.seo.jobTitle,
     description: siteDescription,
     sameAs: socialProfiles,
-    knowsAbout: [
-        "Software Engineering",
-        "Distributed Systems",
-        "System Architecture",
-        "Philosophy",
-        "Geopolitics",
-        "Literature",
-    ],
+    knowsAbout: SITE_CONFIG.seo.knowsAbout,
 };
 
 // Website Schema (for homepage)
@@ -57,9 +46,9 @@ const websiteSchema = {
     description: siteDescription,
     author: {
         "@type": "Person",
-        name: siteTitle,
+        name: SITE_CONFIG.name,
     },
-    inLanguage: "en-US",
+    inLanguage: SITE_CONFIG.seo.language,
 };
 
 // Article Schema (for blog posts)
@@ -78,13 +67,13 @@ const articleSchema = data.article
           dateModified: data.article.updatedAt || data.article.publishedAt,
           image: data.article.image
               ? `${siteUrl}${data.article.image}`
-              : `${siteUrl}og-image.jpg`,
+              : `${siteUrl}${SITE_CONFIG.seo.ogImage}`,
           publisher: {
               "@type": "Person",
-              name: siteTitle,
+              name: SITE_CONFIG.name,
               logo: {
                   "@type": "ImageObject",
-                  url: `${siteUrl}favicon-512x512.png`,
+                  url: `${siteUrl}${SITE_CONFIG.seo.logo}`,
               },
           },
           mainEntityOfPage: {
@@ -93,7 +82,7 @@ const articleSchema = data.article
           },
           keywords: data.article.tags?.join(", "),
           articleSection: data.article.category,
-          inLanguage: "en-US",
+          inLanguage: SITE_CONFIG.seo.language,
       }
     : null;
 

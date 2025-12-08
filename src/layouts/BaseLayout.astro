@@ -1,6 +1,7 @@
 ---
 import SEO from "../components/common/SEO.astro";
 import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
+import { SITE_CONFIG } from "../config/constants";
 
 interface Props {
     title: string;
@@ -14,15 +15,15 @@ interface Props {
 
 const {
     title,
-    description = "Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.",
-    ogImage = "/og-image.jpg",
+    description = SITE_CONFIG.description,
+    ogImage = SITE_CONFIG.seo.ogImage,
     ogImageAlt,
     ogType = "website",
     twitterHandle,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const siteTitle = import.meta.env.SITE_TITLE;
+const siteTitle = SITE_CONFIG.title;
 const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 ---
 
