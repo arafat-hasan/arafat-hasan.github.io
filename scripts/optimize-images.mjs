@@ -131,7 +131,7 @@ async function copyMetadata(sourcePath, destPath) {
         );
 
         if (Object.keys(filteredMetadata).length > 0) {
-            await exiftool.write(destPath, filteredMetadata, ['-overwrite_original']);
+            await exiftool.write(destPath, filteredMetadata, { writeArgs: ['-overwrite_original'] });
         }
     } catch (error) {
         // Metadata copy is non-critical, just log the error
