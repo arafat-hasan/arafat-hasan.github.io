@@ -7,6 +7,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import WritingLayout from "../../layouts/WritingLayout.astro";
+import { getWritingUrl } from "../../utils/getWritingUrl";
 
 export async function getStaticPaths() {
   // Filter out drafts - they won't have pages generated
@@ -15,14 +16,15 @@ export async function getStaticPaths() {
   });
 
   return posts.map((post) => {
-    // Use custom URL if provided, otherwise use filename
-    const filename = post.id.split("/").pop()?.replace(".md", "") || "";
-    const slug = post.data.url || filename;
+    // Use shared utility to generate consistent URLs
+    const fullUrl = getWritingUrl(post);
+    // Remove '/writing/' prefix for the params.slug
+    const slug = fullUrl.replace("/writing/", "");
 
     return {
       params: {
         // Generate URL as: {category}/{custom-url or filename}
-        slug: `${post.data.category}/${slug}`,
+        slug,
       },
       props: { post },
     };
