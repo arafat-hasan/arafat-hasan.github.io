@@ -1,6 +1,7 @@
 ---
 import SEO from "../components/common/SEO.astro";
 import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
+import { SITE_CONFIG } from "../config/constants";
 
 interface Props {
     title: string;
@@ -8,21 +9,21 @@ interface Props {
     ogImage?: string;
     ogImageAlt?: string;
     ogType?: "website" | "article" | "profile";
-    twitterHandle?: string;
+    xHandle?: string;
     mainClass?: string;
 }
 
 const {
     title,
-    description = "Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.",
-    ogImage = "/og-image.jpg",
+    description = SITE_CONFIG.description,
+    ogImage = SITE_CONFIG.seo.ogImage,
     ogImageAlt,
     ogType = "website",
-    twitterHandle,
+    xHandle,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const siteTitle = import.meta.env.SITE_TITLE;
+const siteTitle = SITE_CONFIG.title;
 const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 ---
 
@@ -49,11 +50,17 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
             imageAlt={ogImageAlt}
             type={ogType}
             siteName={siteTitle}
-            twitterHandle={twitterHandle}
+            xHandle={xHandle}
         />
 
         <!-- Favicons - Multiple formats for maximum compatibility -->
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
         <link
             rel="icon"
             type="image/png"
@@ -63,8 +70,14 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
         <link
             rel="icon"
             type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
+            sizes="48x48"
+            href="/favicon-48x48.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
         />
         <link
             rel="apple-touch-icon"
@@ -73,6 +86,10 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="shortcut icon" href="/favicon.ico" />
+
+        <!-- Web App Title -->
+        <meta name="apple-mobile-web-app-title" content={siteTitle} />
+        <meta name="application-name" content={siteTitle} />
 
         <!-- Page Title -->
         <title>{fullTitle}</title>

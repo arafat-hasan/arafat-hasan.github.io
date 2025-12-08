@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { SITE_CONFIG, SOCIAL_LINKS } from "../config/constants";
 ---
 
 <BaseLayout
@@ -35,10 +36,10 @@ import Footer from "../components/Footer.astro";
                             >Email:</span
                         >
                         <a
-                            href="mailto:opendoor.arafat[at]gmail[dot]com"
+                            href={SITE_CONFIG.emailHref}
                             class="text-blue-600 hover:underline break-all touch-manipulation"
                         >
-                            opendoor.arafat[at]gmail[dot]com
+                            {SITE_CONFIG.email}
                         </a>
                     </div>
 
@@ -49,12 +50,12 @@ import Footer from "../components/Footer.astro";
                             >LinkedIn:</span
                         >
                         <a
-                            href="https://linkedin.com/in/arafat-hasan"
+                            href={SOCIAL_LINKS.linkedin.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             class="text-blue-600 hover:underline break-all touch-manipulation"
                         >
-                            linkedin.com/in/arafat-hasan
+                            {SOCIAL_LINKS.linkedin.url.replace("https://", "")}
                         </a>
                     </div>
                 </div>
@@ -77,41 +78,58 @@ import Footer from "../components/Footer.astro";
                     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2"
                 >
                     <a
-                        href="https://github.com/arafat-hasan"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
-                    >
-                        <span class="font-medium text-gray-900">GitHub</span>
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/arafat-hasan/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
-                    >
-                        <span class="font-medium text-gray-900">LinkedIn</span>
-                    </a>
-
-                    <a
-                        href="https://stackoverflow.com/users/6470402/arafat-hasan"
+                        href={SOCIAL_LINKS.github.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
                     >
                         <span class="font-medium text-gray-900"
-                            >Stack Overflow</span
+                            >{SOCIAL_LINKS.github.name}</span
                         >
                     </a>
 
                     <a
-                        href="https://substack.com/@arafathasan"
+                        href={SOCIAL_LINKS.linkedin.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
                     >
-                        <span class="font-medium text-gray-900">Substack</span>
+                        <span class="font-medium text-gray-900"
+                            >{SOCIAL_LINKS.linkedin.name}</span
+                        >
+                    </a>
+
+                    <a
+                        href={SOCIAL_LINKS.stackoverflow.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                    >
+                        <span class="font-medium text-gray-900"
+                            >{SOCIAL_LINKS.stackoverflow.name}</span
+                        >
+                    </a>
+
+                    <a
+                        href={SOCIAL_LINKS.substack.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                    >
+                        <span class="font-medium text-gray-900"
+                            >{SOCIAL_LINKS.substack.name}</span
+                        >
+                    </a>
+
+                    <a
+                        href={SOCIAL_LINKS.x.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                    >
+                        <span class="font-medium text-gray-900"
+                            >{SOCIAL_LINKS.x.name}</span
+                        >
                     </a>
                 </div>
             </div>

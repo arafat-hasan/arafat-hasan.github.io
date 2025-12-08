@@ -1,27 +1,67 @@
 /**
  * Site-wide constants and configuration
+ * This file contains all static application configuration.
+ * For environment-specific values (e.g., SITE_URL, GA_MEASUREMENT_ID), see .env
  */
 
 export const SITE_CONFIG = {
+    // Core metadata
     name: 'Arafat Hasan',
     title: 'Arafat Hasan - Software Engineer & Problem Solver',
-    description: 'Software engineer with 4 years of experience building efficient and reliable systems. Expertise in backend engineering, DevOps, and machine learning.',
+    description: 'Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.',
     url: 'https://arafathasan.com',
     author: 'Arafat Hasan',
     email: 'opendoor.arafat[at]gmail[dot]com',
     emailHref: 'mailto:opendoor.arafat[at]gmail[dot]com',
+
+    // SEO-specific configuration
+    seo: {
+        jobTitle: 'Software Engineer',
+        knowsAbout: [
+            'Software Engineering',
+            'Distributed Systems',
+            'System Architecture',
+            'Philosophy',
+            'Geopolitics',
+            'Literature',
+        ],
+        language: 'en-US',
+        ogImage: '/og-image.jpg',
+        logo: '/favicon-512x512.png',
+    },
+
+    // RSS feed configuration
+    rss: {
+        title: 'Arafat Hasan - Writings',
+        description: 'Technical insights, philosophical essays, and critical analysis on software engineering, geopolitics, literature, and systems thinking.',
+    },
 } as const;
 
 export const SOCIAL_LINKS = {
     github: {
         name: 'GitHub',
-        url: 'https://github.com/arafat-hasan',
+        url: 'https://github.com/arafat-hasan/',
         username: 'arafat-hasan',
     },
     linkedin: {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/arafat-hasan',
+        url: 'https://linkedin.com/in/arafat-hasan/',
         username: 'arafat-hasan',
+    },
+    x: {
+        name: 'X',
+        url: 'https://x.com/Arafat_HJ',
+        username: 'Arafat_HJ',
+    },
+    stackoverflow: {
+        name: 'StackOverflow',
+        url: 'https://stackoverflow.com/users/6470402/arafat-hasan',
+        username: 'arafat-hasan',
+    },
+    substack: {
+        name: 'Substack',
+        url: 'https://substack.com/@arafathasan',
+        username: 'arafathasan',
     },
 } as const;
 
