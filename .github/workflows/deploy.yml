@@ -56,6 +56,16 @@ jobs:
       # Build with TypeScript Checking
       # ============================================
       - name: Build with Astro
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
+          SITE_DESCRIPTION: ${{ vars.SITE_DESCRIPTION }}
+          GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+          MYGITHUB_URL: ${{ vars.MYGITHUB_URL }}
+          LINKEDIN_URL: ${{ vars.LINKEDIN_URL }}
+          TWITTER_URL: ${{ vars.TWITTER_URL }}
+          STACKOVERFLOW_URL: ${{ vars.STACKOVERFLOW_URL }}
+          SUBSTACK_URL: ${{ vars.SUBSTACK_URL }}
         run: npm run build
 
       # ============================================

@@ -12,26 +12,32 @@ interface Props {
 }
 
 const { type, data = {} } = Astro.props;
-const siteUrl = Astro.site?.toString() || "https://arafathasan.com";
+const siteUrl = Astro.site?.toString() || import.meta.env.SITE_URL;
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// Get metadata from environment variables with fallbacks
+const siteTitle = import.meta.env.SITE_TITLE;
+const siteDescription = import.meta.env.SITE_DESCRIPTION;
+
+// Social profile URLs from environment variables
+const socialProfiles = [
+    import.meta.env.MYGITHUB_URL,
+    import.meta.env.LINKEDIN_URL,
+    import.meta.env.TWITTER_URL,
+    import.meta.env.STACKOVERFLOW_URL,
+    import.meta.env.SUBSTACK_URL,
+].filter(Boolean);
 
 // Person Schema (for homepage and about page)
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Arafat Hasan",
+    name: siteTitle,
     url: siteUrl,
     image: `${siteUrl}og-image.jpg`,
     jobTitle: "Software Engineer",
-    description:
-        "Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.",
-    sameAs: [
-        "https://github.com/arafat-hasan/",
-        "https://www.linkedin.com/in/arafat-hasan/",
-        "https://x.com/Arafat_HJ",
-        "https://stackoverflow.com/users/6470402/arafat-hasan",
-        "https://substack.com/@arafathasan",
-    ],
+    description: siteDescription,
+    sameAs: socialProfiles,
     knowsAbout: [
         "Software Engineering",
         "Distributed Systems",
@@ -46,13 +52,12 @@ const personSchema = {
 const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Arafat Hasan",
+    name: siteTitle,
     url: siteUrl,
-    description:
-        "Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.",
+    description: siteDescription,
     author: {
         "@type": "Person",
-        name: "Arafat Hasan",
+        name: siteTitle,
     },
     inLanguage: "en-US",
 };
@@ -66,7 +71,7 @@ const articleSchema = data.article
           description: data.article.description || data.article.excerpt,
           author: {
               "@type": "Person",
-              name: "Arafat Hasan",
+              name: siteTitle,
               url: siteUrl,
           },
           datePublished: data.article.publishedAt,
@@ -76,7 +81,7 @@ const articleSchema = data.article
               : `${siteUrl}og-image.jpg`,
           publisher: {
               "@type": "Person",
-              name: "Arafat Hasan",
+              name: siteTitle,
               logo: {
                   "@type": "ImageObject",
                   url: `${siteUrl}favicon-512x512.png`,

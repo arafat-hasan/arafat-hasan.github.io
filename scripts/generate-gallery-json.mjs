@@ -10,11 +10,6 @@
 import { ExifTool } from 'exiftool-vendored';
 import { readdir, writeFile, mkdir, stat } from 'fs/promises';
 import { join, extname, basename } from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
 
 const exiftool = new ExifTool();
 

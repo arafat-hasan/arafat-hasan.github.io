@@ -8,7 +8,7 @@ interface Props {
     measurementId?: string;
 }
 
-const { measurementId = "G-YM74KVN6P9" } = Astro.props; // Replace with actual GA4 ID
+const { measurementId = import.meta.env.GA_MEASUREMENT_ID } = Astro.props;
 ---
 
 <!-- Google tag (gtag.js) -->
