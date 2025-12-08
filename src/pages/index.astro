@@ -7,6 +7,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Schema from "../components/common/Schema.astro";
 // import WritingCard from "../components/writing/WritingCard.astro";
 // import ActivityCard from "../components/activities/ActivityCard.astro";
 
@@ -29,8 +30,12 @@ import Footer from "../components/Footer.astro";
 
 <BaseLayout
     title="Arafat Hasan - Software Engineer"
-    description="Software engineer, outsider observer."
+    description="Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis."
 >
+    <!-- Structured Data for Homepage -->
+    <Schema slot="head" type="Person" />
+    <Schema slot="head" type="Website" />
+
     <Navbar slot="navbar" />
 
     <!-- Hero Section with Photo - Minimalist -->

@@ -1,5 +1,6 @@
 ---
 import SEO from "../components/common/SEO.astro";
+import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
 
 interface Props {
     title: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const {
     title,
-    description = "Software engineer, outsider observer.",
+    description = "Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis.",
     ogImage = "/og-image.jpg",
     ogImageAlt,
     ogType = "website",
@@ -51,8 +52,27 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
             twitterHandle={twitterHandle}
         />
 
-        <!-- Favicon -->
+        <!-- Favicons - Multiple formats for maximum compatibility -->
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         <!-- Page Title -->
         <title>{fullTitle}</title>
@@ -64,6 +84,20 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
+
+        <!-- RSS Feed -->
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Arafat Hasan - Writings"
+            href="/rss.xml"
+        />
+
+        <!-- Google Analytics -->
+        <GoogleAnalytics />
+
+        <!-- Allow pages to inject additional head elements (e.g., structured data) -->
+        <slot name="head" />
     </head>
     <body class="flex flex-col min-h-screen bg-white text-gray-900 antialiased">
         <!-- Skip to main content for accessibility -->

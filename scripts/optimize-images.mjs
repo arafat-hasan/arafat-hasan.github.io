@@ -13,7 +13,7 @@
 
 import sharp from 'sharp';
 import heicConvert from 'heic-convert';
-import { readdir, stat, unlink, rename, readFile, writeFile } from 'fs/promises';
+import { readdir, stat, unlink, rename, readFile } from 'fs/promises';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';

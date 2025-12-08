@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Badge from "../components/common/Badge.astro";
 import ReadingTime from "../components/writing/ReadingTime.astro";
+import Schema from "../components/common/Schema.astro";
 import { Image } from "astro:assets";
 import "../styles/markdown.css";
 
@@ -47,6 +48,37 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
 ---
 
 <BaseLayout title={title} description={description}>
+    <!-- Structured Data for Articles -->
+    <Schema
+        slot="head"
+        type="Article"
+        data={{
+            article: {
+                title,
+                description,
+                publishedAt: publishedAt.toISOString(),
+                updatedAt: publishedAt.toISOString(),
+                category,
+                tags,
+                image: featuredImage ? featuredImage.src : null,
+            },
+        }}
+    />
+    <Schema
+        slot="head"
+        type="BreadcrumbList"
+        data={{
+            breadcrumbs: [
+                { name: "Home", path: "" },
+                { name: "Writing", path: "writing" },
+                {
+                    name: category.charAt(0).toUpperCase() + category.slice(1),
+                    path: `writing/${category}`,
+                },
+            ],
+        }}
+    />
+
     <Navbar slot="navbar" />
 
     <article class="prose prose-slate max-w-none">
@@ -56,7 +88,8 @@ const formattedDate = publishedAt.toLocaleDateString("en-US", {
                 <ol class="flex items-center gap-2">
                     <li>
                         <a href="/writing" class="hover:text-gray-900"
-                            >Writing</a>
+                            >Writing</a
+                        >
                     </li>
                     <li aria-hidden="true">/</li>
                     <li>
