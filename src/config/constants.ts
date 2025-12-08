@@ -45,11 +45,11 @@ export const SOCIAL_LINKS = {
     },
     linkedin: {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/arafat-hasan/',
+        url: 'https://linkedin.com/in/arafat-hasan/',
         username: 'arafat-hasan',
     },
-    twitter: {
-        name: 'Twitter',
+    x: {
+        name: 'X',
         url: 'https://x.com/Arafat_HJ',
         username: 'Arafat_HJ',
     },

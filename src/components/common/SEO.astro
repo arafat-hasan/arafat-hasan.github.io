@@ -1,7 +1,7 @@
 ---
 /**
  * SEO Component
- * Enhanced meta tags for social sharing (Open Graph, Twitter Cards)
+ * Enhanced meta tags for social sharing (Open Graph, X Cards)
  */
 interface Props {
     title: string;
@@ -10,7 +10,7 @@ interface Props {
     imageAlt?: string;
     type?: "website" | "article" | "profile";
     siteName?: string;
-    twitterHandle?: string;
+    xHandle?: string;
     article?: {
         publishedTime?: string;
         author?: string;
@@ -25,7 +25,7 @@ const {
     imageAlt = "Arafat Hasan - Software Engineer",
     type = "website",
     siteName = "Arafat Hasan",
-    twitterHandle,
+    xHandle,
     article,
 } = Astro.props;
 
@@ -45,15 +45,15 @@ const imageURL = new URL(image, Astro.site);
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content="en_US" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={imageURL} />
-<meta property="twitter:image:alt" content={imageAlt} />
-{twitterHandle && <meta property="twitter:site" content={twitterHandle} />}
-{twitterHandle && <meta property="twitter:creator" content={twitterHandle} />}
+<!-- X -->
+<meta property="x:card" content="summary_large_image" />
+<meta property="x:url" content={canonicalURL} />
+<meta property="x:title" content={title} />
+<meta property="x:description" content={description} />
+<meta property="x:image" content={imageURL} />
+<meta property="x:image:alt" content={imageAlt} />
+{xHandle && <meta property="x:site" content={xHandle} />}
+{xHandle && <meta property="x:creator" content={xHandle} />}
 
 <!-- Article specific meta tags -->
 {

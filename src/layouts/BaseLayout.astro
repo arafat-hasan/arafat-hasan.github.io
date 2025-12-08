@@ -9,7 +9,7 @@ interface Props {
     ogImage?: string;
     ogImageAlt?: string;
     ogType?: "website" | "article" | "profile";
-    twitterHandle?: string;
+    xHandle?: string;
     mainClass?: string;
 }
 
@@ -19,7 +19,7 @@ const {
     ogImage = SITE_CONFIG.seo.ogImage,
     ogImageAlt,
     ogType = "website",
-    twitterHandle,
+    xHandle,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -50,7 +50,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
             imageAlt={ogImageAlt}
             type={ogType}
             siteName={siteTitle}
-            twitterHandle={twitterHandle}
+            xHandle={xHandle}
         />
 
         <!-- Favicons - Multiple formats for maximum compatibility -->
