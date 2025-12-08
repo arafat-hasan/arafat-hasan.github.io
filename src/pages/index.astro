@@ -7,6 +7,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { SITE_CONFIG } from "../config/constants";
 import Schema from "../components/common/Schema.astro";
 // import WritingCard from "../components/writing/WritingCard.astro";
 // import ActivityCard from "../components/activities/ActivityCard.astro";
@@ -28,10 +29,7 @@ import Schema from "../components/common/Schema.astro";
 // .slice(0, 4);
 ---
 
-<BaseLayout
-    title="Arafat Hasan - Software Engineer"
-    description="Software engineer specializing in resilient architectures and systems thinking. Exploring technology, philosophy, geopolitics, and literature through critical analysis."
->
+<BaseLayout title={SITE_CONFIG.title} description={SITE_CONFIG.description}>
     <!-- Structured Data for Homepage -->
     <Schema slot="head" type="Person" />
     <Schema slot="head" type="Website" />
@@ -39,16 +37,14 @@ import Schema from "../components/common/Schema.astro";
     <Navbar slot="navbar" />
 
     <!-- Hero Section with Photo - Minimalist -->
-    <section
-        class="min-h-[calc(100vh-theme(spacing.20))] flex items-center py-8 md:py-12"
-    >
+    <section class="min-h-[calc(80vh-5rem)] flex justify-center flex-col">
         <!-- <div class="grid md:grid-cols-2 gap-12 items-center"> -->
         <!-- Text Content -->
         <div class="order-2 md:order-1">
             <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
             >
-                Arafat Hasan
+                {SITE_CONFIG.name}
             </h1>
             <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
                 Software engineer, outsider observer.
