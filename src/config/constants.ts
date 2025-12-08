@@ -10,6 +10,10 @@ export const SITE_CONFIG = {
     author: 'Arafat Hasan',
     email: 'opendoor.arafat[at]gmail[dot]com',
     emailHref: 'mailto:opendoor.arafat[at]gmail[dot]com',
+    rss: {
+        title: 'Arafat Hasan - Writings',
+        description: 'Technical insights, philosophical essays, and critical analysis on software engineering, geopolitics, literature, and systems thinking.',
+    },
 } as const;
 
 export const SOCIAL_LINKS = {
