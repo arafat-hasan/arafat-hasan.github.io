@@ -3,6 +3,9 @@
  * SEO Component
  * Enhanced meta tags for social sharing (Open Graph, X Cards)
  */
+
+import { SITE_CONFIG } from "../../config/constants";
+
 interface Props {
     title: string;
     description: string;
@@ -21,10 +24,10 @@ interface Props {
 const {
     title,
     description,
-    image = "/og-image.jpg",
-    imageAlt = "Arafat Hasan - Software Engineer",
+    image = SITE_CONFIG.seo.ogImage,
+    imageAlt = `${SITE_CONFIG.name} - ${SITE_CONFIG.seo.jobTitle}`,
     type = "website",
-    siteName = "Arafat Hasan",
+    siteName = SITE_CONFIG.name,
     xHandle,
     article,
 } = Astro.props;
