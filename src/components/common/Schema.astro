@@ -1,0 +1,140 @@
+---
+/**
+ * Structured Data Schema Component
+ * Implements JSON-LD markup for SEO (Person, Website, Article, Breadcrumb)
+ */
+
+type SchemaType = "Person" | "Website" | "Article" | "BreadcrumbList";
+
+interface Props {
+    type: SchemaType;
+    data?: any;
+}
+
+const { type, data = {} } = Astro.props;
+const siteUrl = Astro.site?.toString() || import.meta.env.SITE_URL;
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// Get metadata from environment variables with fallbacks
+const siteTitle = import.meta.env.SITE_TITLE;
+const siteDescription = import.meta.env.SITE_DESCRIPTION;
+
+// Social profile URLs from environment variables
+const socialProfiles = [
+    import.meta.env.MYGITHUB_URL,
+    import.meta.env.LINKEDIN_URL,
+    import.meta.env.TWITTER_URL,
+    import.meta.env.STACKOVERFLOW_URL,
+    import.meta.env.SUBSTACK_URL,
+].filter(Boolean);
+
+// Person Schema (for homepage and about page)
+const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteTitle,
+    url: siteUrl,
+    image: `${siteUrl}og-image.jpg`,
+    jobTitle: "Software Engineer",
+    description: siteDescription,
+    sameAs: socialProfiles,
+    knowsAbout: [
+        "Software Engineering",
+        "Distributed Systems",
+        "System Architecture",
+        "Philosophy",
+        "Geopolitics",
+        "Literature",
+    ],
+};
+
+// Website Schema (for homepage)
+const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteTitle,
+    url: siteUrl,
+    description: siteDescription,
+    author: {
+        "@type": "Person",
+        name: siteTitle,
+    },
+    inLanguage: "en-US",
+};
+
+// Article Schema (for blog posts)
+const articleSchema = data.article
+    ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: data.article.title,
+          description: data.article.description || data.article.excerpt,
+          author: {
+              "@type": "Person",
+              name: siteTitle,
+              url: siteUrl,
+          },
+          datePublished: data.article.publishedAt,
+          dateModified: data.article.updatedAt || data.article.publishedAt,
+          image: data.article.image
+              ? `${siteUrl}${data.article.image}`
+              : `${siteUrl}og-image.jpg`,
+          publisher: {
+              "@type": "Person",
+              name: siteTitle,
+              logo: {
+                  "@type": "ImageObject",
+                  url: `${siteUrl}favicon-512x512.png`,
+              },
+          },
+          mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": currentUrl,
+          },
+          keywords: data.article.tags?.join(", "),
+          articleSection: data.article.category,
+          inLanguage: "en-US",
+      }
+    : null;
+
+// Breadcrumb Schema
+const breadcrumbSchema = data.breadcrumbs
+    ? {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: data.breadcrumbs.map(
+              (crumb: any, index: number) => ({
+                  "@type": "ListItem",
+                  position: index + 1,
+                  name: crumb.name,
+                  item: `${siteUrl}${crumb.path}`,
+              }),
+          ),
+      }
+    : null;
+
+// Select schema based on type
+let schema;
+switch (type) {
+    case "Person":
+        schema = personSchema;
+        break;
+    case "Website":
+        schema = websiteSchema;
+        break;
+    case "Article":
+        schema = articleSchema;
+        break;
+    case "BreadcrumbList":
+        schema = breadcrumbSchema;
+        break;
+    default:
+        schema = null;
+}
+---
+
+{
+    schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )
+}

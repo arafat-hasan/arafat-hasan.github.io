@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Arafat Hasan
+Site: https://arafathasan.com
+GitHub: https://github.com/arafat-hasan
+LinkedIn: https://www.linkedin.com/in/arafat-hasan
+Twitter: https://x.com/Arafat_HJ
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript, Schema.org
+Framework: Astro
+Components: Tailwind CSS, Sharp
+Software: VS Code, Git, npm
+Last Update: December 2025
+
+/* THANKS */
+Built with passion for clean code and systems thinking.

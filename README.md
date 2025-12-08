@@ -137,6 +137,39 @@ cd arafat-hasan.github.io
 
 # Install dependencies
 npm install
+
+# Copy environment variables template
+cp .env.example .env
+
+# Edit .env with your actual values
+# See Configuration section below
+```
+
+### Configuration
+
+Create a `.env` file in the root directory (copy from `.env.example`):
+
+```bash
+# Site Configuration
+SITE_URL=https://arafathasan.com
+SITE_TITLE=Arafat Hasan
+SITE_DESCRIPTION=Software engineer specializing in resilient architectures and systems thinking...
+
+# Google Analytics
+GA_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# Social Profiles
+MYGITHUB_URL=https://github.com/your-username/
+LINKEDIN_URL=https://www.linkedin.com/in/your-profile/
+TWITTER_URL=https://x.com/your-handle
+STACKOVERFLOW_URL=https://stackoverflow.com/users/your-id/your-name
+SUBSTACK_URL=https://substack.com/@your-handle
+```
+
+**Important:** 
+- Never commit `.env` to version control (already in `.gitignore`)
+- Update `.env.example` when adding new environment variables
+- All values have fallback defaults in the code
 ```
 
 ### Development
