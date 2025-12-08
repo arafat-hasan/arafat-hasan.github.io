@@ -29,7 +29,10 @@ const CONFIG = {
     jpegQuality: 75,
     pngQuality: 75,
     webpQuality: 75,
-    imagesDir: join(__dirname, '../public/images'),
+    imagesDirs: [
+        join(__dirname, '../public'),
+        join(__dirname, '../src/content/writing'),
+    ],
     extensions: ['.jpg', '.jpeg', '.png', '.heif', '.heic'],
 };
 
@@ -131,7 +134,7 @@ async function copyMetadata(sourcePath, destPath) {
         );
 
         if (Object.keys(filteredMetadata).length > 0) {
-            await exiftool.write(destPath, filteredMetadata, ['-overwrite_original']);
+            await exiftool.write(destPath, filteredMetadata, { writeArgs: ['-overwrite_original'] });
         }
     } catch (error) {
         // Metadata copy is non-critical, just log the error
@@ -148,7 +151,7 @@ async function optimizeImage(filePath) {
         const stats = await stat(filePath);
         if (stats.size === 0) {
             await unlink(filePath);
-            console.log(`🗑️  Deleted 0-byte file: ${filePath.replace(CONFIG.imagesDir, '')}`);
+            console.log(`🗑️  Deleted 0-byte file: ${filePath}`);
             return;
         }
     } catch {
@@ -231,7 +234,7 @@ async function optimizeImage(filePath) {
             stats.optimizedSize += jpgSize;
 
             console.log(
-                `✓ ${filePath.replace(CONFIG.imagesDir, '')} (Converted to JPG)\n` +
+                `✓ ${filePath} (Converted to JPG)\n` +
                 `  Original: ${formatBytes(originalSize)} → JPG: ${formatBytes(jpgSize)}\n` +
                 `  WebP: ${formatBytes(webpSize)}\n` +
                 `  Original HEIF deleted`
@@ -282,7 +285,7 @@ async function optimizeImage(filePath) {
             const webpSize = await getFileSize(webpPath);
 
             console.log(
-                `✓ ${filePath.replace(CONFIG.imagesDir, '')}\n` +
+                `✓ ${filePath}\n` +
                 `  Original: ${formatBytes(originalSize)} → Optimized: ${formatBytes(tmpSize)} ` +
                 `(${Math.round(savingsPercent)}% reduction)\n` +
                 `  WebP: ${formatBytes(webpSize)}`
@@ -322,14 +325,14 @@ async function optimizeImage(filePath) {
 
                 const webpSize = await getFileSize(webpPath);
                 console.log(
-                    `✓ ${filePath.replace(CONFIG.imagesDir, '')} (WebP updated)\n` +
+                    `✓ ${filePath} (WebP updated)\n` +
                     `  Original kept (savings < 5%)\n` +
                     `  WebP: ${formatBytes(webpSize)}`
                 );
                 stats.processed++;
             } else {
                 console.log(
-                    `⊘ ${filePath.replace(CONFIG.imagesDir, '')}\n` +
+                    `⊘ ${filePath}\n` +
                     `  Skipped: Already optimized`
                 );
                 stats.skipped++;
@@ -353,21 +356,27 @@ async function optimizeImage(filePath) {
  */
 async function main() {
     console.log('🖼️  Image Optimization Starting...\n');
-    console.log(`Directory: ${CONFIG.imagesDir}`);
+    console.log(`Directories:`);
+    CONFIG.imagesDirs.forEach(dir => console.log(`  - ${dir}`));
     console.log(`Max dimensions: ${CONFIG.maxWidth}x${CONFIG.maxHeight}`);
     console.log(`Quality: JPEG ${CONFIG.jpegQuality}%, PNG ${CONFIG.pngQuality}%, WebP ${CONFIG.webpQuality}%\n`);
 
-    const imageFiles = await getImageFiles(CONFIG.imagesDir);
+    // Collect all image files from all directories
+    const allImageFiles = [];
+    for (const dir of CONFIG.imagesDirs) {
+        const imageFiles = await getImageFiles(dir);
+        allImageFiles.push(...imageFiles);
+    }
 
-    if (imageFiles.length === 0) {
+    if (allImageFiles.length === 0) {
         console.log('No images found to optimize.');
         return;
     }
 
-    console.log(`Found ${imageFiles.length} images to process\n`);
+    console.log(`Found ${allImageFiles.length} images to process\n`);
 
     // Process images sequentially to avoid memory issues
-    for (const file of imageFiles) {
+    for (const file of allImageFiles) {
         await optimizeImage(file);
     }
 

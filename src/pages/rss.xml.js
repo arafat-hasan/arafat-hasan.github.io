@@ -1,6 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE_CONFIG } from '../config/constants';
+import { getWritingUrl } from '../utils/getWritingUrl';
 
 export async function GET(context) {
     const writings = await getCollection('writing', ({ data }) => !data.draft);
@@ -21,7 +22,7 @@ export async function GET(context) {
             title: post.data.title,
             pubDate: post.data.publishedAt,
             description: post.data.description || post.data.excerpt || '',
-            link: `/writing/${post.slug}/`,
+            link: getWritingUrl(post),
             categories: [post.data.category, ...(post.data.tags || [])],
         })),
         customData: `<language>en-us</language>
