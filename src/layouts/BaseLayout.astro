@@ -1,7 +1,7 @@
 ---
 import SEO from "../components/common/SEO.astro";
 import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
-import { SITE_CONFIG } from "../config/constants";
+import { SITE_CONFIG, SOCIAL_LINKS } from "../config/constants";
 
 interface Props {
     title: string;
@@ -11,6 +11,11 @@ interface Props {
     ogType?: "website" | "article" | "profile";
     xHandle?: string;
     mainClass?: string;
+    article?: {
+        publishedTime?: string;
+        author?: string;
+        tags?: string[];
+    };
 }
 
 const {
@@ -19,7 +24,8 @@ const {
     ogImage = SITE_CONFIG.seo.ogImage,
     ogImageAlt,
     ogType = "website",
-    xHandle,
+    xHandle = `@${SOCIAL_LINKS.x.username}`,
+    article,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -39,7 +45,8 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 
         <!-- SEO -->
         <link rel="canonical" href={canonicalURL} />
-        <meta name="author" content="Arafat Hasan" />
+        <meta name="author" content="Md. Arafat Hasan Jenin" />
+        <meta name="keywords" content="Arafat Hasan, Md. Arafat Hasan Jenin, Arafat Hasan Jenin, software engineer, distributed systems, system architecture" />
         <meta name="theme-color" content="#ffffff" />
 
         <!-- Enhanced SEO Component -->
@@ -51,6 +58,7 @@ const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
             type={ogType}
             siteName={siteTitle}
             xHandle={xHandle}
+            article={article}
         />
 
         <!-- Favicons - Multiple formats for maximum compatibility -->

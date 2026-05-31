@@ -3,5 +3,4 @@ Allow: /
 Crawl-delay: 1
 
 Sitemap: https://arafathasan.com/sitemap-index.xml
-Sitemap: https://arafathasan.com/rss.xml
 

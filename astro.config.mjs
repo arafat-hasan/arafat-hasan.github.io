@@ -10,8 +10,10 @@ const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
 export default defineConfig({
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/404'),
+    }),
   ],
-  site: env.SITE_URL,
+  site: env.SITE_URL || 'http://localhost:4321',
   base: '/',
 });
