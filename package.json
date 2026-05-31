@@ -15,20 +15,22 @@
     "perf-test": "npm run build && npm run lighthouse"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^4.0.0",
-    "exif-reader": "^2.0.2",
-    "exiftool-vendored": "^33.5.0",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.2",
+    "exif-reader": "^2.0.3",
+    "exiftool-vendored": "^35.21.0",
     "heic-convert": "^2.1.0",
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.0",
-    "@lhci/cli": "^0.13.0",
-    "sharp": "^0.33.0",
-    "typescript": "^5.0.0",
+    "@astrojs/check": "^0.9.9",
+    "@lhci/cli": "^0.15.1",
+    "sharp": "^0.34.5",
+    "typescript": "^6.0.3",
     "vite-bundle-visualizer": "^1.0.0"
   }
 }

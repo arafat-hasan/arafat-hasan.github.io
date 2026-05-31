@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 /* Shared styles for markdown content */
 .markdown-content {
     @apply text-gray-800 leading-relaxed;

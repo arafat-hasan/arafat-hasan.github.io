@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+  --breakpoint-xs: 475px;
+}
+
+@utility touch-manipulation {
+  touch-action: manipulation;
+}
