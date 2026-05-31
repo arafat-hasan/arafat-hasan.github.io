@@ -29,6 +29,7 @@ const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: SITE_CONFIG.name,
+    alternateName: SITE_CONFIG.seo.alternateName,
     url: siteUrl,
     image: `${siteUrl}${SITE_CONFIG.seo.ogImage}`,
     jobTitle: SITE_CONFIG.seo.jobTitle,
@@ -47,6 +48,7 @@ const websiteSchema = {
     author: {
         "@type": "Person",
         name: SITE_CONFIG.name,
+        alternateName: SITE_CONFIG.seo.alternateName,
     },
     inLanguage: SITE_CONFIG.seo.language,
 };
@@ -60,7 +62,8 @@ const articleSchema = data.article
           description: data.article.description || data.article.excerpt,
           author: {
               "@type": "Person",
-              name: siteTitle,
+              name: SITE_CONFIG.name,
+              alternateName: SITE_CONFIG.seo.alternateName,
               url: siteUrl,
           },
           datePublished: data.article.publishedAt,

@@ -2,12 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Schema from "../components/common/Schema.astro";
 ---
 
 <BaseLayout
     title="About - Arafat Hasan"
     description="Learn about Arafat Hasan - software engineer, critical thinker, and systems analyst exploring technology, philosophy, and human behavior."
 >
+    <Schema slot="head" type="Person" />
     <Navbar slot="navbar" />
 
     <article class="prose prose-slate max-w-none">

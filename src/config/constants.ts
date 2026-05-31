@@ -25,6 +25,8 @@ export const SITE_CONFIG = {
             'Geopolitics',
             'Literature',
         ],
+        // Alternate names for search engine indexing (not shown in visible content)
+        alternateName: ['Md. Arafat Hasan Jenin', 'Arafat Hasan Jenin'],
         language: 'en-US',
         ogImage: '/og-image.jpg',
         logo: '/favicon-512x512.png',
