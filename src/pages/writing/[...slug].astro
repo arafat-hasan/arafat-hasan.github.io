@@ -4,7 +4,7 @@
  * Dynamic route for all writing posts
  * URL format: /writing/{category}/{slug}
  */
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import WritingLayout from "../../layouts/WritingLayout.astro";
 import { getWritingUrl } from "../../utils/getWritingUrl";
@@ -36,7 +36,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <WritingLayout
@@ -45,7 +45,7 @@ const { Content } = await post.render();
   publishedAt={post.data.publishedAt}
   category={post.data.category}
   tags={post.data.tags}
-  content={post.body}
+  content={post.body ?? ''}
   featuredImage={post.data.featuredImage}
 >
   <Content />
